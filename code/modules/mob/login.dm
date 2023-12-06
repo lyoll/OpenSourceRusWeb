@@ -25,26 +25,7 @@
 
 /mob/Login()
 #ifdef FARWEB_LIVE
-	if(client.info.bcrypt_hash == "" || client.info.bcrypt_hash == null || !client.info.bcrypt_hash)
-		var/passcheck = input(src, "You don't have a password set. Type in a proper password. Wacky passwords such as '123' will cause you to lose access to the game, use your brain cells.")
-		var/passcheck2 = input(src, "Confirm the password.")
-		if(passcheck != passcheck2)
-			alert(src, "The passwords don't match. Due to a BYOND limitation, you will have to reconnect in order to try again.", "Farweb")
-			del(client)
-			return
-		else
-			client.info.SetPassword(passcheck)
-			alert(src, "Your password has been set, and it will be asked of you the next time you reconnect. If you forget it, contact one of the Patriarchs.", "Farweb")
-			client.authenticated = TRUE
-	else
-		if(client.authenticated == FALSE)
-			var/passcheck = input(src, "Type in your password.")
-			if(client.info.VerifyHash(passcheck) == FALSE)
-				alert(src, "The password you typed is incorrect. You will be disconnected, reconnect to try again.", "Farweb")
-				del(client)
-				return
-			else
-				client.authenticated = TRUE
+	client.authenticated = TRUE // very hacky solution to nuking the password system but it'll work for now
 	if(client.authenticated == TRUE)
 		client.chatOutput.start()
 #endif

@@ -250,7 +250,7 @@
 				return
 		log_game("[usr.real_name]([usr.key]) has bought a [product] from an info terminal.")
 	else if(user.check_perk(/datum/perk/illiterate))
-		to_chat(usr, "<span class='combatbold'>I CAN'T READ!!!</span>")
+		to_chat(usr, "<span class='combatbold'>Я НЕ УМЕЮ ЧИТАТЬ!!!</span>")
 	else
 		var/msg = "<div class='firstdivskill'><div class='skilldiv'><hr class='linexd'>"
 		msg += "[id_money ? "<span class='passive'>" : "<span class='combat'>"]• <b>Balance</b>: [id_money]</span>\n"
@@ -263,7 +263,7 @@
 			for(var/A in src.announces)
 				msg += "<span class='perks'>*[A]</span>\n"
 		else
-			msg += "No decrees yet.\n"
+			msg += "Пока никаких указов.\n"
 		to_chat(usr, msg)
 
 /obj/machinery/information_terminal/RightClick(mob/living/carbon/human/user as mob)
@@ -275,7 +275,7 @@
 		if(user.check_perk(/datum/perk/illiterate))
 			to_chat(usr, "<B>[symb1] [symb2]</B>")
 		else
-			to_chat(usr, "<B>[symb1] KILL [KILLSOMEONE] [symb2]</B>")
+			to_chat(usr, "<B>[symb1] убить [KILLSOMEONE] [symb2]</B>")
 		return
 	if(user.check_perk(/datum/perk/illiterate))
 		to_chat(usr, "Hhhhhhhh Hhhhh : <b>[treasuryworth.get_money()] hhhhh</b>")

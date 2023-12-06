@@ -57,7 +57,7 @@ CREATE TABLE `erro_feedback` (
   `var_value` int(16) DEFAULT NULL,
   `details` text,
   PRIMARY KEY (`id`)
-)  DEFAULT CHARSET=latin1
+)  DEFAULT CHARSET=latin1;
 
 CREATE TABLE `erro_library` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

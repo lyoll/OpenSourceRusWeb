@@ -1,4 +1,4 @@
-var/global/list/anonists_deb = list("randysandy","thuxtk")
+var/global/list/anonists_deb = list()
 
 /client/proc/request_loc_info()
 //	if(check_rights(R_PERMISSIONS))

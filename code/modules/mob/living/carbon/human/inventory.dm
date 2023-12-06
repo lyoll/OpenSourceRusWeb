@@ -480,15 +480,15 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.wear_mask] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>head!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off \a [target.wear_mask] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>head!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять \a [target.wear_mask] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>head!</span>"
 			if("l_hand")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their left hand item ([target.l_hand]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) left hand item ([target.l_hand])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off \a [target.l_hand] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left hand!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять \a [target.l_hand] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left hand!</span>"
 			if("r_hand")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their right hand item ([target.r_hand]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) right hand item ([target.r_hand])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off \a [target.r_hand] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right hand!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять \a [target.r_hand] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right hand!</span>"
 			if("gloves")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their gloves ([target.gloves]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) gloves ([target.gloves])</font>")
@@ -496,7 +496,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.gloves] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>hands!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.gloves] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>hands!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.gloves] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>hands!</span>"
 			if("eyes")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their eyewear ([target.glasses]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) eyewear ([target.glasses])</font>")
@@ -504,7 +504,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.glasses] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>eyes!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.glasses] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>eyes!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.glasses] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>eyes!</span>"
 			if("l_ear")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their left ear item ([target.l_ear]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) left ear item ([target.l_ear])</font>")
@@ -512,7 +512,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.l_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left ear!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.l_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left ear!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.l_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left ear!</span>"
 			if("wrist_l")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their left wrist item ([target.wrist_l]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) left wrist item ([target.wrist_l])</font>")
@@ -520,7 +520,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.wrist_l] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left wrist!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.wrist_l] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left wrist!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.wrist_l] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>left wrist!</span>"
 			if("wrist_r")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their right wrist item ([target.wrist_r]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) right wrist item ([target.wrist_r])</font>")
@@ -528,7 +528,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.wrist_r] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.wrist_r] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.wrist_r] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
 			if("back2")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their right wrist item ([target.back2]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) right wrist item ([target.back2])</font>")
@@ -536,7 +536,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.back2] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.back2] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.back2] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
 			if("amulet")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their amulet item ([target.amulet]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) amulet item ([target.amulet])</font>")
@@ -544,7 +544,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.amulet] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>neck!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.wrist_r] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.wrist_r] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right wrist!</span>"
 			if("r_ear")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their right ear item ([target.r_ear]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) right ear item ([target.r_ear])</font>")
@@ -552,7 +552,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.r_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right ear!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.r_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right ear!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.r_ear] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>right ear!</span>"
 			if("head")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their hat ([target.head]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) hat ([target.head])</font>")
@@ -560,7 +560,7 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.head] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>d!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.head] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>head!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.head] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>head!</span>"
 			if("shoes")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their shoes ([target.shoes]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) shoes ([target.shoes])</font>")
@@ -568,11 +568,11 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.shoes] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>feet!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.shoes] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>feet!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.shoes] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>feet!</span>"
 			if("belt")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their belt item ([target.belt]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) belt item ([target.belt])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off the [target.belt] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>belt!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять the [target.belt] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>belt!</span>"
 			if("suit")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their suit ([target.wear_suit]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) suit ([target.wear_suit])</font>")
@@ -580,19 +580,19 @@
 					message = "<span class='combatbold'>[source]</span> <span class='combat'>fails to take off \a [target.wear_suit] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>body!</span>"
 					return
 				else
-					message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off \a [target.wear_suit] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>body!</span>"
+					message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять \a [target.wear_suit] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>body!</span>"
 			if("back")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their back item ([target.back]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) back item ([target.back])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to take off \a [target.back] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>back!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять \a [target.back] from</span> <span class='combatbold'>[target]'s</span> <span class='combat'>back!</span>"
 			if("handcuff")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Was unhandcuffed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to unhandcuff [target.name]'s ([target.ckey])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to unhandcuff</span> <span class='combatbold'>[target]</span><span class='combat'>!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается надеть наручники</span> <span class='combatbold'>[target]</span><span class='combat'>!</span>"
 			if("legcuff")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Was unlegcuffed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to unlegcuff [target.name]'s ([target.ckey])</font>")
-				message = "<span class='combatbold'>[source]</span> <span class='combat'>is trying to unlegcuff</span> <span class='combatbold'>[target]</span><span class='combat'>!</span>"
+				message = "<span class='combatbold'>[source]</span> <span class='combat'>is пытается снять наручники</span> <span class='combatbold'>[target]</span><span class='combat'>!</span>"
 			if("uniform")
 				target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has had their uniform ([target.w_uniform]) removed by [source.name] ([source.ckey])</font>")
 				source.attack_log += text("\[[time_stamp()]\] <font color='red'>Attempted to remove [target.name]'s ([target.ckey]) uniform ([target.w_uniform])</font>")

@@ -21,6 +21,16 @@
 	hood_state = "monk-hooded"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 
+/obj/item/clothing/suit/hood/mortus
+	name = "Mortician's Cloak"
+	desc = "The cloak of death. Used by morticians to take bums to the web."
+	icon_state = "mortus"
+	item_state = "mortus"
+	hood_state = "mortus-hooded"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	flags = FPRINT | TABLEPASS | ONESIZEFITSALL
+	weight = 5
+
 /obj/item/clothing/suit/hood/thief
 	name = "Grave robber cloak"
 	desc = "The cloak of silence."

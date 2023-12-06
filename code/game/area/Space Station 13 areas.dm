@@ -333,9 +333,9 @@ var/list/ghostteleportlocs = list()
 	var/mob/living/carbon/human/L = A
 	if(!L.AreasEntered.Find(src))
 		if(L.outsider)
-			to_chat(L, "<span class='jogtowalk'><i><b>Streets</b> - Your feet fall on the dilapidated stone below. Through its bleak cracks and disrepair you realize this is the first step many before you have taken for protection from the damp caves that had beckoned them into its maw. But you'll soon realize the real horrors are already here.</i></span>")
+			to_chat(L, "<span class='jogtowalk'><i><b>Улицы</b> - Ваши ноги опускаются на полуразрушенный камень внизу. Сквозь его мрачные трещины и ветхость вы понимаете, что это первый шаг, который многие из вас предприняли до вас, чтобы защититься от сырых пещер, которые манили их в свою утробу. Но скоро вы поймете, что настоящие ужасы уже здесь.</i></span>")
 		else
-			to_chat(L, "<span class='jogtowalk'><i><b>Streets</b> - A chill runs down your spine as a cold breeze rolls in from a nearby alley. Your senses are suddenly clouded by grime and muck, and just as you go to take your first breath of fresh air, you taste the acrid smell of raw sewage. Feels good to live in Firethorn.</i></span>")
+			to_chat(L, "<span class='jogtowalk'><i><b>Улицы</b> - Холодок пробегает у вас по спине, когда из соседнего переулка дует холодный ветерок. Ваши чувства внезапно затуманиваются грязью и навозом, и как только вы выходите сделать свой первый глоток свежего воздуха, вы ощущаете едкий запах неочищенных сточных вод. Приятно жить в Файрторне.</i></span>")
 		L.AreasEntered.Add(src)
 
 /area/dunwell/station/train_station
@@ -454,9 +454,9 @@ var/list/ghostteleportlocs = list()
 	var/mob/living/carbon/human/L = A
 	if(!L.AreasEntered.Find(src))
 		if(L.religion == "Thanati")
-			to_chat(L, "<span class='jogtowalk'><i><b>Church</b> - Your body cringes, sickened by the idoletry lining the room of the incomplete Creator. Contempt fills you, as you alone understand that it is all lies. There is no salvation for you after all, and you intend to show that there is no salvation for them, either. The Overlord shall create a new universe, and redemption shall be gained upon the death of the last person witnessing this one. Praise Tzchernobog!</i></span>")
+			to_chat(L, "<span class='jogtowalk'><i><b>Церковь</b> - Ваше тело съеживается, испытывая отвращение к идолопоклонству, царящему в комнате незавершенного Творца. Презрение переполняет тебя, поскольку ты один понимаешь, что все это ложь. В конце концов, для вас нет спасения, и вы намерены показать, что и для них тоже нет спасения. Всевышний создаст новую вселенную, и искупление будет достигнуто после смерти последнего человека, ставшего свидетелем этого. Хвала Чернобогу!</i></span>")
 		else
-			to_chat(L, "<span class='jogtowalk'><i><b>Church</b> - Stone effigies and sculptures of God look down upon you, His illustrations that are weaved onto the sloped ceiling dance before you in the flickering light. The place of prayer, forgiveness to those who atone for their sins, and for all who have yet to seperate themselves from Him. God be saved.</i></span>")
+			to_chat(L, "<span class='jogtowalk'><i><b>Церковь</b> - Каменные изображения и скульптуры Бога смотрят на вас сверху вниз, Его иллюстрации, вытканные на наклонном потолке, танцуют перед вами в мерцающем свете. Место молитвы, прощения для тех, кто искупает свои грехи, и для всех, кому еще предстоит отделиться от Него. Да будет спасен Бог.</i></span>")
 		L.AreasEntered.Add(src)
 
 /area/dunwell/station/church/bishopoffice
@@ -680,7 +680,7 @@ var/list/ghostteleportlocs = list()
 	icon_state = "misc"
 	hum = 1
 	RoomTitle = "You descend into the Burrows"
-	RoomDesc = "You hear the wailing cries of beggars and the distraught. Those who have found no mercy from the streets find their home among the downtrodden scoundrels and vermin. The stench of this place almost makes you want to puke."
+	RoomDesc = "Вы слышите жалобные крики нищих и обезумевших от горя людей. Те, кто не нашел пощады на улицах, находят свой дом среди забитых негодяев и паразитов. От вони этого места тебя почти тошнит."
 
 /area/dunwell/station/burrow/maintenance
 	name = "Maintenance"
@@ -723,7 +723,7 @@ var/list/ghostteleportlocs = list()
 	hum = 1
 
 	RoomTitle = "Keep"
-	RoomDesc = "The modest fireplaces lining the walls cause a sense of warmth to wash over you. The cozy grandeur of being away from the perils of the outside is a luxury afforded only to aristocracy. But perhaps its the false sense of security that keeps drawing you back."
+	RoomDesc = "Скромные камины, расположенные вдоль стен, создают ощущение тепла, которое окутывает вас. Уютное величие пребывания вдали от опасностей внешнего мира - роскошь, доступная только аристократии. Но, возможно, именно ложное чувство безопасности продолжает тянуть вас назад."
 
 /area/dunwell/station/riverarea
 	name = "riverarea"
@@ -756,7 +756,7 @@ var/list/ghostteleportlocs = list()
 	name = "Great Hall"
 	icon_state = "crown"
 	RoomTitle = "Great Hall"
-	RoomDesc = "The Great Hall towers before you, forked banners with embellished trimmings covering its walls. Between each banner stands a tall candle, lit to illuminate the mosaics of past conquerors and victors before them. The Throne of Thorns sits high above the rest, its sovereign seated below the Draconic Visage, said to contain the spirits of its most esteemed rulers."
+	RoomDesc = "Перед вами возвышается Большой зал, стены которого украшены раздвоенными знаменами с украшенной отделкой. Между каждым знаменем стоит высокая свеча, зажженная для освещения мозаик прошлых завоевателей и победителей, стоявших перед ними. Терновый трон возвышается над остальными, его повелитель восседает под Драконьим ликом, в котором, как говорят, заключены души его самых уважаемых правителей."
 
 /area/dunwell/station/bridge/hangar
 	name = "Hangar"

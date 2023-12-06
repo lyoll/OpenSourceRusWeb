@@ -19,49 +19,10 @@ var/rtlog_path
 /world/New()
 	//logs]
 	set waitfor = FALSE
-#ifdef FARWEB_LIVE
-	if(init_discord == "True")
-		world.log << "Discord initialized."
-	else
-		world.log << "Discord failed to initialize, shutting down..."
-		del(world)
-		return
-	if(src.port == BRZ_PORT)
-		server_language = "BR"
-		current_server = "BRZ"
-		if(send_roundstart_embed != "True")
-			world.log << "Failed to send roundstart embed!"
-			del(world)
-			return
-	if(src.port == IZ2_PORT)
-		server_language = "IZ"
-		current_server =  "S2"
-		if(send_roundstart_embed != "True")
-			world.log << "Failed to send roundstart embed!"
-			del(world)
-			return
-	if(src.port == IZ1_PORT)
-		server_language = "IZ"
-		current_server = "S1"
-		if(send_roundstart_embed != "True")
-			world.log << "Failed to send roundstart embed!"
-			del(world)
-			return
-	if(src.port == SHROOM_PORT)
-		server_language = "IZ"
-		current_server = "SHROOM"
-	if(src.port == IZ3_PORT)
-		server_language = "IZ"
-		current_server = "S3"
-		hub_password = "SORRYNOPASSWORD"
-		if(send_roundstart_embed != "True")
-			world.log << "Failed to send roundstart embed!"
-			del(world)
-			return
-#else
+ #ifdef FARWEB_LIVE
 	server_language = "IZ"
 	current_server = "S1"
-#endif
+#endif 
 	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
 	tick_lag = 0.4
 	for(var/obj/effect/landmark/mapinfo/L in landmarks_list)

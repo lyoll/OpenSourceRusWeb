@@ -19,9 +19,9 @@
 	return 0
 /datum/game_mode/proc/greet_dreamer(var/datum/mind/dreamer)
 	//ticker.mode.learn_basic_spells(current)
-	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>Another NIGHT here. This labyrinthine fortress TWISTS and DISTORTS, something shimmers under the CRACKS. I know in my VISIONS, something GREATER lies beyond this LIFE.</span>")
-	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>I shall CUT my BONDS, only beneath the skin does the TRUTH lay.</span>")
-	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>Dream #1: FOLLOWING my HEART shall be the WHOLE of the law.</span>")
+	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>Еще одна НОЧЬ здесь. Эта похожая на лабиринт крепость ИЗГИБАЕТСЯ и ИСКАЖАЕТСЯ, что-то мерцает под ТРЕЩИНАМИ. Я знаю в своих ВИДЕНИЯХ, что нечто БОЛЬШЕЕ лежит за пределами этой ЖИЗНИ.</span>")
+	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>Я РАЗОРВУ свои ПУТЫ, только под кожей скрывается ИСТИНА..</span>")
+	to_chat(dreamer.current,"<span class='dreamershitfuckcomicao1'>Мечта №1: СЛЕДОВАТЬ ЗОВУ своего СЕРДЦА - вот и весь закон.</span>")
 	return
 /datum/game_mode/proc/finalize_dreamer(var/datum/mind/dreamer)
 	dreamer.special_role = "Waker"
@@ -70,9 +70,9 @@
 /datum/game_mode/dreamer/declare_completion()
 	for(var/mob/living/carbon/human/H in mob_list)
 		if(H.mind.special_role == "Waker" && H.mind.farwebcompletionantagonist)
-			to_chat(world, "<span class='dreamershitfuckcomicao1'>Starring: [starringlist]</span>")
-			to_chat(world, "<span class='dreamershitbutitsactuallypassivebutitactuallyisbigandbold'>The Dreamer has awakened!</span>")
+			to_chat(world, "<span class='dreamershitfuckcomicao1'>В главных ролях: [starringlist]</span>")
+			to_chat(world, "<span class='dreamershitbutitsactuallypassivebutitactuallyisbigandbold'>Мечтатель пробудился!</span>")
 			H.unlock_medal("Finally Awake", 0, "As the Dreamer, followed their heart to the whole of the law.", "23")
 		else if(H.mind.special_role == "Waker" && !H.mind.farwebcompletionantagonist)
-			to_chat(world, "<span class='dreamershitfuckcomicao1'>Starring: [starringlist]</span>")
-			to_chat(world, "<span class='dreamershitbutitsactuallypassivebutitactuallyisbigandbold'>The Dreamer is still imprisioned in his own labyrinth.</span>")
+			to_chat(world, "<span class='dreamershitfuckcomicao1'>В главных ролях: [starringlist]</span>")
+			to_chat(world, "<span class='dreamershitbutitsactuallypassivebutitactuallyisbigandbold'>Мечтатель все еще заточен в своем собственном лабиринте.</span>")

@@ -10,7 +10,7 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		src << "You cannot tackle someone in your current state."
+		src << "Вы не можете справиться с кем-то в вашем нынешнем состоянии."
 		return
 
 	var/list/choices = list()
@@ -19,7 +19,7 @@
 			choices += M
 	choices -= src
 
-	var/mob/living/T = input(src,"Who do you wish to tackle?") as null|anything in choices
+	var/mob/living/T = input(src,"С кем бы вы хотели сразиться?") as null|anything in choices
 
 	if(!T || !src || src.stat) return
 
@@ -29,7 +29,7 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		src << "You cannot tackle in your current state."
+		src << "Вы не можете справиться в своем нынешнем состоянии."
 		return
 
 	last_special = world.time + 50
@@ -58,11 +58,11 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		src << "You cannot leap in your current state."
+		src << "Вы не можете прыгнуть в своем нынешнем состоянии."
 		return
 
 	if(!has_gravity(src))
-		src << "<span class='alertalien'>It is unsafe to leap without gravity!</span>"
+		src << "<span class='alertalien'>Прыгать без силы тяжести небезопасно!</span>"
 		//It's also extremely buggy visually, so it's balance+bugfix
 		return
 
@@ -72,7 +72,7 @@
 			choices += M
 	choices -= src
 
-	var/mob/living/T = input(src,"Who do you wish to leap at?") as null|anything in choices
+	var/mob/living/T = input(src,"На кого бы ты хотел наброситься?") as null|anything in choices
 
 	if(!T || !src || src.stat) return
 
@@ -82,7 +82,7 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		src << "You cannot leap in your current state."
+		src << "Вы не можете прыгнуть в своем нынешнем состоянии."
 		return
 
 	last_special = world.time + 75
@@ -110,7 +110,7 @@
 	var/use_hand = "left"
 	if(l_hand)
 		if(r_hand)
-			src << "\red You need to have one hand free to grab someone."
+			src << "\red У вас должна быть свободна одна рука, чтобы схватить кого-нибудь."
 			return
 		else
 			use_hand = "right"
@@ -136,16 +136,16 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying)
-		src << "\red You cannot do that in your current state."
+		src << "\red Вы не можете этого сделать в вашем нынешнем состоянии."
 		return
 
 	var/obj/item/weapon/grab/G = locate() in src
 	if(!G || !istype(G))
-		src << "\red You are not grabbing anyone."
+		src << "\red Ты никого не хватаешь."
 		return
 
 	if(G.state < GRAB_AGGRESSIVE)
-		src << "\red You must have an aggressive grab to gut your prey!"
+		src << "\red У вас должен быть агрессивный захват, чтобы выпотрошить свою добычу!"
 		return
 
 	last_special = world.time + 50
@@ -192,12 +192,12 @@
 
 	log_say("[key_name(src)] communed to [key_name(M)]: [text]")
 
-	M << "\blue Like lead slabs crashing into the ocean, alien thoughts drop into your mind: [text]"
+	M << "\blue Подобно свинцовым плитам, падающим в океан, чуждые мысли проникают в ваш разум: [text]"
 	if(istype(M,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return
-		H << "\red Your nose begins to bleed..."
+		H << "\red У тебя из носа начинает идти кровь..."
 		H.drip(1)
 
 /mob/living/carbon/human/proc/regurgitate()
@@ -210,7 +210,7 @@
 			if(M in Stomach.stomach_contents)
 				Stomach.stomach_contents.Remove(M)
 				M.loc = loc
-		src.visible_message("\red <B>[src] hurls out the contents of their stomach!</B>")
+		src.visible_message("\red <B>[src] выбрасывает содержимое их желудка!</B>")
 	return
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
@@ -221,6 +221,6 @@
 	var/msg = sanitize(input("Message:", "Psychic Whisper") as text|null)
 	if(msg)
 		log_say("PsychicWhisper: [key_name(src)]->[M.key] : [msg]")
-		M << "\green You hear a strange, alien voice in your head... \italic [msg]"
+		M << "\green Вы слышите странный, чуждый голос в своей голове... \italic [msg]"
 		src << "\green You said: \"[msg]\" to [M]"
 	return

@@ -7,4 +7,4 @@
 	set category = "Admin"
 	set name = "Adminhelp"
 	usr << 'sound/sound_ahelp_br.ogg'
-	to_chat(src, "<font color='[normal_ooc_colour]'><b>OOC: [src.key]: MEU ÂNUS ESTÁ </font><font color='red'><span class='highlighttext'>SANGRANDO!</span></font></b>")
+	to_chat(src, "<font color='[normal_ooc_colour]'><b>OOC: [src.key]: МОЯ ЖОПА </font><font color='red'><span class='highlighttext'>ГОРИТ!</span></font></b>")

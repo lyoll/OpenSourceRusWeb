@@ -101,7 +101,7 @@
 
 /mob/proc/surrender()//Surrending. I need to put this in a different file.
 	if(stat == CONSCIOUS )
-		visible_message("<p style='font-size:20px'><span class='passivebold'>[src] surrenders!</span></p>")
+		visible_message("<p style='font-size:20px'><span class='passivebold'>[src] сдаётся!</span></p>")
 		resting = 1
 		playsound(src, 'sound/effects/surrender.ogg', 90, 0)
 		var/atom/movable/overlay/animation = new /atom/movable/overlay( loc )
@@ -116,7 +116,7 @@
 
 /mob/proc/mob_rest()
 	if(resting && !stunned && !weakened && (can_stand || buckled))//The incapacitated proc includes resting for whatever fucking stupid reason I hate SS13 code so fucking much.
-		visible_message("<span class='passivebold'>[usr]</span> <span class='passive'>is trying to get up.</span> ")
+		visible_message("<span class='passivebold'>[usr]</span> <span class='passive'>пытается подняться.</span> ")
 		if(do_after(src, 15))
 			resting = 0
 			update_vision_cone()
@@ -127,7 +127,7 @@
 		update_transform()
 		sleep(10)
 		playsound(src, "bodyfall", 50, 1)
-		visible_message("<span class='passivebold'>[usr]</span> <span class='passive'>falls over.</span> ")
+		visible_message("<span class='passivebold'>[usr]</span> <span class='passive'>падает.</span> ")
 		update_transform()
 		//if(ishuman(src))
 			//var/mob/living/carbon/human/H = src

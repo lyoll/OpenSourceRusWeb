@@ -148,7 +148,7 @@ Works together with spawning an observer, noted above.
 		if(ticker?.eof?.id == "ghostpower")
 			multiplier = 3
 		O.wraith_pain += 5 * multiplier
-		to_chat(O, "<spanclass='jogtowalk'>5 Pain collected.</span>")
+		to_chat(O, "<spanclass='jogtowalk'>5 Боли собрано.</span>")
 		O << sound('w_consume.ogg', repeat = 0, wait = 0, volume = 70, channel = 25)
 		qdel(src)
 		return

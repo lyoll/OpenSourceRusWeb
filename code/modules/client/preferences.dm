@@ -277,7 +277,7 @@ datum/preferences
 
 		user << browse(dat, "window=preferences;size=600x400;can_close=0;can_resize=0;titlebar=[toggleLobbyScreen]")
 
-	proc/SetChoices(mob/user, limit = 16, list/splitJobs = list("Chief Medical Officer"), width = 550, height = 480)
+	proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Medical Officer"), width = 550, height = 480)
 		if(!job_master)
 			return
 
@@ -289,7 +289,7 @@ datum/preferences
 
 		var/HTML = "<META http-equiv='X-UA-Compatible' content='IE=edge' charset='UTF-8'><Title>Farweb</title><style type='text/css'>body {font-family: Times;cursor: url('pointer.cur'), auto;}a {text-decoration:none;outline: none;border: none;margin:-1px;}a:focus{outline:none;}a:hover {color:#0d0d0d;background:#505055;outline: none;border: none;}a.active { text-decoration:none; color:#533333;}a.inactive:hover {color:#0d0d0d;background:#bb0000}a.active:hover {color:#bb0000;background:#0f0f0f}a.inactive:hover { text-decoration:none; color:#0d0d0d; background:#bb0000}table { width:100%; }td {text-align: center;}TR {border: 0px;}</style><script type='text/javascript'>function updateText(tmpdesc){document.getElementById('INFO').innerHTML = tmpdesc;}</script><body bgcolor=#0d0d0d text=#555555 alink=#777777 vlink=#777777 link=#777777>"
 		HTML += "<tt><center>"
-		HTML += "<b>Choose your destiny.</b><br>"
+		HTML += "<b>Выбери свою судьбу</b><br>"
 		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>\[Done\]</a></center><br>" // Easier to press up here.
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'><tr><td width='20%'>" // Table within a table for alignment, also allows you to easily add more colomns.
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'>"
@@ -876,56 +876,56 @@ datum/preferences
 							Vices.Remove("Sexoholic")
 							Vices.Remove("Necrophile")
 							Vices.Remove("Voyeur")
-						var/chosen_vice = input(user, "Choose your character's vice:", "Character Preference")  as null|anything in Vices
+						var/chosen_vice = input(user, "Выберите порок своего персонажа:", "Character Preference")  as null|anything in Vices
 						if(chosen_vice)
 							vice = chosen_vice
 						ShowChoices(user)
 
 					if("zodiac")
-						var/list/zodiacs = list("Vulpes","Rocca","Numis","Apis","Cygnus","Gryllus","Aranea","Centaurus","Sisyphus","Fulgurri","Phantom","Noctua")
+						var/list/zodiacs = list("Лисица","Скала","Монеты","Пчела","Лебедь","Сверчок","Мизгирь","Кентавр","Сизиф","Зарница","Фантом","Сова")
 
-						var/chosen_zodiac = input(user, "Choose your character's zodiac sign:", "Character Preference")  as null|anything in zodiacs
+						var/chosen_zodiac = input(user, "Выберите знак зодиака вашего персонажа:", "Character Preference")  as null|anything in zodiacs
 						if(chosen_zodiac)
 							zodiac = chosen_zodiac
 						ShowChoices(user)
 						to_chat(user, "<b><font color='green'><u>[zodiac]</u></font></b>")
 						switch(zodiac)
-							if("Vulpes")
-								to_chat(user, "<b>Ruler:</b> <i>St. Petiro the Denier </i>")
-								to_chat(user, "Short-tempered and absurdly brave, Vulpes are like innocent streets kids. They rarely plan ahead or think before they act, and they'll eagerly accept any challenge. Impulsivity and need to win often don't serve them right, and only rampant energy helps them escape their troubles. Vulpes like to overcome difficulties and be victorious. During competence, they never retreat or give up, even if it may hurt them. They rarely dream, because when they want something, they go and get it. They are nothing like spoiled narcissists, because their egotism is naive and childish. Every their act is burning with a question: \"What about me?\" Though their anger (and desire, and love, and any impulse) is quick to raise, it doesn't last long. After a short flash, they could find themselves dressing a wounds of a man they've tried to kill a minute ago.")
-							if("Rocca")
-								to_chat(user, "<b>Ruler:</b> <i>St. Sylar of Caves </i>")
-								to_chat(user, "Always calm and slow, they are somewhat lazy and don't waste their energy on meaningless things. But once they choose a goal, they establish a routine follow it steadfastly, and routine is something Rocche hate to break. It's impossible to make them lose their temper, and it's even harder to change their mind on any subject once it's made up. They are very possessive about any of their property and often behave as scrooges. They do not tolerate being rushed. They have troubles verbalizing their feelings. Rocche can't resist physical pleasures, but are very provident and tend to accumulate their riches. They are not ashamed to make demands, and are very persistent in them. They seek comfort, luxury and, most of all, stability.")
-							if("Numis")
-								to_chat(user, "<b>Ruler:</b> <i>St. Jametta </i>")
-								to_chat(user, "People of this sign are restless like spinning coins, and some may accuse them as being two-faced. One of their sides loves to cheer up and bring joy, the other prefers to cruelly mock everyone and spread gossip. Their speeches sound like jingling silver, and they could bribe their listeners with bare words. Lies and half-truth always help Numis remain unpunished. They easily consume new knowledge and gladly share it, but they couldn't focus on a single subject for a long time and rarely get to specialize in anything. They're very curious and love to react on their surroundings, always trying to make a sharp remark on the most bright details of what they see and hear.")
-							if("Apis")
-								to_chat(user, "<b>Ruler:</b> <i>St. Drewet the Fisherman </i>")
-								to_chat(user, "You won't usually see them during a noisy feast - regardless of their love for food, they'd prefer to hide in their solitude from attention and possible heartwounds. Men of this sign bury their vulnerability under showy manliness and valour. Supporters of traditions and old way of life, they often happen to become sincere patriots and caring spouses and parents; though their care might often be clingy and annoying, they even look after their friends a way too much. They're almost never calm, due to their sensitivity and tendency to overreact, and usually put their feelings way ahead of reason. They're not strangers to tears and anxieties, but when someone close to them gets into trouble, Apis could show themselves as fearless protectors.")
-							if("Cygnus")
-								to_chat(user, "<b>Ruler:</b> <i>St. Ijon</i>")
-								to_chat(user, "Always ready to pay with hospitality for attention and praise, generous Cygni love to be in the eye of social spotlights. In any hour they'll give their help to poor and helpless: they're flattered by the idea of being a saviour; they are generally dramatic. People born under the sign of Cygnus are confident and proud, their biggest fear is to lose their dignity. Flattery is the best way to win them. Children easily melt their already warm hearts, and Cygni indulge them with oceans of caring and love.")
-							if("Gryllus")
-								to_chat(user, "<b>Ruler:</b> <i>St. Vilppu</i>")
-								to_chat(user, "Their bloated common sense and diligence remind of pedantic robo-servants from ancient fairy-tales. But robots at least don't ooze with critique every single minute! All the time Grylli correct otheirs and point at their defects, mistakes, deviations - with best intentions, of course. They believe their observations are helpful. They just try to fix everything. They usually have high moral standarts, try hard to be useful to people around them, and are not afraid of hard work. They are not secretive and are good as their word. They're down-to-earth, and their speech is simple and logical. Their tenacious attention to details serves Grylli well, but makes them obsessed with neatness and order. They try to be perfect and are always afraid of becomming useless and unnecessary.")
-							if("Aranea")
-								to_chat(user, "<b>Ruler:</b> <i>St. Tamash</i>")
-								to_chat(user, "Secretive and mistrustful, Araneas prefer to observe and manipulate from behind the scenes. Behind their stolid masks there is an enormous vengeful ego. Araneas are capable of long, truly manic efforts, which are fueled by their lust and violence. They see lies, including flattery, as attempts to control them, and immediately become aggressive. They enjoy revenge, even if it costs them much. They're usually loyal and extremely dependent on their partner, seeing them as the only ally in their struggle against the whole world. They are secretly passionate, and through passions and vices they unconsciously seek to burn themselves, to die - at least metaphorically - to be born again from the ashes. They despise weak-willed and passive people, and won't waste their time on those who they see as useless. Though they value power and influence the most, Areneas don't want to be Kings. They'd prefer to be the invisible puppeteers behind the throne.")
-							if("Centaurus")
-								to_chat(user, "<b>Ruler:</b> <i>St. Santiago</i>")
-								to_chat(user, "Staying optimistic and cheerful even on the North, Centauri are in love with life. They're always on the move, be it physical travelling or just religious and philosophic search for the Truth. It's easy to recognize them by their straightforward honesty, which could be harsh, and their inability to lie convincingly. Alas, their love for truth doesn't extend to their promises, which they often forget to keep. Centauri have lots of friends, but avoid forming long-term romantic bonds, for they hate the idea of losing their freedom. They are natural born adventurers: the bigger are stakes, the brighter their excitement is. They often take foolish risks and don't learn on their mistakes. Being insensitive to feelings of others, they are often aggressive, and they tend to become fanatical in their beliefs. ")
-							if("Sisyphus")
-								to_chat(user, "<b>Ruler:</b> <i>St. Morte</i>")
-								to_chat(user, "Business comes first. These ambitious stubborns know the value of gold and success, and they're ready to work hard as long as it takes to achieve it all. Sisyphii value reliability and practical benefits, and they often frown at fantasies and entertainment.They're loyal both to people and the cause, but they don't know how to forgive. They hide their emotions, and express their wit through dry and sarcastic humor. Cold self-discipline only strengthen their steel-serious grip, which they use to manage people and resources. They hate unnecessary risks and unpredictability, and won't allow anyone to harm their public image. Despite their dedication and decisiveness, they tend to be pessimistic and have lots of heavy thoughts. Their climb might be long and torturous, but in the end, they'll inevitably reach the peak of their mountain.")
-							if("Fulgurri")
-								to_chat(user, "<b>Ruler:</b> <i>St. Thaddio </i>")
-								to_chat(user, "Electro-ecstatic, Fulgurri hark to everything new and eccentric with a sparkling enthusiasm. Not everyday matters, but high ideas and paradigms lighten their minds. Conventional opinions make them irritaded, so they dwell in bizzare conceptions and love to break taboos. They're very into tools and mechanisms - and often grieve on the current technological collapse. They treat people with distant friendliness: everyone is equal and equally amazing, so no one stands out. Coldness doesn't keep them from being altruists, looking idealistically at the remnants of humanity, seeing its dim future in bright pink colors. They're glad to work on making the world a better place. They tend to avoid emotional situations, but those who dare to disagree with their ideas and opinions or threaten their freedom or free-thinking, will soon call a real storm on themselves.")
-							if("Phantom")
-								to_chat(user, "<b>Ruler:</b> <i>St. Gliutta </i>")
-								to_chat(user, "Evading and changeable, Phantoms dissolve themselves in dreams and worries: they have a hard time in distinguishing truth from lies, and reality from fiction. They trust others easily and they believe in their own lies. They have a sad, weak-willed heart, but it is full of compassion for every suffering being: pain and misfortune attract them Innate followers, they rarely deny a request, even when they know that their kindness is being taken advantage at. Submission is easy for them, and they adapt to any conditions like a gas that fills a shape of a container. Usually they get what they want through making a person feel guilty through endless complaints and pitiable behaviour, or by triggering empathy and everyone's anger towards someone by slander and tearful stories about terrible abuse - even if they're not entirely true. Phantoms often put themselves in situations where they could become a victim, and they drown themselves in alcohol and drugs after that finally happens. They believe that only love could save them, but feel to insecure to find it.")
-							if("Noctua")
-								to_chat(user, "<b>Ruler:</b> <i>St. Barmalew </i>")
-								to_chat(user, "Furious fighters for justice, in innocent times they weave silk of lightweight flirt and pleasant manners.Noctuae like to solve conflicts and give advices. They find calm happiness in arts, aesthetics and peace. Rude people, unfairness and cruelty make them disgusted. Their eternal problem is indecisiveness: they have to weight every little detail before they make their choice, which could bring others to white heat. They hate to hurt people, and will try to hide any unpleasant truth.")
+							if("Лисица")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Петиро Отрёкшийся </i>")
+								to_chat(user, "Вспыльчивые и абсурдно храбрые, лисицы похожи на невинных уличных детей. Они редко планируют наперед или думают, прежде чем действовать, и с готовностью примут любой вызов. Импульсивность и потребность побеждать часто не идут им на пользу, и только безудержная энергия помогает им избежать своих проблем. Лисицы любят преодолевать трудности и выходить победителями. Проявляя компетентность, они никогда не отступают и не сдаются, даже если это может причинить им боль. Они редко мечтают, потому что, когда они чего-то хотят, они идут и получают это. Они совсем не похожи на избалованных нарциссов, потому что их эгоизм наивен и ребяческий. Каждый их поступок пронизан вопросом: А как же я? Хотя их гнев (и желание, и любовь, и любой импульс) вспыхивает быстро, он длится недолго. После короткой вспышки они могут обнаружить, что перевязывают раны человека, которого минуту назад пытались убить.")
+							if("Скала")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Сайлар Пещерный  </i>")
+								to_chat(user, "Всегда спокойные и медлительные, они несколько ленивы и не тратят свою энергию на бессмысленные вещи. Но как только они выбирают цель, они устанавливают распорядок дня и неуклонно следуют ему, а рутина - это то, что Рокки терпеть не могут нарушать. Вывести их из себя невозможно, и еще труднее изменить их мнение по какому-либо вопросу, как только оно принято. Они очень собственнически относятся к любой своей собственности и часто ведут себя как Скруджи. Они не терпят, когда их торопят. Им трудно выразить словами свои чувства. Рокки не могут устоять перед физическими удовольствиями, но очень предусмотрительны и склонны накапливать свои богатства. Они не стыдятся предъявлять требования и очень настойчивы в них. Они стремятся к комфорту, роскоши и, прежде всего, стабильности.")
+							if("Монеты")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Джаметта  </i>")
+								to_chat(user, "Люди этого знака беспокойны, как крутящиеся монеты, и некоторые могут обвинить их в двуличии. Одна из их сторон любит поднимать настроение и приносить радость, другая предпочитает жестоко издеваться надо всеми и распространять сплетни. Их речи звучат как звон серебра, и они могли бы подкупить своих слушателей простыми словами. Ложь и полуправда всегда помогают нумису оставаться безнаказанным. Они легко усваивают новые знания и с радостью делятся ими, но не могут надолго сосредоточиться на каком-то одном предмете и редко специализируются на чем-либо. Они очень любопытны и любят реагировать на окружающее, всегда стараясь сделать резкое замечание по наиболее ярким деталям того, что они видят и слышат.")
+							if("Пчела")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Дрюэт Рыбак</i>")
+								to_chat(user, "Обычно вы не увидите их во время шумного застолья - независимо от их любви к еде, они предпочли бы спрятаться в своем одиночестве от внимания и возможных душевных ран. Мужчины этого знака скрывают свою уязвимость под показной мужественностью и доблестью. Сторонники традиций и старого образа жизни, они часто становятся искренними патриотами, заботливыми супругами и родителями; хотя их забота часто может быть навязчивой и раздражающей, они даже слишком много заботятся о своих друзьях. Они почти никогда не бывают спокойны из-за своей чувствительности и склонности к чрезмерной реакции и обычно ставят свои чувства выше разума. Им не чужды слезы и тревоги, но когда кто-то из их близких попадает в беду, Апи могут проявить себя как бесстрашные защитники.")
+							if("Лебедь")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Ийон </i>")
+								to_chat(user, "Всегда готовые заплатить гостеприимством за внимание и похвалу, щедрые лебеди любят быть в центре внимания общества. В любой момент они готовы оказать свою помощь бедным и беспомощным: им льстит мысль о том, что они спасители; как правило, они драматичны. Люди, рожденные под знаком Лебедя, уверены в себе и горды, их самый большой страх - потерять свое достоинство. Лесть - лучший способ завоевать их расположение. Дети легко растопляют их и без того теплые сердца, а Cygni балует их океанами заботы и любви.")
+							if("Сверчок")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Вилппу</i>")
+								to_chat(user, "Их раздутый здравый смысл и трудолюбие напоминают педантичных роботов-слуг из древних сказок. Но роботы, по крайней мере, не сыплют критикой каждую минуту! Грилли все время поправляет других и указывает на их недостатки, ошибки, отклонения - разумеется, с наилучшими намерениями. Они считают, что их наблюдения полезны. Они просто пытаются все исправить. Обычно они придерживаются высоких моральных стандартов, изо всех сил стараются быть полезными окружающим и не боятся тяжелой работы. Они не скрытны и сдерживают свое слово. Они приземленные, и их речь проста и логична. Их пристальное внимание к деталям хорошо служит Грилли, но делает их одержимыми аккуратностью и порядком. Они стараются быть идеальными и всегда боятся стать бесполезными и ненужными.")
+							if("Мизгирь")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Тамаш</i>")
+								to_chat(user, "Скрытные и недоверчивые, аранеи предпочитают наблюдать и манипулировать из-за кулис. За их твердыми масками скрывается огромное мстительное эго. Аранеи способны на длительные, поистине маниакальные усилия, которые подпитываются их похотью и насилием. Они воспринимают ложь, включая лесть, как попытки контролировать их, и немедленно становятся агрессивными. Они наслаждаются местью, даже если это им дорого обходится. Обычно они лояльны и чрезвычайно зависимы от своего партнера, видя в нем единственного союзника в своей борьбе против всего мира. Они втайне страстны, и из-за страстей и пороков они бессознательно стремятся сжечь себя, умереть - по крайней мере, метафорически - чтобы возродиться из пепла. Они презирают слабовольных и пассивных людей и не будут тратить свое время на тех, кого считают бесполезными. Хотя они больше всего ценят власть и влияние, Арены не хотят быть королями. Они предпочли бы быть невидимыми кукловодами за троном.")
+							if("Кентавр")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Сантьяго</i>")
+								to_chat(user, "Оставаясь оптимистичными и жизнерадостными даже на Севере, центавриане влюблены в жизнь. Они всегда в движении, будь то физические путешествия или просто религиозные и философские поиски Истины. Их легко узнать по их прямолинейной честности, которая может быть резкой, и неспособности убедительно лгать. Увы, их любовь к истине не распространяется на их обещания, которые они часто забывают выполнять. У центавриан много друзей, но они избегают формирования долгосрочных романтических связей, поскольку им ненавистна мысль о потере своей свободы. Они прирожденные искатели приключений: чем больше ставки, тем ярче их азарт. Они часто идут на глупый риск и не учатся на своих ошибках. Будучи нечувствительными к чувствам других, они часто агрессивны и склонны становиться фанатичными в своих убеждениях. ")
+							if("Сизиф")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Морте</i>")
+								to_chat(user, "Бизнес на первом месте. Эти амбициозные упрямцы знают цену золоту и успеху, и они готовы упорно трудиться столько, сколько потребуется, чтобы достичь всего этого. Сизифини ценят надежность и практическую выгоду и часто неодобрительно относятся к фантазиям и развлечениям.Они преданы как людям, так и делу, но они не умеют прощать. Они скрывают свои эмоции и выражают свое остроумие с помощью сухого и саркастического юмора. Холодная самодисциплина только укрепляет их стальную хватку, которую они используют для управления людьми и ресурсами. Они ненавидят ненужные риски и непредсказуемость и никому не позволят нанести ущерб их общественному имиджу. Несмотря на свою целеустремленность и решительность, они склонны к пессимизму и у них много тяжелых мыслей. Их восхождение может быть долгим и мучительным, но в конце концов они неизбежно достигнут вершины своей горы.")
+							if("Зарница")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Фаддьо</i>")
+								to_chat(user, "Электро-заряженные, Фулгурри с искрящимся энтузиазмом воспринимает все новое и эксцентричное. Не повседневные дела, а высокие идеи и парадигмы озаряют их умы. Общепринятые мнения вызывают у них раздражение, поэтому они придерживаются причудливых концепций и любят нарушать табу. Они очень любят инструменты и механизмы - и часто скорбят по поводу нынешнего технологического коллапса. Они относятся к людям с отстраненным дружелюбием: все равны и одинаково удивительны, поэтому никто не выделяется. Холодность не мешает им быть альтруистами, идеалистически взирающими на остатки человечества, видящими его туманное будущее в ярко-розовых тонах. Они рады работать над тем, чтобы сделать мир лучше. Они склонны избегать эмоциональных ситуаций, но те, кто осмеливается не соглашаться с их идеями и мнениями или угрожать их свободе или свободомыслию, вскоре вызовут на себя настоящую бурю.")
+							if("Фантом")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Глютта  </i>")
+								to_chat(user, "Ускользающие и изменчивые, фантомы растворяются в мечтах и тревогах: им трудно отличить правду от лжи, реальность от вымысла. Они легко доверяют другим и верят в свою собственную ложь. У них печальное, безвольное сердце, но оно полно сострадания к каждому страдающему существу: боль и несчастье привлекают к ним прирожденных последователей, они редко отказывают в просьбе, даже когда знают, что их добротой пользуются. Им легко подчиняться, и они приспосабливаются к любым условиям, как газ, заполняющий форму контейнера. Обычно они добиваются желаемого, заставляя человека чувствовать себя виноватым из-за бесконечных жалоб и достойного сожаления поведения, или вызывая сочувствие и всеобщий гнев по отношению к кому-либо с помощью клеветы и слезливых историй об ужасном насилии - даже если они не совсем правдивы. Фантомы часто ставят себя в ситуации, когда они могли бы стать жертвой, и они топят себя в алкоголе и наркотиках после того, как это, наконец, происходит. Они верят, что только любовь может спасти их, но чувствуют себя слишком неуверенно, чтобы найти ее.")
+							if("Сова")
+								to_chat(user, "<b>Ruler:</b> <i>Св. Варомолей  </i>")
+								to_chat(user, "Яростные борцы за справедливость, в невинные времена они ткут шелк легкого флирта и приятных манер.Ноктуа любят разрешать конфликты и давать советы. Они находят спокойное счастье в искусстве, эстетике и покое. Грубые люди, несправедливость и жестокость вызывают у них отвращение. Их вечная проблема - нерешительность: им приходится взвешивать каждую мелочь, прежде чем сделать свой выбор, что может довести других до белого каления. Они ненавидят причинять людям боль и постараются скрыть любую неприятную правду.")
 
 					if("underwear")
 						var/list/underwear_options
@@ -1092,49 +1092,49 @@ datum/preferences
 
 					if("inqui")
 						//var/inquisidor_tipos = input(user, "Escolha o seu tipo de Inquisidor.") as null|anything in list("Velhos Tempos", "| O Fanatico |", "o Conhecedor o", "() Lobo Solitario ()", "- Respeitado -", "Ω \[Beberrao] Ω", "* Perspicaz *", " / Informado \\ ", "@ Espadachim @", "→ Investigador ←", "§ Lider §", "○ Corrupto ○")
-						var/inquisidor_tipos = input(user, "Choose your Inquisitor type.") as null|anything in list("Standard", "Month's Inquisitor", "Holy War Veterans", "Master", "Corrupt", "Fanatic", "King's Favourite")
+						var/inquisidor_tipos = input(user, "Выберите свой тип инквизитора.") as null|anything in list("Standard", "Month's Inquisitor", "Holy War Veterans", "Master", "Corrupt", "Fanatic", "King's Favourite")
 						if(inquisidor_tipos)
 							InquisiPref = inquisidor_tipos
 							to_chat(user, "<b><span class='passivebold'>[InquisiPref]</span></b>")
 							switch(InquisiPref)
 								if("Standard")
-									to_chat(user, "You've been recently sent to Firethorn fortress to investigate allegations of a local Thanati splinter cell.")
+									to_chat(user, "Недавно вас отправили в крепость Фаэторн для расследования утверждений о местной отколовшейся ячейке танати.")
 								if("Month's Inquisitor")
-									to_chat(user, "An overachiever who has left a standing impression on the INKVD. His upstanding achievements have become recognized by his superiors, and has left them with high expectations.")
-									to_chat(user, "<b>Collect 6 avowals through your confession machine for a reward.</b>")
+									to_chat(user, "Отличник, который произвел неизгладимое впечатление на НКВД. Его выдающиеся достижения были признаны его начальством, и они возлагали на него большие надежды.")
+									to_chat(user, "<b>Соберите 6 признаний с помощью вашего автомата для исповеди и получите вознаграждение.</b>")
 								if("Holy War Veterans")
-									to_chat(user, "You once led a sanctioned division of religious warriors through the Green Hell during the bygone Holy War. All that is left today of your detachment are the few fellow comrades you now call your practicii. Those days are behind you now, and you no longer operate with crude tools and archaic interrogation techniques.")
-									to_chat(user, "<b>Our blades are sharp.</b>")
+									to_chat(user, "Однажды вы провели санкционированное подразделение религиозных воинов через Зеленый ад во время ушедшей Священной войны. Все, что сегодня осталось от вашего отряда, - это несколько товарищей, которых вы теперь называете своими практиками. Те дни остались позади, и вы больше не пользуетесь грубыми инструментами и архаичными методами допроса.")
+									to_chat(user, "<b>Наши клинки остры.</b>")
 								if("Master")
-									to_chat(user, "A resilient weapons master trained notably in Arakbo; a martial art once developed for combat against users of portable shields due to their relatively high penetration velocities.")
-									to_chat(user, "<b>Preferring to work alone, he has proven himself capable enough to act as the INKVD's lone hand for the Firethorn case.</b>")
+									to_chat(user, "Неунывающий мастер оружия, прошедший специальную подготовку в Аракбо; боевое искусство, когда-то разработанное для борьбы с пользователями переносных щитов из-за их относительно высокой скорости проникновения.")
+									to_chat(user, "<b>Предпочитая работать в одиночку, он доказал, что способен действовать в одиночку в качестве сотрудника НКВД по делу Фаэторна.</b>")
 								if("Corrupt")
-									to_chat(user, "Blackmail and bribery are nothing new to you; you have committed heinous crimes as an Inquisitor of the INKVD, and turned the other cheek in lieu of your Holy duties for 30 pieces of silver. A superior knows of your wrongdoings - luckily, the one who holds all the cards is worse than you.")
-									to_chat(user, "<b>Each avowal coerced from a noble provides a reward.</b>")
+									to_chat(user, "Шантаж и взяточничество для вас не в новинку; вы совершали чудовищные преступления в качестве инквизитора НКВД и подставляли другую щеку вместо выполнения своих священных обязанностей за 30 сребреников. Начальник знает о ваших проступках - к счастью, тот, у кого на руках все карты, хуже вас.")
+									to_chat(user, "<b>За каждое признание, вырванное у дворянина, полагается награда.</b>")
 								if("Fanatic")
-									to_chat(user, "Those around you are quick to notice your unmistakably inexorable zealousness - and those who are not are even quicker to learn why they should.")
-									to_chat(user, "<b>You have always felt God smile upon you for being his spiritual martyr, and Holy Altars are not defiled upon being used.</b>")
+									to_chat(user, "Те, кто вас окружает, быстро замечают ваше безошибочно неумолимое рвение, а те, кто этого не делает, еще быстрее понимают, почему они должны это делать.")
+									to_chat(user, "<b>Вы всегда чувствовали, что Бог улыбается вам за то, что вы его духовный мученик, и Святые алтари не оскверняются при использовании.</b>")
 								if("King's Favourite")
-									to_chat(user, "Regarded by the King as being a merciless savior of souls.")
-									to_chat(user, "<b>The Inquisitorial Archbishop bestowed upon you a few special gifts, including an expanded arsenal.</b>")
+									to_chat(user, "Король считал его безжалостным спасителем душ.")
+									to_chat(user, "<b>Архиепископ инквизиции наградил вас несколькими особыми дарами, включая расширенный арсенал.</b>")
 
 					if("gatekeeper")
-						var/gatekeeper_tipos = input(user, "Choose your Gatekeeper type.") as null|anything in list("Monk", "Chariot")
+						var/gatekeeper_tipos = input(user, "Выберите свой тип привратника.") as null|anything in list("Monk", "Chariot")
 						if(gatekeeper_tipos)
 							GatekeeperPref = gatekeeper_tipos
 							to_chat(user, "<b><span class ='passivebold'>[GatekeeperPref]</span></b>")
 							switch(GatekeeperPref)
 								if("Monk")
-									to_chat(user, "Too pious and God-fearing for the Tiamathi garrison. The monk is an ineffective fighter, but in battles with the Thanati, they have no equal.")
-									to_chat(user, "You favor the art of picking off your foes from long distances. <b>You are armed with the Legax Gravpulser.</b>")
+									to_chat(user, "Слишком набожный и богобоязненный для Тимоти Гаррисона. Монах - неэффективный боец, но в битвах с танати им нет равных.")
+									to_chat(user, "Вы предпочитаете искусство уничтожать своих врагов с большого расстояния. <b> Вы вооружены законным гравитационным импульсом.</b>")
 								if("Chariot")
-									to_chat(user, "The blighted fanatic who personally keeps the caves clean of the Thanati, a primitive veteran of some bygone conflict.")
-									to_chat(user, "You favor getting up close and personal. <b>You are armed with the Slab.</b>")
+									to_chat(user, "Одержимый фанатик, который лично очищает пещеры от танати, примитивный ветеран какого-то давно минувшего конфликта.")
+									to_chat(user, "Вы предпочитаете сближение на личном уровне. <b>Вы вооружены плитой.</b>")
 
 
 					if("baron")
 						//var/inquisidor_tipos = input(user, "Escolha o seu tipo de Inquisidor.") as null|anything in list("Velhos Tempos", "| O Fanatico |", "o Conhecedor o", "() Lobo Solitario ()", "- Respeitado -", "Ω \[Beberrao] Ω", "* Perspicaz *", " / Informado \\ ", "@ Espadachim @", "→ Investigador ←", "§ Lider §", "○ Corrupto ○")
-						var/baron_tipos = input(user, "Choose a motive for the tyrant you'll become. It's an answer for the question \"why do the people hate you?\" with no mechanical effect.") as null|anything in list("Paranoia","Sadism","Greed", "Stability", "Idealism", "Self-Indulgence (None)")
+						var/baron_tipos = input(user, "Выбери мотив для тирана, которым ты станешь. Это ответ на вопрос: 'Почему люди ненавидят тебя?' без механического воздействия.") as null|anything in list("Paranoia","Sadism","Greed", "Stability", "Idealism", "Self-Indulgence (None)")
 						if(baron_tipos)
 							BaronPref = baron_tipos
 							var/Title = "None"
@@ -1142,32 +1142,32 @@ datum/preferences
 							var/Enemies = "None"
 							switch(baron_tipos)
 								if("Paranoia")
-									Title = "Paranoia"
-									toChatBegin = "You are a target in a crown. The most powerful, but most terrified man in the fortress. You can't trust anyone but your own precautions."
-									Enemies = "Your guards. Your family. Your subjects."
+									Title = "Паранойя"
+									toChatBegin = "Ты - мишень в короне. Самый могущественный, но и самый запуганный человек в крепости. Вы не можете доверять никому, кроме своих собственных мер предосторожности."
+									Enemies = "Твои охранники. Твоя семья. Ваши подданные."
 								if("Sadism")
-									Title = "Sadism"
-									toChatBegin = "Doesn't it feel great - to inflict pain? Heartache is the best, and the horror in their eyes. To crush and humiliate!"
-									Enemies = "You are condemn for what you have done - but only in whispers. Those who still have a glimmer of morality in them would be happy to see you hanged."
+									Title = "Садизм"
+									toChatBegin = "Разве это не здорово - причинять боль? Душевная боль - это самое лучшее, и ужас в их глазах. Чтобы сокрушить и унизить!"
+									Enemies = "Вас осуждают за то, что вы сделали, но только шепотом. Те, в ком еще теплится хоть капля морали, были бы счастливы увидеть тебя повешенным."
 								if("Greed")
-									Title = "Greed"
-									toChatBegin = "No one will accuse you of extravagance. Can't own everything without saving on every thing."
-									Enemies = "Some hate you for your avarice and greed, others simply envy your riches and dream of taking them into their own hands."
+									Title = "Жадность"
+									toChatBegin = "Никто не обвинит вас в расточительности. Нельзя владеть всем, не экономя на всем."
+									Enemies = "Одни ненавидят вас за вашу алчность, другие просто завидуют вашим богатствам и мечтают прибрать их к своим рукам."
 								if("Stability")
-									Title = "Stability"
-									toChatBegin = "As it was, so be it. The changes bring anxiety and complications to everyone, from the subjects to the Grand Baron himself."
-									Enemies = "Young people and idealists especially despise you for your rigid thinking"
+									Title = "Стабильность"
+									toChatBegin = "Как было, так и будет. Перемены приносят беспокойство и осложнения всем, от подданных до самого великого барона."
+									Enemies = "Молодые люди и идеалисты особенно презирают вас за ваше косное мышление"
 								if("Idealism")
-									Title = "Idealism"
-									toChatBegin = "You build a better world for your people, taking care of them even when they don't want you to. "
-									Enemies = "Not everyone likes the new order, because it always was better before."
+									Title = "Идеализм"
+									toChatBegin = "Вы строите лучший мир для своих людей, заботясь о них, даже когда они этого не хотят. "
+									Enemies = "Не всем нравится новый порядок, потому что раньше он всегда был лучше."
 							if(baron_tipos != "Self-Indulgence (None)")
 								to_chat(user, "\n<div class='firstdivmood'><div class='moodbox'><span class='bname'><p style='font-size:20px'>[Title]</p></span>[toChatBegin]</span>\n<span class='bname'>Enemies:</span>\n [Enemies]</div></div>")
 							user << 'special_toggle.ogg'
 
 					if("province")
 						//var/inquisidor_tipos = input(user, "Escolha o seu tipo de Inquisidor.") as null|anything in list("Velhos Tempos", "| O Fanatico |", "o Conhecedor o", "() Lobo Solitario ()", "- Respeitado -", "Ω \[Beberrao] Ω", "* Perspicaz *", " / Informado \\ ", "@ Espadachim @", "→ Investigador ←", "§ Lider §", "○ Corrupto ○")
-						var/provinces = input(user, "Choose a place where your character came from (Only affects Migrants)") as null|anything in list("Ravenheart","Wei Ji Burrows", "Salar","Savo","Wanderer")
+						var/provinces = input(user, "Выберите место, откуда родом ваш персонаж (Затрагивает только мигрантов)") as null|anything in list("Ravenheart","Wei Ji Burrows", "Salar","Savo","Wanderer")
 						if(provinces)
 							MigProvince = provinces
 							to_chat(user, "<b>Province:</b> <i>[MigProvince]</i>")
@@ -1175,24 +1175,24 @@ datum/preferences
 							dat += "<h1>[MigProvince]</h1><br>"
 							switch(MigProvince)
 								if("Ravenheart")
-									dat += "<h3><b>Ruled by:</b> <i>None (Left for Leviathan)</i></h3>"
-									dat += "<br>Ravenheart is located in the north of the planetary kingdom of Evergreen. It owes its rise to the ancient high-tech ruins it was built upon; complex machines and equipment can be found here, on the same scale as they are in the planet's capital. This once rich fiefdom now vegetates due to the mistakes of the current ruler. However, there is some respite to the disasters that have plagued the recent years in the form of hope: refugees from the south are migrating en masse to the North. Cheap labor and economic prosperity come in the form of these migrants, as the old hunting grounds and ancient mines of the area are almost entirely unspoiled, and are waiting to be exploited. Ravenheart has been left to rot after the Baron left for the Leviathan and the attempt to auction the fortress failed."
+									dat += "<h3><b>Правитель:</b> <i>Никто (Left for Leviathan)</i></h3>"
+									dat += "<br>Равенхарт расположен на севере планетарного королевства Эвергрин. Своим возникновением он обязан древним высокотехнологичным руинам, на которых был построен; здесь можно найти сложные машины и оборудование такого же масштаба, как и в столице планеты. Эта некогда богатая вотчина теперь прозябает из-за ошибок нынешнего правителя. Однако есть некоторая передышка в бедствиях, которые преследовали последние годы, в виде надежды: беженцы с юга массово мигрируют на Север. Дешевая рабочая сила и экономическое процветание приходят в виде этих мигрантов, поскольку старые охотничьи угодья и древние рудники в этом районе почти полностью нетронуты и ждут, когда их начнут эксплуатировать. Воронье Сердце было оставлено гнить после того, как барон отправился на Левиафан, а попытка продать крепость с аукциона провалилась."
 								if("Wei Ji Burrows")
-									dat += "<h3><b>Ruled by:</b> <i>Unknown</i></h3>"
-									dat += "<br>The Wei Ji Burrows are the most populous region of Evergreen, an expansive system of tunnels and hollowed-out caverns where commerce, industry and agriculture take place without end. Ginks are known to be proud of their productive nature, and take pride in both the great project of the Burrows and in their own individual dynasties. Yet the greatest dynasty of all is the Ji Dynasty, which plans for the eventual departure of God-King Sherold and his men. The Duke of the East plots for control of Evergreen, securing alliances and planting dedicated agents in the courts of other nobles. He knows something comes for Evergreen, and plans for its defense. While a large portion of the population are agrarian to feed the city, tending riverside terraces, a standing army polices the town-sized neighborhoods, collecting taxes and ensuring peace. To have family in the Jade Army is a mark of great honor to a dynasty, and while the INKVD say the Gink practice of ancestor worship to be heresy, they usually dare not step in the Burrows."
+									dat += "<h3><b>Правитель:</b> <i>Неизвестный</i></h3>"
+									dat += "<br>Норы Вэй Цзи - самый густонаселенный регион Эвергрина, обширная система туннелей и выдолбленных пещер, где без конца происходят торговля, промышленность и сельское хозяйство. Известно, что гинки гордятся своей продуктивной натурой и гордятся как великим проектом Берроузов, так и своими собственными династиями. И все же величайшей династией из всех является династия Цзи, которая планирует окончательный уход Бога-короля Шерольда и его людей. Герцог Восточный строит козни за контроль над Эвергрином, заключая союзы и внедряя преданных агентов при дворах других дворян. Он знает, что что-то надвигается на Эвергрин, и планирует его защиту. В то время как значительная часть населения занимается сельским хозяйством, чтобы прокормить город, ухаживая за террасами на берегу реки, постоянная армия следит за кварталами размером с город, собирая налоги и обеспечивая мир. Иметь семью в Нефритовой армии - знак великой чести для династии, и хотя ИНКВД называет практику поклонения предкам Гинков ересью, они обычно не осмеливаются заходить в Норы."
 								if("Deadeye")
-									dat += "<h3><b>Ruled by:</b> <i>Dorothea the Damned, Bandit Baroness</i></h3>"
-									dat += "<br>This town is ruled entirely by outlaws, but not in the traditional sense that a lord steals from their people and uses force to get what they want. No, bandits stormed this town and took it as their own, with their leader strong-arming the present leader to hand over power to them. Most of the wealth of the town is “repurposed” from passing caravans or other villages that the bandit armies of the criminal lord commands with copious shares of loot. Yet it is very orderly, as while the bandits will pillage and ruin others, they keep to the rules of the boss at home. Even if you’re just a soiler or blacksmith from Deadeye, everyone’s picked up some tricks or tips there. Residents are known as Deadites."
+									dat += "<h3><b>Правитель:</b> <i>Доротея Проклятая, баронесса-разбойница</i></h3>"
+									dat += "<br>Этим городом полностью правят преступники, но не в традиционном смысле, когда лорд ворует у своего народа и использует силу, чтобы получить то, что они хотят. Нет, бандиты штурмовали этот город и захватили его как свой собственный, а их лидер силой заставил нынешнего лидера передать им власть. Большая часть богатств города “перепрофилируется” из проходящих караванов или других деревень, которыми командуют бандитские армии криминального лорда с обильной долей добычи. Тем не менее, это очень упорядоченно, поскольку, хотя бандиты будут грабить и разорять других, они придерживаются правил босса дома. Даже если вы простой землекоп или кузнец из Deadeye, каждый может почерпнуть там какие-нибудь хитрости или советы. Жители известны как диабетики."
 									dat += "<br><p style='color:#cccfcd'><i>Small chances of you being wanted. Bandits recognize your homeland, but that doesn't make them friendly.</i></p>"
 								if("Savo")
-									dat += "<h3><b>Ruled by:</b> <i>Sir Jakob the Unworthy</i></h3>"
-									dat += "<br>A fishing village nestled deep in the cave systems near Ravenheart, the air is humid and the fish pulled from the rivers are warm to the touch, babbling and singing fanciful nonsense. A knight disgraced by his losses in the crusades was given reign of this small settlement, and rule of his land and his title was granted to the Raven of the North. The people of Savo are strangely welcoming of outsiders, and many who leave their hospitality carry this kindness with them. It is rumored to be a Thanati territory, with hidden safehouses for their agents and the entirety of the people loyal to their cause. Even those who stay true to the light of the Comatic are touched by the gifts of the breathing streams, with calm catches swimming placidly to their lures."
+									dat += "<h3><b>Правитель:</b> <i>Сэр Джейкоб Недостойный</i></h3>"
+									dat += "<br>Рыбацкая деревушка, приютившаяся глубоко в пещерной системе близ Равенхарта, воздух здесь влажный, а рыба, выловленная из рек, теплая на ощупь, лепечет и поет причудливую чепуху. Рыцарь, опозоренный своими потерями в крестовых походах, получил власть над этим маленьким поселением, а правление его землей и его титул были дарованы Северному Ворону. Жители Саво странно приветливы к чужакам, и многие, кто покидает их гостеприимство, уносят эту доброту с собой. Ходят слухи, что это территория танати, со скрытыми конспиративными квартирами для их агентов и всех людей, преданных их делу. Даже те, кто остается верен свету косметики, тронуты дарами дышащих потоков, когда спокойные уловы безмятежно плывут к их приманкам."
 								if("Salar")
-									dat += "<h3><b>Ruled by:</b> <i>Владимир Сталино</i></h3>"
-									dat += "<br>You come from the province of Salar."
+									dat += "<h3><b>Правитель:</b> <i>Владимир Сталино</i></h3>"
+									dat += "<br>Вы родом из провинции Салара."
 								if("Wanderer")
-									dat += "<h3><b>Ruled by:</b> <i>Yourself</i></h3>"
-									dat += "<br>You have no home land, you're a nobody."
+									dat += "<h3><b>Правитель:</b> <i>Никто</i></h3>"
+									dat += "<br>У тебя нет родины, ты никто."
 									dat += "<br><p style='color:#cccfcd'><i>Default.</i></p>"
 							dat += "</BODY></HTML>"
 							user << browse(dat, "window=province;size=450x500;can_resize=0;")
@@ -1345,30 +1345,30 @@ datum/preferences
 		character.favorite_beverage = pick("Water","Rum","Beer","Wine")
 		character.zodiac = zodiac
 		switch(character.zodiac)
-			if("Vulpes")
+			if("Лисица")
 				if(prob(25))
 					character.my_stats.dx += 1
-			if("Gryllus")
+			if("Сверчок")
 				if(prob(25))
 					character.my_skills.ADD_SKILL(SKILL_PARTY, rand(1,2))
-			if("Sisyphus")
+			if("Сизиф")
 				if(prob(25))
 					//character.jewish = TRUE
 					character.add_perk(/datum/perk/ref/value)
-			if("Aranea")
+			if("Мизгирь")
 				if(prob(25))
 					//character.jewish = TRUE
 					character.add_perk(/datum/perk/sexaddict)
-			if("Cygnus")
+			if("Лебедь")
 				if(prob(25))
 					character.add_event("nobleblood", /datum/happiness_event/noble_blood)
-			if("Centaurus")
+			if("Кентавр")
 				if(prob(25))
 					character.my_stats.ht += 1
-			if("Noctua")
+			if("Сова")
 				if(prob(25))
 					character.add_perk(/datum/perk/likeart)
-			if("Phantom")
+			if("Фантом")
 				if(prob(50))
 					character.my_skills.ADD_SKILL(SKILL_PARTY, rand(2,3))
 				else
@@ -1500,33 +1500,33 @@ client/New()
 			return
 		for(var/datum/set_spouse/D in pending_set_spouse)
 			if(M.client == D.sender && D.target != src)
-				to_chat(src, "[selection] has already sent a request to another person.")
+				to_chat(src, "[selection] уже отправил запрос другому лицу.")
 				return
 
 			if((M.client == D.target || M.client == D.sender) && D.accepted == TRUE)
-				to_chat(src, "[selection] is already in a relationship.")
+				to_chat(src, "[selection] уже состоит в отношениях.")
 				return
 
 			if(src == D.sender && M.client == D.target)
-				to_chat(src, "You cancel the setspouse request for [selection].")
-				to_chat(M,"[src] no longer wants to be your spouse.")
+				to_chat(src, "Вы отменяете установленный запрос супруга [selection].")
+				to_chat(M,"[src] больше не хочет быть вашим супругом.")
 				D.sender = null
 				D.target = null
 				qdel(D)
 				return
 
 			if(M.client == D.sender && src == D.target)
-				to_chat(M.client, "[src] accepts your request.")
-				to_chat(src,"You accept [selection]'s request")
+				to_chat(M.client, "[src] принимает ваш запрос.")
+				to_chat(src,"Вы принимаете [selection]'s запрос")
 				D.accepted = TRUE
 				return
 
 			if(src == D.sender)
-				to_chat(src, "Cancel your old request if you wish to make a new one.")
+				to_chat(src, "Отмените свой старый запрос, если вы хотите сделать новый.")
 				return
 
-		to_chat(src,"[selection] received your setspouse request.")
-		to_chat(M,"[src] chooses you as a spouse. You must give your consent <i>(F11, type setspouse, and select their name to accept the request to be your spouse)</i>")
+		to_chat(src,"[selection] получен ваш запрос о выборе супруга.")
+		to_chat(M,"[src] выбирает вас в качестве супруга. Вы должны дать свое согласие <i>(F11, введите setspouse и выберите их имя, чтобы принять запрос стать вашим супругом)</i>")
 		var/datum/set_spouse/D = new()
 		D.sender = src
 		D.target = M.client
@@ -1548,11 +1548,11 @@ var/global/lovedepletion = 0
 		return
 	for(var/mob/M in player_list)
 		keys += M.client
-	var/selection = input("Send love to someone!", "sendlove", null, null) as null|anything in sortKey(keys)
+	var/selection = input("Пошлите кому-нибудь любовь!", "sendlove", null, null) as null|anything in sortKey(keys)
 	if(!selection)
 		return
 	if(findtext(selection, src.key))
-		to_chat(src,"<font color='#fc0fc0'><b>FAIL!</b> You're a selfish cunt.</font>")
+		to_chat(src,"<font color='#fc0fc0'><b>FAIL!</b> Ты эгоистичная сучка.</font>")
 		return
 	if (ticker.current_state == GAME_STATE_PLAYING)
 		return
@@ -1561,7 +1561,7 @@ var/global/lovedepletion = 0
 		var/action = pick("stabs","cuts","tortures","bashes","shoots")
 		to_chat(world,"<font color='#fa2605'><b>[src.key]</b> [action] <b>[M.client.key]!</b></font>")
 	else
-		to_chat(world,"<font color='#fc0fc0'><b>[src.key]</b> sends love to <b>[M.client.key]!</b></font>")
+		to_chat(world,"<font color='#fc0fc0'><b>[src.key]</b> посылает любовь <b>[M.client.key]!</b></font>")
 	lovedepletion++
 	return
 

@@ -125,7 +125,7 @@ var/list/CandidatesForInspector = list() //max = 4
 					new_character.month_born = pick("vernes","lipen","stujen","plesnya","leden","cherven","krovotok","zmeinik","grezen","shramyn","kamnepad","ljutish")
 					new_character.day_born = rand(1,30)
 					new_character.year_born = 3021 - new_character.age
-					var/Borntext = "I was [pick("made","lucky")] to be born on [new_character.month_born], [new_character.day_born], [new_character.year_born] ([new_character.zodiac] Sign)"
+					var/Borntext = "Мне [pick("made","lucky")] родится [new_character.month_born], [new_character.day_born], [new_character.year_born] ([new_character.zodiac] Sign)"
 					new_character?.mind?.memory += Borntext
 					var/personal_objective = pick("Have a sexual intercourse with the Baroness or Successor.", "Fuck the Baron of Firethorn.", "Get high for the first time.", "Do a shooting range on smerds. Ignoring the mess it will cause, of course.", "Have on myself atleast a thousand obols from guns to collars.") //I don't trust players creativity, so i'll just suggest them making retarded shit
 					to_chat(new_character, "<span class='passive'>[Borntext]</span>")

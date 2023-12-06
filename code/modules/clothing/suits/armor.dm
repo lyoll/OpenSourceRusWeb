@@ -789,7 +789,7 @@
 	siemens_coefficient = 0.7
 
 //New Vests
-/obj/item/clothing/suit/storage/vest
+/* /obj/item/clothing/suit/storage/vest
 	name = "armor vest"
 	desc = "A simple kevlar plate carrier."
 	icon_state = "kvest"
@@ -799,7 +799,7 @@
 	allowed = list(/obj/item/weapon/gun,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs)
 	var/icon_badge
 	var/icon_nobadge
-	verb/toggle()
+	verb/toggle() 
 		set name ="Adjust Badge"
 		set category = "Object"
 		set src in usr
@@ -816,6 +816,7 @@
 			usr << "You can't find a badge for [src]."
 			return
 		update_icon()
+*/
 
 /obj/item/clothing/suit/storage/vest/officer
 	name = "officer armor vest"
