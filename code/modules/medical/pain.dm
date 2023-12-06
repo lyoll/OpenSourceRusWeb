@@ -56,51 +56,51 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 		switch(amount)
 			if(1 to 10)
 				flash_weakest_pain()
-				msg = "<span class='combatglow'>My [partname] burns.</span>"
+				msg = "<span class='combatglow'>Моя [partname] горит.</span>"
 			if(10 to 20)
 				flash_weaker_pain()
-				msg = "<span class='combatglow'>My [partname] burns!</span>"
+				msg = "<span class='combatglow'>Моя [partname] горит!</span>"
 				if(prob(5))
 					emote("agonyscream")
 			if(20 to 30)
 				flash_weak_pain()
-				msg = "<span class='combatglow'>My [partname] burns badly!</span>"
+				msg = "<span class='combatglow'>Моя [partname] сильно горит!</span>"
 				if(prob(10))
 					emote("agonyscream")
 			if(30 to 10000)
 				flash_pain()
 				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
-					msg = "<span class='combatbold'><b>OH [uppertext(H.god_text())]! My [partname] is on fire!</b></span>"
+					msg = "<span class='combatbold'><b>АХ [uppertext(H.god_text())]! Моя [partname] в огне!</b></span>"
 				else
-					msg = "<span class='combatbold'><b>OH GOD! My [partname] is on fire!</b></span>"
+					msg = "<span class='combatbold'><b>О БОЖЕ! Моя [partname] в огне!</b></span>"
 				if(prob(70))
 					emote("agonyscream")
 	else
 		switch(amount)
 			if(1 to 10)
 				flash_weakest_pain()
-				msg = "<span class='bname'><small>My [partname] hurts.</small></span>"
+				msg = "<span class='bname'><small>Моя [partname] болит.</small></span>"
 			if(10 to 20)
 				flash_weaker_pain()
-				msg = "<span class='bname'><small>My [partname] hurts.</small></span>"
+				msg = "<span class='bname'><small>Моя [partname] болит.</small></span>"
 			if(20 to 30)
 				flash_weak_pain()
-				msg = "<span class='bname'>My [partname] hurts badly!</span>"
+				msg = "<span class='bname'>Моя [partname] сильно болит!</span>"
 			if(30 to 10000)
 				flash_pain()
 				if(istype(src, /mob/living/carbon/human))
 					var/mob/living/carbon/human/H = src
-					msg = "<span class='combatbold'>[pick("OH [uppertext(H.god_text())]!","WHAT A PAIN!")] My [partname]!</span>"
+					msg = "<span class='combatbold'>[pick("АХ [uppertext(H.god_text())]!","КАКАЯ БОЛЬ!")] My [partname]!</span>"
 				else
-					msg = "<span class='combatbold'>[pick("OH GOD!","WHAT A PAIN!")] My [partname]!</span>"
+					msg = "<span class='combatbold'>[pick("О БОЖЕ!","КАКАЯ БОЛЬ!")] Моя [partname]!</span>"
 				if(prob(amount) && prob(20))
 					emote("agonyscream")
 				if(ishuman(src) && src.client)
 					if(prob(15))
 						var/mob/living/carbon/human/H = src
 						H.blur(1,50)
-						to_chat(src, "You shiver in pain.")
+						to_chat(src, "Ты дрожишь от боли.")
 						if(src.gender == MALE)
 							playsound(src.loc, pick('painb.ogg','painb2.ogg','painb3.ogg','painb4.ogg','painb5.ogg','painb6.ogg','painb7.ogg','painb8.ogg'), 75, 0, -1)
 
@@ -177,26 +177,26 @@ mob/living/carbon/human/proc/handle_pain()
 			if(I.damage > 2) if(prob(2))
 				var/organ_name_capitalized
 				organ_name_capitalized = uppertext(I.name)
-				src.custom_pain("<span class='hugepain'>MY [organ_name_capitalized] HURTS!</span>", 1)
+				src.custom_pain("<span class='hugepain'>МОЯ [organ_name_capitalized] БОЛИТ!</span>", 1)
 
 	var/toxDamageMessage = null
 	var/toxMessageProb = 1
 	switch(getToxLoss())
 		if(1 to 5)
 			toxMessageProb = 1
-			toxDamageMessage = "<span class='lowpain'>My body stings slightly.</span>"
+			toxDamageMessage = "<span class='lowpain'>Мое тело слегка покалывает.</span>"
 		if(6 to 10)
 			toxMessageProb = 2
-			toxDamageMessage = "<span class='lowpain'>My whole body hurts a little.</span>"
+			toxDamageMessage = "<span class='lowpain'>Все мое тело немного болит.</span>"
 		if(11 to 15)
 			toxMessageProb = 2
-			toxDamageMessage = "<span class='lowpain'>My whole body hurts.</span>"
+			toxDamageMessage = "<span class='lowpain'>Все мое тело болит.</span>"
 		if(15 to 25)
 			toxMessageProb = 3
-			toxDamageMessage = "<span class='lowpain'>My whole body hurts badly.</span>"
+			toxDamageMessage = "<span class='lowpain'>Все мое тело сильно болит.</span>"
 		if(26 to INFINITY)
 			toxMessageProb = 5
-			toxDamageMessage = "<span class='lowpain'>My body aches all over.</span>"
+			toxDamageMessage = "<span class='lowpain'>У меня все тело болит.</span>"
 	switch(getHalLoss())
 		if(1 to 15)
 			flash_weakest_pain()

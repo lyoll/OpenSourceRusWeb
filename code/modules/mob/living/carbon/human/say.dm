@@ -302,10 +302,10 @@
 	set name = "disguiseVoice"
 	set background = 1
 	if(disguising_voice)
-		to_chat(src, "You're no longer trying to disguise your voice.")
+		to_chat(src, "Ты больше не пытаешься скрыть свой голос.")
 		disguising_voice = FALSE
 	else
-		to_chat(src, "You're now trying to disguise your voice.")
+		to_chat(src, "Ты пытаешься изменить свой голос.")
 		disguising_voice = TRUE
 
 /mob/living/carbon/human/var/truthcooldown = 0

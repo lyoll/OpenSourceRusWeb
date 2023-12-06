@@ -16,7 +16,7 @@ emp_act
 			if(!(def_zone in list("chest", "groin")))
 				reflectchance /= 2
 			if(prob(reflectchance))
-				visible_message("\red <B>The [P.name] gets reflected by [src]'s [wear_suit.name]!</B>")
+				visible_message("\red <B>The [P.name] отражается с помощью [src]'s [wear_suit.name]!</B>")
 
 				// Find a turf near or on the original location to bounce to
 				if(P.starting)
@@ -40,15 +40,15 @@ emp_act
 			if(prob(30) && (src.timeofdeath + 1800 > world.time) && !(NOCLONE in src.mutations))
 				src.stat = UNCONSCIOUS
 				src.visible_message( \
-					"\red [src]'s body trembles!", \
-					"\red You feel the life enter your body with the heavy pain!", \
-					"\red You hear a heavy electric crack!" \
+					"\red [src]'s тело дрожит!", \
+					"\red Вы чувствуете, как жизнь входит в ваше тело вместе с сильной болью!", \
+					"\red Вы слышите сильный электрический треск!" \
 				)
 			else
 				src.visible_message( \
-					"\red [src]'s lifeless body trembles!", \
-					"\red A discharge of electricity passes through your body, but the efforts to bring you back to life are useless.", \
-					"\red You hear a heavy electric crack!" \
+					"\red [src]'s безжизненное тело дрожит!", \
+					"\red По вашему телу проходит электрический разряд, но усилия вернуть вас к жизни бесполезны.", \
+					"\red Вы слышите сильный электрический треск!" \
 				)
 
 

@@ -33,9 +33,9 @@
 
 	if(!stairs_where)
 		if(istop)
-			to_chat(M, "<span class='combat'>There are no stairs down!</span>")
+			to_chat(M, "<span class='combat'>Здесь нет лестницы вниз!</span>")
 		else
-			to_chat(M, "<span class='combat'>There are no stairs up!</span>")
+			to_chat(M, "<span class='combat'>Здесь нет лестницы наверх!</span>")
 		return 0
 
 	if(ismob(M) && M:client)
@@ -58,7 +58,7 @@
 			H.CU()
 			if(prob(80))
 				H.apply_effect(5, PARALYZE)
-				visible_message("<span class='combatglow'><b>[H]</b> has been knocked unconscious!</span>")
+				visible_message("<span class='combatglow'><b>[H]</b> был сбит с толку и потерял сознание!</span>")
 				H.ear_deaf = max(H.ear_deaf,6)
 				H.CU()
 
@@ -67,9 +67,9 @@
 		var/mob/living/L = M
 		if(L.client)
 			if(istop)
-				to_chat(L,"<i>You climb down the stairs.</i>")
+				to_chat(L,"<i>Ты спускаешься по лестнице.</i>")
 			else
-				to_chat(L,"<i>You climb up the stairs.</i>")
+				to_chat(L,"<i>Ты поднимаешься по лестнице.</i>")
 	if (ismob(M) && M:client)
 		M:client.moving = 0
 

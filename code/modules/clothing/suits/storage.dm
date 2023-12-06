@@ -3,7 +3,7 @@
 	storage_slots = 2
 	max_w_class = 2
 	max_combined_w_class = 4
-
+/*
 /obj/item/clothing/suit/storage/New()
 	..()
 	pockets = new/obj/item/weapon/storage/internal(src)
@@ -30,7 +30,7 @@
 /obj/item/clothing/suit/storage/hear_talk(mob/M, var/msg, verb, datum/language/speaking)
 	pockets.hear_talk(M, msg, verb, speaking)
 	..()
-
+*/ // Требуется исправление
 //Jackets with buttons, used for labcoats, IA jackets, First Responder jackets, and brown jackets.
 /*
 /obj/item/clothing/suit/storage/toggle
@@ -74,11 +74,11 @@
 
 		if(icon_state == icon_badge)
 			icon_state = icon_nobadge
-			usr << "You unclip the badge from the vest."
+			usr << "Ты отстегиваешь значок от жилета."
 		else if(icon_state == icon_nobadge)
 			icon_state = icon_badge
-			usr << "You clip the badge to the vest."
+			usr << "Ты прикрепляешь значок на жилет."
 		else
-			usr << "You can't find a badge for [src]."
+			usr << "Вы не можете найти значок для [src]."
 			return
-		update_clothing_icon()
+//		update_clothing_icon() // Требуется исправление

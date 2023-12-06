@@ -3,7 +3,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO seaspotter_merc (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_seaspotter_merc (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -16,7 +16,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO squire_donor (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_squire_donor (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -29,7 +29,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO mercenary_donor (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_mercenary_donor (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -42,7 +42,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO tribvet_donor (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_tribvet_donor (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -55,7 +55,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO urchin_donor (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_urchin_donor (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -68,7 +68,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO reddawn_merc (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_reddawn_merc (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -81,7 +81,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO lord (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_lord (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -94,7 +94,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO crusader (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_crusader (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -107,7 +107,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO tophat (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_tophat (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -120,7 +120,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO monk (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_monk (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -133,7 +133,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO futa (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_futa (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -147,7 +147,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO 30cm (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_30cm (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -160,7 +160,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO trapapoc (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_trapapoc (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -173,7 +173,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO outlaw (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_outlaw (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -186,7 +186,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO waterbottledonation (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_waterbottledonation (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -199,7 +199,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO luxurydonation (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_luxurydonation (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -212,7 +212,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO pjack (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_pjack (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
@@ -225,7 +225,7 @@
     if(length(ckey) <= 1 || length(ckey) > 30)
         to_chat(usr, "<span class='highlighttext'>This ckey is invalid.</span>")
         return
-    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO customooccolorlist (ckey) VALUE (\"[ckey(ckey)]\")")
+    var/DBQuery/queryInsert = dbcon.NewQuery("INSERT INTO donation_customooccolorlist (ckey) VALUE (\"[ckey(ckey)]\")")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()

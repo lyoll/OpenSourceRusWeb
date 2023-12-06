@@ -507,8 +507,8 @@ datum/mind
 					var/mob/living/carbon/human/H = current
 					special_role = "Waker"
 					//ticker.mode.learn_basic_spells(current)
-					to_chat(H,"<span class='dreamershitfuckcomicao1'>Recentemente, tenho sido visitado por um monte de VISÕES. Elas falam sobre outro MUNDO, OUTRA vida. Eu farei de TUDO para saber a VERDADE, para retornar ao mundo REAL.</span>")
-					to_chat(H, "<span class='dreamershitfuckcomicao1'>Sonho #1: SEGUIR meu CORAÇÃO deve ser TODA a minha lei.</span>")
+					to_chat(H,"<span class='dreamershitfuckcomicao1'>В последнее время меня посетило много видений. Они говорят о другом мире, другой жизни. Я сделаю все, чтобы узнать правду, вернуться в реальный мир.</span>")
+					to_chat(H, "<span class='dreamershitfuckcomicao1'>Мечта №1: Мне нужно следовать за своим сердцем.</span>")
 					log_admin("[key_name_admin(usr)] has waker'ed [current].")
 					H.combat_music = 'sound/lfwbsounds/bloodlust1.ogg'
 					var/datum/antagonist/dreamer/D = new()
@@ -531,8 +531,8 @@ datum/mind
 					new_character.gender = MALE
 					special_role = "Soulbreaker"
 					//ticker.mode.learn_basic_spells(current)
-					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Você é um soulbreaker.</span")
-					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Você escraviza pessoas vivas para que possam restaurar planetas perdidos. Você tem muitas ferramentas para fazer isso, então deve ser fácil capturar o migrante comum.</span>")
+					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы душегуб.</span")
+					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы порабощаете живых людей, чтобы они могли восстанавливать потерянные планеты. У вас есть много инструментов для этого, поэтому поймать обычного мигранта должно быть легко.</span>")
 					log_admin("[key_name_admin(usr)] has soulbreaker'ed [new_character.key].")
 					new_character << sound('sound/music/soulbreaker.ogg', repeat = 0, wait = 0, volume = 80, channel = 3)
 					new_character.my_skills.CHANGE_SKILL(SKILL_MELEE, rand(3,6))

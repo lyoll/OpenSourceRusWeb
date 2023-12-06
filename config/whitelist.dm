@@ -2,17 +2,17 @@
 
 var/global/list/ckeywhitelistweb = list()
 
-var/global/private_party = 1
+var/global/private_party = FALSE
 
-var/global/list/proxyignore = list("nolafregit","randysandy","hydrated12","grifferman", "asdor","darkinfected", "demkova", "ltkoepple", "cheesewithpepsi","rarebirbwithtumors")
+var/global/list/proxyignore = list()
 
-var/global/list/comradelist = list("comicao1","thuxtk","aregrued")
+var/global/list/comradelist = list()
 
 var/global/list/villainlist = list()
 
-var/global/list/pigpluslist = list("tw789")
+var/global/list/pigpluslist = list()
 
-var/global/list/guardianlist = list("guymallory","riotmigrant")
+var/global/list/guardianlist = list()
 
 var/global/list/hasinvited = list()
 
@@ -65,6 +65,11 @@ var/global/list/bans = list()
 	if(!query.Execute())
 		world.log << query.ErrorMsg()
 		return
+
+/datum/storyholder
+	var/story_number = 1 //So when you boot it up you aren't on 0
+
+var/datum/storyholder/story_holder = new
 
 /proc/get_story_id()
 	set waitfor = FALSE

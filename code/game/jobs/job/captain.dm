@@ -2,7 +2,7 @@ var/fortHand = null
 
 /datum/job/captain
 	title = "Baron"
-	titlebr = "Barão"
+	titlebr = "Барон"
 	flag = CAPTAIN
 	department_head = list("Centcom")
 	department_flag = ENGSEC
@@ -16,9 +16,9 @@ var/fortHand = null
 	minimal_access = list(meistery,smith,treasury,esculap,sanctuary,innkeep,merchant,garrison,keep,baronquarter,hump,courtroom,soilery,lifeweb,geschef, marduk, hand_access)
 	minimal_player_age = 14
 	sex_lock = MALE
-	jobdesc = "The most gracious, cunning and handsome ruler of Firethorn fortress. At least, that&#8217;s what everyone keeps telling you. And who are they to say otherwise?"
-	jobdescbr = "The most gracious, cunning and handsome ruler of Firethorn fortress. At least, that&#8217;s what everyone keeps telling you. And who are they to say otherwise?"
-	latejoin_locked = TRUE
+	jobdesc = "Самый милостивый, хитрый и красивый правитель крепости Фаэторн. По крайней мере, это то, что все продолжают вам говорить. И кто они такие, чтобы утверждать обратное?"
+	jobdescbr = "Самый милостивый, хитрый и красивый правитель крепости Фаэторн. По крайней мере, это то, что все продолжают вам говорить. И кто они такие, чтобы утверждать обратное??"
+	latejoin_locked = FALSE
 	minimal_character_age = 40
 	thanati_chance = 100
 	equip(var/mob/living/carbon/human/H)
@@ -42,10 +42,10 @@ var/fortHand = null
 		H.add_event("nobleblood", /datum/happiness_event/noble_blood)
 		H.create_kg()
 		if(H.gender == FEMALE)
-			to_chat(world, "<span class='baron'>\n † Baroness</span> <span class='bname'>[H.real_name]</span> <span class='baron'> is the woman who rules the fortress of Firethorn. † </span>")
+			to_chat(world, "<span class='baron'>\n † Баронесса </span> <span class='bname'>[H.real_name]</span> <span class='baron'> это женщина, которая правит крепостью Фаэторн. † </span>")
 			to_chat(world, "<br>")
 		else
-			to_chat(world, "<span class='baron'>\n † Baron</span> <span class='bname'>[H.real_name]</span> <span class='baron'> is the man who rules the fortress of Firethorn. † </span>")//asd
+			to_chat(world, "<span class='baron'>\n † Барон</span> <span class='bname'>[H.real_name]</span> <span class='baron'> это мужчина, который правит крепостью Фаэторн. † </span>")//asd
 			to_chat(world, "<br>")
 		//H << sound('sound/music/sherold.ogg', repeat = 0, wait = 0, volume = 12, channel = 3)
 		return 1
@@ -70,7 +70,7 @@ var/fortHand = null
 
 /datum/job/hand
 	title = "Hand"
-	titlebr = "Braço Direito"
+	titlebr = "Десница"
 	flag = HAND
 	department_head = list("Centcom")
 	department_flag = ENGSEC
@@ -84,8 +84,8 @@ var/fortHand = null
 	minimal_access = list(meistery,smith,treasury,esculap,sanctuary,innkeep,merchant,garrison,keep,baronquarter,hump,courtroom,soilery,lifeweb,geschef, marduk, hand_access)
 	minimal_player_age = 14
 	sex_lock = MALE
-	jobdesc = "A very close friend to the Baron and their most trusted advisor. Your status as Lord Regent gives you near equal power to the Baron himself in their presence, and equal power in their absence. The Hand is expected to make sure the will of the Baron is being executed, and reserves the rare right to lead the garrison forces to do so."
-	jobdescbr = "A very close friend to the Baron and their most trusted advisor. Your status as Lord Regent gives you near equal power to the Baron himself in their presence, and equal power in their absence. The Hand is expected to make sure the will of the Baron is being executed, and reserves the rare right to lead the garrison forces to do so."
+	jobdesc = "Очень близкий друг барона и их самый доверенный советник. Ваш статус лорда-регента дает вам почти равную власть с самим бароном в их присутствии и равную власть в их отсутствие. Ожидается, что Десница проследит за исполнением воли барона и оставит за собой редкое право возглавить силы гарнизона для этого."
+	jobdescbr = "Очень близкий друг барона и их самый доверенный советник. Ваш статус лорда-регента дает вам почти равную власть с самим бароном в их присутствии и равную власть в их отсутствие. Ожидается, что Десница проследит за исполнением воли барона и оставит за собой редкое право возглавить силы гарнизона для этого"
 	latejoin_locked = TRUE
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -104,7 +104,7 @@ var/fortHand = null
 		H.add_event("nobleblood", /datum/happiness_event/noble_blood)
 		fortHand = H
 		H.create_kg()
-		to_chat(world, "<span class='baron'>† Hand</span> <span class='bname'>[H.real_name]</span> <span class='baron'>is the Baron's hand. † </span>\n")
+		to_chat(world, "<span class='baron'>† Десница</span> <span class='bname'>[H.real_name]</span> <span class='baron'>это правая рука Барона. † </span>\n")
 		//H << sound('sound/music/sherold.ogg', repeat = 0, wait = 0, volume = 12, channel = 3)
 		return 1
 /*
@@ -113,7 +113,7 @@ var/fortHand = null
 */
 /datum/job/heir
 	title = "Heir"
-	titlebr = "Herdeiro"
+	titlebr = "Наследник"
 	flag = HEIR
 	department_head = list("Captain")
 	department_flag = ENGSEC
@@ -126,8 +126,8 @@ var/fortHand = null
 	minimal_player_age = 10
 	latejoin_locked = TRUE
 	sex_lock = MALE
-	jobdesc = "The heir to the throne of Firethorn. You have been taught all your life how to lead, yet still no one seems to take your word seriously. One day, however, it will be expected of you to follow in your father&#8217;s footsteps - for better or worse."
-	jobdescbr = "The heir to the throne of Firethorn. You have been taught all your life how to lead, yet still no one seems to take your word seriously. One day, however, it will be expected of you to follow in your father&#8217;s footsteps - for better or worse."
+	jobdesc = "Наследник трона Фаэторна. Всю вашу жизнь вас учили руководить, но, похоже, до сих пор никто не воспринимает ваши слова всерьез. Однако однажды от тебя будут ожидать, что ты пойдешь по стопам своего отца - к лучшему это или к худшему."
+	jobdescbr = "Наследник трона Фаэторна. Всю вашу жизнь вас учили руководить, но, похоже, до сих пор никто не воспринимает ваши слова всерьез. Однако однажды от тебя будут ожидать, что ты пойдешь по стопам своего отца - к лучшему это или к худшему."
 	thanati_chance = 75
 	access = list(keep,baronquarter)
 	minimal_access = list(keep,baronquarter)
@@ -157,15 +157,15 @@ var/fortHand = null
 
 /datum/job/successor
 	title = "Successor"
-	titlebr = "Sucessora"
+	titlebr = "Наследница"
 	flag = SUCCESSOR
 	department_head = list("Captain")
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	jobdesc = "Your familial relationship is more complicated compared to most. Expected to act with dignity, honor your family, and eventually be wed to a more powerful aristocrat who shall align with your Father&#8217;s house, outside of the limelight you make your own rules."
-	jobdescbr = "Your familial relationship is more complicated compared to most. Expected to act with dignity, honor your family, and eventually be wed to a more powerful aristocrat who shall align with your Father&#8217;s house, outside of the limelight you make your own rules."
+	jobdesc = "Ваши семейные отношения более сложны по сравнению с большинством других. Ожидается, что ты будешь вести себя достойно, чтить свою семью и, в конечном счете, выйдешь замуж за более могущественного аристократа, который будет поддерживать дом твоего отца, но за пределами центра внимания ты устанавливаешь свои собственные правила."
+	jobdescbr = "Ваши семейные отношения более сложны по сравнению с большинством других. Ожидается, что ты будешь вести себя достойно, чтить свою семью и, в конечном счете, выйдешь замуж за более могущественного аристократа, который будет поддерживать дом твоего отца, но за пределами центра внимания ты устанавливаешь свои собственные правила."
 	supervisors = "Your father and mother"
 	selection_color = "#ddddff"
 	idtype = /obj/item/weapon/card/id/successor
@@ -216,12 +216,12 @@ var/fortHand = null
 	selection_color = "#ddddff"
 	idtype = /obj/item/weapon/card/id/baroness
 	minimal_player_age = 10
-	latejoin_locked = TRUE
+	latejoin_locked = FALSE
 	sex_lock = FEMALE
 	thanati_chance = 75
-	jobdesc = "The wife of the Baron himself. Your personal life is often carefree and filled with luxury. You&#8217;re fortunate beauty and elegance is a power all men respect. And they respect you."
+	jobdesc = "Жена самого барона. Ваша личная жизнь часто беззаботна и наполнена роскошью. Вам повезло, что красота и элегантность - это сила, которую уважают все мужчины. И они уважают тебя."
 	minimal_character_age = 30
-	jobdescbr = "Você não é apenas o brinquedo de um barão silencioso. Suas mentiras cortam como uma espada e você sabe como controlar as pessoas. Aqueles que o subestimam - o verdadeiro governante da Fortaleza - estão cometendo um erro cruel."
+	jobdescbr = "Жена самого барона. Ваша личная жизнь часто беззаботна и наполнена роскошью. Вам повезло, что красота и элегантность - это сила, которую уважают все мужчины. И они уважают тебя."
 	access = list(treasury,meistery,keep,baronquarter)
 	minimal_access = list(treasury,meistery,keep,baronquarter)
 
@@ -277,8 +277,8 @@ var/fortHand = null
 	minimal_access = list(garrison,keep)
 	latejoin_locked = TRUE
 	thanati_chance = 1
-	jobdesc = "Serving once as your Lady&#8217;s personal guard, she was eventually wed to the Baron of Firethorn. Either through charm or exemplary service, the now-Baroness convinced the Lord to reinstate you as her personal protector."
-	jobdescbr = "Muitos anos atrás, sua senhora, agora baronesa, mudou-se para Firethorn - e você teve a sorte de vir com ela para continuar seu serviço."
+	jobdesc = "Работая когда-то личной охраной вашей леди, она в конце концов вышла замуж за барона Фаэторна. Либо благодаря обаянию, либо образцовому служению, ныне баронесса убедила лорда восстановить вас в качестве ее личного защитника."
+	jobdescbr = "Работая когда-то личной охраной вашей леди, она в конце концов вышла замуж за барона Фаэторна. Либо благодаря обаянию, либо образцовому служению, ныне баронесса убедила лорда восстановить вас в качестве ее личного защитника."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
 			return 0
@@ -332,8 +332,8 @@ var/fortHand = null
 	thanati_chance = 70
 	access = list(keep)
 	minimal_access = list(keep)
-	jobdesc = "You&#8217;re one of those girls who should be quiet and make the lives of your master and mistress easier."
-	jobdescbr = "Você é uma daquelas garotas que deveria ficar quieta e tornar a vida de seu mestre e dona mais fácil."
+	jobdesc = "Ты одна из тех девушек, которые должны вести себя тихо и облегчать жизнь своему хозяину и любовнице."
+	jobdescbr = "Ты одна из тех девушек, которые должны вести себя тихо и облегчать жизнь своему хозяину и любовнице"
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -365,8 +365,8 @@ var/fortHand = null
 	thanati_chance = 80
 	access = list(keep)
 	minimal_access = list(keep, baronquarter)
-	jobdesc = "The Baron&#8217;s friend, a noble staying temporarily in Firethorn. Hopefully their stay is not extended indefinitely."
-	jobdescbr ="Você era amigo de um alto nobre local. É hora de fazer uma visita."
+	jobdesc = "Друг барона, дворянин, временно остановившийся в Фаэторне. Будем надеяться, что его пребывание не продлится бесконечно."
+	jobdescbr ="Друг барона, дворянин, временно остановившийся в Фаэторне. Будем надеяться, что его пребывание не продлится бесконечно."
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -425,8 +425,8 @@ var/fortHand = null
 	access = list(keep)
 	minimal_access = list(keep)
 	children = TRUE
-	jobdesc = "One of the personal child servants of the Baron. They&#8217;re extremely nifty at getting into the small crevices maids just can&#8217;t reach and are excellent cleaners! Or so you&#8217;ve been told."
-	jobdescbr = "Pequeno servo. Brinque e divirta-se até que alguém o force a lavar o chão."
+	jobdesc = "Один из личных детей-слуг барона. Они чрезвычайно ловко забираются в маленькие щели, до которых горничные просто не могут дотянуться, и являются отличными уборщиками! По крайней мере, так вам сказали."
+	jobdescbr = "Один из личных детей-слуг барона. Они чрезвычайно ловко забираются в маленькие щели, до которых горничные просто не могут дотянуться, и являются отличными уборщиками! По крайней мере, так вам сказали."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
 			return 0
@@ -450,8 +450,8 @@ var/fortHand = null
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	jobdesc = "The archivist and advisor to the Baron. Meisters lack a familial background or political allegiance. Hailing from an egalitarian order located in Gahan, they are assigned to the fiefdoms of aristocrats, bound by vows to serve its sovereign. They are often considered to be the most intelligent and well-read people around, with a vast area of knowledge carefully crafted to suit the needs of their Lord."
-	jobdescbr = "The archivist and advisor to the Baron. Meisters lack a familial background or political allegiance. Hailing from an egalitarian order located in Gahan, they are assigned to the fiefdoms of aristocrats, bound by vows to serve its sovereign. They are often considered to be the most intelligent and well-read people around, with a vast area of knowledge carefully crafted to suit the needs of their Lord."
+	jobdesc = "Архивариус и советник барона. У мейстеров нет семейного происхождения или политической преданности. Происходя из эгалитарного ордена, расположенного в Гане, они приписаны к вотчинам аристократов, связанных клятвами служить своему суверену. Их часто считают самыми умными и начитанными людьми в округе, обладающими обширной областью знаний, тщательно разработанной в соответствии с потребностями их Господина."
+	jobdescbr = "Архивариус и советник барона. У мейстеров нет семейного происхождения или политической преданности. Происходя из эгалитарного ордена, расположенного в Гане, они приписаны к вотчинам аристократов, связанных клятвами служить своему суверену. Их часто считают самыми умными и начитанными людьми в округе, обладающими обширной областью знаний, тщательно разработанной в соответствии с потребностями их Господина."
 	supervisors = "the Baron"
 	selection_color = "#ddddff"
 	idtype = /obj/item/weapon/card/id/hop
@@ -493,8 +493,8 @@ var/fortHand = null
 	supervisors = "the Meister."
 	selection_color = "#ddddff"
 	thanati_chance = 80
-	jobdesc = "Tasked with handling all aspects of financial management within Firethorn fortress, their ceremonial gilded cuirass is given to them as a signifier of their importance, and to emphasize the wealth of the Baron himself."
-	jobdescbr = "Tasked with handling all aspects of financial management within Firethorn fortress, their ceremonial gilded cuirass is given to them as a signifier of their importance, and to emphasize the wealth of the Baron himself."
+	jobdesc = "Им поручено заниматься всеми аспектами финансового управления в крепости Фаэторн, и их церемониальная позолоченная кираса выдается им в знак их важности и для того, чтобы подчеркнуть богатство самого барона."
+	jobdescbr = "Им поручено заниматься всеми аспектами финансового управления в крепости Фаэторн, и их церемониальная позолоченная кираса выдается им в знак их важности и для того, чтобы подчеркнуть богатство самого барона"
 	latejoin_locked = TRUE
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(keep,meistery,treasury)

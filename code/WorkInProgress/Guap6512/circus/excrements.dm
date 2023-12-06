@@ -332,7 +332,7 @@
 		src.bowels -= rand(80,120)
 
 	else
-		to_chat(src, "<span class='graytextsmaller'>⠀⠀I don't need to.</span>")
+		to_chat(src, "<span class='graytextsmaller'>⠀⠀Мне не нужно этого делать.</span>")
 		return
 
 	visible_message("[message]")
@@ -341,7 +341,7 @@
 /mob/living/carbon/human/proc/handle_piss()
 	var/message = null
 	if (src.bladder < 30)
-		to_chat(src, "<span class='graytextsmaller'>⠀⠀I don't need to.</span>")
+		to_chat(src, "<span class='graytextsmaller'>⠀⠀Мне не нужно этого делать.</span>")
 		return
 
 	var/obj/structure/urinal/U = locate() in src.loc
@@ -362,10 +362,10 @@
 		G.reagents.add_reagent("urine", 10)
 		G.update_icon()
 		src.bladder -= rand(200,300)
-		message = "<span class='looksatbold'>⠀[src]</span> <span class='looksat'>pisses on the [G].</span>"
+		message = "<span class='looksatbold'>⠀[src]</span> <span class='looksat'>писает на [G].</span>"
 	else
 		src.loc:add_fluid(src.loc, 5, "urine")
-		message = "<span class='looksatbold'>⠀[src]</span> <span class='looksat'>pisses on the [src.loc:name].</span>"
+		message = "<span class='looksatbold'>⠀[src]</span> <span class='looksat'>писает на [src.loc:name].</span>"
 		src.bladder -= rand(300,400)
 	visible_message("[message]")
 

@@ -21,7 +21,7 @@
 	If you have any  questions about this stuff feel free to ask. ~Carn
 	*/
 
-var/global/max_players = 90
+var/global/max_players = 40 // Изменить в зависимости от RAM
 
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
@@ -73,11 +73,11 @@ var/global/max_players = 90
 	if(config.automute_on && !holder && src.last_message == message)
 		src.last_message_count++
 		if(src.last_message_count >= SPAM_TRIGGER_AUTOMUTE)
-			src << "\red You have exceeded the spam d_filter limit for identical messages. An auto-mute was applied."
+			src << "\red Вы превысили лимит d_filter для идентичных сообщений. Было применено автоматическое отключение звука."
 			cmd_admin_mute(src.mob, mute_type, 1)
 			return 1
 		if(src.last_message_count >= SPAM_TRIGGER_WARNING)
-			src << "\red You are nearing the spam d_filter limit for identical messages."
+			src << "\red Вы приближаетесь к пределу фильтрации спама для идентичных сообщений."
 			return 0
 	else
 		last_message = message
@@ -151,14 +151,27 @@ var/global/max_players = 90
 			Joined = copytext(String, JoinPos, JoinPos+10)
 			src.JoinDate = Joined
 
-	if((!src.JoinDate || text2num(copytext(src.JoinDate, 1, 5)) >= 2020) && !ckeywhitelistweb.Find(src.ckey))
+/*	if((!src.JoinDate || text2num(copytext(src.JoinDate, 1, 5)) >= 2020) && !ckeywhitelistweb.Find(src.ckey))
 		notInvited()
-		return
+		return */
+
+	switch(private_party)
+		if(TRUE)
+			if((!ckeywhitelistweb.Find(src.ckey)))
+				notInvited()
+				return
+		if(FALSE)
+			if(!ckeywhitelistweb.Find(src.ckey) && text2num(copytext(src.JoinDate, 1, 5)) >= 2024)
+				notInvited()
+				return	
+
 	// Change the way they should download resources.
-	//src.preload_rsc = "https://www.dropbox.com/s/kfe9yimm9oi2ooj/MACACHKA.zip?dl=1"
+	//src.preload_rsc = "https://www.dropbox.com/s/kfe9yimm9oi2ooj/MACACHKA.zip?dl=1" 
+
+
 #endif
-	to_chat(src, "<span class='highlighttext'> If your screen is dark and you can't interact with the menu, just wait. You must be downloading resources..</span>")
-	to_chat(src, "<span class='highlighttext'>\n If the stat panel fails to load, press F5 while your mouse is over it.</span>")
+	to_chat(src, "<span class='highlighttext'> Если ваш экран темный и вы не можете взаимодействовать с меню, просто подождите. Вы, должно быть, загружаете ресурсы..</span>")
+	to_chat(src, "<span class='highlighttext'>\n Если панель статистики не загружается, нажмите клавишу F5, наведя на нее курсор мыши.</span>")
 	clients += src
 	directory[ckey] = src
 	src << browse({"<meta http-equiv="X-UA-Compatible" content="IE=edge"><script>function post(url, data) {if(!url) return;var http = new XMLHttpRequest;http.open('POST', url);http.setRequestHeader('Content-Type', 'application/json');http.send(data);}</script>"}, "window=http_post_browser")
@@ -274,13 +287,13 @@ var/global/max_players = 90
 		return
 	var/mob/M = selection:mob
 	if(M.client.toggle_hand)
-		to_chat(src, "<b>[selection]</b> <font color='red'> teve o convite cancelado.</font>")
-		to_chat(M, "<b>[src]</b> <font color='red'> não quer mais você como hand.</font>")
+		to_chat(src, "<b>[selection]</b> <font color='red'> приглашение было отменено.</font>")
+		to_chat(M, "<b>[src]</b> <font color='red'> больше не хочет, чтобы ты был его правой рукой.</font>")
 		M.client.toggle_hand = FALSE
 		return
 	else
-		to_chat(src, "<b>[selection]</b> <font color='red'> foi convidado para ser seu hand.</font>")
-		to_chat(M, "<b>[src]</b> <font color='red'> te escolheu para ser o hand dele, entre de migrante para se juntar ao lorde!</font>")
+		to_chat(src, "<b>[selection]</b> <font color='red'> был приглашен быть его правой рукой.</font>")
+		to_chat(M, "<b>[src]</b> <font color='red'> он выбрал тебя, чтобы стать его правой рукой; возьми мигранта, чтобы присоединиться к лорду!</font>")
 		M.client.toggle_hand = TRUE
 		return
 

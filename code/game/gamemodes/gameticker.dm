@@ -86,7 +86,7 @@ var/turf/MiniSpawn
 			MiniSpawn = pickNewmigLocs
 			for(var/client/C in migrants_inwave)
 				if(istype(C.mob, /mob/new_player))
-					to_chat(C, "The tide comes!")
+					to_chat(C, "Наступает волна!")
 					var/mob/living/carbon/human/H = C.mob:AttemptMigSpawn()
 					if(C in set_spoused && !H.job != "Ordinator")
 						continue
@@ -216,7 +216,7 @@ var/turf/MiniSpawn
 
 	if (privateparty && !privatepartyallow)
 		//world << "<B>Unable to start [mode.name].</B> Not enough victims, [mode.required_players] victims are required. Reverting to pre-simulation lobby."
-		to_chat(world,"<b>Não foi possível iniciar.</b> The overlord didn't allow the private party yet,<span class='highlighttext'> contact him on discord: <b>caePax#0001</b>.</span>")
+		to_chat(world,"<b>Не удалось запустить.</b> Повелитель пока не разрешил частную вечеринку,<span class='highlighttext'> свяжитесь с ним в discord: <b>lyoll</b>.</span>")
 		world << 'Unready_Lobby.ogg'
 		qdel(mode)
 		current_state = GAME_STATE_PREGAME
@@ -236,18 +236,18 @@ var/turf/MiniSpawn
 				merchant = "hit"
 
 		if(master_mode == "holywar")
-			to_chat(world,"<b><span class='highlighttext'>Crusade aborted:</span></b> We need <span class='bname'>20 soldiers</span>!")
-			to_chat(world,"<b><span class='bname'>10 Thanatis</span> and <span class='bname'>10 Post-Christians</span>!")
+			to_chat(world,"<b><span class='highlighttext'>Крестовый поход прерван:</span></b> Мы нуждаемся в <span class='bname'>20 солдатах</span>!")
+			to_chat(world,"<b><span class='bname'>10 Танати</span> и <span class='bname'>10 Пост-Христиан</span>!")
 		else
 			if(master_mode == "miniwar")
-				to_chat(world,"<b><span class='hitbold'>Migration aborted:</span></b><span class='hit'> The caves needs </span><span class='badmood'><b>5 migrants</b></span>.")
+				to_chat(world,"<b><span class='hitbold'>Миграция прервана:</span></b><span class='hit'> Пещерам нужны </span><span class='badmood'><b>5 мигрантов</b></span>.")
 			else
-				to_chat(world,"<b><span class='hitbold'>Story aborted:</span></b><span class='hit'> The fortress needs a generous </span><span class='[merchant]'><b>Bookkeeper</b></span>,<span class='hit'> a just </span><span class='[baron]'><b>Baron</b></span><span class='hit'> and a kind </span><span class='[inquisitor]'><b>Inquisitor</b></span><span class='hit'>!</span>")
+				to_chat(world,"<b><span class='hitbold'>Рассказ прерван:</span></b><span class='hit'> Крепость нуждается в щедром </span><span class='[merchant]'><b>Торговце</b></span>,<span class='hit'> справедливом </span><span class='[baron]'><b>Бароне</b></span><span class='hit'> и добром </span><span class='[inquisitor]'><b>Инквизиторе</b></span><span class='hit'>!</span>")
 			if(minimigcounter < minimax)
 				minimigcounter++
-				to_chat(world,"<span class='highlighttext'> [minimigcounter]/[minimax] fails for Mini-War!</span>")
+				to_chat(world,"<span class='highlighttext'> [minimigcounter]/[minimax] провал мини-войны!</span>")
 			if(minimigcounter >= minimax)
-				to_chat(world,"<span class='ravenheartfortress'> Mini-War!</span>")
+				to_chat(world,"<span class='ravenheartfortress'> Мини-война!</span>")
 				world << 'minimigration.ogg'
 				job_master.ResetOccupations()
 				master_mode = "miniwar"
@@ -268,7 +268,7 @@ var/turf/MiniSpawn
 	if(!can_continue)
 		qdel(mode)
 		current_state = GAME_STATE_PREGAME
-		to_chat(world,"<B>Error setting up [master_mode].</B> Reverting to pre-game lobby.")
+		to_chat(world,"<B>Error setting up [master_mode].</B> Возвращение в предигровое лобби.")
 		job_master.ResetOccupations()
 		return 0
 
@@ -315,7 +315,7 @@ var/turf/MiniSpawn
 				qdel(S)
 		if(master_mode == "holywar")
 			to_chat(world,"<h2><B><FONT color='#8f535d'>Holy War!</font></B></h2>")
-			var/quote = pick("War is neither glamorous nor attractive. It is monstrous. Its very nature is one of tragedy and suffering.","Dwell in peace in the home of your own being, and the Messenger of Death will not be able to touch you.","The real and lasting victories are those of peace and not of war.")
+			var/quote = pick("Война не является ни гламурной, ни привлекательной. Это чудовищно. Сама его природа - это трагедия и страдание.","Живите в мире в доме своего собственного существа, и Посланник Смерти не сможет прикоснуться к вам.","Настоящие и долговременные победы - это победы мира, а не войны.")
 			to_chat(world,"<h4><B><i> \"[quote]\" </i></B></h4>")
 			world << 'war_banner.ogg'
 			world << sound('holywarintroduction.ogg', volume = 50, channel = 6)
@@ -348,7 +348,7 @@ var/turf/MiniSpawn
 			possibletiamathi.Add(H)
 	if(possibletiamathi.len >= 2 && prob(33))
 		spawn(400)
-			to_chat(world, "<span class='baronboldoutlined'>One of the Tiamathi is a TRAITOR.</span> <span class='baron'>Rumors about them have disturbed the Fortress for weeks, but the villain's identity remains unclear.</span>")
+			to_chat(world, "<span class='baronboldoutlined'>Один из Тиамат - ПРЕДАТЕЛЬ.</span> <span class='baron'>Слухи о нём будоражили Крепость в течение нескольких недель, но личность злодея остается неясной.</span>")
 		if(prob(50))
 			TheChosenOneIsHere = pick(possibletiamathi)
 			TheChosenOneIsHere.add_event("Imposter", /datum/happiness_event/imposter)
@@ -358,8 +358,8 @@ var/turf/MiniSpawn
 				OtherTiamathi.add_event("Imposterbad", /datum/happiness_event/imposterbad)
 
 			if(TheChosenOneIsHere)
-				to_chat(TheChosenOneIsHere, "<span class='baronboldoutlined'>You're a traitor Tiamat. </span><span class='baron'>Your pay is pathetic, your tasks are suicidal, and the Thanati offered you enough money to buy a dozen fortresses.</span>")
-				to_chat(TheChosenOneIsHere, "<span class='baronboldoutlined'>OBJECTIVE: </span><span class='baron'>Assassinate the Baron and survive with his ring.</span>")
+				to_chat(TheChosenOneIsHere, "<span class='baronboldoutlined'>Ты предатель, Тиамат. </span><span class='baron'>Ваша зарплата ничтожна, ваши задания самоубийственны, и танати предложили вам достаточно денег, чтобы купить дюжину крепостей.</span>")
+				to_chat(TheChosenOneIsHere, "<span class='baronboldoutlined'>ЦЕЛЬ: </span><span class='baron'>Убейте барона и выживите с его кольцом.</span>")
 				TheChosenOneIsHere.mind.special_role = "tiamatrait"
 				TheChosenOneIsHere.combat_music = 'sound/lfwbcombatuse/traitcerbcombat.ogg'
 #ifdef FARWEB_LIVE
@@ -574,7 +574,7 @@ var/turf/MiniSpawn
 		if(eof.id == "informant")
 			for(var/obj/machinery/charon/C in world)
 				var/obj/item/weapon/paper/lord/NG = new (C.loc)
-				NG.info = "The Inquisition Investigation Cell has found all Thanatis hidden inside Firethorn!"
+				NG.info = "Следственная группа инквизиции обнаружила всех культистов, спрятанных внутри Фаэторна!"
 				for(var/mob/living/carbon/human/HH in mob_list)
 					if(HH?.religion == "Thanati")
 						NG.info += "<br>[HH.real_name] ([HH.job]) - [HH.age] [HH.gender]"
@@ -649,9 +649,9 @@ var/turf/MiniSpawn
 				var/where = H.equip_in_one_of_slots(K, slots)
 				if (!where)
 					K.loc = get_turf(H)
-					to_chat(H,"My family has a house inside the fortress. It's the first house in the residences alley. My key is at my feet")
+					to_chat(H,"У моей семьи есть дом внутри крепости. Это первый дом в жилом переулке. Мой ключ лежит у моих ног")
 				else
-					to_chat(H,"My family has a house inside the fortress. It's the first house in the residences alley. My key is in my [where]")
+					to_chat(H,"У моей семьи есть дом внутри крепости. Это первый дом в жилом переулке. Мой ключ лежит [where]")
 					H.update_icons()
 		if(second)
 			var/list/mob/living/carbon/human/second_members = (second.members + second.family_head)
@@ -660,9 +660,9 @@ var/turf/MiniSpawn
 				var/where = H.equip_in_one_of_slots(K, slots)
 				if (!where)
 					K.loc = get_turf(H)
-					to_chat(H,"My family has a house inside the fortress. It's the second house in the residences alley. My key is at my feet")
+					to_chat(H,"У моей семьи есть дом внутри крепости. Это первый дом в жилом переулке. Мой ключ лежит у моих ног")
 				else
-					to_chat(H,"My family has a house inside the fortress. It's the second house in the residences alley. My key is in my [where]")
+					to_chat(H,"У моей семьи есть дом внутри крепости. Это первый дом в жилом переулке. Мой ключ лежит [where]")
 					H.update_icons()
 
 	proc/process()
@@ -699,20 +699,20 @@ var/turf/MiniSpawn
 
 				if (mode.station_was_nuked)
 					if(!delay_end)
-						to_chat(world,"<span class='passivebold'>This is how the day has passed.</span> <span class='passive'>One minute until story end.</span>")
+						to_chat(world,"<span class='passivebold'>Вот так прошел этот день.</span> <span class='passive'>Одна минута до конца истории.</span>")
 				else
 					if(!delay_end)
-						to_chat(world,"<span class='passivebold'>This is how the day has passed.</span> <span class='passive'>One minute until story end.</span>")
+						to_chat(world,"<span class='passivebold'>Вот так прошел этот день.</span> <span class='passive'>Одна минута до конца истории.</span>")
 
 				if(!delay_end)
 					sleep(restart_timeout)
 					if(!delay_end)
-						to_chat(world, "<span class='bname'>The fortress has been abandoned.</span>")
+						to_chat(world, "<span class='bname'>Крепость была покинута.</span>")
 						world.Reboot()
 					else
-						to_chat(world,"<span class='passivebold'>[pick(nao_consigoen)]</span> <span class='passive'>The comatic hasn't allowed the story to end yet!</span>")
+						to_chat(world,"<span class='passivebold'>[pick(nao_consigoen)]</span> <span class='passive'>Коматозник еще не позволил этой истории закончиться!</span>")
 				else
-					to_chat(world,"<span class='passivebold'>[pick(nao_consigoen)]</span> <span class='passive'>The comatic hasn't allowed the story to end yet!</span>")
+					to_chat(world,"<span class='passivebold'>[pick(nao_consigoen)]</span> <span class='passive'>Коматозник еще не позволил этой истории закончиться!</span>")
 
 
 		return 1
@@ -726,7 +726,7 @@ var/turf/MiniSpawn
 		if(!message_events)
 			message_events += "[eof.event_message] "
 		if(eof.roundstartdisplay)
-			to_chat(world, "<span class ='passivebold'>Praise the Lord!</span> <span class ='passive'>[message_events]</span>")
+			to_chat(world, "<span class ='passivebold'>Хвала Господу!</span> <span class ='passive'>[message_events]</span>")
 
 	proc/apply_events()
 		eof.apply_event()
@@ -761,39 +761,39 @@ var/turf/MiniSpawn
 				continue
 			break
 
-	to_chat(player_list, "<span class='boldred'>[vessel_name()] (Story #[story_id])</span>")
+	to_chat(player_list, "<span class='boldred'>[vessel_name()] (История #[story_id])</span>")
 	to_chat(player_list,"<br><span class='dreamershitbutitsbigasfuckanditsboldtoo'><center>[mode.name]</center></span><br><br>")
 
 	ooc_allowed = TRUE
 	mode.declare_completion()//To declare normal completion.
-	to_chat(player_list,"<span class='bname'><font size=+2>STATISTICS:</font></span><br>")
-	to_chat(player_list,"<span class='passive'>The aspect was: <b>[message_events]<b></span><br>")
-	to_chat(player_list,"&#8226; Deaths in the Caves: [deathincave]")
-	to_chat(player_list,"&#8226; Deaths in the Fortress: [deathinfort]")
-	to_chat(player_list,"&#8226; Buried: [manyburied]") // BOTAR O BURIED AQUI
-	to_chat(player_list,"&#8226; First victim: [firstvictim], Last Words:\"[firstvictimlastword]\"")
-	to_chat(player_list,"&#8226; Orgasms: [orgasms]")
-	to_chat(player_list,"&#8226; Migrants arrived: [migrantsarrived]")
-	to_chat(player_list,"&#8226; Migrants died: [migrantsdied]")
-	to_chat(player_list,"&#8226; Teeth lost: [dentesperdidos]")
-	to_chat(player_list,"&#8226; Items crafted: [itemscrafted]")
-	to_chat(player_list,"&#8226; Chromosomes lost: [cromosperdidos]")
-	to_chat(player_list,"&#8226; Eaten by a grue: [gruevictims]")
-	to_chat(player_list,"&#8226; Limbo doors found: [limbodoors]")
+	to_chat(player_list,"<span class='bname'><font size=+2>СТАТИСТИКА:</font></span><br>")
+	to_chat(player_list,"<span class='passive'>Этот аспект был: <b>[message_events]<b></span><br>")
+	to_chat(player_list,"&#8226; Смертей в пещерах: [deathincave]")
+	to_chat(player_list,"&#8226; Смертей в крепости: [deathinfort]")
+	to_chat(player_list,"&#8226; Погребено: [manyburied]") // BOTAR O BURIED AQUI
+	to_chat(player_list,"&#8226; Первая жертва: [firstvictim], её последние слова:\"[firstvictimlastword]\"")
+	to_chat(player_list,"&#8226; Оргазмов: [orgasms]")
+	to_chat(player_list,"&#8226; Мигрантов выжило: [migrantsarrived]")
+	to_chat(player_list,"&#8226; Мигрантов умерло: [migrantsdied]")
+	to_chat(player_list,"&#8226; Потерянно зубов: [dentesperdidos]")
+	to_chat(player_list,"&#8226; Предметов скрафчено: [itemscrafted]")
+	to_chat(player_list,"&#8226; Хромосом потеряно: [cromosperdidos]")
+	to_chat(player_list,"&#8226; Сьедено говна: [gruevictims]")
+	to_chat(player_list,"&#8226; Найдено дверей в Лимбо: [limbodoors]")
 	if(soulbroken.len >= 1)
-		to_chat(player_list,"<span class='bname'><font color='#910000'>&#8226; Soulbroken into slavery:</font></span> <span class='combat'>[english_list(soulbroken)]</span>")
+		to_chat(player_list,"<span class='bname'><font color='#910000'>&#8226; Души, обращённые в рабство:</font></span> <span class='combat'>[english_list(soulbroken)]</span>")
 	if(thanati_list.len >= 1)
-		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'>The Thanati cultists were:</span> <span class='passive'>[english_list(thanati_list)]</span>")
+		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'>Культистами Танати были:</span> <span class='passive'>[english_list(thanati_list)]</span>")
 	if(thanatiGlobal.objective.checkCompletion())
-		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> The thanati cultists managed to complete their objective!</span>")
-		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Tzchernobog Wish: [thanatiGlobal?.objective?.name]</span>")
+		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Культистам Танати удалось достичь своей цели!</span>")
+		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Чернобог желал: [thanatiGlobal?.objective?.name]</span>")
 	else
-		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> The thanati cultists did not complete their objective!</span>")
-		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Tzchernobog Wish: [thanatiGlobal?.objective?.name]</span>")
+		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Сектанты Танати не выполнили свою задачу!</span>")
+		to_chat(player_list,"<span class='passivebold'>&#8226;</span> <span class='passivebold'> Чернобог желал: [thanatiGlobal?.objective?.name]</span>")
 	if(key_changed_list.len >= 1)
-		to_chat(player_list, "Roles Handover: [english_list(key_changed_list)]")
+		to_chat(player_list, "Передача ролей: [english_list(key_changed_list)]")
 	if(achievements_unlocked.len >= 1)
-		to_chat(player_list, "Achievements Unlocked: [english_list(achievements_unlocked)]")
+		to_chat(player_list, "Разблокированные достижения: [english_list(achievements_unlocked)]")
 	/*
 	if(cuckoldlist && cuckoldlist.len >= 1)
 		to_chat(player_list, "<span class='baron'>&#8226;</span> <span class='baron'>Cuckolds were:</span> [english_list(cuckoldlist)]")
@@ -886,7 +886,7 @@ var/turf/MiniSpawn
 				var/datum/ring_account/RA = found_account_by_human(src)
 				if(src.HadSex.len >= 3 && RA && stat != DEAD)
 					if(RA.get_money() >= 100)
-						to_chat(src, "GOOD WHORE.")
+						to_chat(src, "ХОРОШАЯ ШЛЮХА.")
 						src?.client?.ChromieWinorLoose(src?.client, 3)
 
 /proc/CheckLatepartyCompletion()
@@ -897,5 +897,5 @@ var/turf/MiniSpawn
 				for(var/mob/living/carbon/human/ludruk in mob_list)
 					if(ludruk.job == "Ludruk's Leper")
 						ludruk?.client?.ChromieWinorLoose(ludruk?.client, 3)
-						to_chat(ludruk, "<span class='baronboldoutlined'>Lord Ludruk will be pleased.</span>")
+						to_chat(ludruk, "<span class='baronboldoutlined'>Лорд Лудрук будет доволен.</span>")
 				break

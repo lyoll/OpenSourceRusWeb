@@ -122,7 +122,7 @@ datum/shuttle_controller/emergency_shuttle/process()
 					var/second_name = R.group[2]
 					lordShip = second_name
 
-			a.autosay("The Fortress will be abandoned in T - [round(emergency_shuttle.timeleft()/60)] min. His Lordship baron [lordShip] and his confidants are awaited on the Babylon.", "CTTU")
+			a.autosay("Крепость будет заброшена в течении - [round(emergency_shuttle.timeleft()/60)] минут. Его светлость барона [lordShip] и его приближенных уже ждут.", "CTTU")
 
 			world << 'pods_launch_countdown.ogg'
 			if(timeleft() - 60 > 60)
@@ -138,7 +138,7 @@ datum/shuttle_controller/emergency_shuttle/process()
 					var/second_name = R.group[2]
 					lordShip = second_name
 
-			a.autosay("The Fortress will be abandoned in T - [round(emergency_shuttle.timeleft()/60)] seconds. His Lordship baron [lordShip] and his confidants are awaited on the Babylon.", "CTTU")
+			a.autosay("Крепость будет заброшена в течении - [round(emergency_shuttle.timeleft()/60)] секунд. Его светлость барона [lordShip] и его приближенных уже ждут.", "CTTU")
 
 			world << 'pods_launch_countdown.ogg'
 			if(timeleft() - 10 > 10)
@@ -155,7 +155,7 @@ datum/shuttle_controller/emergency_shuttle/process()
 						var/second_name = R.group[2]
 						lordShip = second_name
 
-				a.autosay("The Fortress will be abandoned in T - [round(emergency_shuttle.timeleft(),1)] seconds. His Lordship baron [lordShip] and his confidants are awaited on the Babylon.", "CTTU")
+				a.autosay("Крепость будет заброшена в течении - [round(emergency_shuttle.timeleft(),1)] секунд. Его светлость барона [lordShip] и его приближенных уже ждут.", "CTTU")
 
 				world << 'pods_launch_countdown.ogg'
 

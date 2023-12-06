@@ -26,7 +26,7 @@ var/list/allClothing = list()
 /datum/round_event
 	var/name = "default"
 	var/id = "default"
-	var/event_message = "You shouldn't have seen this. Yell at a Pernambucao."
+	var/event_message = "Тебе не следовало этого видеть. Наорать на Пернамбуку."
 	var/roundstartdisplay = 1
 
 /datum/round_event/proc/apply_event()
@@ -36,45 +36,45 @@ var/list/allClothing = list()
 	name = "Quiet Night"
 	id = "default"
 	roundstartdisplay = 0
-	event_message = "It's a quiet night."
+	event_message = "Сегодня тихая ночь."
 
 
 /datum/round_event/size_matters
 	name = "Size Matters"
 	id = "size_matters"
 
-	event_message = "Man's strength is defined by his penis size."
+	event_message = "Сила мужчины определяется размером его пениса."
 
 /datum/round_event/weak
 	name = "Weak Tradition"
 	id = "weak"
 
-	event_message = "It's a tradition in Firethorn to ignore all kinds of physical exercises. Weak and proud!"
+	event_message = "В Фаэторне существует традиция игнорировать все виды физических упражнений. Слабый и гордый!"
 
 /datum/round_event/kidcensor
 	name = "Baby Marduk"
 	id = "kidcensor"
 
-	event_message = "Abusing DOB during his childhood has prevented a boy's body from growing. To compensate it, he trained a lot, and eventually he became our marduk."
+	event_message = "Жестокое обращение с ДОБом в детстве помешало телу мальчика расти. Чтобы компенсировать это, он много тренировался и в конце концов стал нашим мардуком." // marduk?
 
 /datum/round_event/helpless
 	name = "Helpless Fortress"
 	id = "helpless"
 
-	event_message = "Noone in the fortress knows how to fight."
+	event_message = "Никто в крепости не знает, как сражаться."
 
 /datum/round_event/helpchildren
 	name = "Helpless Fortress?"
 	id = "helpchildren"
 
-	event_message = "Noone in the fortress knows how to fight... except children!"
+	event_message = "Никто в крепости не умеет драться... кроме детей!"
 
 
 /datum/round_event/erpfaggots
 	name = "Eunuch Fortress"
 	id = "erp"
 
-	event_message = "A <b>curse</b> has arrived in Firethorn! Most fortress inhabitants were castrated by a demon during their sleep!"
+	event_message = "<b>Проклятый</b> прибыл в Фаэторн! Большинство обитателей крепости были кастрированы демоном во время сна!"
 //REMOVE PRETO DA ROTAÇÃO ATÉ ADCIONAR PROBABILIDADE
 /*
 /datum/round_event/black
@@ -85,7 +85,7 @@ var/list/allClothing = list()
 	name = "Strong Kids"
 	id = "crianca"
 
-	event_message = "Due to a heavy mix of powerful drugs during pregnancy, many children lost their inteligence, but were rewarded with heavy fists."
+	event_message = "Из-за обильной смеси сильнодействующих лекарств во время беременности многие дети теряли свой интеллект, но были вознаграждены тяжелыми кулаками."
 
 /*/datum/round_event/name
 	name = "Farewell Gift"
@@ -97,19 +97,19 @@ var/list/allClothing = list()
 	name = "Only Male"
 	id = "machismo"
 
-	event_message = "For some weird reason, all women in the fortress are now male! Must be some sort of curse!"
+	event_message = "По какой-то странной причине все женщины в крепости теперь мужчины! Должно быть, это какое-то проклятие!"
 
 /datum/round_event/pathologic
 	name = "Pathologic"
 	id = "pathologic"
 	roundstartdisplay = 0
-	event_message = "A plague is infecting the fortress, the Haruspex is the salvation!"
+	event_message = "Крепость заражена чумой, Гаруспик - это спасение!"
 
 /datum/round_event/freedom
 	name = "Freedom"
 	id = "freedom"
 
-	event_message = "You can go whereever you want."
+	event_message = "Ты можешь идти, куда захочешь."
 
 /*/datum/round_event/polyhedron
 	name = "Polyhedron"
@@ -121,164 +121,164 @@ var/list/allClothing = list()
 	name = "King's Guards"
 	id = "ordinators"
 
-	event_message = "The garrison are replaced with Tribunal Ordinators. They have better equipment, but are loyal to the King and their only goal is to keep order."
+	event_message = "Гарнизон заменен ординаторами трибунала. У них лучшее снаряжение, но они верны королю, и их единственная цель - поддерживать порядок."
 
 /datum/round_event/shattereddreams
 	name = "Shattered Dreams"
 	id = "shattereddreams"
 
-	event_message = "Poor male prostitute by the name of Morgan James, the universal favorite, fell down the roof. Everyone in the fortress is depressed."
+	event_message = "Бедный мужчина-проститутка по имени Морган Джеймс, всеобщий любимец, упал с крыши. Все в крепости подавлены."
 
 /datum/round_event/goldenfortress
 	name = "Golden Fortress"
 	id = "goldenfortress"
 
-	event_message = "The Baron was a great ruler. The treasury is full."
+	event_message = "Барон был великим правителем. Казна полна."
 
 /*
 /datum/round_event/informant
 	name = "Informed"
 	id = "informant"
 
-	event_message = "All thanati in the fortress got ratted out!"
+	event_message = "Все Танати, что были в крепости раскрыты!"
 */
 /datum/round_event/privatesecurity
 	name = "Private Security"
 	id = "privatesecurity"
 
-	event_message = "The Bookkeeper was forced to hire goons to protect himself."
+	event_message = "Торговец был вынужден нанять головорезов, чтобы защитить себя." // The Bookkeeper?
 
 /datum/round_event/bankrupt
 	name = "Bankrupt"
 	id = "bankrupt"
 
-	event_message = "The baron has lost all the treasury to his gamble habit."
+	event_message = "Барон потерял всю казну из-за своей привычки к азартным играм."
 
 /datum/round_event/gifted
 	name = "Dark Nights"
 	id = "gifted"
 
-	event_message = "The fortress is not known to be bright."
+	event_message = "Крепость, как известно, не отличается яркостью."
 
 /datum/round_event/united
 	name = "United"
 	id = "united"
 	roundstartdisplay = 0
-	event_message = "Everyone in the fortress shares the same vice."
+	event_message = "Все в крепости страдают одним и тем же пороком."
 
 /datum/round_event/childbaron
 	name = "Child Baron"
 	id = "childbaron"
 
-	event_message = "The Baron celebrates his 13th birthday today!"
+	event_message = "Сегодня барон празднует свой 13-й день рождения!"
 
 /datum/round_event/crowded
 	name = "Crowded"
 	id = "crowded"
 
-	event_message = "There is a meeting in the throne room!"
+	event_message = "В тронном зале назначено совещание!"
 
 /datum/round_event/godwill
 	name = "God's Will"
 	id = "godwill"
 
-	event_message = "Today, an excommunication is the worst possible thing for you."
+	event_message = "Сегодня отлучение от церкви - это худшее, что может случиться с вами."
 
 /datum/round_event/bumdanger
 	name = "Dangerous Bums"
 	id = "bumdanger"
 
-	event_message = "Bums are extremely dangerous nowanights."
+	event_message = "Бродяги сейчас чрезвычайно опасны по ночам."
 
 /datum/round_event/dangerousday
 	name = "Horrible Night"
 	id = "dangerousday"
 
-	event_message = "Death has a horrible outcome."
+	event_message = "Смерть имеет ужасный исход."
 
 /datum/round_event/holiday
 	name = "Holiday"
 	id = "holiday"
 
-	event_message = "Today is St. Gunther's day. It would be a shame to not drink to it."
+	event_message = "Сегодня день святого Гюнтера. Было бы стыдно не выпить за это."
 
 /datum/round_event/deadlyforce
 	name = "Death Squad"
 	id = "deadlyforce"
 
-	event_message = "Only mass executions could save Firethorn."
+	event_message = "Только массовые казни могли спасти Фаэторна."
 
 /datum/round_event/freshmalemilk
 	name = "Nutritious Milk"
 	id = "freshmalemilk"
 
-	event_message = "That diet was a great choice. Fresh male milk is exremely nutritious in Firethorn."
+	event_message = "Эта диета была отличным выбором. Свежее мужское cемя в Фаэторне чрезвычайно питательно."
 
 /datum/round_event/blessedflesh
 	name = "Guardian"
 	id = "blessedflesh"
 
-	event_message = "By taking the Successor's freshness, a hero could obtain much power."
+	event_message = "Взяв вишню Наследницы, герой мог бы получить много власти."
 
 /datum/round_event/fangtasia
 	name = "Masquerade"
 	id = "fangtasia"
 	roundstartdisplay = 0
-	event_message = "Nobody respects the Masquerade nowanights. The Fortress is infested with bloodsuckers."
+	event_message = "Теперь никто не уважает Маскарад по ночам. Крепость кишит кровососами."
 
 /datum/round_event/buryyourdead
 	name = "Undead Fortress"
 	id = "buryyourdead"
 
-	event_message = "Fallen ones raise even in the fortress."
+	event_message = "Павшие поднимаются даже в крепости."
 
 /datum/round_event/intouch
 	name = "Intouch"
 	id = "intouch"
 
-	event_message = "Migrants have bracelets."
+	event_message = "У мигрантов есть браслеты."
 
 /datum/round_event/safecaves
 	name = "Safe Caves"
 	id = "safecaves"
 
-	event_message = "Thanks to our brave warriors, there will be no ambushes in the caves today."
+	event_message = "Благодаря нашим отважным воинам, сегодня в пещерах не будет засад."
 
 /datum/round_event/migrantess
 	name = "Migrantess"
 	id = "migrantess"
 
-	event_message = "All migrants are females."
+	event_message = "Все мигранты - женщины."
 
 /datum/round_event/deprived
 	name = "Deprived"
 	id = "deprived"
 
-	event_message = "Migrants are poor, naked, and humiliated."
+	event_message = "Мигранты бедны, раздеты и унижены."
 
 /datum/round_event/drunkjester
 	name = "Drunk Jester"
 	id = "drunkjester"
 
-	event_message = "All gates were stolen by a drunk jester!"
+	event_message = "Ворота были украдены пьяным шутом!"
 
 /datum/round_event/ihavenoson
 	name = "I Have No Son"
 	id = "ihavenoson"
 
-	event_message = "The Baron has two daughters."
+	event_message = "У барона две дочери."
 
 /datum/round_event/cheapmerchandise
 	name = "Cheap Merchandise"
 	id = "cheapmerchandise"
 
-	event_message = "The Bookkeeper has been trading with some weird ginks. All packs are cheaper this night."
+	event_message = "Торговец торговал с какими-то странными перегибами. Этой ночью все пакеты дешевле." // Bookkeeper?
 
 /datum/round_event/armedbums
 	name = "Armed Bums"
 	id = "armedbums"
 
-	event_message = "The orphans have given various weapons to the bums of Firethorn."
+	event_message = "Сироты подарили бомжам из Фаэторна различное оружие."
 
 /*
 /datum/round_event/bluepoison
@@ -290,7 +290,7 @@ var/list/allClothing = list()
 	name = "Wargirl"
 	id = "wargirl"
 
-	event_message = "Unlike other girls, Successor is a natural born warrior."
+	event_message = "В отличие от других девушек, Наследница - прирожденный воин."
 
 /*/datum/round_event/organs
 	name = "Good taste"
@@ -302,43 +302,43 @@ var/list/allClothing = list()
 	name = "Ghost Power"
 	id = "ghostpower"
 
-	event_message = "Ghosts obtain their power much faster."
+	event_message = "Призраки обретают свою силу гораздо быстрее."
 
 /datum/round_event/beekeeper
 	name = "The Bee's Knees"
 	id = "beekeeper"
 
-	event_message = "Bookkeeper was overthrown by the new merchant. Greetings, Beekeeper!"
+	event_message = "Торговец был свергнут новым коммерсантом. Приветствую тебя, пчеловод!" // Bookkeeper?
 
 /datum/round_event/childgarrison
 	name = "Youth Camp"
 	id = "childgarrison"
 
-	event_message = "The garrison have went missing in the caves. Their sons and daughters now take their place!"
+	event_message = "Гарнизон пропал без вести в пещерах. Их сыновья и дочери теперь занимают их место!"
 
 /datum/round_event/thunderstruck
 	name = "Thunderstruck"
 	id = "thunderstruck"
 
-	event_message = "The Baron accidently dropped his lawful scepter. It works differently now."
+	event_message = "Барон случайно уронил свой законный скипетр. Теперь это работает по-другому."
 
 /datum/round_event/losttribs
 	name = "Lost Squad"
 	id = "lostsquad"
 	roundstartdisplay = 1
-	event_message = "The first wave of migrants is replaced by a lost Tribunal squad."
+	event_message = "На смену первой волне мигрантов приходит потерянный отряд Трибунала."
 
 /datum/round_event/washingmachine
 	name = "Comically Large Washing Machine"
 	id = "washing"
 	roundstartdisplay = 1
-	event_message = "Oh no! The fortress washing machine broke down!"
+	event_message = "О, нет! Стиральная машина в крепости сломалась!"
 
 /datum/round_event/reallover
 	name = "Lover"
 	id = "lover"
 	roundstartdisplay = 0
-	event_message = "There is a great lover!"
+	event_message = "Есть отличный любовник!"
 
 /datum/round_event/goldenfortress/apply_event()
 	treasuryworth.add_money(50000)

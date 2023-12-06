@@ -133,7 +133,7 @@
 
 /mob/living/carbon/proc/handle_dreamer_mob_hallucination()
 	var/mob_msg = list()
-	mob_msg = pick("It's mom!", "I have to HURRY UP!", "They are close! Theyareclose!", "You're mine.", "Hide!")
+	mob_msg = pick("Это мама!", "Я должен ПОТОРОПИТЬСЯ!", "Они уже близко! Они уже близко!", "Пакет хорош.", "Прячься!")
 	var/turf/turfie
 	var/list/turf/turfies = list()
 	for(var/turf/torf in view(src))
@@ -143,7 +143,7 @@
 	if(!turfie)
 		return
 	var/hall_type = pick("mom", "M3", "deepone")
-	if(mob_msg == "É A MÃE!" || mob_msg == "It's mom!")
+	if(mob_msg == "É A MÃE!" || mob_msg == "Это мама!")
 		hall_type = "mom"
 	var/image/I = image('icons/life/dreamer_mobs.dmi', turfie, hall_type, FLOAT_LAYER, get_dir(turfie, src))
 
@@ -372,7 +372,7 @@
 	var/datum/antagonist/dreamer/M = new()
 	src.mind.antag_datums = M
 
-	to_chat(src,"<span class='dreamershitfuckcomicao1'>I remember now!</span>")
-	to_chat(src,"<span class='dreamershitfuckcomicao1'>They're all from another WORLD, ANOTHER life!</span>")
-	to_chat(src,"<span class='dreamershitfuckcomicao1'>I MUST CUT MY BONDS, ONLY BENEATH THE SKIN DOES THE TRUTH LAY!</span>")
-	to_chat(src,"<span class='dreamershitfuckcomicao1'>Dream #1: FOLLOWING my HEART shall be the WHOLE of the law.</span>")
+	to_chat(src,"<span class='dreamershitfuckcomicao1'>Теперь я вспомнил!</span>")
+	to_chat(src,"<span class='dreamershitfuckcomicao1'>Они все из другого МИРА, из другой жизни!</span>")
+	to_chat(src,"<span class='dreamershitfuckcomicao1'>Я ДОЛЖЕН РАЗОРВАТЬ СВОИ ПУТЫ, ТОЛЬКО ПОД КОЖЕЙ СКРЫВАЕТСЯ ИСТИНА!</span>")
+	to_chat(src,"<span class='dreamershitfuckcomicao1'>Мечта №1: СЛЕДОВАТЬ ЗОВУ своего СЕРДЦА - вот и весь закон.</span>")

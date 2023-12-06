@@ -17,7 +17,7 @@ var/global/Inquisitor_Type = "Null"
 	access = list(church, access_morgue, access_chapel_office, access_maint_tunnels)
 	minimal_access = list(church, access_morgue, access_chapel_office)
 	sex_lock = MALE
-	jobdesc = "Head of the local church in Firethorn. He blesses those who give their tithes and strive to seperate themselves from Him. The Shepard of the sheep, he guides people who have lost their way back to the right path, either through confession or epitemia. Excommunication from the Church is nothing to be taken lightly and is reserved only for acts of serious, unrepentant heresy."
+	jobdesc = "Глава местной церкви в Фаэторне. Он благословляет тех, кто отдает свою десятину и стремится отделиться от Него. Пастырь овец, он направляет людей, сбившихся с пути, обратно на правильный путь либо через исповедь, либо через эпитемию. К отлучению от Церкви нельзя относиться легкомысленно, и оно применяется только за совершение серьезной, нераскаянной ереси."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
 			return 0
@@ -50,8 +50,8 @@ var/global/Inquisitor_Type = "Null"
 /mob/living/carbon/human/proc/excommunicate()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "Excommunicate"
-	set desc="Excommunicates someone, Anathema!"
+	set name = "Отлучить от церкви"
+	set desc="Отлучает кого-либо от церкви, предает анафеме!"
 	var/input = sanitize_uni(input(usr, "Enter the name of the excommunicated member.", "What?", "") as text|null)
 	if(!input)
 		return
@@ -60,11 +60,11 @@ var/global/Inquisitor_Type = "Null"
 	H.qualarea()
 	if(H.lastarea && istype(lastarea, /area/dunwell/station/church))
 		world << sound('sound/AI/bell_toll_02_lp.ogg')
-		to_chat(world, "<span class='ravenheartfortress'>Firethorn Fortress</span>")
-		to_chat(world, "<span class='excomm'>Bishop [src.real_name] excommunicates [input]!</span>")
+		to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
+		to_chat(world, "<span class='excomm'>Епископ [src.real_name] отлучает от церкви [input]!</span>")
 		world << sound('sound/AI/bell_toll.ogg')
 		to_chat(world, "<br>")
-		to_chat(world, "<span class='decree'>Anathema!</span>")
+		to_chat(world, "<span class='decree'>Анафема!</span>")
 		to_chat(world, "<br>")
 		for(var/mob/living/carbon/human/HH in mob_list)
 			if(ticker.eof.id == "godwill" && (HH.real_name == input || HH.name == input))
@@ -83,32 +83,32 @@ var/global/Inquisitor_Type = "Null"
 				isValidPerson = 1
 			if(HH.name != input && HH.religion == "Gray Church" && isValidPerson)
 				var/datum/happiness_event/excomothers/E = new()
-				E.description = "<span class='badmood'>• I MUST KILL [uppertext(input)]!</span>\n"
+				E.description = "<span class='badmood'>• Я ДОЛЖЕН УБИТЬ [uppertext(input)]!</span>\n"
 				HH.add_precreated_event("[uppertext(input)]excom", E)
 
 		log_admin("[key_name(src)] has excommunicated someone: [input]")
 		message_admins("[key_name_admin(src)] has created a excomm report", 1)
 
 	else
-		to_chat(H, "<span class='excomm'>[pick(nao_consigoen)] I can't. I must go to the church.</span>")
+		to_chat(H, "<span class='excomm'>[pick(nao_consigoen)] Я не могу. Я должен пойти в церковь.</span>")
 
 /mob/living/carbon/human/proc/epitemia()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "Epitemia"
-	set desc="Epitemia, Anathema!"
-	var/input = sanitize_uni(input(usr, "Enter the name of the sinful member.", "What?", "") as text|null)
+	set name = "Эпитемия"
+	set desc="Эпитемия, Анафема!"
+	var/input = sanitize_uni(input(usr, "Введите имя грешника.", "Кто?", "") as text|null)
 	if(!input)
 		return
 	var/list/epitemia_list = EPITEMIA_LIST
-	var/epitemia_c = sanitize_uni(input(usr, "Which epitemia i should choose?", "Which?", "") in epitemia_list)
+	var/epitemia_c = sanitize_uni(input(usr, "Какую эпитемию мне следует выбрать?", "Какую?", "") in epitemia_list)
 	if(stat || !epitemia_c) return
 	var/mob/living/carbon/human/H = usr
 	H.qualarea()
 	if(H.lastarea && istype(lastarea, /area/dunwell/station/church))
 		world << sound('sound/AI/bell_toll_02_lp.ogg')
-		to_chat(world, "<span class='ravenheartfortress'>Firethorn Fortress</span>")
-		to_chat(world, "<span class='excomm'>For the commited sins, [src.real_name] imposes an epitemia on [input]: /'[epitemia_c]/'!</span>")
+		to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
+		to_chat(world, "<span class='excomm'>За совершенные грехи, [src.real_name] накладывает эпитемию на [input]: /'[epitemia_c]/'!</span>")
 		world << sound('sound/AI/bell_toll.ogg')
 		to_chat(world, "<br>")
 		to_chat(world, "<span class='decree'>Anathema!</span>")
@@ -119,15 +119,15 @@ var/global/Inquisitor_Type = "Null"
 
 /mob/living/carbon/human/proc/free_sins()
 	clear_event("epitemia")
-	to_chat(src, "<span class='passive'>Finaly, i free from my sins!</span>")
+	to_chat(src, "<span class='passive'>Наконец-то я освободился от своих грехов!</span>")
 	gainWP(TRUE, 3)
 	return
 
 /mob/living/carbon/human/proc/banish()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "BannishtheUndead"
-	set desc="Bannishes the undead beings!"
+	set name = "Изгнать нежить"
+	set desc="Изгоняет немертвых существ!"
 
 	if(stamina_loss >= 100)
 		return
@@ -153,8 +153,8 @@ var/global/Inquisitor_Type = "Null"
 /mob/living/carbon/human/proc/sins()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "RobofSins"
-	set desc="Rob of Sins"
+	set name = "Очисти от грехов"
+	set desc="Избавься от грехов"
 
 	if(stat) return
 
@@ -162,15 +162,15 @@ var/global/Inquisitor_Type = "Null"
 		var/obj/item/weapon/grab/wrench/W = get_active_hand()
 		var/mob/living/carbon/human/H = W.affecting
 		H.clear_event("sin")
-		to_chat(H, "You have been delivered from your sins.")
+		to_chat(H, "Вы были избавлены от своих грехов.")
 
 var/rewarded = 0
 
 /mob/living/carbon/human/proc/reward()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "RewardtheInquisitor"
-	set desc="Reward the Inquisitor"
+	set name = "Наградить инквизитора"
+	set desc="Наградить инквизитора"
 
 	if(stat) return
 	if(rewarded) return
@@ -181,9 +181,9 @@ var/rewarded = 0
 
 	to_chat(world, "<span class='ravenheartfortress'>Firethorn Fortress</span>")
 	if(src.job == "Bishop")
-		to_chat(world, "<span class='excomm'>By the Bishop's will, the Inquisitor was rewarded! His heroic conquests: [input]</span>")
+		to_chat(world, "<span class='excomm'>По воле епископа Инквизитор был вознагражден! Его героические заслуги: [input]</span>")
 	else
-		to_chat(world, "<span class='excomm'>By the Priest's will, the Inquisitor was rewarded! His heroic conquests: [input]</span>")
+		to_chat(world, "<span class='excomm'>По воле священника Инквизитор был вознагражден! Его героические заслуги: [input]</span>")
 	world << sound('sound/AI/bell_toll.ogg')
 	to_chat(world, "<span class='decree'>Santa Felicidade!</span>")
 	to_chat(world, "<br>")
@@ -197,8 +197,8 @@ var/rewarded = 0
 /mob/living/carbon/human/proc/coronation()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "Coronation"
-	set desc="Coronation"
+	set name = "Коронация"
+	set desc="Коронация"
 
 	if(stat) return
 	src.qualarea()
@@ -206,15 +206,15 @@ var/rewarded = 0
 		if(H.head && istype(H.head, /obj/item/clothing/head/caphat) && src.bloody_hands)
 			if(H.lastarea && istype(lastarea, /area/dunwell/station/church) || H.lastarea && istype(lastarea, /area/dunwell/station/bridge))
 				if(src.lastarea && istype(lastarea, /area/dunwell/station/church) || src.lastarea && istype(lastarea, /area/dunwell/station/bridge))
-					src.visible_message("<font color ='#649568'><b>[src]</b> draws a bloody cross in [H.real_name]'s forehead")
+					src.visible_message("<font color ='#649568'><b>[src]</b> рисует кровавый крест на [H.real_name]'s лбу")
 					if(do_after(src, 15))
 						H?.client?.ChromieWinorLoose(src.client, 1)
 						world << sound('sound/AI/bell_toll_02_lp.ogg')
-						to_chat(world, "<h1 class='ravenheartfortress'>Fortaleza de Firethorn</span>")
-						to_chat(world, "<span class='excomm'>By the will of the blood and cross [H.real_name] is coronated the new Baron!</span>")
+						to_chat(world, "<h1 class='ravenheartfortress'>Крепость Фаэторн</span>")
+						to_chat(world, "<span class='excomm'>По воле крови и креста [H.real_name] коронован новый барон!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<br>")
-						to_chat(world, "<span class='decree'>God be Saved!</span>")
+						to_chat(world, "<span class='decree'>Да будет спасен Бог!</span>")
 						to_chat(world, "<br>")
 						H.job = "Baron"
 						H.add_event("coronation", /datum/happiness_event/misc/coronated)
@@ -224,19 +224,19 @@ var/rewarded = 0
 	set hidden = 0
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "Eucharisty"
-	set desc="Make your flesh a weapon."
+	set name = "Евхаристия"
+	set desc="Преврати свою плоть в оружие."
 
 	if(src.get_active_hand() == /obj/item/weapon/organ)
 		var/obj/item/weapon/organ/O = src.get_active_hand()
 		if(O.blood_DNA == src.dna.unique_enzymes)
-			var/list/frasestosay = list("Finalmente, fortaleçam-se no Senhor e no seu forte poder. Vistam toda a armadura de Deus, para poderem ficar firmes contra as ciladas do Diabo, pois a nossa luta não é contra seres humanos, mas contra os poderes e autoridades, contra os dominadores deste mundo de trevas, contra as forças espirituais do mal nas regiões celestiais. Por isso, vistam toda a armadura de Deus, para que possam resistir no dia mau e permanecer inabaláveis, depois de terem feito tudo.",\
-			"Bendito seja o Senhor, a minha Rocha, que treina as minhas mãos para a guerra e os meus dedos para a batalha. Ele é o meu aliado fiel, a minha fortaleza, a minha torre de proteção e o meu libertador; é o meu escudo, aquele em quem me refugio. Ele subjuga a mim os povos.",
-			"Pois, embora vivamos como homens, não lutamos segundo os padrões humanos. As armas com as quais lutamos não são humanas; ao contrário, são poderosas em Deus para destruir fortalezas. Destruímos argumentos e toda pretensão que se levanta contra o conhecimento de Deus e levamos cativo todo pensamento, para torná-lo obediente a Cristo.",
-			"Combata o bom combate da fé. Tome posse da vida eterna, para a qual você foi chamado e fez a boa confissão na presença de muitas testemunhas.",
-			"Suporte comigo os meus sofrimentos, como bom soldado de Cristo Jesus. Nenhum soldado se deixa envolver pelos negócios da vida civil, já que deseja agradar àquele que o alistou.",
-			"Lutei o bom combate, terminei a corrida, guardei a fé. Agora me está reservada a coroa da justiça, que o Senhor, justo Juiz, me dará naquele dia; e não somente a mim, mas também a todos os que amam a sua vinda.",
-			"O Senhor é a minha força e a minha canção; ele é a minha salvação! Ele é o meu Deus, e eu o louvarei; é o Deus de meu pai, e eu o exaltarei! O Senhor é guerreiro, o seu nome é Senhor."
+			var/list/frasestosay = list("Наконец, укрепитесь в Господе и его сильной силе. Носите все Доспехи Бога, чтобы вы могли стоять против ловушек Дьявола, потому что наша борьба идет не против людей, а против сил и властей, против властителей этого мира тьмы, против духовных сил зла в небесных областях. Поэтому надевайте все Доспехи Бога, чтобы вы могли сопротивляться в плохой день и оставаться непоколебимыми после того, как все сделали.",\
+			"Благословен Господь, скала моя, которая тренирует руки мои к войне и пальцы мои к битве. Он мой верный союзник, моя крепость, моя башня защиты и мой освободитель; это мой щит, тот, в котором я укрываюсь. Он подчиняет мне народы.",
+			"Ибо, хотя мы живем как люди, мы не боремся по человеческим стандартам. Оружие, с которым мы сражаемся, не является человеческим; скорее, они сильны в Боге, чтобы разрушать крепости. Мы уничтожаем Аргументы и все притязания, которые восстают против Знания Бога, и берем в плен каждую мысль, чтобы сделать ее послушной Христу.",
+			"Сражайтесь с доброй борьбой веры. Овладейте вечной жизнью, к которой Вы были призваны и сделали доброе признание в присутствии многих свидетелей.",
+			"Неси со мной мои страдания, как добрый воин Христа Иисуса. Ни один солдат не увлекается делами гражданской жизни, так как он хочет угодить тому, кто его завербовал.",
+			"Я боролся в хорошем бою, я закончил гонку, я сохранил веру. Теперь мне зарезервирован венец праведности, который Господь, праведный судья, даст мне в тот день; и не только мне, но и всем любящим пришествие Его.",
+			"Господь-сила моя и песня Моя; он-спасение мое! Он мой Бог, и я буду восхвалять Его; Он Бог Отца Моего, и я возвеличу его! Господь-воин, его имя-Господь."
 			)
 			src.say(pick(frasestosay))
 			if(do_after(src, 30))
@@ -247,8 +247,8 @@ var/rewarded = 0
 /mob/living/carbon/human/proc/undeadead()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "BannishSpirits"
-	set desc="Bannishes the wraith beings!"
+	set name = "Изгнать духов"
+	set desc="Изгоняет призрачных существ!"
 
 	if(stamina_loss >= 100)
 		return
@@ -273,8 +273,8 @@ var/rewarded = 0
 /mob/living/carbon/human/proc/callmeeting()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "CallforChurchMeeting"
-	set desc="Invites the station for a meeting!"
+	set name = "Призыв к церковному собранию"
+	set desc="Приглашает крепость на встречу!"
 	var/mob/living/carbon/human/H = usr
 
 	if(stat) return
@@ -282,19 +282,19 @@ var/rewarded = 0
 	H.qualarea()
 	if(H.lastarea && istype(lastarea, /area/dunwell/station/church))
 		if(src.ischurchmeeting == 1)
-			to_chat(world, "<span class='ravenheartfortress'>Firethorn Fortress</span>")
-			to_chat(world, "<span class='excomm'>[src] finishes the meeting!</span>")
+			to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
+			to_chat(world, "<span class='excomm'>[src] завершает встречу!</span>")
 			world << sound('sound/AI/bell_toll.ogg')
 			to_chat(world, "<br>")
-			to_chat(world, "<span class='decree'>Santa reunião!</span>")
+			to_chat(world, "<span class='decree'>Святой Реюньон!</span>")
 			to_chat(world, "<br>")
 			src.ischurchmeeting = 0
 		else
-			to_chat(world, "<span class='ravenheartfortress'>Firethorn Fortress</span>")
-			to_chat(world, "<span class='excomm'>Bishop [src] calls for a church meeting!</span>")
+			to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
+			to_chat(world, "<span class='excomm'>Bishop [src] призывает к церковному собранию!</span>")
 			world << sound('sound/AI/bell_toll.ogg')
 			to_chat(world, "<br>")
-			to_chat(world, "<span class='decree'>Santa reunião!</span>")
+			to_chat(world, "<span class='decree'>Святой Реюньон!</span>")
 			to_chat(world, "<br>")
 			src.ischurchmeeting = 1
 
@@ -306,19 +306,19 @@ var/rewarded = 0
 					HH.emote("scream")
 					for(var/x = 0, x<=3, x++)
 						sleep(7)
-						to_chat(HH, "I MUST GO TO THE CHURCH!!")
+						to_chat(HH, "Я ДОЛЖЕН ПОЙТИ В ЦЕРКОВЬ!!")
 
 		world << sound('sound/AI/bell_toll_02_lp.ogg')
 		log_admin("[key_name(src)] has called for a meeting at the church")
 		message_admins("[key_name_admin(src)] has called for a meeting at the church", 1)
 	else
-		to_chat(H, "<span class='excomm'>[pick(nao_consigoen)] I can't. I must go to the church.</span>")
+		to_chat(H, "<span class='excomm'>[pick(nao_consigoen)] Я не могу. Я должен пойти в церковь.</span>")
 
 /mob/living/carbon/human/proc/marriage()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "Marriage"
-	set desc="Gather everyone for a Marriage!"
+	set name = "Брак"
+	set desc="Соберите всех на свадьбу!"
 	var/list/keys = list()
 	var/mob/living/carbon/human/MM = usr
 
@@ -363,16 +363,16 @@ var/rewarded = 0
 				if(ticker.mode.config_tag == "siege")
 					M2 = H
 
-		to_chat(world, "<span class='ravenheartfortress'>Fortaleza de Firethorn</span>")
-		to_chat(world, "<span class='excomm'>By the bonds of the Cross, [married1] and [married2] are united unto Death! Rejoice!</span>")
+		to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
+		to_chat(world, "<span class='excomm'>Клянусь узами Креста, [married1] и [married2] соединены до своей смерти! Поздравляем!</span>")
 		world << sound('sound/AI/bell_toll.ogg')
 		to_chat(world, "<br>")
-		to_chat(world, "<span class='decree'>Holy Wedding!</span>")
+		to_chat(world, "<span class='decree'>Священное венчание!</span>")
 		to_chat(world, "<br>")
 
 		world << sound('sound/AI/bell_toll_02_lp.ogg')
-		log_admin("[key_name(src)] has declared a marriage between [married1] and [married2]")
-		message_admins("[key_name_admin(src)] has declared a marriage between [married1] and [married2]", 1)
+		log_admin("[key_name(src)] объявил о заключении брака между [married1] и [married2]")
+		message_admins("[key_name_admin(src)] объявил о заключении брака между [married1] и [married2]", 1)
 		if(M1 && M2)
 			var/datum/game_mode/siege/S = ticker.mode
 			var/list/marrige_M = list(M1, M2)
@@ -384,13 +384,13 @@ var/rewarded = 0
 						S.result = SIEGE_DRAW_MARRIAGE
 						roundendready = TRUE
 	else
-		to_chat(MM, "<span class='excomm'>[pick(nao_consigoen)] I can't. I must go to the church.</span>")
+		to_chat(MM, "<span class='excomm'>[pick(nao_consigoen)] Я не могу. Я должен пойти в церковь.</span>")
 
 /mob/living/carbon/human/proc/ClearName()
 	set hidden = 0
 	set category = "Power of Faith"
-	set name = "ClearName"
-	set desc="Clear Name"
+	set name = "Очистить имя"
+	set desc="Очистить имя"
 
 	if(stat) return
 	var/list/list_M = list()
@@ -404,11 +404,11 @@ var/rewarded = 0
 	if(istype(who_name, /mob))
 		var/mob/M = who_name
 		if(M.nickname)
-			visible_message("[src.name] cleared [M.real_name]'s name!")
+			visible_message("[src.name] очищает [M.real_name]'s имя!")
 			M.nickname = FALSE
 			return
 		else
-			to_chat(src, "<span class='combat'>They name is clear!</span>")
+			to_chat(src, "<span class='combat'>Его имя очищено</span>")
 			return
 
 /datum/job/inquisitor
@@ -426,10 +426,10 @@ var/rewarded = 0
 	access = list(church, access_morgue, access_chapel_office, access_maint_tunnels)
 	minimal_access = list(church, access_morgue, access_chapel_office)
 	sex_lock = MALE
-	latejoin_locked = TRUE
-	no_trapoc = TRUE
+	latejoin_locked = FALSE
+	no_trapoc = FALSE
 
-	jobdesc = "Whispers among INKVD intelligence led to a full blown investigation deep into the province of Salar - most people in this region have never seen a real INKVD presence, let alone an Inquisitor. The allegations of a powerful Thanati terror cell brewing in the south was yet to be confirmed, but they say a splinter group of the central cell is located in Firethorn. You were picked to lead its investigation, and the pressure is mounting. Your superiors demand the quota be filled, and you&#8217;re going to give it to them. Interestingly enough, everyone you detest somehow turns out to be a heretic."
+	jobdesc = "Слухи среди разведчиков НКВД привели к полномасштабному расследованию глубоко в Саларской провинции - большинство людей в этом регионе никогда не видели настоящего присутствия НКВД, не говоря уже об инквизиторе. Утверждения о том, что на юге зреет более мощная, чем антитеррористическая ячейка, еще не подтвердились, но говорят, что отколовшаяся от центральной ячейки группа находится в Фаэторне. Вы были выбраны для руководства расследованием, и давление растет. Ваше начальство требует, чтобы квота была заполнена, и вы собираетесь предоставить ее им. Интересно, что каждый, кого вы ненавидите, каким-то образом оказывается еретиком."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
 			return 0
@@ -570,11 +570,11 @@ var/rewarded = 0
 
 /mob/living/carbon/human/proc/interrogate()
 	set category = "Inquisition"
-	set name = "Interrogate"
+	set name = "Допрос"
 	if(stat) return
 	var/turf/T = get_step(src, dir)
 	if(src?.mind?.cooldown_interrogate > world.time)
-		to_chat(src, "<span class='jogtowalk'>Let's give them some time to think...</span>")
+		to_chat(src, "<span class='jogtowalk'>Давайте дадим им немного времени на размышление...</span>")
 		return
 	src?.mind?.cooldown_interrogate = world.time + 100
 	for(var/mob/living/carbon/human/H in T.contents)
@@ -607,7 +607,7 @@ var/rewarded = 0
 			H.emote("torturescream",1, null, 0)
 			H.reveal_lie()
 		else
-			to_chat(src, "<span class='jogtowalk'>[pick("They're still resistant","They're ignoring my questions")]...</span>")
+			to_chat(src, "<span class='jogtowalk'>[pick("Они все еще сопротивляются","Они игнорируют мои вопросы")]...</span>")
 			return
 		return
 
@@ -622,7 +622,7 @@ var/rewarded = 0
 	sleep(20)
 	if (religion_is_legal())  //Non-heretics will still deny
 		var/list/msg
-		msg = list("I WANT MY MOTHER!", "I DON'T KNOW ANYTHING!!", "LET ME OUT!", "PLEASE LET ME GO!", "I SWEAR I DON'T KNOW!", "I'VE DONE NOTHING WRONG!")
+		msg = list("Я ХОЧУ К СВОЕЙ МАМЕ!", "Я НИЧЕГО НЕ ЗНАЮ!!", "ВЫПУСТИТЕ МЕНЯ!", "ПОЖАЛУЙСТА, ОТПУСТИ МЕНЯ!", "КЛЯНУСЬ, Я НЕ ЗНАЮ!", "Я НЕ СДЕЛАЛ НИЧЕГО ПЛОХОГО!")
 
 		say(pick(msg))
 		emote("cry",1, null, 0)
@@ -638,7 +638,7 @@ var/rewarded = 0
 	sleep(20)
 	if(prob(50))
 		var/list/msg
-		msg = list("I WANT MY MOTHER!", "I DON'T KNOW ANYTHING!!", "LET ME OUT!", "PLEASE LET ME GO!", "I SWEAR I DON'T KNOW!", "I'VE DONE NOTHING WRONG!")
+		msg = list("Я ХОЧУ К СВОЕЙ МАМЕ!", "Я НИЧЕГО НЕ ЗНАЮ!!", "ВЫПУСТИТЕ МЕНЯ!", "ПОЖАЛУЙСТА, ОТПУСТИ МЕНЯ!", "КЛЯНУСЬ, Я НЕ ЗНАЮ!", "Я НЕ СДЕЛАЛ НИЧЕГО ПЛОХОГО!")
 
 		say(pick(msg))
 		emote("cry",1, null, 0)
@@ -648,9 +648,9 @@ var/rewarded = 0
 			if(H.religion_is_legal())
 				whom.Add(H.real_name)
 		if(whom.len)
-			say("[pick("I THINK IT'S", "IT'S", "I PROMISE IT'S")] [uppertext(pick(whom))]!")
+			say("[pick("Я ДУМАЮ, ЧТО ЭТО", "ЭТО", "Я КЛЯНУСЬ, ЧТО ЭТО")] [uppertext(pick(whom))]!")
 		else
-			say("I DON'T KNOW WHO IT IS!")
+			say("Я НЕ ЗНАЮ, КТО ЭТО!")
 		emote("cry",1, null, 0)
 
 
@@ -663,9 +663,9 @@ var/rewarded = 0
 			if(H.religion_is_legal())
 				whom.Add(H.real_name)
 		if(whom.len)
-			say("[pick("I THINK IT'S", "IT'S", "I PROMISE IT'S")] [uppertext(pick(whom))]!")
+			say("[pick("Я ДУМАЮ, ЧТО ЭТО", "ЭТО", "Я КЛЯНУСЬ, ЧТО ЭТО")] [uppertext(pick(whom))]!")
 		else
-			say("I DON'T KNOW WHO IT IS!")
+			say("Я НЕ ЗНАЮ, КТО ЭТО!")
 	else
 		var/list/whom
 		for(var/mob/living/carbon/human/H in mob_list)
@@ -676,9 +676,9 @@ var/rewarded = 0
 				if(prob(50))
 					whom.Add(H.real_name)
 		if(whom.len)
-			say("[pick("I THINK IT'S", "IT'S", "I PROMISE IT'S")] [uppertext(pick(whom))]!")
+			say("[pick("Я ДУМАЮ, ЧТО ЭТО", "ЭТО", "Я КЛЯНУСЬ, ЧТО ЭТО")] [uppertext(pick(whom))]!")
 		else
-			say("I DON'T KNOW WHO IT IS!")
+			say("Я НЕ ЗНАЮ, КТО ЭТО!")
 		emote("cry",1, null, 0)
 
 /datum/job/practicus
@@ -690,7 +690,7 @@ var/rewarded = 0
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	jobdesc = "Hardly as charming and well spoken as your mentor, you&#8217;re a powerful tool in his arsenal. The entire details of your purpose in Firethorn is still unclear. Your superiors told you it was a simple investigation into uncertain claims, but you can&#8217;t help but feel they&#8217;re holding something back from you. You may not yet understand how to talk past the forked tongue of the snake, but you certainly know how to cut it off. And that&#8217;s exactly what you&#8217;re here to do."
+	jobdesc = "Вряд ли вы столь же обаятельны и хорошо владеете речью, как ваш наставник, но вы - мощный инструмент в его арсенале. Все детали вашей цели в Фаэторне до сих пор неясны. Ваше начальство сказало вам, что это было простое расследование неопределенных заявлений, но вы не можете не чувствовать, что они что-то от вас скрывают. Возможно, вы еще не понимаете, как разговаривать через раздвоенный язык змеи, но вы определенно знаете, как его отрезать. И это именно то, для чего вы здесь находитесь."
 	jobdescbr = "Hardly as charming and well spoken as your mentor, you&#8217;re a powerful tool in his arsenal. The entire details of your purpose in Firethorn is still unclear. Your superiors told you it was a simple investigation into uncertain claims, but you can&#8217;t help but feel they&#8217;re holding something back from you. You may not yet understand how to talk past the forked tongue of the snake, but you certainly know how to cut it off. And that&#8217;s exactly what you&#8217;re here to do."
 	supervisors = "the bishop and the inquisitor"
 	selection_color = "#dddddd"
@@ -760,7 +760,7 @@ var/rewarded = 0
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	jobdesc = "As a sister of the church, you are a symbol of purity. You help the sick and downtrodden, and are trusted by all residents within the fortress. You use this trust to extract information from those you care for, and report sinners and evildoers to the Holy Father. Trust and care are your information."
+	jobdesc = "Как сестра церкви, вы являетесь символом чистоты. Вы помогаете больным и обездоленным, и вам доверяют все жители крепости. Вы используете это доверие, чтобы получать информацию от тех, о ком вы заботитесь, и сообщать Святому Отцу о грешниках и злодеях. Доверие и забота - это ваша информация."
 	jobdescbr = "Cuide dos feridos, alimente os famintos e não se esqueça de punir os maus costumes."
 	supervisors = "the bishop and the inquisitor"
 	selection_color = "#dddddd"

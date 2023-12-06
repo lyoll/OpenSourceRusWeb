@@ -51,43 +51,43 @@
 	switch(act)
 
 		if ("blink")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>blinks.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>моргает.</span>"
 			m_type = 1
 
 		if ("praise")
 			if(religion == "Heresy")
 				return //didnt load yet
 			if(religion == "Thanati")
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>calls for Tzchernobog!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>взывает к Чернобогу!</span>"
 				call_sound_emote("praise")
 				for(var/mob/living/carbon/human/H in view(7, src))
 					if(H.religion == "Gray Church")
 						src.seen_me_doing_heresy.Add(H)
 				m_type = 2
 			else if(religion == "Allah")
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>calls for Allah!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>взывает к Аллаху!</span>"
 				call_sound_emote("praise")
 				m_type = 2
 			else if(religion == "ConsCult")
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>nods sagely.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>глубокомысленно кивает</span>"
 				m_type = 1
 			else if(religion == "Old Ways")
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>throw \his hands up in a sacred salute!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кидает \his руки в священном приветствии!</span>"
 				m_type = 1
 			else
 				if(src.religion_is_legal())
 					for(var/mob/living/carbon/human/H in view(1,src.loc))
 						if(!H.religion_is_legal() || H.stat != DEAD)
 							continue
-						src.visible_message("<span class='examinebold'>[src]</span> <span class='examine'>crosses [H]!</span>")
+						src.visible_message("<span class='examinebold'>[src]</span> <span class='examine'>крестится [H]!</span>")
 						m_type = 1
 						H.time_since_death = 0
 						break
 				if(gender == MALE)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>crosses himself!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>крестится!</span>"
 					m_type = 1
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>crosses herself!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>крестится!</span>"
 					m_type = 1
 
 
@@ -103,9 +103,9 @@
 					param = null
 
 				if (param)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>bows to</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кланяется</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>bows.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кланяется.</span>"
 			m_type = 1
 
 		if ("custom")
@@ -151,14 +151,14 @@
 					param = null
 
 				if (param)
-					message = "<span class='examinebold>[src]</span> <span class='examine'>salutes to</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
+					message = "<span class='examinebold>[src]</span> <span class='examine'>отдаёт честь</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>salutes.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>отдаёт честь.</span>"
 			m_type = 1
 
 		if ("clap")
 			if (!src.restrained())
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>claps.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>хлопает.</span>"
 				m_type = 2
 				call_sound_emote("clap")
 				if(miming)
@@ -166,44 +166,44 @@
 
 
 		if ("drool")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>drools.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>пускает слюни.</span>"
 			m_type = 1
 
 		if ("eyebrow")
-			message = "<span class='examinebold'>[src]</span> <span class='examne'>raises an eyebrow.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examne'>приподнимает бровь.</span>"
 			m_type = 1
 
 		if ("chuckle")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to chuckle.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, хихикает.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>chuckles.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>хихикает.</span>"
 					m_type = 2
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает какой-то шум.</span>"
 					m_type = 2
 
 		if ("cough")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to cough!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, кашляет!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>coughs!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кашляет!</span>"
 					m_type = 2
 					call_sound_emote("cough")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a strong noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает сильный шум.</span>"
 					m_type = 2
 
 		if ("frown")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>frowns.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>хмурится.</span>"
 			m_type = 1
 
 		if ("nod")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>nods.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>кивает.</span>"
 			m_type = 1
 			if(length(my_skills.prepare_learn))
 				for(var/t in my_skills.prepare_learn)
@@ -212,63 +212,63 @@
 					my_skills.prepare_learn.Remove(t)
 
 		if ("blush")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>blushes.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>краснеет.</span>"
 			m_type = 1
 
 		if ("wave")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>waves.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>изображает волны.</span>"
 			m_type = 1
 
 		if ("gasp")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to be gasping!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, он задыхается!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>gasps!</small></span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>ахает!</small></span>"
 					m_type = 2
 					call_sound_emote("gasp")
 				else
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>makes a weak noise.</small></span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>издает слабый шум.</small></span>"
 					m_type = 2
 
 		if ("1shotbreath")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to be gasping!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, он задыхается!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>makes a weak noise.</small></span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>издает слабый шум.</small></span>"
 					m_type = 2
 					call_sound_emote("1shotbreath")
 				else
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>makes a weak noise.</small></span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>издает слабый шум.</small></span>"
 					m_type = 2
 
 		if ("coughwounded")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to cough!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, кашляет!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>coughs blood!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кашляет кровью!</span>"
 					m_type = 2
 					call_sound_emote("coughwounded")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a strong noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает сильный шум.</span>"
 					m_type = 2
 
 		if ("giggle")
 			if(miming)
-				message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>giggles silently!</small></span>"
+				message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>беззвучно хихикает!</small></span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'>giggles.</span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'>хихикает.</span>"
 					m_type = 2
 					call_sound_emote("giggle")
 				else
-					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>makes a noise.</small></span>"
+					message = "<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>издает какой-то шум.</small></span>"
 					m_type = 2
 
 		if ("glare")
@@ -282,9 +282,9 @@
 				param = null
 
 			if (param)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>glares at</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>пристально смотрит на</span> <span class='examinebold'>[param]</span><span class='examine'>.</span>"
 			else
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>glares.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>сверлит взглядом.</span>"
 
 		if ("stare")
 			var/M = null
@@ -297,9 +297,9 @@
 				param = null
 
 			if (param)
-				message = "<span class='examinebold'><smaller>[src]</smaller></span> <span class='examine'><smaller>stares at</smaller></span> <span class='examinebold'><smaller>[param]</smaller></span><span class='examine'><smaller>.</smaller></span>"
+				message = "<span class='examinebold'><smaller>[src]</smaller></span> <span class='examine'><smaller>пристально смотрит на</smaller></span> <span class='examinebold'><smaller>[param]</smaller></span><span class='examine'><smaller>.</smaller></span>"
 			else
-				message = "<span class='examinebold'><smaller>[src]</smaller></span> <span class='examine'><smaller>stares.</smaller></span>"
+				message = "<span class='examinebold'><smaller>[src]</smaller></span> <span class='examine'><smaller>пристально смотрит.</smaller></span>"
 
 		if ("look")
 			var/M = null
@@ -313,117 +313,117 @@
 				param = null
 
 			if (param)
-				message = "<span class='looksatbold'>[src]</span> <span class='looksat'>looks at</span> <span class='looksatbold'>[param]</span><span class='looksat'>.</span>"
+				message = "<span class='looksatbold'>[src]</span> <span class='looksat'>смотрит на</span> <span class='looksatbold'>[param]</span><span class='looksat'>.</span>"
 			else
-				message = "<span class='looksatbold'>[src]</span> <span class='looksat'>looks.</span>"
+				message = "<span class='looksatbold'>[src]</span> <span class='looksat'>смотрит.</span>"
 			m_type = 1
 
 		if ("grin")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>grins.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>ухмыляется.</span>"
 			m_type = 1
 
 		if ("krak")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>cracks knuckles.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>хрустит костяшками пальцев.</span>"
 			call_sound_emote("krak")
 			m_type = 2
 
 		if ("whistle")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>whistles.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>свистит.</span>"
 			call_sound_emote("whistle")
 			m_type = 2
 
 		if ("finger")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>snaps.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>щелкает.</span>"
 			call_sound_emote("finger")
 			m_type = 2
 
 		if ("cry")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>cries.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>cries.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит.</span>"
 					call_sound_emote("cry")
 					m_type = 2
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a weak noise. \He frowns.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает слабый шум. \He хмурится.</span>"
 					m_type = 2
 
 		if ("sigh")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>sighs.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>вздыхает.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>sighs.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>вздыхает.</span>"
 					m_type = 2
 					call_sound_emote("sigh")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a weak noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает слабый шум.</span>"
 					m_type = 2
 
 		if ("laugh")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>acts out a laugh.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>изображает смех.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>laughs.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>смеётся.</span>"
 					m_type = 2
 					call_sound_emote("laugh")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает какой-то шум.</span>"
 					m_type = 2
 
 		if ("clearthroat")
 			if (!muzzled)
 				if (stat)
 					return
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>clears \his throat.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>прочищает \his горло.</span>"
 				m_type = 2
 				call_sound_emote("clearthroat")
 			else
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a noise.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>издает какой-то шум.</span>"
 				m_type = 2
 
 		if ("mumble")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>mumbles!</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>бормочет!</span>"
 			m_type = 2
 			if(miming)
 				m_type = 1
 
 		if ("grumble")
 			if(miming)
-				message = "<B>[src]</B> grumbles!"
+				message = "<B>[src]</B> ворчит!"
 				m_type = 1
 			if (!muzzled)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>grumbles!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>ворчит!</span>"
 				m_type = 2
 			else
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a noise.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>издает какой-то шум.</span>"
 				m_type = 2
 
 		if ("groan")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to groan!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, он вздыхает!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>groans!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>вздыхает!</span>"
 					m_type = 2
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает громкий шум.</span>"
 					m_type = 2
 
 		if ("moan")
 			if(miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears to moan!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кажется, стонет!</span>"
 				m_type = 1
 			else
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>moans!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>стонет!</span>"
 				m_type = 2
 
 		if ("point")
@@ -436,26 +436,26 @@
 							break
 
 				if (!M)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>points.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>указывает.</span>"
 				else
 					M.point()
 
 				if (M)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>points to</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>указывает на</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
 				else
 			m_type = 1
 
 		if ("raise")
 			if (!src.restrained())
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>raises a hand.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>поднимает руку.</span>"
 			m_type = 1
 
 		if("shake")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>shakes \his head.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>трясёт \his голову.</span>"
 			m_type = 1
 
 		if ("shrug")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>shrugs.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>пожимает плечами.</span>"
 			m_type = 1
 
 		if ("signal")
@@ -463,99 +463,99 @@
 				var/t1 = round(text2num(param))
 				if (isnum(t1))
 					if (t1 <= 5 && (!src.r_hand || !src.l_hand))
-						message = "<span class='examinebold'>[src]</span> <span class='examine'>raises [t1] finger\s.</span>"
+						message = "<span class='examinebold'>[src]</span> <span class='examine'>поднимает [t1] палец\s.</span>"
 					else if (t1 <= 10 && (!src.r_hand && !src.l_hand))
-						message = "<span class='examinebold'>[src]</span> <span class='examine'>raises [t1] finger\s.</span>"
+						message = "<span class='examinebold'>[src]</span> <span class='examine'>поднимает [t1] палец\s.</span>"
 			m_type = 1
 
 		if ("smile")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>smiles.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>улыбается..</span>"
 			m_type = 1
 
 		if ("shiver")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>shivers.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>дрожит.</span>"
 			m_type = 2
 			if(miming)
 				m_type = 1
 
 		if ("pale")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>goes pale for a second.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>бледнеет на секунду.</span>"
 			m_type = 1
 
 		if ("tremble")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>trembles in fear!</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>дрожит от страха!</span>"
 			m_type = 1
 
 		if ("sneeze")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>sneezes.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>чихает.</span>"
 				call_sound_emote("sneeze")
 				m_type = 2
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>sneezes.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>чихает.</span>"
 					m_type = 2
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a strange noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает странный звук.</span>"
 					m_type = 2
 
 		if ("sniff")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>sniffs.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>принюхивается.</span>"
 			m_type = 2
 			if(miming)
 				m_type = 1
 
 		if ("snore")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>sleeps soundly.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>крепко спит.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>snores.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>спит.</span>"
 					m_type = 2
 					call_sound_emote("snore")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает какой-то шум.</span>"
 					m_type = 2
 
 		if ("whimper")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>appears hurt.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>выглядит обиженным.</span>"
 				m_type = 1
 			else
 				if (!muzzled)
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>whimpers.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>хнычет.</span>"
 					m_type = 2
 					call_sound_emote("whimper")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a weak noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает слабый шум.</span>"
 					m_type = 2
 
 		if ("hem")
 			if (!muzzled)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>hems.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>хмыкает.</span>"
 				m_type = 2
 				call_sound_emote("hem")
 
 		if ("slap")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>slaps his own face.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>бьет себя по лицу.</span>"
 			m_type = 1
 
 		if ("wink")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>winks.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>подмигивает.</span>"
 			m_type = 1
 
 		if ("licklips")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>licks \his lips.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает \his губы.</span>"
 			m_type = 1
 
 		if ("licklip")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>licks \his lips.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает \his губы.</span>"
 			m_type = 1
 
 		if ("yawn")
 			if (!muzzled)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>yawns.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>зевает.</span>"
 				m_type = 2
 				call_sound_emote("yawn")
 				if(miming)
@@ -580,146 +580,146 @@
 
 				if (M)
 					if (M.canmove && !M.r_hand && !M.restrained())
-						message = "<span class='examinebold'>[src]</span> <span class='examine'>shakes hands with</span> <span class='examinebold>'[M]</span><span class='examine'>.</span>"
+						message = "<span class='examinebold'>[src]</span> <span class='examine'>пожимает руку</span> <span class='examinebold>'[M]</span><span class='examine'>.</span>"
 					else
-						message = "<span class='examinebold'>[src]</span> <span class='examine'>holds out \his hand to</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
+						message = "<span class='examinebold'>[src]</span> <span class='examine'>протягивает \his руку</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
 
 		if ("scream")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>acts out a scream!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>разыгрывает крик!</span>"
 				m_type = 1
 			else
 				if (!muzzled)//NO MORE SCREAMING FROM DEAD AND UNCONCIOUS PEOPLE PLEASE!
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>screams!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит!</span>"
 					m_type = 2
 					call_sound_emote("scream")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("torturescream")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>acts out a scream!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>разыгрывает крик!</span>"
 				m_type = 1
 			else
 				if (!muzzled)//NO MORE SCREAMING FROM DEAD AND UNCONCIOUS PEOPLE PLEASE!
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>screams in FEAR!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит от СТРАХА!</span>"
 					m_type = 2
 					call_sound_emote("torturescream")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("stop")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>asks to stop!</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>просит остановиться!</span>"
 			m_type = 2
 			call_sound_emote("stop")
 			sound2()
 
 		if ("burp")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>burps.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>отрыжка.</span>"
 			m_type = 2
 			call_sound_emote("burp")
 			sound2()
 
 		if ("fallscream")
 			if (miming)
-				message = "<B>[src]</B> acts out a scream!"
+				message = "<B>[src]</B> разыгрывает крик!"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>screams on the way down!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит по пути вниз!</span>"
 					m_type = 2
 					sound2()
 					call_sound_emote("fallscream")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("agonyscream")
 			if (miming)
-				message = "<B>[src]</B> acts out a scream!"
+				message = "<B>[src]</B> разыгрывает крик!"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>screams painfully!</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>кричит от боли!</span>"
 					m_type = 2
 					sound2()
 					call_sound_emote("agonyscream")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("agonypain")
 			if (miming)
-				message = "<B>[src]</B> acts out a scream!"
+				message = "<B>[src]</B> разыгрывает крик!"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>moans.</span> <span class='examinebold'>\n<small>[src]</span> <span class='examine'>screams in pain.</small>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>стонет.</span> <span class='examinebold'>\n<small>[src]</span> <span class='examine'>кричит от боли.</small>"
 					m_type = 2
 					sound2()
 					call_sound_emote("agonypain")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("moandeath")
 			if (miming)
-				message = "<B>[src]</B> acts out a scream!"
+				message = "<B>[src]</B> разыгрывает крик!"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'><small>moans in pain.</small></span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'><small>стонет от боли.</small></span>"
 					m_type = 2
 					sound2()
 					call_sound_emote("moandeath")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("agonymoan")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>acts out a scream!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>разыгрывает крик!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>moans.\n<span class='examinebold'>[src]</span> <span class='examine'><small>moans in pain.</small></span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>стонет.\n<span class='examinebold'>[src]</span> <span class='examine'><small>стонет от боли.</small></span>"
 					m_type = 2
 					sound2()
 					call_sound_emote("agonymoan")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 		if ("agonydeath")
 			if (miming)
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>acts out a scream!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>разыгрывает крик!</span>"
 				m_type = 1
 			else
 				if (!muzzled)
 					if (stat)
 						return
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>moans.<span>\n<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>screams in pain.</small></span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>cтонет.<span>\n<span class='examinebold'><small>[src]</small></span> <span class='examine'><small>кричит от боли.</small></span>"
 					m_type = 2
 					sound2()
 					call_sound_emote("agonydeath")
 				else
-					message = "<span class='examinebold'>[src]</span> <span class='examine'>makes a very loud noise.</span>"
+					message = "<span class='examinebold'>[src]</span> <span class='examine'>издает очень громкий шум.</span>"
 					m_type = 2
 
 //SHITTY EMOTES BEGIN
@@ -740,8 +740,8 @@
 			if(ismonster(src))
 				return
 			if(!src.reagents || src.nutrition <= 80)
-				message = "<span class='pukebold'>[src]</span> <span class='pukes'>gags as if trying to throw up but nothing comes out.</span>"
-				to_chat(usr, "<span class='pukes'>You gag as you want to throw up, but there's nothing in your stomach!</span>")
+				message = "<span class='pukebold'>[src]</span> <span class='pukes'>давится, как будто пытается вырвать, но ничего не выходит.</span>"
+				to_chat(usr, "<span class='pukes'>Ты давишься, когда тебя хочет вырвать, но в твоем желудке ничего нет!</span>")
 			else
 				var/obj/effect/decal/cleanable/vomit/V = new/obj/effect/decal/cleanable/vomit(src.loc)
 				if(src.reagents)
@@ -762,18 +762,18 @@
 			m_type = 1
 
 		if("masturbate") // god
-			var/list/nonolist = list("strokes their dick.", "masturbates.")
-			var/list/femnonolist = list("fingers their pussy.","pleasures herself.")
+			var/list/nonolist = list("гладит свой член.", "мастурбирует.")
+			var/list/femnonolist = list("ласкает пальцами свою киску.","доставляет себе удовольствие.")
 			src.adjustStaminaLoss(2)
 
-			if(ismonster(src))
+/*			if(ismonster(src))
 				return
 			if(isChild(src))
-				return
+				return */
 			if(src.mutilated_genitals)
-				return to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)]</span><span class='combat'> I can't.</span>")
+				return to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)]</span><span class='combat'>Я не могу.</span>")
 			if(src.wear_suit)
-				return to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)]</span><span class='combat'> I have clothes on.</span>")
+				return to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)]</span><span class='combat'>На мне есть одежда.</span>")
 			if(src.has_penis())
 				if(src.erpcooldown == 0)
 					if(src.potenzia > 0)
@@ -786,7 +786,7 @@
 							src.moan()
 						call_sound_emote("masturbate")
 				else
-					to_chat(src, "It's not erect...")
+					to_chat(src, "Он не эрегирован...")
 			else
 				message = "<span class='examinebold'>[src]</span> <span class='examine'>[pick(femnonolist)]</span>"
 				src.lust += 12
@@ -799,15 +799,15 @@
 //SHITTY EMOTES END
 
 		if("z_roar")
-			message = "<font color='red'><B>[src]</B> roars!</font>"
+			message = "<font color='red'><B>[src]</B> ревет!</font>"
 			m_type = 1
 			call_sound_emote("z_roar")
 		if("z_shout")
-			message = "<font color='red'><B>[src]</B> shouts!</font>"
+			message = "<font color='red'><B>[src]</B> кричит!</font>"
 			m_type = 1
 			call_sound_emote("z_shout")
 		if("z_mutter")
-			message = "<font color='red'><B>[src]</B> mutters!</font>"
+			message = "<font color='red'><B>[src]</B> бормочет!</font>"
 			m_type = 1
 			call_sound_emote("z_mutter")
 		if ("help")
@@ -822,7 +822,7 @@
 		spawn(0)
 			if(O) //It's possible that it could be deleted in the meantime.
 				if(act == "praise" && src.religion == "Thanati")
-					O.hear_talk(src, "Tzchernobog is cute!")
+					O.hear_talk(src, "Чернобог приди!")
 					return
 				O.hear_talk(src, message)
 

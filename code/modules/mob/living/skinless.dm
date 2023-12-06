@@ -33,7 +33,7 @@
 	var/selectedSound = pick('sound/voice/skinless1.ogg', 'sound/voice/skinless2.ogg','sound/voice/skinless3.ogg','sound/voice/skinless4.ogg','sound/voice/skinless5.ogg')
 	if(prob(10))
 		src.sound2()
-		src.emote("screams violently!")
+		src.emote("яростно кричит!")
 		playsound(loc, selectedSound, 100, 1, 0, 0)
 	return ..()
 

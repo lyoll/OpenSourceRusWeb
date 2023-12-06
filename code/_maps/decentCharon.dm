@@ -82,14 +82,14 @@ var/shuttleMain = null
 	if(world.time > 60 MINUTES)
 		timer = 5 MINUTES
 	world << sound('sound/AI/shuttlecalled.ogg')
-	to_chat(world, "<span class='passivebold'>Warning: \"Babylon\" will be launched in T - [round(emergency_shuttle.timeleft()/60)] minutes.</span>")
-	INTERCOM.autosay("The Fortress will be abandoned in T - 10 min. His Lordship baron [lordShip] and his confidants are awaited on the Babylon.", "CTTU")
+	to_chat(world, "<span class='passivebold'>Предупреждение: \"Babylon\" будет запущен в - [round(emergency_shuttle.timeleft()/60)] минут.</span>")
+	INTERCOM.autosay("Крепость будет брошена в течении - 10 минут. Его светлость барона [lordShip] и его приближенных уже ждут.", "CTTU")
 
 /datum/shuttle/proc/recall()
 	timer = 10 MINUTES
 	called = 0
 	world << sound('sound/AI/shuttlerecalled.ogg')
-	to_chat(world, "<span class='passivebold'>Warning: The launch was canceled.")
+	to_chat(world, "<span class='passivebold'>Предупреждение: Запуск был отменен.")
 
 /datum/shuttle/proc/move(var/direction)
 	if(moving) return
@@ -116,7 +116,7 @@ var/shuttleMain = null
 						if(!B.locked)
 							B.unbuckle()
 					if(!C.buckled)
-						C.visible_message("<span class='warning'>[C.name] is tossed around by the sudden acceleration!</span>")
+						C.visible_message("<span class='warning'>[C.name] его подбрасывает из стороны в сторону от внезапного ускорения!</span>")
 						var/smashsound = pick("sound/effects/gore/smash[rand(1,3)].ogg", "sound/effects/gore/trauma1.ogg")
 						playsound(C, smashsound, 80, 1, -1)
 						C.emote("scream")

@@ -9,7 +9,7 @@
 	spawn_positions = 2
 	supervisors = "the Baron"
 	selection_color = "#fff5cc"
-	jobdesc = "An all around skilled engineer and mason paid to construct works of stone, make repairs to the fortress or even mine. An all around handyman, he is the only person in the fortress with these capabilities ensuring his niche trade skills always land him a job. Don&#8217;t pay him and he&#8217;ll be sure to measure the thickness of your skull."
+	jobdesc = "Опытному инженеру и каменщику платили за возведение каменных сооружений, ремонт крепости или даже шахты. Мастер на все руки, он единственный человек в крепости, обладающий такими способностями, гарантирующими, что его навыки в узкой профессии всегда обеспечат ему работу. Не платите ему, и он обязательно измерит толщину вашего черепа."
 	jobdescbr = "An all around skilled engineer and mason paid to construct works of stone, make repairs to the fortress or even mine. An all around handyman, he is the only person in the fortress with these capabilities ensuring his niche trade skills always land him a job. Don&#8217;t pay him and he&#8217;ll be sure to measure the thickness of your skull."
 	idtype = /obj/item/weapon/card/id/engie
 	access = list(keep,hump)
@@ -49,7 +49,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Baron"
-	jobdesc = "The obscure residents of the fortress, often hiding their faces from others to not be identified. With an immunity from the lifeweb radiation, they can sometimes be heard referring to it as the &#8217;Mistress&#8217; amongst themselves. Kidnappings happen often in Firethorn, and its usually the mortii blamed first. The garrison turn a blind eye to the necessities of your job as long as you&#8217;re keeping the power on, or else you&#8217;ll be the mistress&#8217;s next sacrifice."
+	jobdesc = "Малоизвестные жители крепости, часто скрывающие свои лица от окружающих, чтобы их не опознали. Обладая иммунитетом к излучению паутины жизни, иногда можно услышать, как они называют ее Госпожой между собой. Похищения людей часто случаются во Фаэторне, и обычно в первую очередь обвиняют мортиев. Гарнизон закрывает глаза на необходимость вашей работы до тех пор, пока вы поддерживаете электричество включенным, иначе вы станете следующей жертвой госпожи.."
 	jobdescbr = "The obscure residents of the fortress, often hiding their faces from others to not be identified. With an immunity from the lifeweb radiation, they can sometimes be heard referring to it as the &#8217;Mistress&#8217; amongst themselves. Kidnappings happen often in Firethorn, and its usually the mortii blamed first. The garrison turn a blind eye to the necessities of your job as long as you&#8217;re keeping the power on, or else you&#8217;ll be the mistress&#8217;s next sacrifice."
 	selection_color = "#fff5cc"
 	idtype = /obj/item/weapon/card/id/mortician
@@ -67,6 +67,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/boots(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/daggerssheath(H), slot_wrist_l)
 		H.equip_to_slot_or_del(new /obj/item/weapon/chisel(H), slot_r_store)
+		H.equip_to_slot_or_del(new /obj/item/clothing/suit/hood/mortus(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/weapon/spacecash/c10(H), slot_l_store)
 		H.add_perk(/datum/perk/ref/strongback)
 		H.add_perk(/datum/perk/ancitech)
