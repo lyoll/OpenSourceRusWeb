@@ -193,9 +193,9 @@ var/rtlog_path
 	s += "<b>[vessel_name()]</b>";*/
 	s += "<b>[vessel_name()]</b> &#8212; "
 	s += " ("
-	s += "<a href=\"https://discord.gg/JcVcG6JxJm\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://discord.gg/zR2Kc9SpGg\">" //Change this to wherever you want the hub to link to. 
 //	s += "[game_version]"
-	s += "Dungeon"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "Дискорд"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 
@@ -223,13 +223,14 @@ var/rtlog_path
 		features += "~[n] addict"
 
 	//if (!host && config && config.hostedby)
-	features += "<b>[server_language]ZONE</b>"
+	features += "<b>RUZONE</b>"
 	features += "<b>+\[18\]</b>"
 
 	if (features)
 		s += "<br>[list2text(features, ", ")]"
-	s += "<br><b>Server:</b> [src.port]"
-	s += "<br><b>Map of the Week:</b> [currentmaprotation]"
+	s += "<br><b>Сервер:</b> [src.port]"
+	s += "<br><b>Карта этой недели:</b> [currentmaprotation]"
+	s += "<br><b>О нас:</b> Форк Farweb'а, - бразильской копии Lifeweb. Залетай в наш дискорд за подробностями!"
 	if(master_mode == "holywar")
 		s += "<br><b>HOLY WAR!</b>"
 	if(master_mode == "miniwar")
