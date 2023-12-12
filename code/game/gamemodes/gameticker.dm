@@ -708,7 +708,7 @@ var/turf/MiniSpawn
 					sleep(restart_timeout)
 					if(!delay_end)
 						to_chat(world, "<span class='bname'>Крепость была покинута.</span>")
-						world.Reboot()
+						qdel(world)
 					else
 						to_chat(world,"<span class='passivebold'>[pick(nao_consigoen)]</span> <span class='passive'>Коматозник еще не позволил этой истории закончиться!</span>")
 				else
