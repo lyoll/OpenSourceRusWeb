@@ -150,8 +150,7 @@ var/rtlog_path
 	if(roundendping.len > 0)
 		for(var/C in roundendping)
 			TgsChatPrivateMessage("[current_server] has restarted!", C)
-	TgsReboot()
-	TgsEndProcess()
+	qdel(world)
 	..(reason)
 
 /hook/startup/proc/loadMode()
