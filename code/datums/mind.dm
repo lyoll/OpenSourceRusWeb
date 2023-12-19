@@ -531,7 +531,7 @@ datum/mind
 					new_character.gender = MALE
 					special_role = "Soulbreaker"
 					//ticker.mode.learn_basic_spells(current)
-					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы душегуб.</span")
+					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы душелом.</span")
 					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы порабощаете живых людей, чтобы они могли восстанавливать потерянные планеты. У вас есть много инструментов для этого, поэтому поймать обычного мигранта должно быть легко.</span>")
 					log_admin("[key_name_admin(usr)] has soulbreaker'ed [new_character.key].")
 					new_character << sound('sound/music/soulbreaker.ogg', repeat = 0, wait = 0, volume = 80, channel = 3)

@@ -42,7 +42,7 @@ var/global/list/coolboombox = list()
 
 var/global/list/singer = list()
 
-var/global/list/weeDonator = list()
+var/global/list/weedonator = list()
 var/global/list/baliset = list()
 var/global/list/black_cloak = list()
 var/global/list/bee_queen = list()
@@ -74,7 +74,7 @@ var/global/list/patreons = list()
     build_tribvet_donor()
     build_urchin_donor()
     build_mobilephone()
-    build_weeDonator()
+    build_weedonator()
     build_baliset()
     //set_donation_locks() //NAO ATIVAR ISSO FICA NO MASTER_CONTROLLER.DM
 
@@ -96,14 +96,14 @@ var/global/list/patreons = list()
     while(queryInsert.NextRow())
         baliset.Add(queryInsert.item[1])
 
-/proc/build_weeDonator()
-    var/DBQuery/queryInsert = dbcon.NewQuery("Select ckey FROM donation_weeDonator;")
+/proc/build_weedonator()
+    var/DBQuery/queryInsert = dbcon.NewQuery("Select ckey FROM donation_weedonator;")
     if(!queryInsert.Execute())
         world.log << queryInsert.ErrorMsg()
         queryInsert.Close()
         return
     while(queryInsert.NextRow())
-        weeDonator.Add(queryInsert.item[1])
+        weedonator.Add(queryInsert.item[1])
 
 /proc/build_remigrator()
     var/DBQuery/queryInsert = dbcon.NewQuery("Select ckey FROM donation_remigrator;")

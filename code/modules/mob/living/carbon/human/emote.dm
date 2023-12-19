@@ -72,7 +72,7 @@
 				message = "<span class='examinebold'>[src]</span> <span class='examine'>глубокомысленно кивает</span>"
 				m_type = 1
 			else if(religion == "Old Ways")
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>кидает \his руки в священном приветствии!</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>кидает руки в священном приветствии!</span>"
 				m_type = 1
 			else
 				if(src.religion_is_legal())
@@ -382,7 +382,7 @@
 			if (!muzzled)
 				if (stat)
 					return
-				message = "<span class='examinebold'>[src]</span> <span class='examine'>прочищает \his горло.</span>"
+				message = "<span class='examinebold'>[src]</span> <span class='examine'>прочищает горло.</span>"
 				m_type = 2
 				call_sound_emote("clearthroat")
 			else
@@ -451,7 +451,7 @@
 			m_type = 1
 
 		if("shake")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>трясёт \his голову.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>трясёт голову.</span>"
 			m_type = 1
 
 		if ("shrug")
@@ -546,11 +546,11 @@
 			m_type = 1
 
 		if ("licklips")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает \his губы.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает губы.</span>"
 			m_type = 1
 
 		if ("licklip")
-			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает \his губы.</span>"
+			message = "<span class='examinebold'>[src]</span> <span class='examine'>облизывает губы.</span>"
 			m_type = 1
 
 		if ("yawn")
@@ -582,7 +582,7 @@
 					if (M.canmove && !M.r_hand && !M.restrained())
 						message = "<span class='examinebold'>[src]</span> <span class='examine'>пожимает руку</span> <span class='examinebold>'[M]</span><span class='examine'>.</span>"
 					else
-						message = "<span class='examinebold'>[src]</span> <span class='examine'>протягивает \his руку</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
+						message = "<span class='examinebold'>[src]</span> <span class='examine'>протягивает руку</span> <span class='examinebold'>[M]</span><span class='examine'>.</span>"
 
 		if ("scream")
 			if (miming)

@@ -94,7 +94,7 @@ var/datum/padla/Padla = null
 		var/turf/T = pick(regurgilist)
 		new/obj/effect/regurgitator(T)
 		regurgilist -= T
-
+/*
 /datum/curses/padla/horde
 	name = "horde padla"
 
@@ -102,4 +102,4 @@ var/datum/padla/Padla = null
 	for(var/i = 0; i <= 4; i++)
 		var/turf/T = pick(regurgilist)
 		new/obj/effect/horde(T)
-		regurgilist -= T
+		regurgilist -= T */

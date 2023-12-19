@@ -20,7 +20,7 @@ CREATE TABLE `donation_baliset` (
   `ckey` char(30) NOT NULL
 );
 
-CREATE TABLE `donation_weeDonator` (
+CREATE TABLE `donation_weedonator` (
   `ckey` char(30) NOT NULL
 );
 

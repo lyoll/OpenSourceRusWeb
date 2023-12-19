@@ -425,9 +425,9 @@ var/rewarded = 0
 	idtype = /obj/item/weapon/card/id/churchkeeper
 	access = list(church, access_morgue, access_chapel_office, access_maint_tunnels)
 	minimal_access = list(church, access_morgue, access_chapel_office)
-	sex_lock = MALE
+//	sex_lock = MALE
 	latejoin_locked = FALSE
-	no_trapoc = FALSE
+//	no_trapoc = FALSE
 
 	jobdesc = "Слухи среди разведчиков НКВД привели к полномасштабному расследованию глубоко в Саларской провинции - большинство людей в этом регионе никогда не видели настоящего присутствия НКВД, не говоря уже об инквизиторе. Утверждения о том, что на юге зреет более мощная, чем антитеррористическая ячейка, еще не подтвердились, но говорят, что отколовшаяся от центральной ячейки группа находится в Фаэторне. Вы были выбраны для руководства расследованием, и давление растет. Ваше начальство требует, чтобы квота была заполнена, и вы собираетесь предоставить ее им. Интересно, что каждый, кого вы ненавидите, каким-то образом оказывается еретиком."
 	equip(var/mob/living/carbon/human/H)
@@ -533,8 +533,9 @@ var/rewarded = 0
 			H.religion = "Gray Church"
 
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chaplain(H), slot_w_uniform)
-			H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/general_inquisitor(H), slot_wear_suit)
+			H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/inquisition(H), slot_wear_suit)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/boots(H), slot_shoes)
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/inquisihat(H), slot_head)
 			H.equip_to_slot_or_del(new /obj/item/device/radio/headset/bracelet/eng(H), 	slot_wrist_r)
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/amulet/holy/cross/old(H), slot_amulet)
 
