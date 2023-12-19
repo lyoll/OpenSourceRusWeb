@@ -39,7 +39,7 @@
 		itemstake.Add("*Pumpkin Jack*")
 	if(H.ckey in waterbottledonation)
 		itemstake.Add("*Water Bottle*")
-	if(H.ckey in weeDonator)
+	if(H.ckey in weedonator)
 		itemstake.Add("*Weed*")
 	if(H.ckey in baliset)
 		itemstake.Add("*Baliset*")
@@ -76,7 +76,7 @@
 			itemstake.Add("*Conceivable Boombox*")
 	if(H.ckey in hiden_obols)
 		itemstake.Add("*Obols*")
-	if(H.ckey in weeDonator)
+	if(H.ckey in weedonator)
 		itemstake.Add("*Joint*")
 
 /obj/structure/lifeweb/proc/spawn_item(var/pickeditem, var/mob/living/carbon/human/receiver)

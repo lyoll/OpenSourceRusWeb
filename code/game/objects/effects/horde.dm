@@ -1,4 +1,4 @@
-/obj/effect/horde
+/* /obj/effect/horde
 	name = "Strange Hollow"
 	desc = "I Better stay away from that thing."
 	density = 0
@@ -12,4 +12,4 @@
 	new/mob/living/carbon/human/skinless(src)
 	new/mob/living/carbon/human/skinless(src)
 	new/mob/living/carbon/human/skinless(src)
-	new/mob/living/carbon/human/skinless(src)
+	new/mob/living/carbon/human/skinless(src) */

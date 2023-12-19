@@ -229,7 +229,6 @@ var/rtlog_path
 		s += "<br>[list2text(features, ", ")]"
 	s += "<br><b>Сервер:</b> [src.port]"
 	s += "<br><b>Карта этой недели:</b> [currentmaprotation]"
-	s += "<br><b>О нас:</b> Форк Farweb'а, - бразильской копии Lifeweb. Залетай в наш дискорд за подробностями!"
 	if(master_mode == "holywar")
 		s += "<br><b>HOLY WAR!</b>"
 	if(master_mode == "miniwar")

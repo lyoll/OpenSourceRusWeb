@@ -432,6 +432,28 @@ var/list/usedremig = list()
 	set name = "GotoHell"
 	set category = "OOC"
 
+	var/deathtime = world.time - src.timeofdeath
+	var/deathtimeminutes = round(deathtime / 600)
+	var/pluralcheck = "minute"
+	if(deathtimeminutes == 0)
+		pluralcheck = ""
+	else if(deathtimeminutes == 1)
+		pluralcheck = " [deathtimeminutes] minute and"
+	else if(deathtimeminutes > 1)
+		pluralcheck = " [deathtimeminutes] minutes and"
+	var/deathtimeseconds = round((deathtime - deathtimeminutes * 600) / 10,1)
+	usr << "You have been dead for [pluralcheck] [deathtimeseconds] seconds."
+
+	client.screen.Cut()
+	var/mob/new_player/M = new /mob/new_player()
+	M.key = key
+	M.old_key = key
+	M.old_job = job
+	M.client.color = null
+	return
+
+	
+/*
 	if(ticker?.mode.config_tag == "siege")
 		client.screen.Cut()
 		var/mob/new_player/M = new /mob/new_player()
@@ -531,7 +553,7 @@ var/list/usedremig = list()
 		M.old_key = key
 		M.old_job = job
 		M.client.color = null
-	return
+	return */
 /*
 /mob/dead/observer/verb/toggle_medHUD()
 	set category = "Ghost"

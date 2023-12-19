@@ -128,7 +128,7 @@ var/global/list/hiden_obols = list()
 
 	ChromieReturn(usr, cost, nameE, descE)
 
-/*/client/verb/callCharon()
+/client/verb/callCharon()
 	set category = "Chromossomes"
 	set name = "ChamarCharon"
 	set desc = "Voce vai chamar a Charon."
@@ -155,7 +155,7 @@ var/global/list/hiden_obols = list()
 	log_game("[key_name(usr)] has launched the Babylon.")
 	message_admins("[key_name_admin(usr)] has launched the Babylon.", 1)
 
-	ChromieReturn(usr, cost, nameE, descE)*/
+	ChromieReturn(usr, cost, nameE, descE)
 
 /client/verb/jobConcealCustom()
 	set category = "Chromossomes"

@@ -740,7 +740,7 @@ var/list/cuckoldlist = list()
 				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>дрочит</span> <B>[P]'s </span><span class='erp'> [pick("член","член","пенис")] faster.</span>")
 
 		if("vaginal")
-			message = pick("трахает [P].", "колотит [P]'s киску.")
+			message = pick("входит в отверстие [P].", "колотит [P]'s киску.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				message = pick(" засовывает свой член в [P]'s киску.")
@@ -922,9 +922,9 @@ var/list/cuckoldlist = list()
 			if (prob(H.potenzia))
 				P.stamina_loss += 3
 				sound_path = "honk/sound/new/ACTIONS/MOUTH/SWALLOW/"
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>трахает</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>погружается в</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>трахает</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
+					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>погружается в</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
 			else
 				sound_path = "honk/sound/new/ACTIONS/BLOWJOB/"
 			sound = pick(flist("[sound_path]"))

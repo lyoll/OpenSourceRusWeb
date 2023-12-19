@@ -226,14 +226,14 @@ var/turf/MiniSpawn
 		//world << "<B>Unable to start [mode.name].</B> Not enough victims, [mode.required_players] victims are required. Reverting to pre-simulation lobby."
 		var/baron = "badmood"
 		var/inquisitor = "badmood"
-		var/merchant = "badmood"
+/*		var/merchant = "badmood" */
 		for(var/mob/new_player/NN in player_list)
 			if(NN.client.work_chosen == "Baron" && NN.ready)
 				baron = "hit"
+/*			else if(NN.client.work_chosen == "Bookkeeper" && NN.ready)
+				merchant = "hit" */
 			else if(NN.client.work_chosen == "Inquisitor" && NN.ready)
 				inquisitor = "hit"
-			else if(NN.client.work_chosen == "Bookkeeper" && NN.ready)
-				merchant = "hit"
 
 		if(master_mode == "holywar")
 			to_chat(world,"<b><span class='highlighttext'>Крестовый поход прерван:</span></b> Мы нуждаемся в <span class='bname'>20 солдатах</span>!")
@@ -242,10 +242,12 @@ var/turf/MiniSpawn
 			if(master_mode == "miniwar")
 				to_chat(world,"<b><span class='hitbold'>Миграция прервана:</span></b><span class='hit'> Пещерам нужны </span><span class='badmood'><b>5 мигрантов</b></span>.")
 			else
-				to_chat(world,"<b><span class='hitbold'>Рассказ прерван:</span></b><span class='hit'> Крепость нуждается в щедром </span><span class='[merchant]'><b>Торговце</b></span>,<span class='hit'> справедливом </span><span class='[baron]'><b>Бароне</b></span><span class='hit'> и добром </span><span class='[inquisitor]'><b>Инквизиторе</b></span><span class='hit'>!</span>")
-			if(minimigcounter < minimax)
+				to_chat(world,"<b><span class='hitbold'>Рассказ прерван:</span></b><span class='hit'> Крепость нуждается в справедливом </span><span class='[baron]'><b>Бароне</b></span><span class='hit'> и добром </span><span class='[inquisitor]'><b>Инквизиторе</b></span><span class='hit'>!</span>")
+/*			else
+				to_chat(world,"<b><span class='hitbold'>Рассказ прерван:</span></b><span class='hit'> Крепость нуждается в щедром </span><span class='[merchant]'><b>Торговце</b></span>,<span class='hit'> справедливом </span><span class='[baron]'><b>Бароне</b></span><span class='hit'> и добром </span><span class='[inquisitor]'><b>Инквизиторе</b></span><span class='hit'>!</span>") */
+/*			if(minimigcounter < minimax)
 				minimigcounter++
-				to_chat(world,"<span class='highlighttext'> [minimigcounter]/[minimax] провал мини-войны!</span>")
+				to_chat(world,"<span class='highlighttext'> [minimigcounter]/[minimax] провал мини-войны!</span>") */
 			if(minimigcounter >= minimax)
 				to_chat(world,"<span class='ravenheartfortress'> Мини-война!</span>")
 				world << 'minimigration.ogg'
@@ -503,7 +505,7 @@ var/turf/MiniSpawn
 	proc/createnpcs()
 		for(var/obj/effect/landmark/L in landmarks_list)
 			if (L.name == "NPCBum")
-				if(prob(50))
+				if(prob(70))
 					new /mob/living/carbon/human/bumbot(L.loc)
 		for(var/obj/effect/landmark/L in landmarks_list)
 			if (L.name == "BigRat")
