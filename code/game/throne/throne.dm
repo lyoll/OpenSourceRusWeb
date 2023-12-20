@@ -86,7 +86,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 		if(H.job == "Jester" && H.special == "jesterdecree")
 			switch(href_list["usecrown"])
 				if("decree")
-					var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null, list("\t"="#","ÿ"="&#255;"))
+					var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null)
 					if(!input)
 						return
 					if(findtext(input, "http"))
@@ -96,7 +96,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(H.stat)
 						return
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<span class='decree'>[input]</span>")
 					to_chat(world, "<br>")
@@ -111,10 +111,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(riotreal == 0 && riot != 1)
 						to_chat(world, "<br>")
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>¤Объявлен бунт! Тиамати должна собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!¤</span>")
+						to_chat(world, "<span class='excomm'>Объявлен бунт! Тиамати должна собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<br>")
-						to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+						to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 						to_chat(world, "<br>")
 						world << sound('RiotAlarm.ogg', repeat = 1, wait = 0, volume = 100, channel = 6)
 						riotreal = 1
@@ -125,10 +125,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 						if(riotreal == 1 && riot == 0)
 							to_chat(world, "<br>")
 							to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-							to_chat(world, "<span class='excomm'><b>¤Беспорядки подавлены. Жители крепости теперь могут вернуться к своим обязанностям¤</b></span>")
+							to_chat(world, "<span class='excomm'><b>Беспорядки подавлены. Жители крепости теперь могут вернуться к своим обязанностям</b></span>")
 							world << sound('sound/AI/bell_toll.ogg')
 							to_chat(world, "<br>")
-							to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+							to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 							to_chat(world, "<br>")
 							world << sound('RiotAlarm.ogg', repeat = 0, wait = 0, volume = 0, channel = 6)
 							riotreal = 0
@@ -143,9 +143,9 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 				if("declareemergency")
 					if(!isEmergency)
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
-						to_chat(world, "<span class='decree'>Наш славный [src.buckled_mob.job] объявляет ЧРЕЗВЫЧАЙНОЕ положение!</span>")
+						to_chat(world, "<span class='decree'>Наш славный Барон объявляет ЧРЕЗВЫЧАЙНОЕ положение!</span>")
 						to_chat(world, "<br>")
 						isEmergency = 1
 						for(var/obj/machinery/emergency_room/E in emergency_rooms)
@@ -158,9 +158,9 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 									processing_objects.Add(E)
 					else
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
-						to_chat(world, "<span class='decree'>Наш славный [src.buckled_mob.job] снимает чрезвычаное положение!</span>")
+						to_chat(world, "<span class='decree'>Наш славный Барон снимает чрезвычаное положение!</span>")
 						to_chat(world, "<br>")
 						isEmergency = 0
 						for(var/obj/machinery/emergency_room/E in emergency_rooms)
@@ -174,22 +174,22 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 				if("gathermeeting")
 					if(!isMeeting)
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
-						to_chat(world, "<span class='decree'>Наш славный [src.buckled_mob.job] созывает на ВСТРЕЧУ В ТРОННОМ ЗАЛЕ!</span>")
+						to_chat(world, "<span class='decree'>Наш славный Барон созывает на ВСТРЕЧУ В ТРОННОМ ЗАЛЕ!</span>")
 						to_chat(world, "<br>")
 						isMeeting = 1
 					else
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
-						to_chat(world, "<span class='decree'>Наш славный [src.buckled_mob.job] завершает встречу!</span>")
-						to_chat(world, "<span class='decree'>Go away!</span>")
+						to_chat(world, "<span class='decree'>Наш славный Барон завершает встречу!</span>")
+						to_chat(world, "<span class='decree'>Уходите!</span>")
 						to_chat(world, "<br>")
 						isMeeting = 0
 
 				if("decree")
-					var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null, list("\t"="#","ÿ"="&#255;"))
+					var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null)
 					if(!input)
 						return
 					if(findtext(input, "http"))
@@ -199,7 +199,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(H.stat)
 						return
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<span class='decree'>[input]</span>")
 					to_chat(world, "<br>")
@@ -215,7 +215,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(findtext(input, "http"))
 						return
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<span class='decree'>[input] должен быть ЗАХВАЧЕН живым!</span>")
 					to_chat(world, "<br>")
@@ -227,7 +227,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(findtext(input, "http"))
 						return
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<span class='decree'>[input] должен быть УНИЧТОЖЕН!</span>")
 					to_chat(world, "<br>")
@@ -238,11 +238,11 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 						return
 					to_chat(world, "<br>")
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world,"<span class='excomm'>¤Новые налоги - <i>[input]%</i>!¤</span>")
+					to_chat(world,"<span class='excomm'>Установлены новые налоги в крепости - <i>[input]%</i> !</span>")
 					taxes = input
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<br>")
-					to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+					to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 					to_chat(world, "<br>")
 
 				if("opensmall")
@@ -266,7 +266,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(!fortHand)
 						return
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<span class='decree'>[input] становится [H.real_name]'s Десницей!</span>")
 					to_chat(world, "<br>")
@@ -275,10 +275,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(riot == 0 && riotreal == 0)
 						to_chat(world, "<br>")
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>¤БОЕВАЯ ТРЕВОГА! Все должны направиться в оружейную и приготовиться к бою!¤</span>")
+						to_chat(world, "<span class='excomm'>БОЕВАЯ ТРЕВОГА! Все должны направиться в оружейную и приготовиться к бою!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<br>")
-						to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+						to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 						to_chat(world, "<br>")
 						world << sound('mantrap.ogg', repeat = 1, wait = 0, volume = 50, channel = 6)
 						riot = 1
@@ -289,10 +289,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 						if(riot == 1 && riotreal == 0)
 							to_chat(world, "<br>")
 							to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-							to_chat(world, "<span class='excomm'><b>¤Боевая тревога отключена.¤</b></span>")
+							to_chat(world, "<span class='excomm'><b>Боевая тревога отключена.</b></span>")
 							world << sound('sound/AI/bell_toll.ogg')
 							to_chat(world, "<br>")
-							to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+							to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 							to_chat(world, "<br>")
 							world << sound('mantrap.ogg', repeat = 0, wait = 0, volume = 0, channel = 6)
 							riot = 0
@@ -306,10 +306,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					if(riotreal == 0 && riot != 1)
 						to_chat(world, "<br>")
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>¤Объявлен бунт! Тиамати должна собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!¤</span>")
+						to_chat(world, "<span class='excomm'>Объявлен бунт! Тиамати должна собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<br>")
-						to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+						to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 						to_chat(world, "<br>")
 						world << sound('RiotAlarm.ogg', repeat = 1, wait = 0, volume = 100, channel = 6)
 						riotreal = 1
@@ -320,10 +320,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 						if(riotreal == 1 && riot == 0)
 							to_chat(world, "<br>")
 							to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-							to_chat(world, "<span class='excomm'><b>¤Бунт подавлен. Жители крепости теперь могут вернуться к своим обязанностям.¤</b></span>")
+							to_chat(world, "<span class='excomm'><b>Бунт подавлен. Жители крепости теперь могут вернуться к своим обязанностям.</b></span>")
 							world << sound('sound/AI/bell_toll.ogg')
 							to_chat(world, "<br>")
-							to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+							to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 							to_chat(world, "<br>")
 							world << sound('RiotAlarm.ogg', repeat = 0, wait = 0, volume = 0, channel = 6)
 							riotreal = 0
@@ -338,26 +338,26 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					to_chat(world, "<br>")
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 					if(!gunban)
-						to_chat(world, "<span class='excomm'>¤Продажа и обмен огнестрельного оружия в крепости теперь запрещены.¤</span>")
+						to_chat(world, "<span class='excomm'>Продажа и обмен огнестрельного оружия в крепости теперь запрещены.</span>")
 						gunban = 1
 					else
-						to_chat(world, "<span class='excomm'>¤Продажа и обмен огнестрельного оружия в крепости разрешены.¤</span>")
+						to_chat(world, "<span class='excomm'>Продажа и обмен огнестрельного оружия в крепости разрешены.</span>")
 						gunban = 0
 					to_chat(world, "<br>")
-					to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+					to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 					to_chat(world, "<br>")
 				if("drugslaw")
 					to_chat(world, "<br>")
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 					if(!drugban)
-						to_chat(world, "<span class='excomm'>¤Продажа и обмен наркотиков в крепости теперь запрещены.¤</span>")
+						to_chat(world, "<span class='excomm'>Продажа и обмен наркотиков в крепости теперь запрещены.</span>")
 						drugban = 1
 					else
-						to_chat(world, "<span class='excomm'>¤Продажа и обмен наркотиков в крепости разрешены.¤</span>")
+						to_chat(world, "<span class='excomm'>Продажа и обмен наркотиков в крепости разрешены.</span>")
 						drugban = 0
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<br>")
-					to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+					to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 					to_chat(world, "<br>")
 				if("expandchurch")
 					switch(alert("Вы уверены, что хотите расширить полномочия церкви? Это необратимо.", "Expand Church Powers", "Yes", "No"))
@@ -368,7 +368,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 								to_chat(world, "<span class='excomm'>[H.job] расширяет церковные полномочия, хвала Господу!</span>")
 								world << sound('sound/AI/bell_toll.ogg')
 								to_chat(world, "<br>")
-								to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+								to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 								to_chat(world, "<br>")
 								churchexpanded = 1
 								Inquisitor_Points += rand(6,11)
@@ -432,10 +432,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 								if("Innkeeper Wife") R.access = list(innkeep)
 						to_chat(world, "<br>")
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world,"<span class='excomm'>¤[M.real_name] назначается на должность [job]!¤</span>")
+						to_chat(world,"<span class='excomm'>[M.real_name] назначается на должность [job]!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<br>")
-						to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+						to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 						to_chat(world, "<br>")
 
 
@@ -456,13 +456,13 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					if(!migban)
-						to_chat(world, "<span class='excomm'>¤Вход новых мигрантов в крепость запрещен. Инкарну теперь разрешено бросать их в магму.¤</span>")
+						to_chat(world, "<span class='excomm'>Вход новых мигрантов в крепость запрещен. Инкарну теперь разрешено бросать их в магму.</span>")
 						migban = 1
 					else
-						to_chat(world, "<span class='excomm'>¤Мигрантам разрешается входить в крепость.¤</span>")
+						to_chat(world, "<span class='excomm'>Мигрантам разрешается входить в крепость.</span>")
 						migban = 0
 					to_chat(world, "<br>")
-					to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+					to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 					to_chat(world, "<br>")
 
 				if("openpit")
@@ -472,10 +472,10 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 				if("callformigrants")
 					to_chat(world, "<br>")
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world,"<span class='excomm'>¤Господь просит о мигрантах!¤</span>")
+					to_chat(world,"<span class='excomm'>Господь просит о мигрантах!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					to_chat(world, "<br>")
-					to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+					to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 					to_chat(world, "<br>")
 
 				if("craftmedal")
@@ -492,7 +492,7 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 								already_nominated = HU
 								break
 					to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-					to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+					to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 					world << sound('sound/AI/bell_toll.ogg')
 					if(already_nominated)
 						to_chat(world, "<span class='decree'>[H.job] уже наградил [input]!</span>")
@@ -508,14 +508,14 @@ var/list/riot_essential = list("Baron", "Baroness Bodyguard", "Incarn", "Squire"
 				if("energylaw")
 					if((treasuryworth.get_money()) > 199 && energyInvestimento == 0)
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<span class='decree'>Наш славный [H.job] решил потратить деньги на энергию!</span>")
 						to_chat(world, "<br>")
 						energyInvestimento = 1
 					else if((treasuryworth.get_money()) > 199 && energyInvestimento == 1)
 						to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-						to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+						to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 						world << sound('sound/AI/bell_toll.ogg')
 						to_chat(world, "<span class='decree'>Our glorious [H.job] перестал тратить деньги на энергию!</span>")
 						to_chat(world, "<br>")
@@ -626,13 +626,13 @@ var/roundendready = FALSE
 	set category = "Baron"
 	set name = "Decretodobarao"
 	set desc="Decretar algo."
-	var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null, list("\t"="#","ÿ"="&#255;"))
+	var/input = sanitize(input(usr, "Type your decree.", "Firethorn Decree", "") as message|null)
 	if(!input)
 		return
 	if(findtext(input, "http"))
 		return
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-	to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+	to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 	world << sound('sound/AI/bell_toll.ogg')
 	to_chat(world, "<span class='decree'>[input]</span>")
 	to_chat(world, "<br>")
@@ -661,7 +661,7 @@ var/roundendready = FALSE
 	if(!fortHand)
 		return
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-	to_chat(world, "<span class='excomm'>Новый указ барона!</span>")
+	to_chat(world, "<span class='excomm'>Новый указ Барона!</span>")
 	world << sound('sound/AI/bell_toll.ogg')
 	to_chat(world, "<span class='decree'>[input] становится [src.real_name]'s Десницей!</span>")
 	to_chat(world, "<br>")
@@ -685,11 +685,11 @@ var/roundendready = FALSE
 		return
 	to_chat(world, "<br>")
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-	to_chat(world,"<span class='excomm'>¤Новые налоги - <i>[input]%</i>!¤</span>")
+	to_chat(world,"<span class='excomm'>Новые налоги - <i>[input]%</i>!</span>")
 	taxes = input
 	world << sound('sound/AI/bell_toll.ogg')
 	to_chat(world, "<br>")
-	to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+	to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 	to_chat(world, "<br>")
 
 	log_admin("[key_name(src)] has made a decree")
@@ -703,10 +703,10 @@ var/roundendready = FALSE
 	if(riot == 0 && riotreal == 0)
 		to_chat(world, "<br>")
 		to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-		to_chat(world, "<span class='excomm'>¤БОЕВАЯ ТРЕВОГА! Все должны направиться в оружейную и приготовиться к бою!¤</span>")
+		to_chat(world, "<span class='excomm'>БОЕВАЯ ТРЕВОГА! Все должны направиться в оружейную и приготовиться к бою!</span>")
 		world << sound('sound/AI/bell_toll.ogg')
 		to_chat(world, "<br>")
-		to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+		to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 		to_chat(world, "<br>")
 		world << sound('mantrap.ogg', repeat = 1, wait = 0, volume = 50, channel = 6)
 		riot = 1
@@ -717,10 +717,10 @@ var/roundendready = FALSE
 		if(riot == 1 && riotreal == 0)
 			to_chat(world, "<br>")
 			to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-			to_chat(world, "<span class='excomm'><b>¤Боевая тревога отключена.¤</b></span>")
+			to_chat(world, "<span class='excomm'><b>Боевая тревога отключена.</b></span>")
 			world << sound('sound/AI/bell_toll.ogg')
 			to_chat(world, "<br>")
-			to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+			to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 			to_chat(world, "<br>")
 			world << sound('mantrap.ogg', repeat = 0, wait = 0, volume = 0, channel = 6)
 			riot = 0
@@ -741,10 +741,10 @@ var/roundendready = FALSE
 	if(riotreal == 0 && riot == 0)
 		to_chat(world, "<br>")
 		to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-		to_chat(world, "<span class='excomm'>¤Объявлен бунт! Тиамати должны собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!¤</span>")
+		to_chat(world, "<span class='excomm'>Объявлен бунт! Тиамати должны собраться в малой оружейной, те, кого поймают за пределами их резиденции, будут казнены!</span>")
 		world << sound('sound/AI/bell_toll.ogg')
 		to_chat(world, "<br>")
-		to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+		to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 		to_chat(world, "<br>")
 		world << sound('RiotAlarm.ogg', repeat = 1, wait = 0, volume = 100, channel = 6)
 		riotreal = 1
@@ -755,10 +755,10 @@ var/roundendready = FALSE
 		if(riotreal == 1 && riot == 0)
 			to_chat(world, "<br>")
 			to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
-			to_chat(world, "<span class='excomm'><b>¤Режим беспорядков неактивен. Жители крепости теперь могут вернуться к своим обязанностям.¤</b></span>")
+			to_chat(world, "<span class='excomm'><b>Режим беспорядков неактивен. Жители крепости теперь могут вернуться к своим обязанностям.</b></span>")
 			world << sound('sound/AI/bell_toll.ogg')
 			to_chat(world, "<br>")
-			to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+			to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 			to_chat(world, "<br>")
 			world << sound('RiotAlarm.ogg', repeat = 0, wait = 0, volume = 0, channel = 6)
 			riotreal = 0
@@ -782,14 +782,14 @@ var/roundendready = FALSE
 	to_chat(world, "<br>")
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 	if(!drugban)
-		to_chat(world, "<span class='excomm'>¤Продажа и обмен наркотиков в крепости теперь запрещены.¤</span>")
+		to_chat(world, "<span class='excomm'>Продажа и обмен наркотиков в крепости теперь запрещены.</span>")
 		drugban = 1
 	else
-		to_chat(world, "<span class='excomm'>¤Продажа и обмен наркотиков в крепости теперь разрешены.¤</span>")
+		to_chat(world, "<span class='excomm'>Продажа и обмен наркотиков в крепости теперь разрешены.</span>")
 		drugban = 0
 	world << sound('sound/AI/bell_toll.ogg')
 	to_chat(world, "<br>")
-	to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+	to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 	to_chat(world, "<br>")
 
 /mob/living/carbon/human/verb/WeaponBan()
@@ -802,13 +802,13 @@ var/roundendready = FALSE
 	to_chat(world, "<br>")
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 	if(!gunban)
-		to_chat(world, "<span class='excomm'>¤Продажа и обмен огнестрельного оружия в крепости теперь запрещены.¤</span>")
+		to_chat(world, "<span class='excomm'>Продажа и обмен огнестрельного оружия в крепости теперь запрещены.</span>")
 		gunban = 1
 	else
-		to_chat(world, "<span class='excomm'>¤Продажа и обмен огнестрельного оружия в крепости теперь разрешены.¤</span>")
+		to_chat(world, "<span class='excomm'>Продажа и обмен огнестрельного оружия в крепости теперь разрешены.</span>")
 		gunban = 0
 	to_chat(world, "<br>")
-	to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+	to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 	to_chat(world, "<br>")
 
 /mob/living/carbon/human/verb/ChurchExpand()
@@ -824,7 +824,7 @@ var/roundendready = FALSE
 				to_chat(world, "<span class='excomm'>The [src.job] расширил церковные полномочия, хвала Господу!</span>")
 				world << sound('sound/AI/bell_toll.ogg')
 				to_chat(world, "<br>")
-				to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+				to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 				to_chat(world, "<br>")
 				churchexpanded = 1
 				Inquisitor_Points += 10
@@ -841,13 +841,13 @@ var/roundendready = FALSE
 	to_chat(world, "<span class='ravenheartfortress'>Крепость Фаэторн</span>")
 	world << sound('sound/AI/bell_toll.ogg')
 	if(!migban)
-		to_chat(world, "<span class='excomm'>¤Вход новых мигрантов в крепость теперь запрещен. Инкарну теперь разрешено бросать их в магму.¤</span>")
+		to_chat(world, "<span class='excomm'>Вход новых мигрантов в крепость теперь запрещен. Инкарну теперь разрешено бросать их в магму.</span>")
 		migban = 1
 	else
-		to_chat(world, "<span class='excomm'>¤Мигрантам разрешается входить в крепость.¤</span>")
+		to_chat(world, "<span class='excomm'>Мигрантам разрешается входить в крепость.</span>")
 		migban = 0
 	to_chat(world, "<br>")
-	to_chat(world, "<span class='decree'>Новый указ барона!</span>")
+	to_chat(world, "<span class='decree'>Новый указ Барона!</span>")
 	to_chat(world, "<br>")
 
 /obj/structure/stool/bed/chair/ThroneSides

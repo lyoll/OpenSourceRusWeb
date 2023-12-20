@@ -85,7 +85,7 @@ var/datum/padla/Padla = null
 	for(var/mob/living/carbon/human/H in player_list)
 		if(!H.check_perk(/datum/perk/ref/warlock))
 			H.nutrition = rand(50, 100)
-
+/*
 /datum/curses/padla/regurgitator
 	name = "regurgitator padla"
 
@@ -93,7 +93,7 @@ var/datum/padla/Padla = null
 	for(var/i = 0; i <= 4; i++)
 		var/turf/T = pick(regurgilist)
 		new/obj/effect/regurgitator(T)
-		regurgilist -= T
+		regurgilist -= T */
 /*
 /datum/curses/padla/horde
 	name = "horde padla"
