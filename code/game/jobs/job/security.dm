@@ -64,7 +64,7 @@ datum/job/ordinator
 	sex_lock = MALE
 	money = 25
 	jobdesc = "Также неофициально называемые драконами, тиаматы являются личной охраной барона. Искусные в бою, их главным приоритетом является защита своего господина, его семьи и исполнение его воли. До тех пор, пока им платят, это так."
-	latejoin_locked = TRUE
+	latejoin_locked = FALSE
 	thanati_chance = 1
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -113,7 +113,7 @@ datum/job/ordinator
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/lw/jackboots(H), slot_shoes)
 			H.set_dir(NORTH)
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/sechelm(H), slot_r_hand)
-			H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/iron_cuirass(H), slot_wear_suit)
+			H.equip_to_slot_or_del(new /obj/item/clothing/suit/armor/vest/security(H), slot_wear_suit)
 			H.equip_to_slot_or_del(new /obj/item/device/radio/headset/bracelet/security(H), slot_wrist_r)
 			H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/taser/leet/sparq(H), slot_belt)
 			H.my_skills.CHANGE_SKILL(SKILL_MELEE, rand(10,11))
