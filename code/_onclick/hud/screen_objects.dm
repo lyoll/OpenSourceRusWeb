@@ -350,10 +350,10 @@
 							if(1 to 18)
 								if(H?.client?.DisplayingRolls)
 									H?.client?.DisplayingRolls = FALSE
-									to_chat(H, "<span class='jogtowalk'>Вы больше не видите roll.</span>")
+									to_chat(H, "<span class='jogtowalk'>You're no longer displaying rolls.</span>")
 								else
 									H?.client?.DisplayingRolls = TRUE
-									to_chat(H, "<span class='jogtowalk'>Теперь вам показываются roll.</span>")
+									to_chat(H, "<span class='jogtowalk'>You're now displaying rolls.</span>")
 								return
 	if(modifiers["right"])
 		switch(name)
@@ -383,10 +383,10 @@
 				if(isliving(usr))
 					var/mob/living/L = usr
 					if(!L.exam_wounds)
-						to_chat(L, "<span class='jogtowalk'>Сейчас я изучаю других более подробно.</span>")
+						to_chat(L, "<span class='jogtowalk'>I am now examining others with greater detail.</span>")
 						L.exam_wounds = TRUE
 					else
-						to_chat(L, "<span class='jogtowalk'>Я больше не рассматриваю других настолько подробно.</span>")
+						to_chat(L, "<span class='jogtowalk'>I am no longer examining others with greater detail.</span>")
 						L.exam_wounds = FALSE
 
 		return 1
@@ -458,42 +458,42 @@
 					if(33 to 62)
 						switch(icon_y)
 							if(55 to 64)
-								to_chat(H, "<span class='combatmodes'>⠀Weak: Наносит ласковый удар. Хорошо подходит для дружеского тумака.</i></span>")
+								to_chat(H, "<span class='combatmodes'>⠀Weak: You will deal as little damage as possible to an enemy target. Perhaps it is good to suppress someone.</i></span>")
 								H.combat_intent = "weak"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "min_st"
 							if(48 to 54)
-								to_chat(H, "<span class='combatmodes'>⠀Aimed: Улучшенный шанс на попадание, улучшенный шанс попасть в выбранную зону. Точный укол по конечностями нанесёт удар в сочленения брони. Цена: увеличенный промежуток между атаками.</i></span>")
+								to_chat(H, "<span class='combatmodes'>⠀Aimed: You will more precisely damage your enemy in exchange for stamina and strength. Good at hitting targets with few weaknesses.</i></span>")
 								H.combat_intent = "aimed"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "aimed"
 							if(40 to 47)
-								to_chat(H, "<span class='combatmodes'>⠀Fury: Цель испытает штраф к увороту и парированию этой атаки, снизится промежуток между атаками.</i></span>")
+
 								H.combat_intent = "fury"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "fury"
 							if(33 to 40)
-								to_chat(H, "<span class='combatmodes'>⠀Strong: Наносит мощный удар. Цена: быстро приводит к усталости.</i></span>")
+								to_chat(H, "<span class='combatmodes'>⠀Strong: You will deal as much damage as possible to an enemy target in exchange for stamina. Great to finish off someone.</i></span>")
 								H.combat_intent = "strong"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "max_st"
 							if(25 to 31)
-								to_chat(H, "<span class='combatmodes'>⠀Defend: Увеличивает вашу реакцию - парирование и уворот, даёт возможность контратаковать. Цена: замедляет перемещения, ослабляет вашу атаку, повышает уязвимость к финтам.</i></span>")
+								to_chat(H, "<span class='combatmodes'>⠀Defend: You will more easily dodge or parry an enemy attack in exchange for stamina. Great to defend yourself!</i></span>")
 								H.combat_intent = "defend"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "defend"
 							if(18 to 24)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! Вы не знаете, как этим пользоваться..</span>")
+								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
 								H.combat_intent = "guard"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "guard"
 							if(9 to 17)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! Вы не знаете, как этим пользоваться..</span>")
+								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
 								H.combat_intent = "dual"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "dual"
 							if(1 to 9)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! Вы не знаете, как этим пользоваться..</span>")
+								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
 								H.combat_intent = "feint"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "feint"
@@ -603,7 +603,7 @@
 			if(iscarbon(usr))
 				var/mob/living/carbon/C = usr
 				if(C.legcuffed)
-					to_chat(C, "<span class='notice'>Ты в наручниках! Ты не можешь бежать, пока не [C.legcuffed] сбросишь их!</span>")
+					to_chat(C, "<span class='notice'>You are legcuffed! You cannot run until you get [C.legcuffed] removed!</span>")
 					C.m_intent = "walk"	//Just incase
 					C.hud_used.move_intent.icon_state = "walking"
 					return 1
@@ -611,11 +611,10 @@
 					if("run")
 						usr.m_intent = "walk"
 						usr.hud_used.move_intent.icon_state = "walking"
-						to_chat(usr, "<span class='baron'><i>⠀Режим: медленные шаги. Бонус к защите и прицеливанию.</i></span>")
+						to_chat(usr, "<span class='baron'><i>⠀Mode: slow steps. Bonus to defense and aim.</i></span>")
 					if("walk")
 						usr.m_intent = "run"
 						usr.hud_used.move_intent.icon_state = "running"
-						to_chat(usr, "<span class='baron'><i>⠀Режим: бег.</i></span>")
 //				if(istype(usr,/mob/living/carbon/alien/humanoid))
 //					usr.update_icons()
 
@@ -658,23 +657,23 @@
 				if(!C.stat)
 					if(!istype(C.wear_mask, /obj/item/clothing/mask/breath) && !istype(C.wear_mask, /obj/item/clothing/mask/gas))
 						if(C.resting && C?:loc?:liquid?:depth >= 85)
-							to_chat(C, "Я не могу задержать дыхание!!")
+							to_chat(C, "I can't hold my breath!!")
 							return
 						if(!C.resting && C?:loc?:liquid?:depth >= 205)
-							to_chat(C, "Я не могу задержать дыхание!!")
+							to_chat(C, "I can't hold my breath!!")
 							return
 						if(C.holding_breath)
 							C.holding_breath = FALSE
-							to_chat(C, "Ты больше не пытаешься задержать дыхание.")
+							to_chat(C, "You're no longer trying to hold your breath.")
 							C.internals.icon_state = "internal01"
 						else
 							C.holding_breath = TRUE
-							to_chat(C, "Ты пытаешься задержать дыхание.")
+							to_chat(C, "You're now trying to hold your breath.")
 							C.internals.icon_state = "internal00"
 							spawn(350)
 								if(C.holding_breath)
 									C.holding_breath = FALSE
-									to_chat(C, "Ты больше не пытаешься задержать дыхание.")
+									to_chat(C, "You're no longer trying to hold your breath.")
 									C.internals.icon_state = "internal01"
 					else
 						if(!C.stat && !C.stunned && !C.paralysis && !C.restrained())
@@ -685,7 +684,7 @@
 									C.internals.icon_state = "internal0"
 							else
 								if(!istype(C.wear_mask, /obj/item/clothing/mask))
-									C << "<span class='notice'>На тебе нет маски.</span>"
+									C << "<span class='notice'>You are not wearing a mask.</span>"
 									return 1
 								else
 									var/list/nicename = null

@@ -21,12 +21,12 @@ var/list/depotenzia_types = list(
 	var/haspenis = ((H.has_penis() && H.potenzia > -1 && H.species.genitals && !H.mutilated_genitals))
 	if(H.is_nude())//Gotta be naked.
 		if(haspenis)//And have a dick.
-			H.visible_message("<span class='danger'>[user] пытается отрезать [H]'s член с [src]!</span>",
-								"<span class='danger'>[user] пытается отрезать твой пенис с помощью [src]!</span>")
+			H.visible_message("<span class='danger'>[user] tries to cut off [H]'s penis with [src]!</span>",
+								"<span class='danger'>[user] tries to cut off your penis with [src]!</span>")
 			if(do_after(user, 50))
-				H.visible_message("<span class='danger'>[user] отсекает [H]'s член с [src]!</span>",
-								"<span class='danger'>[user] отрезает твой пенис с помощью [src]!</span>")
-				H.custom_pain("[pick("OH [uppertext(H.god_text())] МОЙ ЧЛЕН!", "АХ [uppertext(H.god_text())] ЗАЧЕМ!", "АХ [uppertext(H.god_text())] ТАК БОЛЬНО!")]", 100)//Pain.
+				H.visible_message("<span class='danger'>[user] cuts off [H]'s penis with [src]!</span>",
+								"<span class='danger'>[user] cuts off your penis with [src]!</span>")
+				H.custom_pain("[pick("OH [uppertext(H.god_text())] MY DICK!", "OH [uppertext(H.god_text())] WHY!", "OH [uppertext(H.god_text())] IT HURTS!")]", 100)//Pain.
 				H.apply_damage(rand(30,45), BRUTE, BP_GROIN)
 				playsound(H, 'sound/effects/gore/severed.ogg', 50, 1, -1)
 				var/obj/item/weapon/reagent_containers/food/snacks/organ/internal/penis/P = new /obj/item/weapon/reagent_containers/food/snacks/organ/internal/penis(H.loc)
@@ -34,9 +34,9 @@ var/list/depotenzia_types = list(
 				H.mutilate_genitals()
 				H.client.ChromieWinorLoose(H.client, -1)
 			else
-				to_chat(user, "<span class='notice'>Вам не удастся отрезать им пенис...</span>")
+				to_chat(user, "<span class='notice'>You fail to cut off their penis...</span>")
 				return
 		else
-			to_chat(user, "<span class='passive'>У них нет пениса!</span>")
+			to_chat(user, "<span class='passive'>They have no penis!</span>")
 	else
-		to_chat(user, "Они должны быть обнажены, чтобы совершить это действие.")
+		to_chat(user, "They must be naked to perform the act.")

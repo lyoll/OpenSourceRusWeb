@@ -243,7 +243,7 @@
 		if(!I)
 			return
 		if(I.name)
-			I.visible_message("<span class='passiveboldsmaller'>[capitalize(I.name)]</span> <span class='passivesmaller'>падает на \the [src.loc].</span>")
+			I.visible_message("<span class='passiveboldsmaller'>[capitalize(I.name)]</span> <span class='passivesmaller'>falls on \the [src.loc].</span>")
 		if(I.drop_sound)
 			playsound(I, I.drop_sound, 25, 0)
 		if(istype(I, /obj/item/weapon/gun))//Snowflake check yeah, but I'm tired of people getting fucking shot when they pull their gun out from their inventory.

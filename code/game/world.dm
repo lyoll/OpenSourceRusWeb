@@ -194,7 +194,7 @@ var/rtlog_path
 	s += " ("
 	s += "<a href=\"https://discord.gg/zR2Kc9SpGg\">" //Change this to wherever you want the hub to link to. 
 //	s += "[game_version]"
-	s += "Дискорд"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 
@@ -222,13 +222,13 @@ var/rtlog_path
 		features += "~[n] addict"
 
 	//if (!host && config && config.hostedby)
-	features += "<b>RUZONE</b>"
+	features += "<b>IZONE</b>"
 	features += "<b>+\[18\]</b>"
 
 	if (features)
 		s += "<br>[list2text(features, ", ")]"
-	s += "<br><b>Сервер:</b> [src.port]"
-	s += "<br><b>Карта этой недели:</b> [currentmaprotation]"
+	s += "<br><b>The server:</b> [src.port]"
+	s += "<br><b>This week's map:</b> [currentmaprotation]"
 	if(master_mode == "holywar")
 		s += "<br><b>HOLY WAR!</b>"
 	if(master_mode == "miniwar")

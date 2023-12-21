@@ -281,17 +281,17 @@
 				if(H.a_intent == "help" && H.get_active_hand() == null)
 					if(istype(user, /mob/living/carbon/human/bumbot))
 						spawn(rand(40, 45))
-							user.visible_message("<span class='passivebold'>[user]</span> <span class='passive'>дружелюбно машет на <span class='passivebold'>[H]</span><span class='passive'>.</span>")
-					return src.visible_message("<span class='passivebold'>[H]</span> <span class='passive'>дружелюбно машет на <span class='passivebold'>[user]</span><span class='passive'>.</span>")
+							user.visible_message("<span class='passivebold'>[user]</span> <span class='passive'>waves friendly at <span class='passivebold'>[H]</span><span class='passive'>.</span>")
+					return src.visible_message("<span class='passivebold'>[H]</span> <span class='passive'>waves friendly at <span class='passivebold'>[user]</span><span class='passive'>.</span>")
 				if(H.a_intent == "hurt")
 					if(H.get_active_hand() == null)
-						return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> угрожает </span><span class='combatbold'>[user]</span> <span class='combat'>своими кулаками!</span>")
+						return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> threatens </span><span class='combatbold'>[user]</span> <span class='combat'>with his fists!</span>")
 					var/obj/item/I = H.get_active_hand()
 					if(istype(I, /obj/item/weapon/gun))
 						var/obj/item/weapon/gun/G = I
 						G.aim_at(user)
-						return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> нацелен на [user] c <b>[I]</b>!</span>")
-					return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> угрожает [user] c <b>[I]</b>!</span>")
+						return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> aims at [user] with <b>[I]</b>!</span>")
+					return src.visible_message("<span class='combatbold'>[H]</span><span class='combat'> threatens [user] with <b>[I]</b>!</span>")
 
 
 	return
@@ -316,7 +316,7 @@
 		return
 	if(user.lying)
 		return
-	user.visible_message("<span class='notice'>[user] всматривается вдаль.</span>")
+	user.visible_message("<span class='notice'>[user] peers into the distance.</span>")
 	user.face_atom(src)
 	user.do_zoom()
 	return
@@ -347,7 +347,7 @@
 		if(P)	qdel(P)
 
 	user.face_atom(src)
-	user.visible_message("<span class='examinebold'>[usr]</span><span class='examine'> указывает на</span><span class='examinebold'> [src].</span>")
+	user.visible_message("<span class='examinebold'>[usr]</span><span class='examine'> points at</span><span class='examinebold'> [src].</span>")
 	user.next_move = world.time + 20
 
 
@@ -451,7 +451,7 @@
 		nutrition = max(nutrition - rand(1,5),0)
 		handle_regular_hud_updates()
 	else
-		src << "\red У тебя кончились силы!  Тебе нужна еда!"
+		src << "\red You're out of energy!  You need food!"
 
 // Simple helper to face what you clicked on, in case it should be needed in more than one place
 /mob/proc/face_atom(var/atom/A)
@@ -493,11 +493,11 @@
 		if(l_hand)
 			return
 	if(!has_limbs)
-		to_chat(src, "<i>Ты даже сам не можешь пошевелиться - у тебя нет конечностей.</i>")
+		to_chat(src, "<i>You can't even move yourself - you have no limbs!</i>")
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		if(H.special == "wormcrawl")
-			to_chat(src, "СТОЙ! Я не червяк!")
+			to_chat(src, "HALT! I'm not a worm!")
 			return
 	var/dx = A.x - x
 	var/dy = A.y - y
@@ -512,7 +512,7 @@
 	if(direction)
 		if(src.nutrition > 150)
 			scrambling = 1
-			src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>переползает через [A]!</span>")
+			src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>crawls over the [A]!</span>")
 			sleep(4)
 			Move(get_step(src,direction))
 			scrambling = 0
@@ -522,7 +522,7 @@
 			var/mob/living/carbon/human/H = src
 			if(H.last_dam > 50)
 				scrambling = 1
-				src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>переползает через [A]!</span>")
+				src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>crawls over the [A]!</span>")
 				sleep(2)
 				Move(get_step(src,direction))
 				scrambling = 0
@@ -530,7 +530,7 @@
 				return
 		else
 			scrambling = 1
-			src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>переползает через [A]</span>!")
+			src.visible_message("<span class='combatbold'>[src]</span> <span class='combat'>crawls over the [A]</span>!")
 			sleep(4)
 			Move(get_step(src,direction))
 			scrambling = 0

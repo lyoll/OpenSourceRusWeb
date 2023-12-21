@@ -508,11 +508,11 @@ var/global/thanatiWords = list()
 					modifier = rand(8,20)
 				if(H.job == "Migrant")
 					H.religion = "Old Ways"
-					to_chat(H, "<span class='baronboldoutlined'>Ты исповедуешь старые обычаи.</span> <span class='baron'>Это забытая религия. Пусть наши боги воссияют во тьме пещер.</span>")
+					to_chat(H, "<span class='baronboldoutlined'>You profess the Old Ways.</span> <span class='baron'>It is a forgotten religion. May our Gods shine in the darkness of the caves.</span>")
 				else
 					if(prob(job.thanati_chance+modifier) && !H.isChild() && !joined_late)
 						H.religion = "Thanati"
-						to_chat(H, "<span class='baronboldoutlined'>⠀Ты - часть этого [H.religion] культа.</span> <span class='baron'>Это нелегальная религия в Эвергрине, держитесь подальше от инквизиции. Проверьте свои воспоминания, чтобы узнать, кто ваши братья и сестры по вере.</span>")
+						to_chat(H, "<span class='baronboldoutlined'>⠀You're part of the [H.religion] cult.</span> <span class='baron'>It's not a legal religion in Evergreen, stay away from the Inquisition. Check your memories to see who's your brothers and sisters in faith.</span>")
 						H << pick('sound/effects/thanati_investigation1.ogg', 'sound/effects/thanati_investigation2.ogg', 'sound/effects/thanati_investigation3.ogg')
 						to_chat(H, "<span class='jogtowalk'><i>Thanati Roll: Successful!</i></span>")
 						if(H.mind)
@@ -527,27 +527,27 @@ var/global/thanatiWords = list()
 							H.mind.thanati_word_random = "[pick(CorruptWord3) + " " + pick(CorruptWord4)]"
 
 							thanatiWords += fullWord
-							H.mind.store_memory("Мое слово - это [H.mind.thanati_corrupt] и мой круг - это [H.mind.thanati_type]")
-							to_chat(H, "<span class='baron'>Твое испорченное слово: [H.mind.thanati_corrupt], [H.mind.thanati_word_random] (Круг [H.mind.thanati_type]).</span>\n")
-							to_chat(H, "\n<span class='barondarker'><i>* Прославим нашего господа в символе, чтобы помнить о наших целях. *</i></span>")
+							H.mind.store_memory("My word is [H.mind.thanati_corrupt] and my circle is [H.mind.thanati_type]")
+							to_chat(H, "<span class='baron'>Your corrupt word: [H.mind.thanati_corrupt], [H.mind.thanati_word_random] (Круг [H.mind.thanati_type]).</span>\n")
+							to_chat(H, "\n<span class='barondarker'><i>* Glorify our lord in a Sigil to remember our goals. *</i></span>")
 							H.verbs += /mob/living/carbon/human/proc/getWords
 							H.verbs += /mob/living/carbon/human/proc/praisethelord
 							H.verbs += /mob/living/carbon/human/proc/getBrothers
 					else
 						if(!H.isChild() && !joined_late)
-							to_chat(H, "<span class='jogtowalk'><i>Thanati Roll: Провал!</i></span>")
+							to_chat(H, "<span class='jogtowalk'><i>Thanati Roll: Failed!</i></span>")
 						H.religion = "Gray Church"
 			if(H.religion == "Gray Church")
 				if(H.job == "Mortus")
-					to_chat(H, "<span class='baronboldoutlined'>Вы исповедуете постхристианство.</span><span class='baron'>, но на практике это безразлично. Чем больше вы работаете в этом месте, тем меньше вас волнуют</span> <span class='baronboldoutlined'>религиозные</span><span class='baron'>, </span><span class='baronboldoutlined'>вещи</span> <span class='baron'>и</span> <span class='baronboldoutlined'>общественное мнение</span><span class='baron'>. Ваше внимание поглощено опьяняющей тревогой, которую вы продолжаете испытывать рядом с паутиной жизни.</span>")
+					to_chat(H, "<span class='baronboldoutlined'>You profess Post-Christianity.</span><span class='baron'>, but in practice it is indifferent. The more you work in this place, the less you care about</span> <span class='baronboldoutlined'>religions</span><span class='baron'>, </span><span class='baronboldoutlined'>thoughts</span> <span class='baron'>and</span> <span class='baronboldoutlined'>common affairs</span><span class='baron'>. Your attention is consumed by the intoxicating anxiety that you continue to feel close to the Lifeweb.</span>")
 				else
-					to_chat(H, "<span class='baronboldoutlined'>Вы исповедуете постхристианство.</span> <span class='baron'>Это единственная законная религия Эвергрина. Пусть Бог и инквизиция спасут нас от повторения Шанхая. Аминь.</span>")
+					to_chat(H, "<span class='baronboldoutlined'>You profess Post-Christianity.</span> <span class='baron'>It is Evergreen's only legal religion. May God and the Inquisition save us from Thanati. Amen.</span>")
 				H.religion = "Gray Church"
 		H.create_kg()
 		H.month_born = pick("vernes","lipen","stujen","plesnya","leden","cherven","krovotok","zmeinik","grezen","shramyn","kamnepad","ljutish")
 		H.day_born = rand(1,30)
 		H.year_born = 3021 - H.age
-		var/Borntext = "Мне [pick("посчастливилось","повезло")] родиться в [H.month_born], [H.day_born], [H.year_born] ([H.zodiac] Sign)"
+		var/Borntext = "I was [pick("made","lucky")] to be born on [H.month_born], [H.day_born], [H.year_born] ([H.zodiac] Sign)"
 		H?.mind?.memory += Borntext
 		spawn(15 SECONDS)
 			to_chat(H, "<span class='passive'>[Borntext]</span>")

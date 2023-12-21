@@ -34,7 +34,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Life"
-	jobdesc = "Оказавшись в стороне от королевской армии, вы лишились ног, а вместе с ними и своей службы. Тем не менее, вы завоевали признание и уважение - настолько, насколько это позволяет передвигаться в инвалидном кресле."
+	jobdesc = "Once apart of the King’s Army, you have lost your legs and with it your service. However, you have gained acknowledgement and respect - so far as that will take you in a wheelchair."
 	selection_color = "#dddddd"
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list()
@@ -91,7 +91,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the baron"
-	jobdesc = "Владелец гостиницы Старый петух. Люди голодны, и вы жаждете их денег, так накорми их! Вы знаете почти всех и можете услышать слухи от тех, кто временно проезжает через Фаэторн. Сойлеры часто выращивают ингредиенты, которые вы используете для приготовления вкусного рагу, и обеспечивают результат, предназначенный для ваших сочных бургеров, и они знают, что вы недешевы."
+	jobdesc = "The owner of The Old Cock inn. The people are hungry, and you&#8217;re starving for their coin, so feed them! You know just about everyone, and get to hear rumors from those temporarily passing through Firethorn. The soilers often grow the ingredients you use for your delicious stews and provide the arellit meat for your juicy burgers, and they know you&#8217;re not cheap."
 	selection_color = "#dddddd"
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(innkeep)
@@ -127,7 +127,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(innkeep)
 	minimal_access = list(innkeep)
-	jobdesc = "Любимая жена трактирщика - вы управляете семейным бизнесом. Любить своего мужа и готовить еду, пока он ухаживает за голодными посетителями, часто является вашим ежедневным упражнением. Некоторые мужчины бросают на вас косые взгляды, но это часто сопровождается звуком выстрела из дробовика."
+	jobdesc = "The darling wife of the Innkeeper - you run a family business. Loving your husband and cooking food while he tends to the hungry patrons is often your daily excercise. Some men flash awry looks at you, but its often met by the sound of a pumping shotgun."
 	thanati_chance = 75
 	money = 13
 	sex_lock = FEMALE
@@ -175,7 +175,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(keep)
 	minimal_access = list(keep)
-	jobdesc = "Главный слуга и личный прислужник барона. Вы справляетесь со всеми предсказуемыми и непредсказуемыми потребностями домашнего хозяйства. Будь то организация запасов для судомойни, приготовление еды для семьи барона и его гостей или организация общественных мероприятий за счет казны."
+	jobdesc = "The chief manservant and personal servant to the Baron. You handle all predictable and unpredictable needs of the household. Be it organizing stock for the scullery, preparing food for the Baron&#8217;s family and his guests, or arranging social events at the cost of the treasury."
 	thanati_chance = 75
 	money = 27
 	latejoin_locked = TRUE
@@ -203,7 +203,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	jobdesc = "Старшая экономка женского персонала барона и личная служанка. Ваша иерархическая структура состоит из горничных и детей-слуг, стоящих ниже вас. Будучи единственным учителем и опекуном, ответственным за воспитание потомства Барона, они считают вас такой же матерью, как и свою настоящую."
+	jobdesc = "The head housekeeper of the Baron&#8217;s female staff and personal servant. Your pecking order consists of the maids and child servants beneath you. Being the sole teacher and caretaker responsible for the upbringing Baron&#8217;s progeny, they consider you as much a mother as their real one."
 	jobdescbr = "The head housekeeper of the Baron&#8217;s female staff and personal servant. Your pecking order consists of the maids and child servants beneath you. Being the sole teacher and caretaker responsible for the upbringing Baron&#8217;s progeny, they consider you as much a mother as their real one."
 	supervisors = "the baron"
 	selection_color = "#dddddd"
@@ -241,7 +241,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list()
 	minimal_access = list()
-	jobdesc = "Чудотворец-еретик, который был полезен жителям крепости, даровал им временную амнистию от казни. Говорят, что он принадлежит к культу Конситов, конситы и некоторые неосведомленные жители называют его пророком - богохульство, если вы когда-либо это слышали. Способный получать видения и пересказывать их в мельчайших подробностях до того, как они произойдут, епископ часто отговаривает от любого признания этих истин. Но иногда вы не можете не чувствовать, что это не совпадение..."
+	jobdesc = "A heretic miracle worker who&#8217;s usefulness to the residents of the fortress has granted them temporary amnesty from execution. Said to belong to the Cult of Cons, the Consytes and some unknowing residents refer to him as the &#8217;Prophet&#8217; - blasphemy, if you&#8217;ve ever heard it. Able to receive and recite visions in great detail before they happen, the Bishop often dissuades any acknowledgement to these &#8217;Truths&#8217;. But sometimes you can&#8217;t help but feel its not a coincidence..."
 	jobdescbr = "A heretic miracle worker who&#8217;s usefulness to the residents of the fortress has granted them temporary amnesty from execution. Said to belong to the Cult of Cons, the Consytes and some unknowing residents refer to him as the &#8217;Prophet&#8217; - blasphemy, if you&#8217;ve ever heard it. Able to receive and recite visions in great detail before they happen, the Bishop often dissuades any acknowledgement to these &#8217;Truths&#8217;. But sometimes you can&#8217;t help but feel its not a coincidence..."
 
 	equip(var/mob/living/carbon/human/H)
@@ -262,8 +262,8 @@
 		return 1
 
 /mob/living/carbon/human/verb/respark()
-	set name = "Зажечь искру"
-	set desc="Возвращает кого-то к жизни!"
+	set name = "respark"
+	set desc="Brings someone back to life!"
 
 	if(!consyte)
 		return
@@ -271,7 +271,7 @@
 	var/turf/T = get_step(src, dir)
 	for(var/mob/living/carbon/human/H in T.contents)
 		if(H.stat != DEAD)
-			to_chat(src, "Они все еще живы.")
+			to_chat(src, "They're still alive.")
 			return
 		if(src.species.name != "Human" && src.species.name != "Child")
 			return
@@ -280,7 +280,7 @@
 		var/datum/organ/external/affectedorgan = H.get_organ(BP_HEAD)
 		if(affectedorgan.amputated || affectedorgan.status & ORGAN_DESTROYED)
 			return
-		visible_message("<span class='examinebold'>[src]</span> <span class='examine'>наклоняется и целует</span> <span class='examinebold'>[H]</span><span class='examine'> в губы.</span>")
+		visible_message("<span class='examinebold'>[src]</span> <span class='examine'>bends down and kisses</span> <span class='examinebold'>[H]</span><span class='examine'> on the lips.</span>")
 		H.respark_revival()
 		H.verbs += /mob/living/carbon/human/verb/respark
 		H.verbs += /mob/living/carbon/human/verb/choir
@@ -342,16 +342,16 @@
 /mob/living/carbon/human/verb/choir()
 	set hidden = 0
 	set category = "Consyte"
-	set name = "Хор"
+	set name = "Choir"
 	if(!consyte)
 		return
 	if(!consyte_voice)
-		consyte_voice = sanitize(input("Выберите название для хора.","[src.real_name]",consyte_voice))
+		consyte_voice = sanitize(input("Choose a name for the choir.","[src.real_name]",consyte_voice))
 		if(!consyte_voice)
 			return
 		if(findtext(consyte_voice, "http"))
 			return
-	var/consytemessage = sanitize(input("Хор!","[src.consyte_voice]") as message)
+	var/consytemessage = sanitize(input("CHOIR!","[src.consyte_voice]") as message)
 	if(!consytemessage)
 		return
 	if(findtext(consytemessage, "http"))
@@ -373,7 +373,7 @@
 	selection_color = "#dddddd"
 	access = list()
 	minimal_access = list()
-	jobdesc = "Потерянные беспризорники разбросаны среди бездомных в Фаэторне. Часто начиная преступную жизнь в раннем возрасте, они податливы влиянию более предприимчивых местных жителей. Забитые и не имеющие дома, куда можно вернуться, они часто обращаются к местному населению за кровом и едой."
+	jobdesc = "Lost street kids are littered among the homeless in Firethorn. Often starting an early life of crime, they are malleable to the influences of the more opportunistic residents. Downtrodden and without a home to return to, they often find themselves turning to the local consyte for shelter and food."
 	jobdescbr = "Lost street kids are littered among the homeless in Firethorn. Often starting an early life of crime, they are malleable to the influences of the more opportunistic residents. Downtrodden and without a home to return to, they often find themselves turning to the local consyte for shelter and food."
 
 	equip(var/mob/living/carbon/human/H)
@@ -425,7 +425,7 @@
 	idtype = null
 	access = list()
 	minimal_access = list()
-	jobdesc = "Ветеран улиц, вы жили и дышали ими всю свою жизнь. Прогорклый запах канализации теперь притупляет ваши чувства, и вы выжили за счет добычи мертвых паразитов, которых находите в темных переулках. Люди думают, что ты грязь, но улицы изменили тебя, и ты знаешь правду."
+	jobdesc = "A veteran of the streets, you&#8217;ve lived and breathed them all your life. The rancid smell of the sewers is now numb to your senses and you&#8217;ve survived off the pickings of the dead vermin you find in the dark alleyways. People think you&#8217;re dirt - but the streets have changed you, and you know the truth."
 	jobdescbr = "Você perdeu uma vida decente, o respeito da sociedade e sua própria mente, e não se arrepende de nada. Hoje à noite alguém vai te matar só por diversão."
 
 	equip(var/mob/living/carbon/human/H)
@@ -501,7 +501,7 @@
 	selection_color = "#ffeeee"
 	idtype = /obj/item/weapon/card/id
 	access = list()
-	jobdesc = "Наемник Фаэторна, вы вступили в местную гильдию наемников, чтобы получить шанс получить высокооплачиваемую работу. Вам еще предстоит найти его."
+	jobdesc = "A sellsword of Firethorn, you joined the local mercenary&#8217;s guild for a chance of landing a paying job. You have yet to find one."
 	minimal_access = list()
 	latejoin_locked = FALSE
 	thanati_chance = 12
@@ -606,7 +606,7 @@
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
 	faction = "Station"
-	jobdesc = "Страдающий карликовостью, чей талант быть маленьким и выставлять себя дураком привлек к нему внимание двора барона. Его безграничная способность к самоуничижению часто встречается у тех, кто смеется над ним, но не над ним самим."
+	jobdesc = "A sufferer of dwarfism whose talent for being small and making a fool of himself has brought him to the attention of the Baron&#8217;s court. His limitless ability for self-deprecation is often met with those laughing at him - not with him."
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the duke"
@@ -723,13 +723,13 @@
 	if(istype(response, /mob))
 		var/mob/M = response
 		if(M.nickname)
-			to_chat(src, "<span class='combat'>У них уже есть прозвище!</span>")
+			to_chat(src, "<span class='combat'>They already have a nickname!</span>")
 			return
 
-		log_game("([src.ckey])[src.real_name] выдаёт ([M.ckey])[M.real_name] прозвище: [responseTwo]")
+		log_game("([src.ckey])[src.real_name] gave ([M.ckey])[M.real_name] the nickname: [responseTwo]")
 		if(findtext(responseTwo, config.ic_filter_regex))
 			src << 'vam_ban.ogg'
-			to_chat("ЭТО ТАК ЗАБАВНО!")
+			to_chat("THAT'S SO FUNNY!")
 			var/datum/organ/internal/heart/HE = (locate() in internal_organs)
 			if(HE)
 				src.emote("laugh")
@@ -740,7 +740,7 @@
 			sleep(30)
 			qdel(src.client)
 			return
-		visible_message("[src.name] выдаёт [M.name] прозвище: [responseTwo]")
+		visible_message("[src.name] gave [M.name] the nickname: [responseTwo]")
 		M.nickname = responseTwo
 
 /mob/living/carbon/human/proc/malabares()
@@ -809,22 +809,22 @@
 
 /mob/living/carbon/human/proc/rememberjoke()
 	var/list/joke_to_safe
-	var/list/begining_list = list("Однажды инквизитор заходит в бордель", "Южанин и северянин встречаются друг с другом в пещере", "Барон возвращается из похода", "Мигрант прибывает в тронный зал", "Торговец просит барона об одолжении", "Шут решил пошутить", "Женщина зовет на помощь", "Наследник и Правопреемница заперлись в комнате", "(ДРУГОЕ)")
+	var/list/begining_list = list("One day, an Inquisitor walks into a brothel", "A Southerner and a Northerner meet each other in the cave", "The Baron returns from the campaign", "A Migrant arrives at the throne room", "The Bookkeeper asks the Baron for a favor", "The Jester decided to make a joke", "A woman calls for help", "The Heir and the Successor locked themselves in a room", "(ANOTHER)")
 	if(stat) return
-	var/joke_name = sanitize(input(src, "Выбери название своей шутки!", "Шутка", "") as text)
+	var/joke_name = sanitize(input(src, "Choose the name of your joke!", "Joke", "") as text)
 	if(!length(joke_name))
 		return
-	var/begining = input(src, "Выберите ПЕРВУЮ ЧАСТЬ вашей шутки!", "Шутка") in begining_list
+	var/begining = input(src, "Choose the FIRST PART of your joke!", "Joke") in begining_list
 	if(!length(begining))
 		return
-	var/joke_input = sanitize(input(src, "Сюжет шутки", "Шутка", "") as message, repl_chars = list("\t"="#","ÿ"="&#255;"))
+	var/joke_input = sanitize(input(src, "Joke Plot", "Joke", "") as message, repl_chars = list("\t"="#","ÿ"="&#255;"))
 	if(!length(joke_input))
 		return
 	if(stat) return
 	var/list/joke_list = splittext(joke_input, "\n")
-	if(begining == "(ДРУГОЕ)")
+	if(begining == "(ANOTHER)")
 		if(length(joke_list) < 2)
-			to_chat(src, "<span class='combat'>Длина шутки должна составлять не менее 2 строк!</span>")
+			to_chat(src, "<span class='combat'>The length of the joke must be at least 2 lines!</span>")
 			return
 		joke_to_safe = joke_list
 
@@ -832,7 +832,7 @@
 		joke_to_safe = list(begining) | joke_list
 
 	jokes_remembered[joke_name] = joke_to_safe
-	to_chat(src, "Я помню шутку под названием [joke_name].")
+	to_chat(src, "I remember a joke named [joke_name].")
 	return
 
 
@@ -842,15 +842,15 @@
 		is_joking = FALSE
 		return
 	if(!length(jokes_remembered))
-		to_chat(src, "<span class='combat'>Я не знаю никаких шуток!</span>")
+		to_chat(src, "<span class='combat'>I don't know any jokes!</span>")
 		return
-	var/joke_name = input(usr, "Какую шутку мне следует использовать?", "Шутка") in jokes_remembered
+	var/joke_name = input(usr, "Which joke i should use?", "Joke") in jokes_remembered
 	if(stat) return
 	is_joking = TRUE
 	var/the_joke = ""
 	for(var/joke_text in jokes_remembered[joke_name])
 		if(!is_joking)
-			to_chat(src, "<span class='combat'>Мне нужно перестать шутить!</span>")
+			to_chat(src, "<span class='combat'>I need to stop joking!</span>")
 			return
 		say("poison*[joke_text]")
 		the_joke += joke_text
@@ -919,7 +919,7 @@
 	idtype = /obj/item/weapon/card/id/hydro
 	access = list(soilery)
 	minimal_access = list(soilery)
-	jobdesc = "Живая кровь форта. Многие люди полагаются на вас в поставках урожая. Они обеспечивают Фаэторн самыми свежими продуктами и результатами как для еды, так и для верховой езды. Большая часть продуктов питания, производимых фирмой Фаэторн, производится внутри страны и закупается у местных продавцов, которые продают их как частным лицам, так и предприятиям в пределах форта."
+	jobdesc = "The life blood of the fort. Many people rely on you to supply crops. They provide Firethorn with its freshest produce and arellits for both food and riding. Most of Firethorn&#8217;s food production is domestic and bought locally from the soilers who market to both individuals and businesses within the fort."
 	jobdescbr = "The life blood of the fort. Many people rely on you to supply crops. They provide Firethorn with its freshest produce and arellits for both food and riding. Most of Firethorn&#8217;s food production is domestic and bought locally from the soilers who market to both individuals and businesses within the fort."
 	thanati_chance = 75
 	money = 5
@@ -956,9 +956,9 @@
 	idtype = /obj/item/weapon/card/id/qm
 	access = list(merchant)
 	minimal_access = list(merchant)
-	latejoin_locked = FALSE
+	latejoin_locked = TRUE
 	thanati_chance = 33
-	jobdesc = "Новичок откуда-то с востока, по слухам, он известный букмекер и приехал во Фаэторн, чтобы опередить войска трибунала."
+	jobdesc = "A newcomer from somewhere in the east, rumors say he&#8217;s a known book maker and came to Firethorn to outrun tribunal troops."
 	jobdescbr = "A newcomer from somewhere in the east, rumors say he&#8217;s a known book maker and came to Firethorn to outrun tribunal troops."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -993,7 +993,7 @@
 	minimal_access = list(merchant)
 	sex_lock = MALE
 	money = 12
-	jobdesc = "Нанятый бухгалтером для ручного труда, вы работаете в их магазине и доках, помогая им выгружать товары с баржи и следя за тем, чтобы им не приходилось выполнять физические обязанности. Делайте это достаточно хорошо, и ваш босс, возможно, будет достаточно любезен, чтобы заплатить вам."
+	jobdesc = "Hired by the Bookkeeper for manual labor, you work their shop and docks by assisting them with unloading their goods from the barge and ensuring they don&#8217;t have to do physical duties. Do it well enough and your boss may be gracious enough to pay you."
 	jobdescbr = "Hired by the Bookkeeper for manual labor, you work their shop and docks by assisting them with unloading their goods from the barge and ensuring they don&#8217;t have to do physical duties. Do it well enough and your boss may be gracious enough to pay you."
 	thanati_chance = 70
 	equip(var/mob/living/carbon/human/H)
@@ -1065,7 +1065,7 @@
 	sex_lock = FEMALE
 	thanati_chance = 75
 	money = 3
-	jobdesc = "Повелительница ночи, соблазнительница, которая приглашает мужчин в свои нежные объятия за деньги. Толкач - это ваш сутенер, и он ожидает сокращения заработка. Соблазнять мужчин этими ночами не так уж сложно - в конце концов, ночи становятся тоскливыми и одинокими, но с недавним появлением инквизиции вы заметили, что ваши частые посетители становятся странно целомудренными в вашем присутствии."
+	jobdesc = "The lady of the night, a seductress who welcomes men into her soft embrace for coin. The pusher is your pimp, and he&#8217;s expecting a cut of the earnings. Enticing men these nights is not that hard - nights get dreary and lonely after all, but with the recent arrival of the Inquisition, you&#8217;ve noticed your frequent visitors become strangely chaste in your presence."
 	jobdescbr = "Após a chegada da Inquisição, os homens da fortaleza tornaram-se subitamente ... assexuados. Eles têm medo de uma reeducação que agrada a Deus e incapacitante ou apenas se sublimam em fanatismo, intrigas e expectativa de uma matança? De qualquer forma, você deve se esforçar para lembrá-los de simples alegrias corporais."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -1101,7 +1101,7 @@
 	children = TRUE
 	//sex_lock = MALE
 	access = list(brothel)
-	jobdesc = "Уличный мальчишка, попавший под влияние наркоторговца. Он заставляет вас выполнять черную работу, за которой его нельзя застукать, например, надевать звенящие сумки на шеи людей и залезать в их карманы. Он также обещает вам компенсацию. Иногда ты получаешь свою долю."
+	jobdesc = "A street urchin caught up under the pusher&#8217;s influence. He gets you to do menial jobs he can&#8217;t be caught doing, like nicking the jingling bags around people&#8217;s necks and working your way into people&#8217;s pockets. He promises you compensation, too. Sometimes you get your share."
 	minimal_access = list(brothel, amuser)
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -1134,7 +1134,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	money = 20
 	thanati_chance = 75
-	jobdesc = "Те, кто приходит в логово, чтобы купить ваши ванночки для крови, варьируются от благородных до грязных, а вы здесь для того, чтобы продавать им секс и потакать всему их аморальному гедонизму. Ты слышишь, как дети называют тебя самым крутым человеком в крепости, и ты заботишься о том, чтобы бездельники потратили их на хит, как только, наконец, покажется, что они заработали немного бабла. На вас равняются негодяи и паразиты, и вы являетесь мишенью для тех, кто хочет бросить вызов вашей торговле наркотиками. Ты не позволишь этому случиться."
+	jobdesc = "Those who come by the den to purchase your blood plungers range from nobility to dirt, and you&#8217;re here to sell them sex and indulge in all of their immoral hedonism. You hear the kids calling you the coolest person in the fortress, and you make sure that the obol-less bums spend it on a hit once it finally looks like they&#8217;ve made some dough. You&#8217;re looked up to by scoundrels and vermin, and are a target for those looking to challenge your drug trade. You won&#8217;t let that happen."
 	jobdescbr = "Those who come by the den to purchase your blood plungers range from nobility to dirt, and you&#8217;re here to sell them sex and indulge in all of their immoral hedonism. You hear the kids calling you the coolest person in the fortress, and you make sure that the obol-less bums spend it on a hit once it finally looks like they&#8217;ve made some dough. You&#8217;re looked up to by scoundrels and vermin, and are a target for those looking to challenge your drug trade. You won&#8217;t let that happen."
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -1215,7 +1215,7 @@
 	access = list(lifeweb)
 	minimal_access = list(lifeweb)
 	idtype = /obj/item/weapon/card/id/ltgrey
-	jobdesc = "Доказавший, что он слишком туп, чтобы быть мортусом, мизеро не может работать в сети жизни. Вместо этого он убирает после похорон, следит за тем, чтобы улицы были вымыты, и занимается погребением умерших на кладбище."
+	jobdesc = "Proven too dumb to be a mortus, the misero cannot work the lifeweb. Instead, he cleans up after the mortii, keeps the streets washed, and deals with the burial of the deceased in the graveyard."
 	jobdescbr = "Proven too dumb to be a mortus, the misero cannot work the lifeweb. Instead, he cleans up after the mortii, keeps the streets washed, and deals with the burial of the deceased in the graveyard."
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -1250,7 +1250,7 @@
 	access = list(keep,courtroom)
 	minimal_access = list(keep,courtroom)
 	sex_lock = MALE
-	jobdesc = "Самый уважаемый человек в крепости, не считая самого барона. Он один из старейших жителей, и у него большая семья. Он улаживает бытовые споры и следит за соблюдением закона. Жители часто обращаются к нему за советом."
+	jobdesc = "The most respected man in the fortress outside of the Baron himself. He is one of the eldest residents, with a large family to show for it. He handles domestic disputes and ensures that the law is adhered. Residents often find themselves coming to him for advice."
 	latejoin_locked = FALSE
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -1271,25 +1271,25 @@
 /mob/living/carbon/human/proc/execution()
 	set hidden = 0
 	set category = "Law"
-	set name = "Казнь"
-	set desc="Огласить приговор казни."
+	set name = "Execucao"
+	set desc="Executa alguém."
 	var/input = sanitize_uni(input(usr, "Nome do julgado.", "What?", "") as message|null)
 	if(!input)
 		return
 	if(!src.anchored && !istype(src.anchored, /obj/structure/stool/bed/chair/comfy/judge))
 		return
 	world << sound('sound/AI/judgement.ogg')
-	command_alert("<b>[input]</b> приговор казни вступает в силу.", "Патриарх [src] & South's Law");
+	command_alert("<b>[input]</b> will be executed in court.", "Patriarch [src] & South's Law");
 	log_admin("[key_name(src)] has declared execution on someone: [input]")
 	message_admins("[key_name_admin(src)] has created a execution report", 1)
 
 /mob/living/carbon/human/proc/duel()
 	set hidden = 0
 	set category = "Law"
-	set name = "Дуэль"
-	set desc="Огласить дуэль."
-	var/input = sanitize_uni(input(usr, "Имя судимого.", "Что?", "") as message|null)
-	var/input2 = sanitize_uni(input(usr, "Имя второго.", "Что?", "") as message|null)
+	set name = "Duelo"
+	set desc="Bota pessoas para duelar."
+	var/input = sanitize_uni(input(usr, "Nome do julgado.", "What?", "") as message|null)
+	var/input2 = sanitize_uni(input(usr, "Nome do outro juglado.", "What?", "") as message|null)
 	if(!input)
 		return
 	if(!input2)
@@ -1297,21 +1297,21 @@
 	if(!src.anchored && !istype(src.anchored, /obj/structure/stool/bed/chair/comfy/judge))
 		return
 	world << sound('sound/AI/judgement.ogg')
-	command_alert("<b>[input]</b> e <b>[input2]</b> будут драться на дуэли насмерть.", "Патриарх [src] & South's Law")
+	command_alert("<b>[input]</b> e <b>[input2]</b> will duel to their death.", "Patriarch [src] & South's Law")
 	log_admin("[key_name(src)] has declared execution on someone: [input]")
 	message_admins("[key_name_admin(src)] has created a execution report", 1)
 
 /mob/living/carbon/human/proc/great_hunt()
 	set hidden = 0
 	set category = "Law"
-	set name = "Охота"
-	set desc="Огласить охоту."
+	set name = "Cacada"
+	set desc="Caça alguém."
 	var/input = sanitize_uni(input(usr, "Nome do julgado.", "What?", "") as message|null)
 	if(!input)
 		return
 	if(!src.anchored && !istype(src.anchored, /obj/structure/stool/bed/chair/comfy/judge))
 		return
 	world << sound('sound/AI/judgement.ogg')
-	command_alert("Большая охота надвигается на <b>[input]</b>", "Патриарх [src] & South's Law")
+	command_alert("A great hunt has been declared on <b>[input]</b>", "Patriarch [src] & South's Law")
 	log_admin("[key_name(src)] has declared a great hunt on someone: [input]")
 	message_admins("[key_name_admin(src)] has created a great hunt report", 1)

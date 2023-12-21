@@ -18,6 +18,7 @@ var/global/list/dbdatums = list()
 	if(!check_ckey_whitelisted(ckey))
 		MakeNewUserEntry()
 	LoadReputation()
+	LoadChromies()
 
 /datum/dbinfo/proc/LoadReputation()
 	set waitfor = FALSE
@@ -28,6 +29,29 @@ var/global/list/dbdatums = list()
 	while(rep.NextRow())
 		src.reputation = text2num(rep.item[1])
 
+/datum/dbinfo/proc/LoadChromies()
+	set waitfor = FALSE
+	var/DBQuery/chromie = dbcon.NewQuery("SELECT chromosomes FROM erro_player WHERE ckey = \"[ckey]\"")
+	if(!chromie.Execute())
+		world.log << chromie.ErrorMsg()
+		return
+	while(chromie.NextRow())
+		src.chromosomes = text2num(chromie.item[1])
+
+/datum/dbinfo/proc/AdjustChromies(var/value) // use negative values to take away chromosomes
+	set waitfor = FALSE
+	if(!isnum(value))
+		world.log << "Attempted to set chromies for user with an invalid value!"
+		return
+	async_call(null, "ChromieAdjustDeferred", list(src.ckey, value), src, TRUE)
+	src.chromosomes += value
+	var/DBQuery/adchromie = dbcon.NewQuery("UPDATE erro_player SET chromosomes = \"[src.chromosomes]\" WHERE ckey = \"[ckey]\"")
+	if(!adchromie.Execute())
+		world.log << adchromie.ErrorMsg()
+		return
+	while(adchromie.NextRow())
+		src.chromosomes = text2num(adchromie.item[1])
+/*
 /datum/chromieholder
 	var/chromie_number = 0
 
@@ -61,7 +85,7 @@ var/global/list/dbdatums = list()
 /client/proc/SaveChromies()
 	set waitfor = FALSE
 	var/savefile/S = new /savefile("data/player_saves/[copytext(ckey, 1, 2)]/[ckey]/chromies.sav")
-	chromie_holder.Write(S)
+	chromie_holder.Write(S) */
 
 /datum/dbinfo/proc/MakeNewUserEntry()
 	async_call(null, "HubbieInsertDeferred", list(src.ckey), src, TRUE)

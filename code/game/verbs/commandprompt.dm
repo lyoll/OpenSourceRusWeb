@@ -29,7 +29,7 @@ client/verb/prompt_command()
 				if((ckey(usr.key) in comradelist) || usr.client.holder || usr.ckey == SECRET_GUARDIAN)
 				//if(ckey(usr.key) in villainlist || ckey(usr.key) in comradelist)
 					if(usr.client.prefs.roundsplayed < roundsinvite  && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-						to_chat(src, "<span class='highlighttext'>Вам нужно отыграть [roundsinvite] раундов, что-бы пригласить другого человека. Вы уже отыграли [usr.client.prefs.roundsplayed] раундов.</span>")
+						to_chat(src, "<span class='highlighttext'>You need [roundsinvite] rounds to invite other players. You have [usr.client.prefs.roundsplayed] rounds played.</span>")
 						return
 					else
 						invite_ckey()
@@ -37,18 +37,18 @@ client/verb/prompt_command()
 				else
 					if(ckey(usr.key) in villainlist)
 						if(usr.client.prefs.roundsplayed < roundsinvite && !usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-							to_chat(src, "<span class='highlighttext'>Вам нужно отыграть [roundsinvite] раундов, что-бы пригласить другого человека. Вы уже отыграли [usr.client.prefs.roundsplayed] раундов.</span>")
+							to_chat(src, "<span class='highlighttext'>You need [roundsinvite] rounds to invite other players. You have [usr.client.prefs.roundsplayed] rounds played.</span>")
 							return
 						else
 							invite_ckey()
 							return
 					else
-						to_chat(src, "<span class='highlighttext'>Вам не разрешается это сделать.</span>")
+						to_chat(src, "<span class='highlighttext'>You are not allowed to do that.</span>")
 						return
 
 			if("superretro")
 				if(src.prefs.UI_type == "Luna")
-					to_chat(src, "Включен ретро-интерфейс, не забудьте перезайти.")
+					to_chat(src, "Retro UI enabled, Remember to Reconnect.")
 					src.prefs.UI_type = "Retro"
 					src.prefs.UI_style = "Luna"
 					src.prefs.save_preferences()
@@ -61,7 +61,7 @@ client/verb/prompt_command()
 
 			if("retro")
 				if(src.prefs.UI_type == "Luna")
-					to_chat(src, "Включен ретро-интерфейс, не забудьте перезайти")
+					to_chat(src, "Retro UI enabled, Remember to Reconnect.")
 					src.prefs.UI_type = "Retro"
 					src.prefs.UI_style = "Luna"
 					src.prefs.save_preferences()
@@ -71,7 +71,7 @@ client/verb/prompt_command()
 					mob.updatePig()
 					mob?.hud_used?.add_inventory_overlay()
 				else
-					to_chat(src, "Выключен ретро-интерфейс, не забудьте перезайти")
+					to_chat(src, "Retro UI disabled, Remember to Reconnect.")
 					src.prefs.UI_type = "Luna"
 					src.prefs.UI_style = "Luna"
 					src.prefs.save_preferences()
@@ -94,21 +94,21 @@ client/verb/prompt_command()
 					to_chat(usr, "<span class='combatbold'>[pick(nao_consigoen)]</span> <span class='combat'>[pick("I'm poor","I don't have it","My wallet is empty","I'm broke")]!</span>")
 					return
 				if(src.mob.type != /mob/new_player)
-					to_chat(usr, "<span class='combatbold'>FAIL!</span><span class='combat'> Его можно поменять только в вестибюле!</span>")
+					to_chat(usr, "<span class='combatbold'>FAIL!</span><span class='combat'> It can only be changed in the lobby!</span>")
 					return
 
-				var/input = input(usr, "Вы уверены, что хотите отключить / включить futa?", "Farweb") in list("Yes", "No")
+				var/input = input(usr, "Are you sure you want to disable / enable futa?", "Farweb") in list("Yes", "No")
 				switch(input)
 					if("No")
 						return
 					if("Yes")
 						if(src.prefs.togglefuta)
-							to_chat(usr, "<span class='highlighttext'>Ты отключил futa.</span>")
+							to_chat(usr, "<span class='highlighttext'>You disabled futa.</span>")
 							src.prefs.togglefuta = FALSE
 							prefs.save_preferences()
 							prefs.savefile_update()
 						else
-							to_chat(usr, "<span class='highlighttext'>Вы включили futa.</span>")
+							to_chat(usr, "<span class='highlighttext'>You enabled futa.</span>")
 							src.prefs.togglefuta = TRUE
 							prefs.save_preferences()
 							prefs.savefile_update()
@@ -122,18 +122,18 @@ client/verb/prompt_command()
 					to_chat(usr, "<span class='combatbold'>FAIL!</span><span class='combat'> It can only be changed in the lobby!</span>")
 					return
 
-				var/input = input(usr, "Вы уверены, что хотите отключить / включить 30 см?", "Farweb") in list("Yes", "No")
+				var/input = input(usr, "Are you sure you want to disable / enable 30cm?", "Farweb") in list("Yes", "No")
 				switch(input)
 					if("No")
 						return
 					if("Yes")
 						if(src.prefs.togglesize)
-							to_chat(usr, "<span class='highlighttext'>Вы отключили 30 см.</span>")
+							to_chat(usr, "<span class='highlighttext'>You disabled 30cm.</span>")
 							src.prefs.togglesize = FALSE
 							prefs.save_preferences()
 							prefs.savefile_update()
 						else
-							to_chat(usr, "<span class='highlighttext'>Вы включили 30 см.</span>")
+							to_chat(usr, "<span class='highlighttext'>You enabled 30cm.</span>")
 							src.prefs.togglesize = TRUE
 							prefs.save_preferences()
 							prefs.savefile_update()
@@ -141,18 +141,18 @@ client/verb/prompt_command()
 				return
 
 			if("togglenat")
-				var/input = input(usr, "Вы уверены, что хотите скрыть/ показать свою страну?", "Farweb") in list("Yes", "No")
+				var/input = input(usr, "Are you sure you want to hide/show your country?", "Farweb") in list("Yes", "No")
 				switch(input)
 					if("No")
 						return
 					if("Yes")
 						if(src.prefs.toggle_nat == TRUE)
-							to_chat(usr, "<span class='highlighttext'>Ты скрыл свою страну.</span>")
+							to_chat(usr, "<span class='highlighttext'>You've hidden your country.</span>")
 							src.prefs.toggle_nat = FALSE
 							prefs.save_preferences()
 							prefs.savefile_update()
 						else
-							to_chat(usr, "<span class='highlighttext'>Вы показали свою страну.</span>")
+							to_chat(usr, "<span class='highlighttext'>You've shown your country.</span>")
 							src.prefs.toggle_nat = TRUE
 							prefs.save_preferences()
 							prefs.savefile_update()
@@ -164,12 +164,12 @@ client/verb/prompt_command()
 					return
 				if(auth == privatepartypass)
 					privatepartyallow = TRUE
-					to_chat(world,"<b>Authorized!</b> <span class='highlighttext'>Повелитель разрешил частную вечеринку.</span>")
+					to_chat(world,"<b>Authorized!</b> <span class='highlighttext'>The overlord allowed the private party.</span>")
 					world << 'thanet.ogg'
 
 			if("add_donator")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-					to_chat(src, "<span class='highlighttext'>Вам не разрешается этого делать.</span>")
+					to_chat(src, "<span class='highlighttext'>You are not allowed to do that.</span>")
 					return
 				var/donateadd = input("What type of donation do you want to add?") in list ("Urchin","Mercenary","Seaspotter Merc", "Red Dawn Merc", "Lord", "Crusader", "Tophat", "Monk", "Futa", "Trap apoc", "Outlaw", "Water bottle", "Luxury donation", "Pjack", "Custom OOC Color","30cm","Tribunal Veteran","Adult Squire")
 				switch(donateadd)
@@ -211,17 +211,17 @@ client/verb/prompt_command()
 						add_squirea()
 			if("ban")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-					to_chat(usr, "<span class='highlighttext'>Вам не разрешается этого делать.</span>")
+					to_chat(usr, "<span class='highlighttext'>You are not allowed to do that.</span>")
 					return
 				remove_whitelist()
 			if("unban")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-					to_chat(usr, "<span class='highlighttext'>Вам не разрешается этого делать.</span>")
+					to_chat(usr, "<span class='highlighttext'>You are not allowed to do that.</span>")
 					return
 				remove_ban()
 			if("add_role")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-					to_chat(usr, "<span class='highlighttext'>Вам не разрешается этого делать.</span>")
+					to_chat(usr, "<span class='highlighttext'>You are not allowed to do that.</span>")
 					return
 				var/input = input(usr, "Which role do you want to add an user to?", "Farweb") in list("Villain", "Comrade","Pig+")
 				switch(input)
@@ -233,7 +233,7 @@ client/verb/prompt_command()
 						add_pigplus()
 			if("remove_role")
 				if(!usr.client.holder && !(usr.ckey == SECRET_GUARDIAN))
-					to_chat(usr, "<span class='highlighttext'>Вам не разрешается этого делать.</span>")
+					to_chat(usr, "<span class='highlighttext'>You are not allowed to do that.</span>")
 					return
 				var/input = input(usr, "Which role do you want to remove an user from?", "Farweb") in list("Villain", "Comrade","Pig+")
 				switch(input)
@@ -274,9 +274,9 @@ client/verb/prompt_command()
 					src.prefs.rsc_fix = 1
 				src.prefs.save_preferences()
 				if(src.prefs.rsc_fix)
-					to_chat(src, "Ресурсы теперь будут загружаться перед подключением, не забудьте повторно подключиться.")
+					to_chat(src, "Resources will now download before you connect, Remember to Reconnect.")
 				else
-					to_chat(src, "Ресурсы теперь будут загружаться перед подключением, не забудьте повторно подключиться.")
+					to_chat(src, "Resources will now download as they are needed, Remember to Reconnect.")
 			if("fix64")
 				if(src.prefs.zoom_level == 2)
 					src.prefs.zoom_level = 0
@@ -284,14 +284,14 @@ client/verb/prompt_command()
 					src.prefs.rsc_fix = 2
 				src.prefs.save_preferences()
 				if(src.prefs.zoom_level)
-					to_chat(src, "Вы включили 2-кратный зум. Не забудьте снова подключиться.")
+					to_chat(src, "You have enabled 2x Zoom. Remember to Reconnect.")
 				else
-					to_chat(src, "Вы включили функцию растягивания по размеру. Не забудьте снова подключиться.")
+					to_chat(src, "You have enabled stretch to fit. Remember to Reconnect.")
 			if("togglesquire")
 				if(!adultsquire.Find(src.ckey))
 					to_chat(usr, "<span class='combatbold'>[pick(nao_consigoen)]</span> <span class='combat'>[pick("I'm poor","I don't have it","My wallet is empty","I'm broke")]!</span>")
 					return
-				var/input = input(usr, "Вы уверены, что хотите отключить / включить adult squire?", "Farweb") in list("Yes", "No")
+				var/input = input(usr, "Are you sure you want to disable / enable adult squire?", "Farweb") in list("Yes", "No")
 				switch(input)
 					if("No")
 						return
@@ -386,11 +386,11 @@ client/verb/music_volume()
 
 /client/proc/RegisterCallback(var/token)
 	if(token == "False")
-		to_chat(src, "Вы уже получили свой жетон. Свяжитесь с патриархом, если он был утерян.")
+		to_chat(src, "You already received your token. Contact a Patriarch if it has been lost.")
 		return
 	if(token == "fail")
-		to_chat(src, "При попытке выполнить операцию с базой данных произошла ошибка. Наорать на Нопм.")
+		to_chat(src, "An error has occurred while attempting a database operation. Yell at Nopm.")
 		return
-	to_chat(src, "Это ваш ключ: [token] <br><b style='color: red'>НЕ ЗАБЫВАЙ ОБ ЭТОМ!</b><br>")
-	to_chat(src, "Message Lyoll on Discord with !register YOURKEYHERE")
+	to_chat(src, "This is your key: [token] <br><b style='color: red'>DON'T FORGET IT!</b><br>")
+	to_chat(src, "Message Epic Machine#2884 on Discord with !register YOURKEYHERE")
 	return

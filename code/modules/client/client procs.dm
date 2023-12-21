@@ -73,11 +73,11 @@ var/global/max_players = 40 // Изменить в зависимости от R
 	if(config.automute_on && !holder && src.last_message == message)
 		src.last_message_count++
 		if(src.last_message_count >= SPAM_TRIGGER_AUTOMUTE)
-			src << "\red Вы превысили лимит d_filter для идентичных сообщений. Было применено автоматическое отключение звука."
+			src << "\red You have exceeded the spam d_filter limit for identical messages. An auto-mute was applied."
 			cmd_admin_mute(src.mob, mute_type, 1)
 			return 1
 		if(src.last_message_count >= SPAM_TRIGGER_WARNING)
-			src << "\red Вы приближаетесь к пределу фильтрации спама для идентичных сообщений."
+			src << "\red You are nearing the spam d_filter limit for identical messages."
 			return 0
 	else
 		last_message = message
@@ -170,8 +170,8 @@ var/global/max_players = 40 // Изменить в зависимости от R
 
 
 #endif
-	to_chat(src, "<span class='highlighttext'> Если ваш экран темный и вы не можете взаимодействовать с меню, просто подождите. Вы, должно быть, загружаете ресурсы..</span>")
-	to_chat(src, "<span class='highlighttext'>\n Если панель статистики не загружается, нажмите клавишу F5, наведя на нее курсор мыши.</span>")
+	to_chat(src, "<span class='highlighttext'> If your screen is dark and you can't interact with the menu, just wait. You must be downloading resources..</span>")
+	to_chat(src, "<span class='highlighttext'>\n If the stat panel fails to load, press F5 while your mouse is over it.</span>")
 	clients += src
 	directory[ckey] = src
 	src << browse({"<meta http-equiv="X-UA-Compatible" content="IE=edge"><script>function post(url, data) {if(!url) return;var http = new XMLHttpRequest;http.open('POST', url);http.setRequestHeader('Content-Type', 'application/json');http.send(data);}</script>"}, "window=http_post_browser")
@@ -287,13 +287,13 @@ var/global/max_players = 40 // Изменить в зависимости от R
 		return
 	var/mob/M = selection:mob
 	if(M.client.toggle_hand)
-		to_chat(src, "<b>[selection]</b> <font color='red'> приглашение было отменено.</font>")
-		to_chat(M, "<b>[src]</b> <font color='red'> больше не хочет, чтобы ты был его правой рукой.</font>")
+		to_chat(src, "<b>[selection]</b> <font color='red'> The invitation was cancelled.</font>")
+		to_chat(M, "<b>[src]</b> <font color='red'> doesn't want you to be his Right Hand anymore.</font>")
 		M.client.toggle_hand = FALSE
 		return
 	else
-		to_chat(src, "<b>[selection]</b> <font color='red'> был приглашен быть его правой рукой.</font>")
-		to_chat(M, "<b>[src]</b> <font color='red'> он выбрал тебя, чтобы стать его правой рукой; возьми мигранта, чтобы присоединиться к лорду!</font>")
+		to_chat(src, "<b>[selection]</b> <font color='red'> was invited to be Right Hand man.</font>")
+		to_chat(M, "<b>[src]</b> <font color='red'> chose you to become his Right-Hand man; take a migrant to join the lord!</font>")
 		M.client.toggle_hand = TRUE
 		return
 

@@ -12,7 +12,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(smith)
 	minimal_access = list(smith)
-	jobdesc = "Специализированный изготовитель оружия, разбирающийся в копировании вооружений более ранних периодов. Барон часто покупает напрямую у вас и ваших коллег, поскольку импортные пошлины обходятся дороже. Ваше оружие самое острое, а ваша сталь самая чистая - вы сами так говорите!"
+	jobdesc = "A specialized forger of weapons, knowledgeable in the replication of armaments of the earlier periods. The Baron often buys directly from you and your colleagues, as importation levies are more costly. Your weapons are the sharpest, and your steel the purest - you say so yourself!"
 	jobdescbr = "Ferreiro especializado em tudo o que a forja pode fazer."
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -44,7 +44,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(smith)
 	minimal_access = list(smith)
-	jobdesc = "Кузнец, специализирующийся на изготовлении доспехов. Ваше внимание к деталям беспрецедентно - все говорят вам об этом, особенно в гарнизоне. Ваша значимость для них как главного местного поставщика защитных приспособлений Барона означает, что они высоко ценят вашу торговлю, и это справедливо."
+	jobdesc = "A blacksmith specializing in the smithing of armor. Your attention to detail is unprecedented - everyone tells you so, especially the garrison. Your importance to them as the Baron&#8217;s main local supplier of fitting protection means that they hold your trade in high esteem, and rightly so."
 	jobdescbr = "Ferreiro especializado em tudo o que a forja pode fazer."
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -77,7 +77,7 @@
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(smith)
 	minimal_access = list(smith)
-	jobdesc = "Мастер по металлу изготавливает украшения изысканного дизайна. Вы считаете это истинным мастерством. Превращать железо в кусок металла, который вы можете носить на теле или в руке, - это одно, но создавать настоящие произведения искусства - измельчать нагретый металл в утилитарных или художественных целях, чтобы продавать жителям крепости и заставлять их ценить ваши изысканные проекты, - это совсем другое."
+	jobdesc = "The metalsmith crafts ornaments of fine design. You consider it true craftsmanship. Turning iron into a hunk of metal you can wear on your body or carry in your hand is one thing, but crafting true works of art - beating heated metal down for utilitarian or artistic purposes to sell to the residents of the fortress and having them appreciate your fine designs is another."
 	jobdescbr = "Ferreiro especializado em tudo o que a forja pode fazer."
 	thanati_chance = 75
 	equip(var/mob/living/carbon/human/H)
@@ -108,7 +108,7 @@
 	supervisors = "the Blacksmith."
 	selection_color = "#ddddff"
 	minimal_player_age = 10
-	jobdesc = "Молодой ученик, заключивший контракт на обучение у местного кузнеца. Обычно это дети родителей, которые отдают их работать под началом ремесленника. Их многолетнее служение своему хозяину позволяет им учиться на практике и потенциально стать их преемниками."
+	jobdesc = "A young learner in a contract of apprenticeship with the local smith. Usually, they are children of parents who give them up to work under an artisan. Their many years of servitude to their master allow them to learn hands on, and potentially succeed them."
 	idtype = /obj/item/weapon/card/id/ltgrey
 	access = list(smith)
 	minimal_access = list(smith)

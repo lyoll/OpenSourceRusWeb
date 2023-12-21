@@ -8,14 +8,13 @@ var/global/list/hiden_obols = list()
 		return
 	if(current_server == "S3")
 		return
-	if(chromie_holder.chromie_number < cost)
-		to_chat(usr, "Недостаточно хромосом.")
+	if(info.chromosomes < cost)
+		to_chat(usr, "Not enough chromosomes.")
 		return
-	if(chromie_holder.chromie_number >= cost)
-		AdjustChromies(cost*-1) // multiply by negative one to make the value negative
+	if(info.chromosomes >= cost)
+		info.AdjustChromies(cost*-1) // multiply by negative one to make the value negative
 		ChromieDO(user, name)
-		to_chat(usr, "<span class='excomm'>[cost] Хромосом потеряно!</span>")
-		return TRUE
+		to_chat(usr, "<span class='excomm'>[cost] Chromosomes lost!</span>")
 
 /client/proc/ChromieDO(mob/user, var/name)
 	if(current_server == "S3")
@@ -32,12 +31,12 @@ var/global/list/hiden_obols = list()
 				N.specialitem = null
 				N.specialdesc = null
 				N.qualspecial = ""
-
+/*
 		if("Chamar a Babylon")
 			emergency_shuttle.incall()
-			log_game("[src] запустил Харон.")
-			message_admins("[src] запустил Харон.", 1)
-			world << sound('sound/AI/shuttlecalled.ogg')
+			log_game("[src] has launched the Babylon.")
+			message_admins("[src] has launched the Babylon.", 1)
+			world << sound('sound/AI/shuttlecalled.ogg') */
 		if("RetirarVice")
 			var/mob/living/carbon/human/H = user
 			if(H.vice)
@@ -46,13 +45,13 @@ var/global/list/hiden_obols = list()
 				H.clear_event("vice")
 				return
 		if("SilencePigs")
-			to_chat(world, "<p style='font-size:22px'><span class='passivebold'>[src.key] дарует нам молчание свиней!</span></p>")
+			to_chat(world, "<p style='font-size:22px'><span class='passivebold'>[src.key] grants us Silence of the Pigs!</span></p>")
 			world << 'pigdeath.ogg'
 			silenceofpigs = TRUE
 			return
 		if("Trapokalipsis")
 			trapokalipsis = TRUE
-			to_chat(world, "<p style='font-size:22px'><span class='passivebold'>[src.key] дарует нам Трапокалипсис!</span></p>")
+			to_chat(world, "<p style='font-size:22px'><span class='passivebold'>[src.key] grants us Trapokalipsis!</span></p>")
 			trapapoc = ckeywhitelistweb.Copy()
 			world << 'ladyend.ogg'
 		if("ForceAspect")
@@ -76,9 +75,9 @@ var/global/list/hiden_obols = list()
 			var/obj/item/weapon/card/id/ID = found_ring_by_human(user)
 			if(!ID)
 				hiden_obols += user.ckey
-				to_chat(user, "<i>Я спрятал оболы, но где...</i>")
+				to_chat(user, "<i>I hide them somewhere, but where...</i>")
 			else
-				to_chat(user, "Нашёл ли я их?")
+				to_chat(user, "Did i receive it?")
 				ID.receivePayment(50)
 
 /client/proc/ChromieWinorLoose(mob/user, var/value)
@@ -88,25 +87,25 @@ var/global/list/hiden_obols = list()
 	if(current_server == "S3")
 		return
 	if(value > 0)
-		AdjustChromies(value)
-		chromossomeTXT = "<span class='passivebold'>[value] Приобретено хромосом!</span>"
+		info.AdjustChromies(value)
+		chromossomeTXT = "<span class='passivebold'>[value] Chromosomes gained!</span>"
 		if(value > 3)
-			chromossomeTXT = "<span class='passivebold'>[value] Приобретено хромосом!</span>"
+			chromossomeTXT = "<span class='passivebold'>[value] Chromosomes gained!</span>"
 		to_chat(src, chromossomeTXT)
 	if(value < 0)
 		if(info.chromosomes <= -5)
 			return
-		AdjustChromies(value)
+		info.AdjustChromies(value)
 		cromosperdidos += value
-		chromossomeTXT = "<span class='excomm'>[value] Хромосом потеряно!</span>"
+		chromossomeTXT = "<span class='excomm'>[value] Chromosomes lost!</span>"
 		if(value > -3)
-			chromossomeTXT = "<span class='excomm'>[value] Хромосом потеряно!</span>"
+			chromossomeTXT = "<span class='excomm'>[value] Chromosomes lost!</span>"
 		to_chat(src, chromossomeTXT)
 
 /client/verb/wipeChromossomes()
 	set category = "Chromossomes"
-	set name = "Обнулить хромосомы"
-	set desc = "Вы очистите все хромосомы игроков."
+	set name = "LimparCromossomos"
+	set desc = "Voce vai limpar todos os cromossomos dos jogadores."
 
 
 	var/nameE = "Limpar Cromossomos"
@@ -118,8 +117,8 @@ var/global/list/hiden_obols = list()
 
 /client/verb/allMig()
 	set category = "Chromossomes"
-	set name = "Всемиграция"
-	set desc = "Провозгласите всемиграцию."
+	set name = "MigracaodeTodos"
+	set desc = "Voce vai fazer o gamemode All Mig."
 
 
 	var/nameE = "Migracao de Todos"
@@ -127,7 +126,7 @@ var/global/list/hiden_obols = list()
 	var/cost = 100
 
 	ChromieReturn(usr, cost, nameE, descE)
-
+/*
 /client/verb/callCharon()
 	set category = "Chromossomes"
 	set name = "ChamarCharon"
@@ -156,11 +155,11 @@ var/global/list/hiden_obols = list()
 	message_admins("[key_name_admin(usr)] has launched the Babylon.", 1)
 
 	ChromieReturn(usr, cost, nameE, descE)
-
+*/
 /client/verb/jobConcealCustom()
 	set category = "Chromossomes"
-	set name = "Скрыть индивидуальную роль"
-	set desc = "Скрыть индивидуальную роль"
+	set name = "EscondercargoCustom"
+	set desc = "Voce vai se conceder um cargo customizado."
 
 	var/nameE = "Esconder cargo Custom"
 	var/descE = "Voce vai se conceder um cargo customizado."
@@ -170,8 +169,8 @@ var/global/list/hiden_obols = list()
 
 /client/verb/jobConceal()
 	set category = "Chromossomes"
-	set name = "Скрыть роль"
-	set desc = "Скрыть роль"
+	set name = "Escondercargo"
+	set desc = "Voce vai se conceder um cargo."
 
 	var/nameE = "Esconder cargo"
 	var/descE = "Voce vai se conceder um cargo."
@@ -181,8 +180,8 @@ var/global/list/hiden_obols = list()
 
 /client/verb/rerollSpecial()
 	set category = "Chromossomes"
-	set name = "Сменить особенность"
-	set desc = "Сменить особенность."
+	set name = "ReRolarSpecial"
+	set desc = "Voce vai dar reroll em seu Special."
 
 	var/nameE = "ReRolarSpecial"
 	var/descE = "Voce vai dar reroll em seu Special."
@@ -192,8 +191,8 @@ var/global/list/hiden_obols = list()
 
 /client/verb/Trapokalipsis()
 	set category = "Chromossomes"
-	set name = "Трапоапокалипсис"
-	set desc = "Вот оно, - счастье."
+	set name = "Trapokalipsis"
+	set desc = "Pain."
 
 	var/nameE = "Trapokalipsis"
 	var/descE = "Pain."
@@ -206,22 +205,22 @@ var/global/list/hiden_obols = list()
 
 /client/verb/removeVice()
 	set category = "Chromossomes"
-	set name = "Убрать недостаток"
-	set desc = "Вы уберете свою зависимость от чего-то."
+	set name = "RetirarVice"
+	set desc = "Voce vai retirar seu vicio sobre algo."
 
 	var/nameE = "RetirarVice"
 	var/descE = "Voce vai retirar seu vicio sobre algo."
 	var/cost = 1
 
 	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-		to_chat(src, "Раунд либо не готов, либо уже завершен...")
+		to_chat(src, "The round is either not ready, or has already finished...")
 		return 0
 	ChromieReturn(usr, cost, nameE, descE)
 
 /client/verb/silencePigs()
 	set category = "Chromossomes"
-	set name = "Молчание свиней"
-	set desc = "Пусть помолчат"
+	set name = "SilencePigs"
+	set desc = "cale os porcos"
 
 	var/nameE = "SilencePigs"
 	var/descE = "cale os porcos"
@@ -232,8 +231,8 @@ var/global/list/hiden_obols = list()
 
 /client/verb/ForceAspect()
 	set category = "Chromossomes"
-	set name = "Продвинуть аспект"
-	set desc = "продвинуть аспект"
+	set name = "ForceAspect"
+	set desc = "Force Aspect"
 
 	var/nameE = "ForceAspect"
 	var/descE = "Force Aspect"
@@ -247,30 +246,30 @@ var/global/list/hiden_obols = list()
 
 /client/verb/ForcePadla()
 	set category = "Chromossomes"
-	set name = "Продвинуть Падлу"
-	set desc = "Продвинуть Падлу"
+	set name = "ForcePadla"
+	set desc = "Force Padla"
 
 	var/nameE = "ForcePadla"
 	var/descE = "Force Padla"
 	var/cost = 7
 
 	if (!ticker || ticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, "Дождитесь начала раунда.")
+		to_chat(usr, "Wait for round start.")
 		return
 
 	ChromieReturn(usr, cost, nameE, descE)
 
 /client/verb/ReceiveObols()
 	set category = "Chromossomes"
-	set name = "Получить оболы"
-	set desc = "Получить оболы"
+	set name = "ReceiveObols"
+	set desc = "Receive Obols"
 
 	var/nameE = "ReceiveObols"
 	var/descE = "Receive Obols"
 	var/cost = 1
 
 	if (!istype(usr, /mob/living/carbon/human))
-		to_chat(usr, "В конце концов, мне нужно быть человеком...")
+		to_chat(usr, "I need to be human, after all...")
 		return
 
 	ChromieReturn(usr, cost, nameE, descE)

@@ -25,14 +25,14 @@
 /obj/item/condom_wrapper/attack_self(mob/user as mob)
 	if(!opened)
 		if(do_after(user, 5))
-			to_chat(user, "<span class='passive'>Ты отрываешь обертку от презерватива.</span>")
+			to_chat(user, "<span class='passive'>You open the condom wrapper.</span>")
 			opened = TRUE
 			playsound(user, "open_candy.ogg", 50, 0)
 			update_icon()
 			var/turf/T = get_turf(user)
 			new condomtype(T)
 	else
-		to_chat(user, "<span class='combat'>[pick(nao_consigoen)] он уже открыт!</span>")
+		to_chat(user, "<span class='combat'>[pick(nao_consigoen)] it is already open!</span>")
 	return
 
 /obj/item/condom_wrapper/small
@@ -145,7 +145,7 @@ var/list/cuckoldlist = list()
 	if(usr.restrained())		return
 	var/mob/living/carbon/human/H = usr
 	H.partner = src
-	if(H.isChild() && (H.religion = "Gray Church")) return	
+	if(H.isChild() && (H.religion = "Gray Church")) return
 	if(src.isChild() && (H.religion = "Gray Church" && H.job != "Bishop"))	return
 	if(master_mode == "miniwar")	return
 	// if(iszombie(H))		return
@@ -244,14 +244,14 @@ var/list/cuckoldlist = list()
 			//dat +=  {"• <A href='?src=\ref[usr];interaction=five'>Highfive.</A><BR>"}
 			//if (hashands_p)
 			//	dat +=  {"• <A href='?src=\ref[src];interaction=give'>Give.</A><BR>"}
-			dat +=  {"<A href='?src=\ref[usr];interaction=slap'>Ударить по лицу!</A><BR>"}
+			dat +=  {"<A href='?src=\ref[usr];interaction=slap'>Slap face!</A><BR>"}
 			if (hasanus_p)
-				dat += {"<A href='?src=\ref[usr];interaction=assslap'>Ударить по жопе!</A><BR>"}
+				dat += {"<A href='?src=\ref[usr];interaction=assslap'>Slap ass!</A><BR>"}
 			if (isnude_p)
 				if (hasvagina_p && (!P.mutilated_genitals))
-					dat += {"<A href='?src=\ref[usr];interaction=fingering'>Используйте пальчики!.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=fingering'>Put fingers in places.</A><BR>"}
 				if(P.gender == FEMALE || P.isFemboy())
-					dat += {"<A href='?src=\ref[usr];interaction=squeezebreast'>Потрогать грудь!</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=squeezebreast'>Squeeze breasts!</A><BR>"}
 			//if (P.species.name == "Tajaran")
 			//	dat +=  {"• <A href='?src=\ref[usr];interaction=pull'><font color=red>Pull big fluffy tail!</font></A><BR>"}
 			//	if(P.can_inject(H, 1))
@@ -262,7 +262,7 @@ var/list/cuckoldlist = list()
 
 	if (mouthfree && (lying == P.lying || !lying))
 		dat += {"<font size=3><B>Mouth:</B></font><BR>"}
-		dat += {"<A href='?src=\ref[usr];interaction=kiss'>Поцеловать.</A><BR>"}
+		dat += {"<A href='?src=\ref[usr];interaction=kiss'>Kiss.</A><BR>"}
 		//if (Adjacent(P))
 		if(get_dist(H,P) <= 1)
 			//if (mouthfree_p)
@@ -270,30 +270,30 @@ var/list/cuckoldlist = list()
 			//		dat += {"• <A href='?src=\ref[usr];interaction=lick'>Ëèçíóòü â ùåêó.</A><BR>"}
 			if (isnude_p && (!P.mutilated_genitals))
 				if (haspenis_p)
-					dat += {"<A href='?src=\ref[usr];interaction=blowjob'>Сосать член.</A><BR>"}
-					dat += {"<A href='?src=\ref[usr];interaction=handjob'>Мастурбировать.</A><BR>"}
-					dat += {"<A href='?src=\ref[usr];interaction=ballsuck'>Сосать яйца.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=blowjob'>Suck cock.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=handjob'>Masturbate.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=ballsuck'>Suck balls.</A><BR>"}
 				if (hasvagina_p)
-					dat += {"<A href='?src=\ref[usr];interaction=vaglick'>Лизать вагину.</A><BR>"}
-			dat +=  {"<A href='?src=\ref[usr];interaction=spit'>Плюнуть.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=vaglick'>Lick vagina.</A><BR>"}
+			dat +=  {"<A href='?src=\ref[usr];interaction=spit'>Spit.</A><BR>"}
 		//dat +=  {"• <A href='?src=\ref[usr];interaction=tongue'><font color=red>Stick out tongue.</font></A><BR>"}
 
 	//if (isnude && usr.loc == H.partner.loc)
 	if(isnude && get_dist(usr,H.partner) <= 1)
 		if (haspenis && hashands)
-			dat += {"<font size=3><B>Запретные плоды:</B></font><BR>"}
+			dat += {"<font size=3><B>Forbidden Fruits:</B></font><BR>"}
 			if (isnude_p)
 				if (hasvagina_p && (!P.mutilated_genitals))
-					dat += {"<A href='?src=\ref[usr];interaction=vaginal'>Вагина.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=vaginal'>Vaginal.</A><BR>"}
 				if (hasanus_p)
-					dat += {"<A href='?src=\ref[usr];interaction=anal'>Анал.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=anal'>Anal.</A><BR>"}
 				if (mouthfree_p)
-					dat += {"<A href='?src=\ref[usr];interaction=oral'>Рот.</A><BR>"}
+					dat += {"<A href='?src=\ref[usr];interaction=oral'>Oral.</A><BR>"}
 	//if (isnude && usr.loc == H.partner.loc && hashands)
 	if (isnude && get_dist(usr,H.partner) <= 1)
 		if (hasvagina && haspenis_p && (!H.mutilated_genitals))
 			dat += {"<font size=3><B>Vagina:</B></font><BR>"}
-			dat += {"<A href='?src=\ref[usr];interaction=mount'>Оседлать</A><BR><HR>"}
+			dat += {"<A href='?src=\ref[usr];interaction=mount'>Mount</A><BR><HR>"}
 
 	//var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
 	usr << browse(dat, "window=interactions;size=350x300;can_resize=0")
@@ -338,7 +338,7 @@ var/list/cuckoldlist = list()
 		if(FEMALE)
 			playsound(loc, "honk/sound/interactions/final_f[rand(1, 3)].ogg", 90, 0, -5)
 	H.druggy = 30
-	to_chat(H, "<span class='malfunction'>[pick("ОХ БОЖЕ", "ЧЁРТ ВОЗЬМИ")]!</span>") //creativity
+	to_chat(H, "<span class='malfunction'>[pick("OH FUCK", "HOLY SHIT")]!</span>") //creativity
 	P.druggy = 30
 	if (has_penis())
 		var/datum/reagent/blood/source = H.get_blood(H.vessel)
@@ -513,15 +513,15 @@ var/list/cuckoldlist = list()
 	if(G && !G.reagents.total_volume != G.reagents.maximum_volume)
 		G.reagents.add_reagent("semen", 10)
 		G.update_icon()
-		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>кончает на [G]!</span>")
+		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>cums on the [G]!</span>")
 
 	if(src.ConDom)
 		src.ConDom.CameInto = TRUE
 		src.ConDom.update_icon()
-		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>кончает в презерватив!</span>")
+		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>cums on the condom!</span>")
 
 	else
-		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>кончает на пол!</span>")
+		src.visible_message("<span class='erpbold'>[src]</span> <span class='cumzone'>cums on the floor!</span>")
 
 
 	switch(src.gender)
@@ -578,7 +578,7 @@ var/list/cuckoldlist = list()
 			if(istype(A,/datum/disease/aids))
 				H.contract_disease(new /datum/disease/aids,1,0)
 	if(P.job == "Nun")
-		H.custom_pain("[pick("<span class='hugepain'>ОХ [uppertext(god_text())] МОЙ ЧЛЕН!</span>", "<span class='hugepain'>ОХ [uppertext(god_text())] ЗАЧЕМ!</span>", "<span class='hugepain'>ОХ [uppertext(god_text())] ЭТО БОЛЬНО!</span>")]", 100)
+		H.custom_pain("[pick("<span class='hugepain'>OH [uppertext(god_text())] MY DICK!</span>", "<span class='hugepain'>OH [uppertext(god_text())] WHY!</span>", "<span class='hugepain'>OH [uppertext(god_text())] IT HURTS!</span>")]", 100)
 		H.apply_damage(rand(50,70), BRUTE, BP_GROIN)
 		playsound(H, 'sound/effects/gore/severed.ogg', 50, 1, -1)
 		H.mutilate_genitals()
@@ -588,7 +588,7 @@ var/list/cuckoldlist = list()
 
 		if("vaglick")
 
-			message = pick("лижет [P].", "сосёт [P]'s киску.")
+			message = pick("licks [P].", "sucks [P]'s pussy.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -618,11 +618,11 @@ var/list/cuckoldlist = list()
 
 		if("fingering")
 
-			message = pick("вводит своими пальцами [P].", "дразнит [P]'s киску.")
+			message = pick("fingers [P].", "fingers [P]'s pussy.")
 			if (prob(35))
 				message = pick("fingers [P] hard.")
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = (" засовывает свои пальцы в [P]'s киску.")
+				message = (" shoves their fingers into [P]'s pussy.")
 				sound = ("honk/sound/new/ACTIONS/VAGINA/INSERTION/")
 				playsound(loc, "honk/sound/new/ACTIONS/VAGINA/INSERTION/[sound]", 90, 1, -5)
 				H.lastfucked = P
@@ -645,10 +645,10 @@ var/list/cuckoldlist = list()
 			H.do_fucking_animation(P)
 
 		if("ballsuck")
-			message = pick("лижет [P]'s яйца.", "лижет [P]'s орехи.")
+			message = pick("sucks [P]'s balls.", "licks [P]'s nuts.")
 			sound_path = ("honk/sound/new/ACTIONS/BLOWJOB/")
 			if (prob(25))
-				message = pick("вертит языком по кругу [P]'s мешочка.")
+				message = pick("twirls their tongue around [P]'s sack.")
 				sound_path = "honk/sound/new/ACTIONS/MOUTH/SUCK/"
 			sound = pick(flist("[sound_path]"))
 
@@ -678,10 +678,10 @@ var/list/cuckoldlist = list()
 				playsound(loc, ("honk/sound/new/ACTIONS/MOUTH/SALIVA/[sound]"), 90, 1, -5)
 
 		if("blowjob")
-			message = pick("сосёт [P]'s член.", "принимает [P] своим ртом.")
+			message = pick("sucks [P]'s dick.", "gives [P] head.")
 			sound_path = ("honk/sound/new/ACTIONS/BLOWJOB/")
 			if (prob(35))
-				message = pick("отсасывает [P].")
+				message = pick("sucks [P] off.")
 				sound_path = "honk/sound/new/ACTIONS/MOUTH/SUCK/"
 			sound = pick(flist("[sound_path]"))
 
@@ -710,7 +710,7 @@ var/list/cuckoldlist = list()
 				sound = pick(flist("honk/sound/new/ACTIONS/MOUTH/SALIVA/"))
 				playsound(loc, ("honk/sound/new/ACTIONS/MOUTH/SALIVA/[sound]"), 90, 1, -5)
 			if (prob(P.potenzia))
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>погружается глубоко в</span> <span class='erpbold'>[P]</span><span class='erp'>.</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>goes in deep on</span> <span class='erpbold'>[P]</span><span class='erp'>.</span>")
 
 		if("handjob")
 			message = pick("strokes [P]'s dick.", "masturbate [P]'s penis.")
@@ -737,13 +737,13 @@ var/list/cuckoldlist = list()
 				playsound(loc, "honk/sound/new/ACTIONS/PENIS/HANDJOB/[sound]", 90, 1, -5)
 			H.do_fucking_animation(P)
 			if (prob(P.potenzia))
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>дрочит</span> <B>[P]'s </span><span class='erp'> [pick("член","член","пенис")] faster.</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>strokes</span> <B>[P]'s </span><span class='erp'> [pick("cock","dick","penis")] faster.</span>")
 
 		if("vaginal")
-			message = pick("входит в отверстие [P].", "колотит [P]'s киску.")
+			message = pick("fucks [P].", "pounds [P]'s pussy.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick(" засовывает свой член в [P]'s киску.")
+				message = pick(" shoves their dick into [P]'s pussy.")
 				sound = pick(flist("honk/sound/new/ACTIONS/VAGINA/INSERTION/"))
 				playsound(loc, "honk/sound/new/ACTIONS/VAGINA/INSERTION/[sound]", 90, 1, -5)
 				H.lastfucked = P
@@ -751,7 +751,7 @@ var/list/cuckoldlist = list()
 
 			if(P.virgin)
 				P.virgin = FALSE
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>трёт</span> <span class='erpbold'>[P]'s</span> <span class='erp'>вишню.</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>pop's</span> <span class='erpbold'>[P]'s</span> <span class='erp'>cherry.</span>")
 				H.gainWP(1, 1)
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>[message]</span>")
@@ -820,19 +820,19 @@ var/list/cuckoldlist = list()
 */
 
 		if("mount")
-			message = pick("проникает членом в [P]'s", "скачет на члене [P]'s", "едет верхом на [P]")
+			message = pick("fucks [P]'s dick", "rides [P]'s dick", "rides [P]")
 
 			/*if(potenzia >= 30)
 				P.Weaken(stun * 1.5)*/
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("садится на член [P]'s")//"îñòîðîæíî íàñàæèâàåòñ[ya] íà ïîëîâîé îðãàí [P]")
+				message = pick("begins to hop on [P]'s dick")//"îñòîðîæíî íàñàæèâàåòñ[ya] íà ïîëîâîé îðãàí [P]")
 				H.lastfucked = P
 				H.lfhole = hole
 				//add_logs(P, H, "fucked")
 
 			if(H.virgin)
 				H.virgin = FALSE
-				H.visible_message("<span class='erpbold'>[P]</span> <span class='erp'>трёт</span> <span class='erpbold'>[H]'s</span> <span class='erp'>вишню.</span>")
+				H.visible_message("<span class='erpbold'>[P]</span> <span class='erp'>pop's</span> <span class='erpbold'>[H]'s</span> <span class='erp'>cherry.</span>")
 
 			if (prob(5))
 				if(P.stat != DEAD)
@@ -863,10 +863,10 @@ var/list/cuckoldlist = list()
 				playsound(loc, "honk/sound/new/ACTIONS/BODY/COLLIDE/NAKED/[sound]", 90, 1, -5)
 		if("anal")
 
-			message = pick("проникает своим членом в заднее отверстие [P]'s.")
+			message = pick("fucks [P]'s ass.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick(" засовывает свой член в задницу [P]'s.")
+				message = pick(" shoves their dick into [P]'s asshole.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -899,11 +899,11 @@ var/list/cuckoldlist = list()
 			playsound(loc, "honk/sound/new/ACTIONS/BODY/COLLIDE/NAKED/[sound]", 90, 1, -5)
 
 		if("oral")
-			message = pick(" проникает в рот [P]'s.")
+			message = pick(" fucks [P]'s mouth.")
 			if (prob(35))
-				message = pick(" сосёт [P]'s [P.has_penis() ? "dick" : "vag"]..", " licks [P]'s [P.has_penis() ? "dick" : "vag"]..")
+				message = pick(" sucks [P]'s [P.has_penis() ? "dick" : "vag"]..", " licks [P]'s [P.has_penis() ? "dick" : "vag"]..")
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick(" засовывает свой член глубже в глотку к [P]'s.")
+				message = pick(" shoves their dick down [P]'s throat.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -922,9 +922,9 @@ var/list/cuckoldlist = list()
 			if (prob(H.potenzia))
 				P.stamina_loss += 3
 				sound_path = "honk/sound/new/ACTIONS/MOUTH/SWALLOW/"
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>погружается в</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>fucks</span> <span class='erpbold'>[P]'s</span> <span class='erp'>throat.</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>погружается в</span> <span class='erpbold'>[P]'s</span> <span class='erp'>горло.</span>")
+					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>fucks</span> <span class='erpbold'>[P]'s</span> <span class='erp'>throat.</span>")
 			else
 				sound_path = "honk/sound/new/ACTIONS/BLOWJOB/"
 			sound = pick(flist("[sound_path]"))
@@ -937,7 +937,7 @@ var/list/cuckoldlist = list()
 	var/mob/living/carbon/human/H = src
 	if (species.name == "Human" || H.isFemboy())
 		if (prob(H.lust / H.resistenza * 65))
-			var/message = pick("стонет", "стонет в удовольствии",)
+			var/message = pick("moans", "moans in pleasure",)
 			H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>[message].</span:")
 			var/g = H.gender == FEMALE ? "f" : "m"
 			var/moan = rand(1, 7)

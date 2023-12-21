@@ -15,7 +15,7 @@ var/michael_shepard = FALSE
 	if(prob(0.5))
 		emote(pick("cry","scream","laugh"))
 
-var/list/bumquotes = list("Холодно... Так холодно...","Вы знали?","Люди такие глупые по сравнению со мной", "Мы уже на месте?", "Недостаточно любви", "Эта крепость - моя замена любви", "Все фальшиво", "Я не могу удержать это в голове. Вы можете мне помочь?", "Ну, как обычно", "Вампиры пьют кровь", "Но если эти вороны исчезнут в одну из этих ночей, солнце все равно будет светить вечно", "Нам нужно немного потерпеть", "Сегодня все так же, как вчера", "Это было бы забавно, но нет.", "Умру ли я достойно?", "Я совершаю здесь ошибку.", "Ты изменился!", "Давным-давно я был лордом.", "Мясоеды, грызуны костей, лизуны кожи...", "Враг", "КАКОВО ЭТО?!", "Мне сказали, что да.", "Я не бездельник, я разумный!", "Кто я? Я трудолюбивый работник. Я ставлю перед собой высокие цели, и мне говорили, что я настойчивый", "Я сдаюсь!")
+var/list/bumquotes = list("Cold... So cold...","Did you know?","People are so stupid compared to me.","Are we there yet?","Not enough love.","This fortress is my substitute for love.","Everything is fake.","I can't keep it in my mind. Can you help me?","Well, as usual","Vampires drink blood.","But if these ravens disappear one of these nights, the sun will still shine forever.","We need to endure it a little.","Today is just like yesterday.","It would be fun, but no.","Will I die in a great way?","I make a mistake here.","You've changed!","Long ago, I was a lord.","Meat eaters, bone gnawlers, skin lickers...","Foe","HOW DOES IT FEEL?!","I was told I do.", "I'm not a bum, I'm sapient!", "Who am I? I'm a hard worker. I set high goals and I've been told that I'm persistent.", "I surrender!")
 
 /mob/living/carbon/human/bumbot/examine()
 	if(ishuman(usr))

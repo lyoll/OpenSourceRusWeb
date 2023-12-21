@@ -99,11 +99,11 @@ var/const/BLOOD_VOLUME_SURVIVE = 50
 					if(!pale)
 						pale = 1
 						update_body()
-						var/word = pick("головокружение","растерянность","слабость")
-						to_chat(src, "\red Ты чувствуешь [word]")
+						var/word = pick("dizzy","woosey","faint")
+						to_chat(src, "\red You feel [word]")
 					if(prob(1))
-						var/word = pick("головокружение","растерянность","слабость")
-						to_chat(src,"\red Ты чувствуешь [word]")
+						var/word = pick("dizzy","woosey","faint")
+						to_chat(src,"\red You feel [word]")
 					if(oxyloss < 20)
 						oxyloss += 3
 			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
@@ -117,8 +117,8 @@ var/const/BLOOD_VOLUME_SURVIVE = 50
 					oxyloss += 1
 					if(prob(15))
 						Paralyse(rand(1,2))
-						var/word = pick("головокружительную боль","растерянность","слабость")
-						to_chat(src,"\red Вы чувствуете чрезвечайно сильную [word]")
+						var/word = pick("dizzy","woosey","faint")
+						to_chat(src,"\red You feel extremely [word]")
 			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
 				if(isVampire)
 					if(!pale)
@@ -165,7 +165,7 @@ var/const/BLOOD_VOLUME_SURVIVE = 50
 				do_spray += "[temp.artery_name]"
 
 		if(world.time >= next_blood_squirt && istype(loc, /turf) && do_spray.len)
-			visible_message("<span class='combatbold'>[src]</span><span class='combat'>'s [pick(do_spray)] брызжет кровью!</span>")
+			visible_message("<span class='combatbold'>[src]</span><span class='combat'>'s [pick(do_spray)] squirts blood!</span>")
 			playsound(src, 'sound/lfwbsounds/blood_splat.ogg', 100, 0)
 			if(!ismonster(src) && !iszombie(src))
 				for(var/mob/living/carbon/human/HHH in range(src,9))

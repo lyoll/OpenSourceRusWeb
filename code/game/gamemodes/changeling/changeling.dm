@@ -40,7 +40,7 @@ var/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","Epsilon"
 	var/changeling_amount = 4
 
 /datum/game_mode/changeling/announce()
-	world << "<B>Нашу тихую ночь прерывают пришельцы.</B>"
+	world << "<B>Our quiet night is interrupted by aliens.</B>"
 
 /datum/game_mode/changeling/can_start()
 	for(var/mob/new_player/player in player_list)
@@ -130,16 +130,16 @@ var/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","Epsilon"
 
 /datum/game_mode/proc/greet_changeling(var/datum/mind/changeling, var/you_are=1)
 	if (you_are)
-		to_chat(changeling.current, "<B>\red Вы являетесь частью общества!</B>")
+		to_chat(changeling.current, "<B>\red You are part of the society!</B>")
 		changeling.current << sound('sound/music/changeling_intro.ogg', repeat = 0, wait = 0, volume = 100, channel = 10)
 		changeling.current << sound('sound/music/the_collective.ogg', repeat = 0, wait = 0, volume = 80, channel = 3)
-	to_chat(changeling.current, "<b>\red Используйте \":g \" для общения с обществом.</b>")
-	to_chat(changeling.current, "<B>Вы должны выполнить следующую задачуs:</B>")
+	to_chat(changeling.current, "<b>\red Use say \":g message\" to communicate with the society.</b>")
+	to_chat(changeling.current, "<B>You must complete the following tasks:</B>")
 	var/mob/living/carbon/human/H = changeling.current
 	H.update_all_society_icons()
 	if (changeling.current.mind)
 		if (changeling.current.mind.assigned_role == "Clown")
-			changeling.current << "Вы эволюционировали за пределы своей клоунской натуры, что позволило вам владеть оружием, не нанося себе вреда."
+			changeling.current << "You have evolved beyond your clownish nature, allowing you to wield weapons without harming yourself."
 			changeling.current.mutations.Remove(CLUMSY)
 
 	var/obj_count = 1
@@ -214,9 +214,9 @@ var/list/possible_changeling_IDs = list("Alpha","Beta","Gamma","Delta","Epsilon"
 					count++
 
 			if(changelingwin)
-				text += "<br><font color='green'><B>Общество было успешным!</B></font>"
+				text += "<br><font color='green'><B>The society was successful!</B></font>"
 			else
-				text += "<br><font color='red'><B>Общество потерпело неудачу.</B></font>"
+				text += "<br><font color='red'><B>The society has failed.</B></font>"
 
 		to_chat(world, text)
 

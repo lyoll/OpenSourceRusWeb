@@ -57,9 +57,9 @@
 		H.add_perk(/datum/perk/morestamina)
 		H.add_perk(/datum/perk/ref/slippery)
 		H.add_perk(/datum/perk/sexaddict)
-	to_chat(src, "<h4><br><span class='bname'><font color='pink'>Ты суккуб.</font></span></h4>")
-	to_chat(src, "Ты способна порабощать мужчин с помощью своих постельных трюков и развращать их души плотскими удовольствиями.<br>")
-	to_chat(src, "<i>Твоих губ достаточно, чтобы свести мужчину с ума, поцелуй его, и он возжелает тебя.</i><br>")
+	to_chat(src, "<h4><br><span class='bname'><font color='pink'>You're a succubus.</font></span></h4>")
+	to_chat(src, "You're able to enslave men through your bedroom tricks and corrupt their souls with the pleasures of the flesh.<br>")
+	to_chat(src, "<i>Your lips are enough to drive a man crazy, kiss him and he will crave you.</i><br>")
 
 	src.mind.special_role = "Succubus"
 	for(var/datum/relation/family/R in H.mind.relations)
@@ -68,7 +68,7 @@
 				var/mob/living/carbon/human/lover = R.relation_holder.current
 				if(lover.age >= 18)
 					H.succubus_enslave(lover,TRUE)
-					to_chat(H,"<h4><br><span class='bname'><font color='pink'>В результате наших замечательных отношений мой любящий муж, [lover] так случилось, что он один из моих рабов.</font></span></h4>")
+					to_chat(H,"<h4><br><span class='bname'><font color='pink'>As a result of our wonderful relationship, my loving Husband, [lover] happens to be one my slaves.</font></span></h4>")
 	return 1
 
 
@@ -121,8 +121,8 @@
 					succwin = 0
 				count++
 		if(succwin)
-			text += "<h3><span class='passive'>[H.real_name] Суккуб достигла своих целей! Грешники будут вечно служить своей Госпоже!</span></h3>"
+			text += "<h3><span class='passive'>[H.real_name] The Succubus has achieved her goals! The sinners will serve their Mistress for eternity!</span></h3>"
 		else
-			text += "<h3><span class='combat'>Победа морали! Суккуб потерпел неудачу в разрушении крепости!</span></h3>"
+			text += "<h3><span class='combat'>Morality Victory! The Succubus has failed at corrupting the fortress!</span></h3>"
 	to_chat(player_list, text)
 

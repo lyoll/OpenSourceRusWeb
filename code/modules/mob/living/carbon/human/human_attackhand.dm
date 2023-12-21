@@ -10,7 +10,7 @@
 	if (M.hand)
 		temp = M:organs_by_name["l_hand"]
 	if(temp && !temp.is_usable())
-		to_chat(M, "\red Ты не можешь использовать свой [temp.display_name].")
+		to_chat(M, "\red You can't use your [temp.display_name].")
 		return
 
 	if(M.stunned)
@@ -85,7 +85,7 @@
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 75, 1, -1)
 				visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has grabbed</span> <span class='hitbold'>[src]'s</span> <span class='hit'>[affecting.display_name]!</span>")
 				if (affecting.status & ORGAN_BROKEN)
-					to_chat(usr, "<span class='combatbold'>Я чувствую, как расшатываются кости на [affecting.display_name].</span>")
+					to_chat(usr, "<span class='combatbold'>I feel the loose bones on the [affecting.display_name].</span>")
 				switch(M.zone_sel.selecting)
 					if(BP_L_LEG)
 						var/obj/item/weapon/grab/wrench/W = new /obj/item/weapon/grab/wrench(M, src)
@@ -117,7 +117,7 @@
 						return
 					if(BP_HEAD)
 						if(is_it_high(M))
-							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] Ты не можешь достичь такой высоты.</span>")
+							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] You can't reach that high.</span>")
 							return
 						var/obj/item/weapon/grab/wrench/W = new /obj/item/weapon/grab/wrench(M, src)
 						M.put_in_active_hand(W)
@@ -127,7 +127,7 @@
 						return
 					if("face")
 						if(is_it_high(M))
-							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] Ты не можешь достичь такой высоты.</span>")
+							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] You can't reach that high.</span>")
 							return
 						var/obj/item/weapon/grab/wrench/W = new /obj/item/weapon/grab/wrench(M, src)
 						M.put_in_active_hand(W)
@@ -137,7 +137,7 @@
 						return
 					if("mouth")
 						if(is_it_high(M))
-							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] Ты не можешь достичь такой высоты.</span>")
+							to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] You can't reach that high.</span>")
 							return
 						var/obj/item/weapon/grab/wrench/W = new /obj/item/weapon/grab/wrench(M, src)
 						M.put_in_active_hand(W)
@@ -219,34 +219,34 @@
 			M.adjustStaminaLoss(rand(2,3))//ja ta balangando o braço, gasta stamina
 
 			if(affecting?.status && affecting?.status & ORGAN_DESTROYED) //nao da pra bater em limb que nao existe
-				to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] Их конечность разрушена.</span>")
-				visible_message("<span class='hitbold'>[M]</span><span class='hit'> промахивается при попытке атаковать </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] с помощью кулака!</span>")
+				to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] Their limb is destroyed.</span>")
+				visible_message("<span class='hitbold'>[M]</span><span class='hit'> misses trying to attack </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] with the fist!</span>")
 				playsound(loc, attack.miss_sound, 25, 1)
 				return
 
 			if(is_it_high(M)) // ta muito alto
-				visible_message("<span class='hitbold'>[M]</span><span class='hit'> промахивается при попытке атаковать </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] с помощью кулака!</span>")
+				visible_message("<span class='hitbold'>[M]</span><span class='hit'> misses trying to attack </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] with the fist!</span>")
 				to_chat(M, "<span class='combatbold'>[pick(nao_consigoen)] too high.</span>")
 				playsound(loc, attack.miss_sound, 25, 1)
 				return
 
 			if(attempt_dodge(src, M) && canmove && !stat && c_intent == "dodge") // nao da pra desviar deitado
-				visible_message("<span class='hitbold'>[M]</span><span class='hit'> промахивается при попытке атаковать </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] с помощью кулака!</span>")
+				visible_message("<span class='hitbold'>[M]</span><span class='hit'> misses trying to attack </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] with the fist!</span>")
 				do_dodge()
 				return
 
 			if(attempt_parry(src, M, strToDamageModifier(M.my_stats.st, src.my_stats.ht)) && src.c_intent == "parry" && !src.sleeping && src.stat == 0) // parry de soco
-				visible_message("<span class='hitbold'>[M]</span><span class='hit'> промахивается при попытке атаковать </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] с помощью кулака!</span>")
+				visible_message("<span class='hitbold'>[M]</span><span class='hit'> misses trying to attack </span><span class='hitbold'>[src]'s</span><span class='hit'> [affecting] with the fist!</span>")
 				do_parry(src, M)
 				return
 
 			if(M.combat_mode && prob(1) && !prob(M.my_skills.GET_SKILL(SKILL_MELEE)+3*10))
-				visible_message("<span class='hitbold'>[M.name]</span> <span class='hit'>теряет равновесие, пытаясь нанести удар [src]!</span> ")
+				visible_message("<span class='hitbold'>[M.name]</span> <span class='hit'>loses their balance trying to punch [src]!</span> ")
 				M.resting = 1
 				playsound(loc, attack.miss_sound, 25, 1)
 
 			if(!M.combat_mode && prob(1))
-				visible_message("<span class='hitbold'>[M.name]</span> <span class='hit'>теряет равновесие, пытаясь нанести удар  [src]!</span> ")
+				visible_message("<span class='hitbold'>[M.name]</span> <span class='hit'>loses their balance trying to punch [src]!</span> ")
 				to_chat(M, "WHAT HAVE I DONE WRONG?!")
 				M.rotate_plane()
 				M.resting = 1
@@ -278,7 +278,7 @@
 
 
 			if(armor_block == ARMOR_BLOCKED)
-				dmgTXT += "<span class='hit'>Посредственное попадание! Броня останавливает удар.</span> "
+				dmgTXT += "<span class='hit'>A mediocre hit! Armor stops the damage.</span> "
 				M.visible_message(dmgTXT)
 				var/datum/organ/external/TT = M:organs_by_name["r_hand"]
 				if (M.hand)
@@ -289,7 +289,7 @@
 
 			if(armor_block == ARMOR_SOFTEN)
 				if(!istype(M?.gloves,/obj/item/clothing/gloves/combat/gauntlet))
-					dmgTXT += "<span class='hit'>Броня смягчает удар.</span> "
+					dmgTXT += "<span class='hit'>Armor softens the damage.</span> "
 					var/datum/organ/external/TT = M:organs_by_name["r_hand"]
 					if (M.hand)
 						TT = M:organs_by_name["l_hand"]
@@ -297,7 +297,7 @@
 
 
 			if(prob(5+(my_skills.GET_SKILL(SKILL_MELEE)*2)))
-				dmgTXT += "<span class='crithit'>КРИТИЧЕСКИЙ УДАР!</span> "
+				dmgTXT += "<span class='crithit'>CRITICAL HIT!</span> "
 				damage += rand(10,20)
 				if(affecting.name == "head")
 					if(prob(80))
@@ -336,12 +336,12 @@
 				if(affecting.display_name == "mouth" ? prob(affecting.brute_dam) : prob(0)) //MUCH higher chance to knock out teeth if you aim for mouth
 					var/datum/organ/external/mouth/MH = src.get_organ("mouth")
 					if(MH.knock_out_teeth(get_dir(M, src), round(rand(28, 38) * ((hitcheck*2)/100))))
-						dmgTXT += "<span class='hit'>Зубы были выбиты!</span> "
+						dmgTXT += "<span class='hit'>Teeth were blown!</span> "
 						if(prob(25))
 							src.CU()
 
 			if(affecting.name == "head" && prob(weakenProb - src.my_stats.ht + M.my_stats.st) && damage >= 7 || affecting.name == "face" && prob(weakenProb - src.my_stats.ht + M.my_stats.st) && damage >= 7)
-				dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>ослабляется!</span> "
+				dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>is weakened!</span> "
 				apply_effect(rand(1,4), WEAKEN, armor_block)
 				src.receive_damage()
 				if(prob(65))
@@ -356,12 +356,12 @@
 				var/rand1 = rand(1,2)
 				if(rand1 == 1)
 					apply_effect(13, PARALYZE, armor_block)
-					dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>был сбит с толку и потерял сознание!</span> "
+					dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>has been knocked unconscious!</span> "
 					src.ear_deaf = max(src.ear_deaf,6)
 					src.receive_damage()
 				if(rand1 == 2)
 					apply_effect(6, STUN, armor_block)
-					dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>был ошеломлен!</span> "
+					dmgTXT += "<span class='hitbold'>[src]</span> <span class='hit'>has been stunned down!</span> "
 					src.ear_deaf = max(src.ear_deaf,6)
 					src.receive_damage()
 
@@ -415,11 +415,11 @@
 
 
 		if("disarm")
-			M.attack_log += text("\[[time_stamp()]\] <font color='red'>Разоружен [src.name] ([src.ckey])</font>")
-			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Был разоружен [M.name] ([M.ckey])</font>")
+			M.attack_log += text("\[[time_stamp()]\] <font color='red'>Disarmed [src.name] ([src.ckey])</font>")
+			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been disarmed by [M.name] ([M.ckey])</font>")
 			if(iszombie(src))
 				return
-			log_attack("[M.name] ([M.ckey]) разоружен [src.name] ([src.ckey])")
+			log_attack("[M.name] ([M.ckey]) disarmed [src.name] ([src.ckey])")
 			M.adjustStaminaLoss(rand(3,5))//No more spamming disarm without consequences.
 
 			if(istype(M?.species, /datum/species/human/alien) && ishuman(src))
@@ -448,7 +448,7 @@
 					chance = !hand ? 40 : 20
 
 				if (prob(chance))
-					visible_message("<span class='crithit'>КРИТИЧЕСКАЯ НЕУДАЧА!</span> <span class='hitbold'>[src]'s</span> <span class='hit'>[W] goes off during struggle!</span> ")
+					visible_message("<span class='crithit'>CRITICAL FAIL!</span> <span class='hitbold'>[src]'s</span> <span class='hit'>[W] goes off during struggle!</span> ")
 					M.combatfail(25, 40)
 					var/list/turfs = list()
 					for(var/turf/T in view())
@@ -471,7 +471,7 @@
 					src.throw_at(edgeTurf, rand(1,2), 2, src)
 					M.adjustStaminaLoss(rand(1,2))
 					src.adjustStaminaLoss(rand(2,3))
-					visible_message("<span class='hitbold'>[M]</span> <span class='hit'>оттолкнул</span> <span class='hitbold'>[src]!</span> ")
+					visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has pushed</span> <span class='hitbold'>[src]!</span> ")
 					return
 
 			var/talked = 0	// BubbleWrap
@@ -483,7 +483,7 @@
 				if(skillcheck(M.my_skills.GET_SKILL(SKILL_MELEE), 70, null, M) && statcheck(M.my_stats.dx, rand(7,10), null, M))
 					//BubbleWrap: Disarming breaks a pull
 					if(pulling)
-						visible_message("<span class='hitbold'>[M]</span> <span class='hit'>ослабил</span> <span class='hitbold'>[src]'s</span> <span class='hit'>хватку на</span> <span class='hitbold'>[pulling]</span><span class='hit'>!</span> ")
+						visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has broken</span> <span class='hitbold'>[src]'s</span> <span class='hit'>grip on</span> <span class='hitbold'>[pulling]</span><span class='hit'>!</span> ")
 						talked = 1
 						stop_pulling()
 
@@ -491,14 +491,14 @@
 					if(istype(l_hand, /obj/item/weapon/grab))
 						var/obj/item/weapon/grab/lgrab = l_hand
 						if(lgrab.affecting)
-							visible_message("<span class='hitbold'>[M]</span> <span class='hit'>ослабил</span> <span class='hitbold'>[src]'s</span> <span class='hit'>хватку на</span> <span class='hitbold'>[lgrab.affecting]</span><span class='hit'>!</span> ")
+							visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has broken</span> <span class='hitbold'>[src]'s</span> <span class='hit'>grip on</span> <span class='hitbold'>[lgrab.affecting]</span><span class='hit'>!</span> ")
 							talked = 1
 						spawn(1)
 							qdel(lgrab)
 					if(istype(r_hand, /obj/item/weapon/grab))
 						var/obj/item/weapon/grab/rgrab = r_hand
 						if(rgrab.affecting)
-							visible_message("<span class='hitbold'>[M]</span> <span class='hit'>ослабил</span> <span class='hitbold'>[src]'s</span> <span class='hit'>хватку на</span> <span class='hitbold'>[rgrab.affecting]</span><span class='hit'>!</span>")
+							visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has broken</span> <span class='hitbold'>[src]'s</span> <span class='hit>'grip on</span> <span class='hitbold'>[rgrab.affecting]</span><span class='hit'>!</span>")
 							talked = 1
 						spawn(1)
 							qdel(rgrab)
@@ -506,7 +506,7 @@
 
 					if(!talked)	//BubbleWrap
 						drop_item()
-						visible_message("<span class='hitbold'>[M]</span> <span class='hit'>разоружил</span> <span class='hitbold'>[src]</span><span class='hit'>!</span>")
+						visible_message("<span class='hitbold'>[M]</span> <span class='hit'>has disarmed</span> <span class='hitbold'>[src]</span><span class='hit'>!</span>")
 					playsound(loc, 'sound/weapons/thudswoosh.ogg', 80, 0, -1)
 					return
 

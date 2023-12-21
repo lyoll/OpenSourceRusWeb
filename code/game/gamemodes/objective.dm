@@ -664,7 +664,7 @@ datum/objective/absorb
 
 /*---------SUCCUBUS----------*/
 datum/objective/succubus
-	explanation_text = "Разврати 5 мужчин и поглоти их души во время полового акта!"
+	explanation_text = "Corrupt 5 men and consume their souls through a coitus!"
 
 	check_completion()
 		if(owner && owner.succubus && owner.succubus.succubusSlaves.len >= 5)
@@ -673,7 +673,7 @@ datum/objective/succubus
 			return 0
 
 datum/objective/succubusTwo
-	explanation_text = "Убедитесь, что вы единственный суккуб в крепости!"
+	explanation_text = "Ensure that you are the only Succubus in the fortress!"
 
 	check_completion()
 		for(var/mob/living/carbon/human/H in mob_list)

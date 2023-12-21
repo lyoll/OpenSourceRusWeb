@@ -11,7 +11,7 @@
 		if(istype(mob, /mob/new_player))
 			playtitlemusic()
 	else
-		to_chat(src, "Вы больше не будете слышать музыку в игровом лобби.")
+		to_chat(src, "You will no longer hear music in the game lobby.")
 		if(istype(mob, /mob/new_player))
 			src << sound(null, repeat = 0, wait = 0, volume = prefs?.music_volume, channel = 1) // stop the jamsz
 
@@ -22,9 +22,9 @@
 	prefs.toggles ^= SOUND_MIDI
 	prefs.save_preferences()
 	if(prefs.toggles & SOUND_MIDI)
-		to_chat(src,  "Теперь вы будете слышать любые звуки, загруженные администраторами.")
+		to_chat(src,  "You will now hear any sounds uploaded by admins.")
 		var/sound/break_sound = sound(null, repeat = 0, wait = 0, channel = 777)
 		break_sound.priority = 250
 		src << break_sound	//breaks the client's sound output on channel 777
 	else
-		to_chat(src, "Вы больше не будете слышать звуки, загруженные администраторами; все воспроизводимые в данный момент midi были отключены.")
+		to_chat(src, "You will no longer hear sounds uploaded by admins; any currently playing midis have been disabled.")

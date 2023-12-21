@@ -8,7 +8,7 @@
 	return
 /atom/movable/attackby(obj/item/W, mob/user)
 	if(!(W.flags&NOBLUDGEON))
-		visible_message("<span class='danger'>[src] ударил [user] c помощью [W].</span>")
+		visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
 
 /mob/living/attackby(obj/item/I, mob/user)
 	if(istype(I) && ismob(user))
@@ -37,7 +37,7 @@
 
 	if(world.time <= next_attack_time)
 		if(world.time % 3) //to prevent spam
-			to_chat(user, "<span class='warning'>The [src] не готов снова атаковать!</span>")
+			to_chat(user, "<span class='warning'>The [src] is not ready to attack again!</span>")
 		return 0
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)

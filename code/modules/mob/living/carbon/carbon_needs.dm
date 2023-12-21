@@ -5,7 +5,7 @@
 		var/datum/happiness_event/event = events[i]
 		msg += event.description
 	if(!msg || !events.len)
-		msg += "<span class='passiveglow'>Я чувствую себя безразличным.</span>\n"
+		msg += "<span class='passiveglow'>I feel indifferent.</span>\n"
 
 	msg += "<hr class='linexd'>"
 	to_chat(src, "[msg]</div></div>")
@@ -14,72 +14,72 @@
 	var/msg = "<div class='firstdivmood'><div class='moodbox'>"
 	var/zodiacdesc = ""
 	msg += "<hr class='linexd'>"
-	msg += "<span class='moodboxtext'>Меня зовут</span><span class='[mind.say_color]'>[src.real_name]</span>\n"
+	msg += "<span class='moodboxtext'>My name is</span><span class='[mind.say_color]'>[src.real_name]</span>\n"
 	/*if(dom_hand == "Right-handed")
 		msg += "<span class='moodboxtext'>I'm right-handed.</span>"
 	else if (dom_hand == "Left-handed")
 		msg += "<span class='moodboxtext'>I'm left-handed.</span>"
 	else if (src.dom_hand == "Ambidextrous")
 		msg += "I'm ambidextrous."*/ // dom_hand does nothing but i'm leaving this here for the future,remind RiotMigrant to add ambidextrous special when Foe finishes combat
-	msg += "<span class='moodboxtext'>Моя группа крови: [src.dna.b_type]. </span>"
+	msg += "<span class='moodboxtext'>My blood type: [src.dna.b_type]. </span>"
 	if(src.potenzia <=10 && src.has_penis())
-		msg += "<span class='moodboxtext'>Мой размер: маленький.</span>"
+		msg += "<span class='moodboxtext'>My size: small.</span>"
 	else if(src.potenzia <=20 && src.has_penis())
-		msg += "<span class='moodboxtext'>Мой размер: обычный.</span>"
+		msg += "<span class='moodboxtext'>My size: regular.</span>"
 	else if (src.potenzia >20 && src.has_penis())
-		msg += "<span class='moodboxtext'>Мой размер: огромный.</span>" 
+		msg += "<span class='moodboxtext'>My size: large.</span>" 
 	if(src.outsider && src.province && src.province != "Wanderer")
-		msg += "<span class='moodboxtext'>Я родом из <b>[src.province]</b></span>\n"
+		msg += "<span class='moodboxtext'>I come from <b>[src.province]</b></span>\n"
 	msg += "<br>"
 	msg += "<br>"
 	if(src.favorite_beverage == "Blood" || src.favorite_beverage == "Water")
-		msg += "<span class='moodboxtext'>У меня нет любимого напитка.</span>"
+		msg += "<span class='moodboxtext'>I don't have a favorite beverage.</span>"
 	else
-		msg += "<span class='moodboxtext'>Мой любимый напиток: [src.favorite_beverage]<br>"
+		msg += "<span class='moodboxtext'>My favorite beverage: [src.favorite_beverage]<br>"
 	if(src.special)
 		msg += "<span class='combat'><i>\"[src.specialdesc]\"</i></span><br>"
 	switch(zodiac)
-		if("Мизгирь")
-			zodiacdesc = "(Манипуляция, Похоть, Скрытность)"
-		if("Лисица")
-			zodiacdesc = "(Соревнование, Риск, Эгоизм)"
-		if("Монеты")
-			zodiacdesc = "(Любопытство, Остроумие, Переменчивость)"
-		if("Лебедь")
-			zodiacdesc = "(Горделивость, Щедрость, Артистизм)"
-		if("Сверчок")
-			zodiacdesc = "(Труд, Помощь, Критиканство)"
-		if("Кентавр")
-			zodiacdesc = "(Веселье, Приключения, Честность)"
-		if("Сизиф")
-			zodiacdesc = "(Дисциплина, Власть, Упорство)"
-		if("Зарница")
-			zodiacdesc = "(Прогресс, Оригинальность, Независимость)"
-		if("Фантом")
-			zodiacdesc = "(Доброта, Эскапизм, Зависимость)"
-		if("Сова")
-			zodiacdesc = "(Дипломатия, Изысканность, Осторожность)"
-		if("Скала")
-			zodiacdesc = "(Безопасность, Постоянство, Невозмутимость)"
-		if("Пчела")
-			zodiacdesc = "(Семья, Защита, Забота)"
-	msg += "<span class='moodboxtext'>Мой возраст: [src.age]. Мой знак: <span class='graytextbold'>[src.zodiac]</span> <span class='moodboxtext'>[zodiacdesc].</span><br>"
+		if("Aranea")
+			zodiacdesc = "(Manipulation, Lust, Stealth)"
+		if("Vulpes")
+			zodiacdesc = "(Contest, Risk, Selfishness)"
+		if("Numis")
+			zodiacdesc = "(Curiosity, Wit, Changeability)"
+		if("Cygnus")
+			zodiacdesc = "(Pride, Generosity, Artistry)"
+		if("Gryllus")
+			zodiacdesc = "(Labor, Help, Criticism)"
+		if("Centaurus")
+			zodiacdesc = "(Fun, Adventure, Honesty)"
+		if("Sisyphus")
+			zodiacdesc = "(Discipline, Power, Perseverance)"
+		if("Fulgurri")
+			zodiacdesc = "(Progress, Originality, Independence)"
+		if("Phantom")
+			zodiacdesc = "(Kindness, Escapism, Dependence)"
+		if("Noctua")
+			zodiacdesc = "(Diplomacy, Sophistication, Caution)"
+		if("Rocca")
+			zodiacdesc = "(Safety, Consistency, Equanimity)"
+		if("Apis")
+			zodiacdesc = "(Family, Protection, Care)"
+	msg += "<span class='moodboxtext'>My age: [src.age]. My Sign: <span class='graytextbold'>[src.zodiac]</span> <span class='moodboxtext'>[zodiacdesc].</span><br>"
 	msg += "<br>"
 	if(src.vice)
-		msg += "<span class='moodboxtext'>Мой порок: [src.vice]</span>"
+		msg += "<span class='moodboxtext'>My vice: [src.vice]</span>"
 	else
-		msg += "<span class='moodboxtext'>Я</span> <span class='graytextbold'>не имею</span> <span class='moodboxtext'>недостатков.</span>"
+		msg += "<span class='moodboxtext'>I</span> <span class='graytextbold'>don't</span> <span class='moodboxtext'>have vices.</span>"
 	msg += "<hr class='linexd'>"
 
 	if(ismonster(src) || iszombie(src) || isVampire || src.mind.changeling)
 		if(client)
-			msg += "<span class='combatglow'><b>Моя душа черна. Человечность мне чужда.</b></span>\n"
+			msg += "<span class='combatglow'><b>My soul is black. Humanity is alien to me.</b></span>\n"
 	else
 		for(var/i in events)
 			var/datum/happiness_event/event = events[i]
 			msg += "[event.description]"
 		if(!msg || !events.len)
-			msg += "<span class='passiveglow'>Я чувствую себя безразличным.</span>\n"
+			msg += "<span class='passiveglow'>I feel indifferent.</span>\n"
 
 	msg += "<hr class='linexd'>"
 	to_chat(src, "[msg]</div></div>", 7)
@@ -137,9 +137,9 @@
 
 	if(old_icon && old_icon != mood_icon.icon_state)
 		if(old_happiness > happiness)
-			to_chat(src, "<span class='combatglow'>Мое настроение становится все хуже.</span>")
+			to_chat(src, "<span class='combatglow'>My mood gets worse.</span>")
 		else
-			to_chat(src, "<span class='passiveglow'>Мое настроение становится лучше.</span>")
+			to_chat(src, "<span class='passiveglow'>My mood gets better.</span>")
 
 /mob/proc/flash_sadness()
 	if(prob(2))

@@ -13,8 +13,8 @@ datum/job/ordinator
 	access = list(meistery,sanctuary,garrison,keep,hump,courtroom,soilery,lifeweb, baronquarter, marduk, innkeep, hand_access)
 	minimal_access = list(meistery,sanctuary,garrison,keep,hump,courtroom,soilery,lifeweb, baronquarter, marduk, innkeep, hand_access)
 	minimal_player_age = 14
-	latejoin_locked = TRUE
-	jobdesc = "Будучи человеком сильной воли, героической силы и невероятного боевого мастерства, Мардук является одним из самых ужасающих людей, с которыми когда-либо приходилось сталкиваться в бою. Его выдающиеся навыки признаны по всей провинции Салариан. Чемпион барона Фаэторна, его иногда посылают принять участие в спешке и боевых играх среди более богатой знати. Многие более влиятельные дворяне предложили ему место среди своих могущественных людей, но его преданность своему господину бессмертна."
+	latejoin_locked = FALSE
+	jobdesc = "Being a man of strong will, heroic strength, and incredible combat prowess, the Marduk is one of the most horrifying men one will ever face in battle. His formidable skills are recognized throughout the Salarian province. Champion of the Baron of Firethorn, he is sometimes sent to take part in hastilude and martial games among more wealthy nobility. Many more influential nobles have offered him a seat among their mighty men, but his loyalty towards his Lord is undying."
 	sex_lock = MALE
 	money = 66
 	thanati_chance = 1
@@ -63,7 +63,7 @@ datum/job/ordinator
 	minimal_player_age = 3
 	sex_lock = MALE
 	money = 25
-	jobdesc = "Также неофициально называемые драконами, тиаматы являются личной охраной барона. Искусные в бою, их главным приоритетом является защита своего господина, его семьи и исполнение его воли. До тех пор, пока им платят, это так."
+	jobdesc = "Also informally called Dragons, Tiamats are the personal guard of the Baron. Skilled in combat, their main priority is to protect their Lord, his family, and enforce his will. So long as they&#8217;re being paid, that is."
 	latejoin_locked = FALSE
 	thanati_chance = 1
 	equip(var/mob/living/carbon/human/H)
@@ -141,7 +141,7 @@ datum/job/ordinator
 	access = list(garrison,keep,courtroom)
 	minimal_access = list(garrison,keep,courtroom)
 	minimal_player_age = 3
-	jobdesc = "Выступая одновременно в роли внешнего сторожа и представителя закона, вы - первый человек, который узнает о любой надвигающейся угрозе Фаэторну. Большую часть ваших дней вы проводите, лениво наблюдая за мигрантами, проходящими через деревню, но вы не можете не чувствовать, что некогда тихое пение ересей пещеры становится все ближе. И теперь они стучатся в вашу дверь."
+	jobdesc = "Serving as both the outside&#8217;s watchman and lawman, you are the first person to know of any impending threat to Firethorn. Most of your days are spent keeping a lazy eye on the migrants passing through the village, but you can&#8217;t help but feel like the once silent chanting of the cave&#8217;s heresies have been drawing nearer. And now they&#8217;re knocking on your door."
 	sex_lock = MALE
 	money = 25
 	latejoin_locked = TRUE
@@ -183,7 +183,7 @@ datum/job/ordinator
 	minimal_access = list(garrison,keep)
 	sex_lock = MALE
 	money = 5
-	jobdesc = "Все еще юные оруженосцы еще не заслужили права называть себя Тиаматами. Хорошо служи своему хозяину. Наденьте на него доспехи, заточите его клинок, и он научит вас, как стать мужчиной. И однажды ты тоже будешь иметь честь служить непосредственно под началом самого Господа среди своих братьев. Это честь для всех молодых людей."
+	jobdesc = "Still young, squires have yet to earn the right to call themselves Tiamats. Serve your master well. Fit his armor, sharpen his blade, and he shall teach you how to become a man. And one day you too shall have the honor of serving directly under the Lord himself among your brothers. It is an honor to all young men."
 	latejoin_locked = FALSE
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
@@ -258,7 +258,7 @@ var/global/Gatekeeper_Type = "Null"
 	sex_lock = MALE
 	money = 13
 	thanati_chance = 1
-	jobdesc = "Фанатичный воин-монах, который стремился очистить еретиков, но дал неосмотрительный обет. Теперь его обязанность - следить за воротами крепости, регистрировать мигрантов и сбрасывать негодяев в магму. "
+	jobdesc = "A fanatical warrior-monk who was eager to purify heretics, but gave an imprudent vow. Now it is his duty to watch the gates of the fortress, register migrants and throw scoundrels into magma. "
 	equip(var/mob/living/carbon/human/H)
 		if(!H)
 			return 0
@@ -334,9 +334,9 @@ var/global/Gatekeeper_Type = "Null"
 		if(!H)
 			return 0
 		..()
-		to_chat(H, "<span class='objectivesbig'>Вы - координатор трибунала</span>")
-		to_chat(H, "<span class='objectives'>Ты направляешься к ближайшему пристанищу, Фаэторн.</span>")
-		to_chat(H, "<span class='objectives'>Надеюсь, там ты сможешь перегруппироваться с остальными членами своего взвода.</span>")
+		to_chat(H, "<span class='objectivesbig'>You are a Tribunal Ordinator</span>")
+		to_chat(H, "<span class='objectives'>You're making your way to the nearest hold, Firethorn.</span>")
+		to_chat(H, "<span class='objectives'>Hopefully there you can regroup with the rest of your platoon.</span>")
 		H.job = "Ordinator"
 		H.terriblethings = TRUE
 		H.voicetype = "strong"

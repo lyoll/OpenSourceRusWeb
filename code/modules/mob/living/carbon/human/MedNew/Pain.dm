@@ -63,7 +63,7 @@
 
 /mob/living/carbon/human/proc/death_door()
 	if(death_door) return
-	to_chat(src, "<span class='hugepain'><b>Ты стучишься в дверь смерти!</b></span>")
+	to_chat(src, "<span class='hugepain'><b>You're knockin' on death's door!</b></span>")
 	eye_blurry = max(eye_blurry-3, 0)
 	blinded = 1
 	death_door = 1

@@ -507,8 +507,8 @@ datum/mind
 					var/mob/living/carbon/human/H = current
 					special_role = "Waker"
 					//ticker.mode.learn_basic_spells(current)
-					to_chat(H,"<span class='dreamershitfuckcomicao1'>В последнее время меня посетило много видений. Они говорят о другом мире, другой жизни. Я сделаю все, чтобы узнать правду, вернуться в реальный мир.</span>")
-					to_chat(H, "<span class='dreamershitfuckcomicao1'>Мечта №1: Мне нужно следовать за своим сердцем.</span>")
+					to_chat(H,"<span class='dreamershitfuckcomicao1'>I've had a lot of visions lately. They talk about another world, another life. I will do everything to find out the truth, to return to the real world.</span>")
+					to_chat(H, "<span class='dreamershitfuckcomicao1'>Dream #1: I need to Follow my Heart.</span>")
 					log_admin("[key_name_admin(usr)] has waker'ed [current].")
 					H.combat_music = 'sound/lfwbsounds/bloodlust1.ogg'
 					var/datum/antagonist/dreamer/D = new()
@@ -531,8 +531,8 @@ datum/mind
 					new_character.gender = MALE
 					special_role = "Soulbreaker"
 					//ticker.mode.learn_basic_spells(current)
-					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы душелом.</span")
-					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Вы порабощаете живых людей, чтобы они могли восстанавливать потерянные планеты. У вас есть много инструментов для этого, поэтому поймать обычного мигранта должно быть легко.</span>")
+					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>Are you a soulbreaker.</span")
+					to_chat(new_character, "<span class='dreamershitfuckcomicao1'>You enslave living people so that they can rebuild lost planets. You have a lot of tools for this, so catching an ordinary migrant should be easy.</span>")
 					log_admin("[key_name_admin(usr)] has soulbreaker'ed [new_character.key].")
 					new_character << sound('sound/music/soulbreaker.ogg', repeat = 0, wait = 0, volume = 80, channel = 3)
 					new_character.my_skills.CHANGE_SKILL(SKILL_MELEE, rand(3,6))

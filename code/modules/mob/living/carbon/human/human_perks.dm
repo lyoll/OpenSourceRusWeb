@@ -39,140 +39,140 @@
 
 /datum/perk/illiterate
 	name = "Illiterate"
-	description = "Я горжусь тем, что неграмотен."
+	description = "I'm proudly illiterate."
 
 /datum/perk/ref/teaching
 	name = "Teaching"
-	description = "Преподавание - это для меня."
-	reflectmessage = "Я научился преподавать."
+	description = "Teaching is for me."
+	reflectmessage = "I learned how to teach."
 
 /datum/perk/docker
 	name = "Docker"
-	description = "Я могу таскать тяжелые тяжести."
+	description = "I can carry heavy weights."
 
 /datum/perk/likeart
 	name = "Likeart"
-	description = "Мне нравится искусство."
+	description = "I like art."
 
 /datum/perk/morestamina
 	name = "Morestamina"
-	description = "У меня больше выносливости, чем у других людей."
+	description = "I have more stamina than other people."
 
 /datum/perk/lessstamina
 	name = "Lessstamina"
-	description = "У меня меньше выносливости, чем у других людей."
+	description = "I have less stamina than other people."
 
 /datum/perk/screamerimmunity
 	name = "Screamerimmunity"
-	description = "У меня иммунитет к инфекциям крикунов."
+	description = "I am immune to screamer infections."
 
 /datum/perk/ref/value
 	name = "Value"
 	description = "I know the value of things."
-	reflectmessage = "Теперь я знаю, как оценить стоимость товара."
+	reflectmessage = "I now know how to estimate a item's value."
 
 /datum/perk/pathfinder
 	name = "Pathfinder"
-	description = "Я хорошо разбираюсь в навигации."
+	description = "I'm good at navigation."
 
 /datum/perk/singer
 	name = "Singer"
-	description = "Я хороший певец."
+	description = "I'm a good singer."
 
 /datum/perk/heroiceffort
 	name = "HeroicEffort"
-	description = "Я могу совершать героические усилия."
+	description = "I can perform heroic efforts."
 
 /datum/perk/ref/strongback
 	name = "Strongback"
-	description = "У меня крепкая спина."
-	reflectmessage = "Теперь у меня крепкая спина."
+	description = "I have a strong back."
+	reflectmessage = "I now have a strong back."
 
 /datum/perk/ref/disarm
 	name = "Disarm"
-	description = "Я люблю обезоруживать."
-	reflectmessage = "Я люблю обезоруживать."
+	description = "I love to disarm."
+	reflectmessage = "I love to disarm."
 
 /datum/perk/ref/slippery
 	name = "Slippery"
-	description = "Я скользкий."
-	reflectmessage = "Я теперь скользкий, мне легче ускользать от захватов."
+	description = "I'm slippery."
+	reflectmessage = "I am now slippery, it's easier to escape from grabs."
 
 /datum/perk/ref/jumper
 	name = "Jumper"
-	description = "Я такой прыгун."
-	reflectmessage = "Я такой прыгун, что теперь могу перепрыгнуть на 5 плиток дальше!"
+	description = "I'm such a jumper."
+	reflectmessage = "I'm such a jumper, I can now jump 5 tiles away!"
 
 /datum/perk/interrogate
 	name = "Interrogate"
-	description = "Они замечают мои вопросы."
+	description = "They notice my questions."
 
 /datum/perk/sexaddict
 	name = "Sexaddict"
-	description = "Я одержим сексом."
+	description = "I am obsessed with sex."
 
 /datum/perk/ref/cavetravel
 	name = "cavetravel"
-	description = "Я знаю, как быстро передвигаться по пещерам."
-	reflectmessage = "Я знаю, как быстро передвигаться по пещерам."
+	description = "I know how to travel the caves fast."
+	reflectmessage = "I know how to travel the caves fast."
 
 /datum/perk/ref/traptard
 	name = "traptard"
-	description = "Ловушки ловят только отстающих."
-	reflectmessage = "Ловушки ловят только отстающих!"
+	description = "Traps only catch retards."
+	reflectmessage = "Traps only catch retards!"
 
 /datum/perk/ref/warlock
 	name = "warlock"
-	description = "Я в безопасности от Падлы."
-	reflectmessage = "Колдун наблюдал за тобой, он больше не причинит тебе вреда."
+	description = "I am safe from padlas."
+	reflectmessage = "The warlock was watching you, he won't harm you anymore."
 
 /datum/perk/ref/silent
 	name = "silent"
-	description = "Я молчу."
-	reflectmessage = "Я молчу, никто не слышит моих шагов."
+	description = "I am silent."
+	reflectmessage = "I am silent, nobody can hear my footsteps."
 
 /datum/perk/ancitech
 	name = "ancitech"
-	description = "Я знаю о древних технологиях."
+	description = "I know about ancient technologies."
 
 /datum/perk/shoemaking
 	name = "shoemaking"
-	description = "Я знаю, как шить обувь."
+	description = "I know how to make shoes."
 
 /datum/perk/chemical
 	name = "chemical"
-	description = "Я знаю, как смешивать химикаты."
+	description = "I know how to mix chemicals."
 
 /datum/perk/bees
 	name = "bees"
-	description = "Я знаю пчел."
+	description = "I know bees."
 
 /datum/perk/bee_queen
 	name = "bee_queen"
-	description = "Я знаю, что пчелы любят меня."
+	description = "I know that bees loves me."
 
 /datum/perk/gemcutting
 	name = "gemcutting"
-	description = "Я разбираюсь в драгоценных камнях."
+	description = "I know gems."
 
 /mob/living/carbon/human/proc/reflectexperience()
 	set name = "ReflectExperience"
 	if(reflectneed < 700)
 		return
 	if(stat == DEAD)
-		to_chat(src, "<span class='combat'>Я мёртв!</span>")
+		to_chat(src, "<span class='combat'>I am dead!</span>")
 		return
 	if(stat != 1 && reflectneed >= 740)
-		to_chat(src, "<span class='combat'>Мне нужно найти кровать.</span>")
+		to_chat(src, "<span class='combat'>I need to find a bed.</span>")
 		return
 	if(!buckled)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Мне нужно поспать на кровати.</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I need to sleep on a bed.</span>")
 		return
 	if(stat == 1 && reflectneed >= 740 && istype(buckled, /obj/structure/stool/bed))
 		src.gainWP(1,1)
 		src.reflectneed = 0
 		if(src.species.name == "Child" && prob(10))
-			to_chat(src, "Воздействие радиации паутины жизни привело к тому, что вы быстрее состарились.")
+			to_chat(src, "Exposure to the Lifeweb's radiation has caused you to age faster.")
 			src.set_species("Human")
 		else if(prob(10))
 			add_random_stat()
@@ -197,26 +197,26 @@
 	var/random_stat = pick(STAT_ST, STAT_DX, STAT_HT, STAT_PR, STAT_IN, STAT_IM)
 	switch(random_stat)
 		if(STAT_ST)
-			to_chat(src, "<span class='malfunction'><b>Шло время, и ты становился сильнее.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>As time went on, you got stronger.</b></span>")
 			my_stats.initst += 1
 			my_stats.st += 1
 		if(STAT_DX)
-			to_chat(src, "<span class='malfunction'><b>Со временем вы стали более проворными.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>You've become more agile over time.</b></span>")
 			my_stats.initdx += 1
 			my_stats.dx += 1
 		if(STAT_HT)
-			to_chat(src, "<span class='malfunction'><b>С течением времени ты становишься жестче.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>As time goes by, you've grown tougher.</b></span>")
 			my_stats.initht += 1
 			my_stats.ht += 1
 		if(STAT_PR)
-			to_chat(src, "<span class='malfunction'><b>Со временем вы стали более внимательными.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>Over time you have become more attentive.</b></span>")
 			my_stats.initpr += 1
 			my_stats.pr += 1
 		if(STAT_IN)
-			to_chat(src, "<span class='malfunction'><b>Со временем ты стал умнее.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>You've gotten smarter over time.</b></span>")
 			my_stats.initit += 1
 			my_stats.it += 1
 		if(STAT_IM)
-			to_chat(src, "<span class='malfunction'><b>Со временем ваша иммунная система улучшилась.</b></span>")
+			to_chat(src, "<span class='malfunction'><b>Over time, your immune system has improved.</b></span>")
 			my_stats.initim += 1
 			my_stats.im += 1

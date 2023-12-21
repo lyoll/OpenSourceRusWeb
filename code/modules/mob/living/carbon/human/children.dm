@@ -15,7 +15,7 @@
 		H.vice = "Kleptomaniac"
 	if(H.f_style)//Children don't get beards.
 		H.f_style = "Shaved"
-	to_chat(H, "<span class='info'><big>Мне [H.age] лет! Ура!</big></span>")
+	to_chat(H, "<span class='info'><big>I'm [H.age] years old! Hooray!</big></span>")
 	return ..()
 
 /obj/item/clothing/under/child_jumpsuit
