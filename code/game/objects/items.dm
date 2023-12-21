@@ -225,15 +225,15 @@
 					TheReach += "••••••"
 		switch(W.speciality)
 			if(SKILL_FLAIL)
-				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828004675676012595/unknown.png","ИМПРОВИЗИРОВАННОЕ ОРУЖИЕ - немного шансов попасть. Хотя и лучше, чем ничего.")]"
+				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828004675676012595/unknown.png","IMPROVISED. Lesser chance to hit. A little better than nothing.")]"
 			if(SKILL_SWORD)
-				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828016818261458954/sword.png","МЕЧИ - Порезы или удары ножом. Ваше мастерство владения тяжелыми или громоздкими клинками.")]"
+				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828016818261458954/sword.png","SWORD - Cuts or stabs. Your finesse of wieldy or unwieldy blades.")]"
 			if(SKILL_SWING)
-				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828016821218312242/club.png","ДУБИНКИ/ТОПОРЫ - Ломает кости. Ваш контроль при атаках и парировании сокрушительным оружием.")]"
+				TheSpec = "[generatehintbox("https://cdn.discordapp.com/attachments/781574628229382144/828016821218312242/club.png","CLUB/AXES - Smashes bones. Your control in assaults and parrying with crushing weapons.")]"
 
 
 	if(!isobserver(usr))
-		usr.visible_message("<span class='looksatbold'>[usr.name]</span> <span class='looksat'>смотрит на [src].</span>")
+		usr.visible_message("<span class='looksatbold'>[usr.name]</span> <span class='looksat'>looks at [src].</span>")
 		if(get_dist(usr,src) > 5)//Don't get descriptions of things far away.
 			to_chat(usr, "<span class='passivebold'>It's too far away to see clearly.</span>")
 			return
@@ -390,7 +390,7 @@
 			return
 		else
 			if(user.middle_click_intent == "steal")
-				to_chat(user, "<i>Вы начинаете медленно поднимать [src] не производя никакого шума.</i>")
+				to_chat(user, "<i>You begin to slowly pick up [src] without making any noise.</i>")
 				if(do_after(user, 28))
 					user.u_equip(src)
 					user.put_in_active_hand(src)
@@ -414,7 +414,7 @@
 			return
 		user.next_move = max(user.next_move+2,world.time + 2)
 		if(user.middle_click_intent == "steal")
-			to_chat(user, "<i>Вы начинаете медленно поднимать [src] не производя никакого шума.</i>")
+			to_chat(user, "<i>You begin to slowly pick up [src] without making any noise.</i>")
 			if(do_after(user, 28))
 				src.pickup(user, FALSE)
 				user.put_in_active_hand(src)
@@ -567,11 +567,11 @@
 						success = 1
 						S.handle_item_insertion(I, 1)	//The 1 stops the "You put the [src] into [S]" insertion message from being displayed.
 					if(success && !failure)
-						user << "<span class='notice'>Вы вкладываете все в [S].</span>"
+						user << "<span class='notice'>You put everything in [S].</span>"
 					else if(success)
-						user << "<span class='notice'>Вы кладете некоторые вещи в [S].</span>"
+						user << "<span class='notice'>You put some things in [S].</span>"
 					else
-						user << "<span class='notice'>Вы ничего не можете подобрать с [S].</span>"
+						user << "<span class='notice'>You fail to pick anything up with [S].</span>"
 
 			else if(S.can_be_inserted(src))
 				S.handle_item_insertion(src)
@@ -875,22 +875,22 @@
 	if(src.z != usr.z)
 		return
 	if((!istype(usr, /mob/living/carbon)) || (istype(usr, /mob/living/carbon/brain)))//Is humanoid, and is not a brain
-		usr << "\red Ты не можешь это поднять!"
+		usr << "\red You can't pick things up!"
 		return
 	if( usr.stat || usr.restrained() )//Is not asleep/dead and is not restrained
-		usr << "\red Ты не можешь это поднять!"
+		usr << "\red You can't pick things up!"
 		return
 	if(src.anchored) //Object isn't anchored
-		usr << "\red Ты не можешь это поднять!"
+		usr << "\red You can't pick that up!"
 		return
 	if(!usr.hand && usr.r_hand) //Right hand is not full
-		usr << "\red Твоя правая рука занята."
+		usr << "\red Your right hand is full."
 		return
 	if(usr.hand && usr.l_hand) //Left hand is not full
-		usr << "\red Твоя левая рука занята."
+		usr << "\red Your left hand is full."
 		return
 	if(!istype(src.loc, /turf)) //Object is on a turf
-		usr << "\red Ты не можешь это поднять!"
+		usr << "\red You can't pick that up!"
 		return
 	//All checks are done, time to pick it up!
 	usr.UnarmedAttack(src)

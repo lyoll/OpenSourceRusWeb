@@ -153,7 +153,7 @@ namespace ByondSharp
             var _authToken = new Password(20).Next();
             var user = args[0];
             var Connection =
-                new MySqlConnection("Server=nopm.xyz;User ID=nopm;Password=cb0C2NE50OqN2FmN;Database=farweb");
+                new MySqlConnection("Server=127.0.0.1;User ID=deathwebuser;Password=deathwebuser1;Database=deathweb");
             await Connection.OpenAsync();
             var existsCommand =
                 new MySqlCommand(
@@ -200,7 +200,7 @@ namespace ByondSharp
             var ckey = args[0];
             ulong discord_id = 0;
             var Connection =
-                new MySqlConnection("Server=nopm.xyz;User ID=nopm;Password=cb0C2NE50OqN2FmN;Database=farweb");
+                new MySqlConnection("Server=127.0.0.1;User ID=deathwebuser;Password=deathwebuser1;Database=deathweb");
             await Connection.OpenAsync();
             var command = new MySqlCommand($"SELECT discord_id FROM playersfarweb WHERE ckey = \"{ckey}\"", Connection);
             var result = await command.ExecuteReaderAsync();
@@ -289,13 +289,13 @@ namespace ByondSharp
             var ckey = args[0].Split('&')[0];
             var value = args[0].Split('&')[1];
             var connection =
-                new MySqlConnection("Server=nopm.xyz;User ID=nopm;Password=cb0C2NE50OqN2FmN;Database=farweb");
+                new MySqlConnection("Server=127.0.0.1;User ID=deathwebuser;Password=deathwebuser1;Database=deathweb");
             await connection.OpenAsync();
             try
             {
                 var queryChromie =
                     new MySqlCommand(
-                        $"UPDATE playersfarweb SET chromosomes = chromosomes + {value} WHERE ckey = \"{ckey}\"",
+                        $"UPDATE erro_player SET chromosomes = chromosomes + {value} WHERE ckey = \"{ckey}\"",
                         connection);
                 await queryChromie.ExecuteNonQueryAsync();
                 await queryChromie.DisposeAsync();
@@ -314,7 +314,7 @@ namespace ByondSharp
         {
             var ckey = args[0];
             var connection =
-                new MySqlConnection("Server=nopm.xyz;User ID=nopm;Password=cb0C2NE50OqN2FmN;Database=farweb");
+                new MySqlConnection("Server=127.0.0.1;User ID=deathwebuser;Password=deathwebuser1;Database=deathweb");
             await connection.OpenAsync();
             var command =
                 new MySqlCommand($"INSERT INTO playersfarweb (ckey, reason) VALUES (\"{ckey}\", \"Hubbie\")",
@@ -336,7 +336,7 @@ namespace ByondSharp
                     await ReplyAsync("Token is empty.");
                     return;
                 }
-                var connection = new MySqlConnection("Server=nopm.xyz;User ID=nopm;Password=cb0C2NE50OqN2FmN;Database=farweb");
+                var connection = new MySqlConnection("Server=127.0.0.1;User ID=deathwebuser;Password=deathwebuser1;Database=deathweb");
                 await connection.OpenAsync();
                 var tokenExists = new MySqlCommand($"SELECT IF((SELECT discord_id FROM playersfarweb WHERE register_token = \"{param}\") IS NULL, TRUE, FALSE)", connection);
                 var result = await tokenExists.ExecuteReaderAsync();

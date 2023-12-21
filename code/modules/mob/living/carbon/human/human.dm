@@ -156,12 +156,12 @@
 			if(statcheck(humanmob?.my_stats.st, 9, null, tmob))
 				if(humanmob.combat_mode)
 					if(prob(70+humanmob.my_stats.st))
-						visible_message("<span class='bname'>[src]</span> пытается оттолкнуть <span class='bname'>[AM]</span>")
+						visible_message("<span class='bname'>[src]</span> tries to push <span class='bname'>[AM]</span>")
 						now_pushing = 0
 						return
 				else
 					if(prob(25))
-						visible_message("<span class='bname'>[src]</span> пытается оттолкнуть <span class='bname'>[AM]</span>")
+						visible_message("<span class='bname'>[src]</span> tries to push <span class='bname'>[AM]</span>")
 						now_pushing = 0
 						return
 
@@ -620,9 +620,9 @@
 
 
 		if (href_list["interaction"] == "bow")
-			H.visible_message("<span class='examinebold'>[H]</span> <span class='examine'>склоняется перед</span> <span class='examinebold'>[P].</span>")
+			H.visible_message("<span class='examinebold'>[H]</span> <span class='examine'>bows before</span> <span class='examinebold'>[P].</span>")
 			if (istype(P.loc, /obj/structure/closet) && P.loc == H.loc)
-				P.visible_message("<span class='examinebold'>[H]</span> <span class='examine'>склоняется перед</span> <span class='examinebold'>[P].</span>")
+				P.visible_message("<span class='examinebold'>[H]</span> <span class='examine'>bows before</span> <span class='examinebold'>[P].</span>")
 
 
 		else if (href_list["interaction"] == "pet")
@@ -639,19 +639,19 @@
 		else if (href_list["interaction"] == "kiss")
 			if( ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree && mouthfree_p  && (H.species.flags & HAS_LIPS) && (P.species.flags & HAS_LIPS))
 				if(H.wear_mask && H.wear_mask.flags & MASKCOVERSMOUTH)
-					to_chat(H, "<span class='combat'>[pick(nao_consigoen)] моя маска мешает!</span>")
+					to_chat(H, "<span class='combat'>[pick(nao_consigoen)] my mask is in the way!</span>")
 					return
 				if (H.lust == 0)
-					H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>целует</span> <span class='erpbold'>[P]</span>")
+					H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>kisses</span> <span class='erpbold'>[P]</span>")
 					if (istype(P.loc, /obj/structure/closet))
-						P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>целует</span> <span class='erpbold'>[P]</span>")
+						P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>kisses</span> <span class='erpbold'>[P]</span>")
 					if (H.lust < 5)
 						H.lust = 5
 				else
-					H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>целует</span> <span class='erpbold'>[P]</span>")
+					H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>kisses</span> <span class='erpbold'>[P]</span>")
 				if(H?.mind?.succubus)
 					if(!P.check_event(H.real_name))
-						to_chat(P, "<span class='horriblestate' style='font-size: 200%;'><b><i>МНЕ НУЖНО ПОТРАХАТЬСЯ С [H]!</i></b></span>")
+						to_chat(P, "<span class='horriblestate' style='font-size: 200%;'><b><i>I NEED TO FUCK [H]!</i></b></span>")
 						P.my_stats.st -= 3
 						P.my_stats.dx -= 3
 					H.succubus_mood(P)
@@ -676,7 +676,7 @@
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>kisses</span> <span class='erpbold'>[P]</span>")
 			else if (mouthfree)
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>blows</span> <span class='erpbold'>[P]</span> <span class='erp'>поцелуй</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>blows</span> <span class='erpbold'>[P]</span> <span class='erp'>a kiss</span>")
 
 		else if (href_list["interaction"] == "lick")
 			if( ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree && mouthfree_p)
@@ -730,9 +730,9 @@
 
 		else if (href_list["interaction"] == "slap")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
-				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>шлёпает</span> <span class='combatbold'>[P]</span> <span class='combat'>по лицу!</span>")
+				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>slaps</span> <span class='combatbold'>[P]</span> <span class='combat'>across the face!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>шлёпает</span> <span class='combatbold'>[P]</span> <span class='combat'>по лицу!</span>")
+					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>slaps</span> <span class='combatbold'>[P]</span> <span class='combat'>across the face!</span>")
 				playsound(loc, 'honk/sound/interactions/slap.ogg', 50, 1, -1)
 				P.flash_weaker_pain()
 				if (P.stamina_loss < 5)
@@ -740,15 +740,15 @@
 
 		else if (href_list["interaction"] == "fuckyou")
 			if(hashands)
-				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>показывает</span> <span class='combatbold'>[P]</span> <span class='combat'>средний палец!</span>")
+				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>gives</span> <span class='combatbold'>[P]</span> <span class='combat'>the finger!</span>")
 				if (istype(P.loc, /obj/structure/closet) && P.loc == H.loc)
-					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>показывает</span> <span class='combatbold'>[P]</span> <span class='combat'>средний палец!</span>")
+					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>gives</span> <span class='combatbold'>[P]</span> <span class='combat'>the finger!</span>")
 
 		else if (href_list["interaction"] == "knock")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
-				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>стучит</span> <span class='combatbold'>[P]</span> <span class='combat'>по макушке!</span>")//Knocks?("<span class='danger'>[H] äàåò [P] ïîäçàòûëüíèê!</span>")
+				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>knocks</span> <span class='combatbold'>[P]</span> <span class='combat'>upside the head!</span>")//Knocks?("<span class='danger'>[H] äàåò [P] ïîäçàòûëüíèê!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>стучит</span> <span class='combatbold'>[P]</span> <span class='combat'>по макушке!</span>")
+					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>knocks</span> <span class='combatbold'>[P]</span> <span class='combat'>upside the head!</span>")
 				playsound(loc, 'sound/weapons/throwtap.ogg', 50, 1, -1)
 				if (P.stamina_loss < 5)
 					P.stamina_loss += 5
@@ -756,15 +756,15 @@
 
 		else if (href_list["interaction"] == "spit")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && mouthfree)
-				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>плюет в</span> <span class='combatbold'>[P]!</span>")
+				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>spits at</span> <span class='combatbold'>[P]!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>плюет в</span> <span class='combatbold'>[P]!</span>")
+					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>spits at</span> <span class='combatbold'>[P]!</span>")
 
 		else if (href_list["interaction"] == "threaten")
 			if(hashands)
-				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>угрожает</span> <span class='combatbold'>[P]</span> <span class='combat'>с помощью кулака!</span>")
+				H.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>threatens</span> <span class='combatbold'>[P]</span> <span class='combat'>with a fist!</span>")
 				if (istype(P.loc, /obj/structure/closet) && H.loc == P.loc)
-					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>угрожает</span> <span class='combatbold'>[P]</span> <span class='combat'>с помощью кулака!</span>")
+					P.visible_message("<span class='combatbold'>[H]</span> <span class='combat'>threatens</span> <span class='combatbold'>[P]</span> <span class='combat'>with a fist!</span>")
 
 		else if (href_list["interaction"] == "tongue")
 			if(mouthfree)
@@ -774,9 +774,9 @@
 
 		else if (href_list["interaction"] == "assslap")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hasanus_p && hashands)
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>шлёпает</span> <span class='erpbold'>[P]</span> <span class='erp'>прямо по заднице!</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>slaps</span> <span class='erpbold'>[P]</span> <span class='erp'>right on the ass!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>шлёпает</span> <span class='erpbold'>[P]</span> <span class='erp'>прямо по заднице!</span>")
+					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>slaps</span> <span class='erpbold'>[P]</span> <span class='erp'>right on the ass!</span>")
 				playsound(loc, 'honk/sound/interactions/slap.ogg', 50, 1, -1)
 				P.flash_weakest_pain()
 				H.lust += rand(0.1,0.5)
@@ -786,9 +786,9 @@
 
 		else if (href_list["interaction"] == "squeezebreast")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hashands)
-				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>сжимает</span> <span class='erpbold'>[P]</span> <span class='erp'>'s груди!</span>")
+				H.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>squeezes</span> <span class='erpbold'>[P]</span> <span class='erp'>'s breasts!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>сжимает</span> <span class='erpbold'>[P]</span> <span class='erp'>'s груди!</span>")
+					P.visible_message("<span class='erpbold'>[H]</span> <span class='erp'>squeezes</span> <span class='erpbold'>[P]</span> <span class='erp'>'s breasts!</span>")
 				if (P.stamina_loss < 10)
 					P.stamina_loss += 5
 				H.lust += rand(0.1,0.5)
@@ -833,7 +833,7 @@
 					if (H.potenzia > 0)
 						H.fuck(H, P, "anal")
 				else
-					var/message = pick("Он не эрегирован...")//, "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
+					var/message = pick("it's not erect...")//, "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
 					to_chat(H, message)
 		else if (href_list["interaction"] == "vaginal")
 			if (get_dist(H,P) <= 1 && isnude_p && isnude && haspenis && hasanus_p)
@@ -841,7 +841,7 @@
 					if (H.potenzia > 0)
 						H.fuck(H, P, "vaginal")
 				else
-					var/message = pick("Он не эрегирован...")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
+					var/message = pick("It's not erect...")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
 					to_chat(H, message)
 
 		else if (href_list["interaction"] == "oral")
@@ -850,7 +850,7 @@
 					if (H.potenzia > 0)
 						H.fuck(H, P, "oral")
 				else
-					var/message = pick("Он не эрегирован...")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
+					var/message = pick("It's not erect...")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
 					to_chat(H, message)
 
 		else if (href_list["interaction"] == "mount")
@@ -861,7 +861,7 @@
 				if(P.erpcooldown == 0)
 					H.fuck(H, P, "mount")
 				else
-					var/message = pick("Теперь у тебя нет вожделения.")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
+					var/message = pick("You have no lust now.")//"Íå õî÷åòñ[ya] ìíå...", "Êàê-òî íåò æåëàíè[ya]...", "×òî-òî íå îõîòà...", "Íåò, íå ñåé÷àñ.")
 					to_chat(H, "<span class='erp'>[message]</span>")
 
 
@@ -954,20 +954,20 @@
 
 	if(!lastpuke)
 		lastpuke = 1
-		to_chat(src, "<spawn class='pukes'>Вы чувствуете тошноту...")
+		to_chat(src, "<spawn class='pukes'>You feel nauseous...")
 		if(resisting_disgust)
-			to_chat(src, "<spawn class='pukes'>Тебе удалось сдержать это в себе")
+			to_chat(src, "<spawn class='pukes'>You managed to hold it back")
 			return
 		spawn(150)	//15 seconds until second warning
-			to_chat(src, "<spawn class='pukes'>Вы чувствуете, что вас вот-вот вырвет!")
+			to_chat(src, "<spawn class='pukes'>You feel like you are about to throw up!")
 			if(resisting_disgust)
-				to_chat(src, "<spawn class='pukes'>Тебе удалось сдержать это в себе")
+				to_chat(src, "<spawn class='pukes'>You managed to hold it back")
 				return
 			spawn(100)	//and you have 10 more for mad dash to the bucket
 				if(resisting_disgust)
-					to_chat(src, "<spawn class='pukes'>Тебе удалось сдержать это в себе")
+					to_chat(src, "<spawn class='pukes'>You managed to hold it back")
 					return
-				src.visible_message("<span class='pukebold'>[src]</span> <span class='pukes'>throws up!</span>","<span class='pukes'>Тебя тошнит!</span>")
+				src.visible_message("<span class='pukebold'>[src]</span> <span class='pukes'>throws up!</span>","<span class='pukes'>You throw up!</span>")
 				playsound(loc, 'sound/voice/vomit.ogg', 60, 1)
 				src.hygiene = -400
 				src.CU()
@@ -1267,7 +1267,7 @@
 	var/datum/organ/internal/lungs/L = internal_organs_by_name["lungs"]
 
 	if(L && !L.is_bruised())
-		src.custom_pain("<span class='combat'>Вы чувствуете пронзительную боль в груди!</span>", 1)
+		src.custom_pain("<span class='combat'>You feel a stabbing pain in your chest!</span>", 1)
 		L.damage = L.min_bruised_damage
 
 /*
@@ -1343,11 +1343,11 @@
 				var/msg = null
 				switch(rand(1,3))
 					if(1)
-						msg ="<span class='warning'>Вспышка боли пронзает твое [organ.display_name] когда ты натыкаешься на [O] внутри.</span>"
+						msg ="<span class='warning'>A spike of pain jolts your [organ.display_name] as you bump [O] inside.</span>"
 					if(2)
-						msg ="<span class='warning'>Ваше движение сбивает с толку [O] в вашем [organ.display_name].</span>"
+						msg ="<span class='warning'>Your movement jostles [O] in your [organ.display_name] painfully.</span>"
 					if(3)
-						msg ="<span class='warning'>[O] в вашем [organ.display_name] болезненно изгибается при движении.</span>"
+						msg ="<span class='warning'>[O] in your [organ.display_name] twists painfully as you move.</span>"
 				src << msg
 
 				organ.take_damage(rand(1,3), 0, 0)
@@ -1383,7 +1383,7 @@
 	set hidden = 0
 	set category = "Object"
 	set name = "Checkpulse"
-	set desc = "Приблизительно посчитайте чей-нибудь пульс. Требуется, чтобы вы стояли неподвижно не менее 6 секунд."
+	set desc = "Approximately count somebody's pulse. Requires you to stand still at least 6 seconds."
 	set src in view(1)
 	var/self = 0
 
@@ -1392,17 +1392,17 @@
 	if(checker == src)
 		self = 1
 	if(!self)
-		checker.visible_message("<span class='passivebold'>[checker]</span> <span class='passivebold'>опускается на колени, кладет \his руку на</span> <span class='passivebold'>[src]</span><span class='passive'>'s запястье и начинает считать их пульс.</span>",\
+		checker.visible_message("<span class='passivebold'>[checker]</span> <span class='passivebold'>kneels down, puts \his hand on</span> <span class='passivebold'>[src]</span><span class='passive'>'s wrist and begins counting their pulse.</span>",\
 		"<span class='passive'>You begin counting</span> <span class='passivebold'>[src]</span><span class='passive'>'s pulse.</span>")
 	else
-		checker.visible_message("\blue [checker] начинает считать пульс.",\
-		"Вы начинаете считать свой пульс.")
+		checker.visible_message("\blue [checker] begins counting their pulse.",\
+		"You begin counting your pulse.")
 	if(do_after(checker, 20))
 		if(!src.pulse || isVampire)
-			to_chat(checker, "<span class='combatbold'> [src] у него нет пульса!</span>")
+			to_chat(checker, "<span class='combatbold'> [src] has no pulse!</span>")
 			return
 		else
-			to_chat(checker, "<span class='passive'> [self ? "Ваш" : "[src]'s"] пульс [src.get_pulse(GETPULSE_HAND)].")
+			to_chat(checker, "<span class='passive'> [self ? "Your" : "[src]'s"] pulse is [src.get_pulse(GETPULSE_HAND)].")
 
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_colour)
 
@@ -1467,7 +1467,7 @@
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC"
 	set name = "Write in blood"
-	set desc = "Используйте кровь на своих руках, чтобы написать короткое сообщение на полу или стене в стиле детективного убийства."
+	set desc = "Use blood on your hands to write a short message on the floor or a wall, murder mystery style."
 
 	if (src.stat)
 		return
@@ -1479,31 +1479,31 @@
 		verbs -= /mob/living/carbon/human/proc/bloody_doodle
 
 	if (src.gloves)
-		src << "<span class='warning'>Ваши [src.gloves] встают у нас на пути.</span>"
+		src << "<span class='warning'>Your [src.gloves] are getting in the way.</span>"
 		return
 
 	var/turf/simulated/T = src.loc
 	if (!istype(T)) //to prevent doodling out of mechs and lockers
-		src << "<span class='warning'>Вы не можете дотянуться до пола.</span>"
+		src << "<span class='warning'>You cannot reach the floor.</span>"
 		return
 
 	var/direction = input(src,"Which way?","Tile selection") as anything in list("Here","North","South","East","West")
 	if (direction != "Here")
 		T = get_step(T,text2dir(direction))
 	if (!istype(T))
-		src << "<span class='warning'>Вы не можете рисовать там каракули.</span>"
+		src << "<span class='warning'>You cannot doodle there.</span>"
 		return
 
 	var/num_doodles = 0
 	for (var/obj/effect/decal/cleanable/blood/writing/W in T)
 		num_doodles++
 	if (num_doodles > 4)
-		src << "<span class='warning'>Там нет места для записи!</span>"
+		src << "<span class='warning'>There is no space to write on!</span>"
 		return
 
 	var/max_length = bloody_hands * 30 //tweeter style
 
-	var/message = stripped_input(src,"Напишите сообщение. Это не может быть больше, чем [max_length] символов.","Blood writing", "")
+	var/message = stripped_input(src,"Write a message. It cannot be longer than [max_length] characters.","Blood writing", "")
 
 	if (message)
 		var/used_blood_amount = round(length(message) / 30, 1)
@@ -1511,7 +1511,7 @@
 
 		if (length(message) > max_length)
 			message += "-"
-			src << "<span class='warning'>У тебя закончилась кровь, которой ты мог бы писать!</span>"
+			src << "<span class='warning'>You ran out of blood to write with!</span>"
 
 		var/obj/effect/decal/cleanable/blood/writing/W = PoolOrNew(/obj/effect/decal/cleanable/blood/writing, T)
 		W.basecolor = (hand_blood_color) ? hand_blood_color : "#A10808"
@@ -1529,14 +1529,14 @@
 		var/mob/living/carbon/human/H = usr
 		var/msg
 		if(!stat)
-			msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>Я все еще жив. Я могу нести [maxweight] кг.\n Отягощение:[weight_state]</span>\n"
+			msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>I'm still alive. I can carry [maxweight] kgs.\n Encumbrance:[weight_state]</span>\n"
 		if(stat == DEAD)
-			msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>Я мертв.</span>\n"
+			msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>I'm dead.</span>\n"
 		else
 			if(sleeping || stat == UNCONSCIOUS)
-				msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>Я все еще жив. Я могу нести [maxweight] кг. \n Отягощение:[weight_state]</span>\n"
+				msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>I'm unconscious. I can carry [maxweight] kgs. \n Encumbrance:[weight_state]</span>\n"
 			if(stat == UNCONSCIOUS && last_dam >= 100)
-				msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>Я мертв.</span>\n"
+				msg = "<div class='firstdiv'><div class='box'><span class='uppertext'>I'm dying.</span>\n"
 
 		for(var/datum/organ/external/org in H.organs)
 			var/list/status = list()
@@ -1545,13 +1545,13 @@
 			if(!reagents.has_reagent("dentrine") || !reagents.has_reagent("morphine"))
 				switch(hurts)
 					if(1 to 15)
-						status += "<span class='lpexamine'><small>больно</small></span>"
+						status += "<span class='lpexamine'><small>pain</small></span>"
 					if(15 to 25)
-						status += "<span class='lpexamine'>Больно</span>"
+						status += "<span class='lpexamine'>Pain</span>"
 					if(25 to 45)
-						status += "<span class='magentatext'><big>БОЛЬНО</big></span>"
+						status += "<span class='magentatext'><big>PAIN</big></span>"
 					if(45 to INFINITY)
-						status += "<span class='magentatextbig'><big><big>БОЛЬНО</big></big></span>"
+						status += "<span class='magentatextbig'><big><big>PAIN</big></big></span>"
 
 			if(org.has_finger)
 				var/list/L = org.get_fucked_up()
@@ -1559,34 +1559,34 @@
 					status += x
 
 			if(org.status & ORGAN_DESTROYED)
-				status += "<span class='missingnew'><big>ОТСУТСТВУЕТ</big></span>"
+				status += "<span class='missingnew'><big>MISSING</big></span>"
 			if(org.status & ORGAN_MUTATED)
-				status += "<span class='magentatext'>ДЕФОРМИРОВАН</span>"
+				status += "<span class='magentatext'>MISSHAPEN</span>"
 			if(org.germ_level >= 1)
-				status += "<span class='redtext'>ГНОЯЩИЙСЯ</span>"
+				status += "<span class='redtext'>FESTERING</span>"
 			if(org.status & ORGAN_BLEEDING)
-				status += "<span class='redtext'>КРОВОТОЧИТ</span>"
+				status += "<span class='redtext'>BLEEDING</span>"
 			if(org.status & ORGAN_BROKEN)
-				status += "<span class='redtext'>ПЕРЕЛОМ</span>"
+				status += "<span class='redtext'>FRACTURE</span>"
 			if(org.status & ORGAN_SPLINTED)
-				status += "<span class='passivebold'>НАЛОЖЕНА ШИНА</span>"
-				status -= "<span class='redtext'>ПЕРЕЛОМ</span>"
+				status += "<span class='passivebold'>SPLINTED</span>"
+				status -= "<span class='redtext'>FRACTURE</span>"
 			if(org.status & ORGAN_DEAD)
-				status += "<span class='redtext'>НЕКРОЗ</span>"
+				status += "<span class='redtext'>NECROSIS</span>"
 			if(org.status & ORGAN_ARTERY)
-				status += "<span class='magentatext'>АРТЕРИЯ</span>"
+				status += "<span class='magentatext'>ARTERY</span>"
 			if(org.cripple_left > 0)
-				status += "<span class='magentatext'>ПОКАЛЕЧЕН</span>"
+				status += "<span class='magentatext'>CRIPPLED</span>"
 			if(org.status & ORGAN_CUT_AWAY)
-				status += "<span class='magentatext'>НЕПОДСОЕДИНЕННЫЙ</span>"
+				status += "<span class='magentatext'>UNCONNECTED</span>"
 			if(org.status & ORGAN_TENDON)
-				status += "<span class='magentatext'>СУХОЖИЛИЕ</span>"
+				status += "<span class='magentatext'>TENDON</span>"
 			if(!org.is_usable())
-				status += "<span class='missingnew'>НЕПРИГОДНЫЙ</span>"
+				status += "<span class='missingnew'>UNUSABLE</span>"
 			if(istype(org, /datum/organ/external/head))
 				var/datum/organ/external/head/HEADD = org
 				if(HEADD.brained)
-					status += "<span class='magentatext'>ТРЕЩИНА</span>"
+					status += "<span class='magentatext'>CRACK</span>"
 			if(status.len)
 				msg += "<span class='statustext'>¤ [capitalize(org.display_name)]: [english_listt(status)]</span>\n"
 			else
@@ -1695,7 +1695,7 @@
 
 /mob/living/carbon/human/verb/lookup()
 	set name = "Look Up"
-	set desc = "Если вы хотите знать, что находится выше."
+	set desc = "If you want to know what's above."
 	set category = "IC"
 
 	if(!sleeping)
@@ -1707,20 +1707,20 @@
 					if(!looking_up)
 						looking_up = TRUE
 						src.client.eye = above
-						to_chat(src, "<span class='passive'>Ты смотришь вверх и видишь открытое пространство, может быть, я смогу взобраться на него.</span>")
+						to_chat(src, "<span class='passive'>You look up and see a open space, maybe I can climb it.</span>")
 					else
 						src.client.eye = src
 						looking_up = FALSE
 						src.reset_view()
 				else
-					to_chat(src, "<span class='jogtowalk'><i>Вы поднимаете голову и смотрите в потолок. Тысячи злобных глаз смотрят на вас сверху.</i></span>")
+					to_chat(src, "<span class='jogtowalk'><i>You raise your head and look at the ceiling. Thousands of spiteful eyes glare at you from above.</i></span>")
 					src.client.eye = src
 					looking_up = FALSE
 					src.reset_view()
 
 /mob/living/carbon/human/verb/hidee()
 	set name = "Hide"
-	set desc = "Если вы хотите спрятаться от врагов."
+	set desc = "If you want to hide from enemies."
 	set category = "IC"
 
 	if(isturf(loc))

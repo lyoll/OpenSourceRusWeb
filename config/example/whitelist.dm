@@ -4,15 +4,15 @@ var/global/list/ckeywhitelistweb = list()
 
 var/global/private_party = 1
 
-var/global/list/proxyignore = list("nolafregit","randysandy","hydrated12","grifferman", "asdor","darkinfected", "demkova", "ltkoepple", "cheesewithpepsi","rarebirbwithtumors")
+var/global/list/proxyignore = list()
 
-var/global/list/comradelist = list("comicao1","thuxtk","aregrued")
+var/global/list/comradelist = list()
 
 var/global/list/villainlist = list()
 
-var/global/list/pigpluslist = list("tw789")
+var/global/list/pigpluslist = list()
 
-var/global/list/guardianlist = list("guymallory","riotmigrant")
+var/global/list/guardianlist = list()
 
 var/global/list/hasinvited = list()
 
@@ -42,7 +42,7 @@ var/global/list/bans = list()
 
 /proc/load_db_whitelist()
 	set waitfor = FALSE
-	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM playersfarweb;")
+	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM erro_player;")
 	if(!query.Execute())
 		world.log << query.ErrorMsg()
 		return

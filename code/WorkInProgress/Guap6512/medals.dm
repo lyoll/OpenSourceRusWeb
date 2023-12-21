@@ -22,7 +22,7 @@ var/list/achievements_unlocked = list()
 			if(!xquery.Execute())
 				message_admins(xquery.ErrorMsg())
 				to_chat(src, "Medal save failed")
-			to_chat(src, "<h3><span class='highlighttext'>Достижение разблокировано!</span> <span class='bname'><b>[title]</b></span></font></h3>")
+			to_chat(src, "<h3><span class='highlighttext'>Achievement Unlocked!</span> <span class='bname'><b>[title]</b></span></font></h3>")
 			achievements_unlocked.Add("<font color='green'>[src.key]</font> Unlocked \"<span class='bname'><b>[title]</b></span>\"")
 			//to_chat(src, text("<span class='passive'>[desc]</span>"))
 //This crashes the game.

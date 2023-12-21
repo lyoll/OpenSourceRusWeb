@@ -7,7 +7,7 @@
 	spawn_positions = 1
 	department_flag = MEDSCI
 	supervisors = "the captain"
-	jobdesc = "Быть достаточно удачливым, чтобы носить титул эскулапа, - немалый подвиг. Пройдя многолетнюю строгую формальную и академическую медицинскую подготовку, эти медицинские работники являются одними из лучших и ярчайших специалистов, которых может предложить Evergreen. Обычно они являются вторыми сыновьями богатых купцов, но некоторые лживые шарлатаны используют монеты, чтобы купить себе этот почетный титул."
+	jobdesc = "Being fortunate enough to wear the title of Esculap is no small feat. Having gone through many years of rigorous formal and academic medical training, these medical professionals are some of the best and brightest Evergreen has to offer. They are usually the second sons of wealthy merchants, but some deceitful charlatans use coin to buy their way into this estimable title."
 	jobdescbr = "Serpentes sussurram que você não é um curandeiro gênio, mas um charlatão que conseguiu essa tarefa por meio das conexões de seus pais. Você deve fingir que não é verdade."
 	selection_color = "#ffddf0"
 	idtype = /obj/item/weapon/card/id/cmo
@@ -41,7 +41,7 @@
 	spawn_positions = 3
 	supervisors = "the Esculap"
 	selection_color = "#ffeef0"
-	jobdesc = "Серпент - опытный практик, проходящий обучение у своего наставника, эскулапа. В отличие от вашего наставника, вам никогда не везло настолько, чтобы позволить себе более формальное медицинское образование. К счастью для вас, ваш великодушный учитель предложил обучать вас самостоятельно и предоставил вам место в ордене змееносцев в обмен на ваше продолжительное служение. Да здравствует Гиппократ!"
+	jobdesc = "The serpent is a skilled practitioner serving an apprenticeship under their mentor, the Esculap. Unlike your mentor, you were never fortunate enough to afford more formal medical training. Luckily for you, your generous teacher offered to train you themselves and rendered you a place in the serpentine order in return for your extended servitude. Hail Hippocrates!"
 	idtype = /obj/item/weapon/card/id/med
 	access = list(sanctuary)
 	minimal_access = list(sanctuary)
@@ -78,7 +78,7 @@
 	minimal_access = list(sanctuary)
 	sex_lock = FEMALE
 	no_trapoc = TRUE
-	jobdesc = "Хотя змеиный орден - это тесное братство медицинских работников, сестры-химики совсем не такие. Этим женщинам поручено готовить необходимые анестетики для рутинных операций змей. Обеспечение надлежащего ухода за пациентом, ваше пристрастие к химическим веществам и разумные предписания различных регентов сделали вас достаточно уважаемым, чтобы вас терпимо относились к персоналу святилища."
+	jobdesc = "Although the serpentine order is a close brotherhood of medical workers, chemsisters are anything but. These women are tasked with preparing the necessary anesthetics for the routine operations of the serpents. Ensuring that the patient recieves adequate care, your affinity for chemicals and sensible prescriptions of various regents has made you respected enough to be tolerated among sanctuary staff."
 	thanati_chance = 30
 	money = 7
 	equip(var/mob/living/carbon/human/H)

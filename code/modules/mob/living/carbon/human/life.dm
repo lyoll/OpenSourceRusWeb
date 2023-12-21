@@ -1724,9 +1724,9 @@
 				if(sleeping == 0 && stat == 0)
 					if(awake.icon_state != "sleep0")
 						if(gender == FEMALE)
-							emote("открывает свои глаза.")
+							emote("opens her eyes.")
 						else
-							emote("открывает свои глаза.")
+							emote("opens his eyes.")
 						eye_closed = 0
 					awake.icon_state = "sleep0"
 					awake.overlays.Cut()
@@ -1741,9 +1741,9 @@
 						if(sleeping >= 2 || stat != 0 || eye_closed)
 							if(awake.icon_state != "sleep1")
 								if(gender == FEMALE)
-									emote("открывает свои глаза.")
+									emote("closes her eyes.")
 								else
-									emote("открывает свои глаза.")
+									emote("closes his eyes.")
 
 							awake.icon_state = "sleep1"
 							awake.overlays.Cut()
@@ -1929,26 +1929,26 @@
 				if(THIRST_LEVEL_THIRSTY to THIRST_LEVEL_MEDIUM)
 					add_event("thirst", /datum/happiness_event/nutrition/bitthirsty)
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Мне немного хочется пить.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>I'm a bit thirsty.</i></span><span class='hungerasterisks'>*</span>")
 				if(150 to THIRST_LEVEL_THIRSTY)
 					add_event("thirst", /datum/happiness_event/nutrition/thirsty)
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Я хочу пить.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>I'm thirsty.</i></span><span class='hungerasterisks'>*</span>")
 				if(150 to THIRST_LEVEL_DEHYDRATED)
 
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Я **ДЕЙСТВИТЕЛЬНО** хочу пить.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>I'm **REALLY** thirsty.</i></span><span class='hungerasterisks'>*</span>")
 
 					else if(prob(2) && prob(10)) //5% chance of being weakened
 
 						Weaken(1)
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Я не могу вынести этой жажды...</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>I can't stand this thirst...</i></span><span class='hungerasterisks'>*</span>")
 
 				if(THIRST_LEVEL_DEHYDRATED to -INFINITY)
 					add_event("thirst", /datum/happiness_event/nutrition/dehydrated)
 
 					if(prob(5))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Вы испытываете сильную жажду.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You are extremely thirsty.</i></span><span class='hungerasterisks'>*</span>")
 						//Weaken(2)
 					if(prob(4) && prob(10))
 						src.sleeping += 3
@@ -1971,20 +1971,20 @@
 					if(sleeping) return
 
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Ты немного проголодался.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You're a bit hungry.</i></span><span class='hungerasterisks'>*</span>")
 				if(150 to 220) //60-80
 					add_event("hunger", /datum/happiness_event/nutrition/bithungry)
 					if(sleeping) return
 
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Вы чувствуете голод.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You feel hunger.</i></span><span class='hungerasterisks'>*</span>")
 						playsound(src, pick('hungry1.ogg','hungry2.ogg','hungry3.ogg','hungry4.ogg'), 40, 1, -5)
 				if(100 to 150) //30-60
 					add_event("hunger", /datum/happiness_event/nutrition/hungry)
 					if(sleeping) return
 
 					if(prob(2))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Ты чувствуешь себя по-настоящему голодным.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You feel really hungry.</i></span><span class='hungerasterisks'>*</span>")
 						if(prob(45))
 							playsound(src, pick('hungry1.ogg','hungry2.ogg','hungry3.ogg','hungry4.ogg'), 40, 1, -5)
 
@@ -1995,7 +1995,7 @@
 						if(prob(10))
 							Weaken(2)
 							src.sleeping += 3
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Я не могу вынести этого голода...</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>I can't stand this hunger...</i></span><span class='hungerasterisks'>*</span>")
 
 				if(1 to 100) //5-30, 5% chance of weakening and 1-230 oxygen damage. 5% chance of a seizure. 10% chance of dropping item
 					add_event("hunger", /datum/happiness_event/nutrition/starving)
@@ -2003,7 +2003,7 @@
 
 					if(prob(5) && prob(50))
 
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Ты УМИРАЕШЬ с ГОЛОДУ.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You are STARVING.</i></span><span class='hungerasterisks'>*</span>")
 						if(prob(45))
 							playsound(src, pick('hungry1.ogg','hungry2.ogg','hungry3.ogg','hungry4.ogg'), rand(20,30), 1)
 						if(prob(25))
@@ -2012,7 +2012,7 @@
 				if(-INFINITY to 1) //Fuck the whole body up at this point
 
 					if(prob(10))
-						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>Ты УМИРАЕШЬ с ГОЛОДУ.</i></span><span class='hungerasterisks'>*</span>")
+						to_chat(src, "<span class='hungerasterisks'>*</span><span class='hunger'><i>You are STARVING.</i></span><span class='hungerasterisks'>*</span>")
 						if(prob(25))
 							Weaken(2)
 						if(prob(45))
@@ -2134,7 +2134,7 @@
 						return
 					if(H.resisting_disgust)
 						return
-					to_chat(H, "<spawn class='ifeelsick'>Ты чувствуешь какой-то неприятный запах..")
+					to_chat(H, "<spawn class='ifeelsick'>You smell something foul..")
 					H.add_event("disgust", /datum/happiness_event/disgust/verygross)
 					H.disgust_level += 4
 
@@ -2163,7 +2163,7 @@
 			return
 		if(/obj/effect/decal/cleanable/poo in range(5, src))
 			if(prob(2))
-				to_chat(src, "<spawn class='ifeelsick'>Что-то пахнет дерьмом...")
+				to_chat(src, "<spawn class='ifeelsick'>Something smells like shit...")
 				vomit()
 				add_event("disgust", /datum/happiness_event/disgust/verygross)
 				if(prob(50))
@@ -2193,7 +2193,7 @@
 			if(special == "avantgarde")
 				return
 			if(prob(6))
-				to_chat(src, "<spawn class='ifeelsick'>Что-то пахнет дерьмом...")
+				to_chat(src, "<spawn class='ifeelsick'>Something smells like shit...")
 				vomit()
 				add_event("disgust", /datum/happiness_event/disgust/verygross)
 				if(prob(50))
@@ -2234,7 +2234,7 @@
 				E.status &= ~ORGAN_ARTERY
 				src.UpdateArteryIcon()
 				E.whenstopartery = -1
-				to_chat(src, "Моё [E.display_name] чувствует себя лучше.")
+				to_chat(src, "My [E.display_name] feels better.")
 
 /mob/living/carbon/human/proc/handle_blood_pools()
 	if(resting && vessel.get_reagent_amount("blood") && stat != 2)//check if human is laying and has blood, i dont know if this is the right way to check for laying

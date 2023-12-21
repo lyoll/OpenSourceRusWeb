@@ -157,18 +157,18 @@ var/global/list/allRecipes = list("Cult", "Old Ways", "Gray Church", "Furniture"
 			if(!T1 || !T2)
 				return
 			if(!istype(T1, /turf/simulated/wall) || !istype(T2, /turf/simulated/wall))
-				to_chat(usr, "<span class='combat'>[pick(nao_consigoen)] [CR.name] нужно находиться между 2 стенами!</span>")
+				to_chat(usr, "<span class='combat'>[pick(nao_consigoen)] [CR.name] need to be between 2 walls!</span>")
 				return
 		if(check_event("failed"))
 			GURPS_mod -= 5
 		var/list/rolled = roll3d6(src, SR, GURPS_mod)
 		switch(rolled[GP_RESULT])
 			if(GP_FAILED)
-				to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)] Я потерпел неудачу...</span>")
+				to_chat(src, "<span class='combatbold'>[pick(nao_consigoen)] I failed...</span>")
 				src.add_event("failed", /datum/happiness_event/misc/ivefailed)
 				return
 			if(GP_CRITFAIL)
-				usr.visible_message("<span class='hitbold'>КРИТИЧЕСКАЯ НЕУДАЧА!</span> <span class='hit'>[usr] проваливается в попытке создать предмет!</span>")
+				usr.visible_message("<span class='hitbold'>CRITICAL FAILURE!</span> <span class='hit'>[usr] fails to craft!</span>")
 				src.add_event("failed", /datum/happiness_event/misc/ivefailed)
 				for(var/obj/item/A in newLoc.contents)
 					if(!A.density &&  !ismob(A))

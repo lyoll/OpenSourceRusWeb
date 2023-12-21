@@ -6,8 +6,8 @@
 	var/vampireBuffCelerity = 0
 
 /mob/living/carbon/human/proc/vampire_me()
-	to_chat(src, "<span class='combat'>Теперь ты -</span> <span class='combatglow'>вампир</span>. ")
-	to_chat(src, "<span class='bname'>Тайные хозяева человеческой расы, полагающиеся на секретность и многовековую мудрость.</span>")
+	to_chat(src, "<span class='combat'>You're now a</span> <span class='combatglow'>vampire</span>. ")
+	to_chat(src, "<span class='bname'>Secret masters of the human race, relying on secrecy and centuries-old wisdom.</span>")
 	log_game("[src]([src?.key]) is now a vampire.")
 	//src << 'theater-gargoyle.ogg'
 	//src.combat_music = 'disturbed-and-twisted-combat.ogg'
@@ -44,7 +44,7 @@
 	set name = "Heal"
 	if(stat == 2) return
 	if(src.vessel.total_volume <= 150)
-		to_chat(src, "<span class='excomm'>Мне нужно больше крови!</span>")
+		to_chat(src, "<span class='excomm'>I need more blood!</span>")
 		return
 	src << 'sound/effects/discipline.ogg'
 	src.vessel.remove_reagent("blood",150)
@@ -57,7 +57,7 @@
 	set name = "BloodStrength"
 	var/maximum = 30
 	if(src.vessel.total_volume <= 50)
-		to_chat(src, "<span class='excomm'>Мне нужно больше крови!</span>")
+		to_chat(src, "<span class='excomm'>I need more blood!</span>")
 		return
 	if(src.my_stats.st < maximum)
 		src.my_stats.st += 4
@@ -66,7 +66,7 @@
 		spawn(1200)
 			src.my_stats.st = src.my_stats.initst
 	else
-		to_chat(src, "<span class='excomm'>Большего я получить не могу!</span>")
+		to_chat(src, "<span class='excomm'>I can't get more than that!</span>")
 
 
 /mob/living/carbon/human/proc/fortitude()
@@ -74,7 +74,7 @@
 	set name = "Fortitude"
 	var/maximum = 30
 	if(src.vessel.total_volume <= 50)
-		to_chat(src, "<span class='excomm'>Мне нужно больше крови!</span>")
+		to_chat(src, "<span class='excomm'>I need more blood!</span>")
 		return
 	if(src.my_stats.ht < maximum)
 		src.vessel.remove_reagent("blood",50)
@@ -85,13 +85,13 @@
 			vampireBuffFortitude = 0
 			src.my_stats.ht = src.my_stats.initht
 	else
-		to_chat(src, "<span class='excomm'>Большего я получить не могу!</span>")
+		to_chat(src, "<span class='excomm'>I can't get more than that!</span>")
 
 /mob/living/carbon/human/proc/celerety()
 	set category = "Vampire"
 	set name = "Celerety"
 	if(src.vessel.total_volume <= 250)
-		to_chat(src, "<span class='excomm'>Мне нужно больше крови!</span>")
+		to_chat(src, "<span class='excomm'>I need more blood!</span>")
 		return
 	if(vampireBuffCelerity != 1)
 		src.my_stats.dx += 6
@@ -104,7 +104,7 @@
 			vampireBuffCelerity = 0
 			src.movement_speed_modifier = 1
 	else
-		to_chat(src, "<span class='excomm'>Большего я получить не могу!</span>")
+		to_chat(src, "<span class='excomm'>I can't get more than that!</span>")
 
 /mob/living/carbon/human/proc/dead_eyes()
 	set name = "DeadEyes"
@@ -128,7 +128,7 @@
 
 	for(var/obj/structure/fire/F in view(1, src))
 		src.rotate_plane(1)
-		to_chat(src, pick("<span class='combatglow'><b>УБЕРИ ЭТО ОТСЮДА!</b></span>", "<span class='combatglow'><b>ОГОНЬ ОГОНЬ ОГОНЬ!</b></span>", "<span class='combatglow'><b>AAAAAAAAAAAAAAAAAAAAAAAAH!</b></span>"))
+		to_chat(src, pick("<span class='combatglow'><b>GET THIS OUT OF HERE!</b></span>", "<span class='combatglow'><b>FIRE FIRE FIRE!</b></span>", "<span class='combatglow'><b>AAAAAAAAAAAAAAAAAAAAAAAAH!</b></span>"))
 
 	/*for(var/obj/structure/torchwall/T in view(1, src))
 		if(T.on)
@@ -138,7 +138,7 @@
 	for(var/obj/structure/fireplace/F in view(1, src))
 		if(F.lit)
 			src.rotate_plane(1)
-			to_chat(src, pick("<span class='combatglow'><b>УБЕРИ ЭТО ОТСЮДА!</b></span>", "<span class='combatglow'><b>ОГОНЬ ОГОНЬ ОГОНЬ!</b></span>", "<span class='combatglow'><b>AAAAAAAAAAAAAAAAAAAAAAAAH!</b></span>"))
+			to_chat(src, pick("<span class='combatglow'><b>GET THIS OUT OF HERE!</b></span>", "<span class='combatglow'><b>FIRE FIRE FIRE!</b></span>", "<span class='combatglow'><b>AAAAAAAAAAAAAAAAAAAAAAAAH!</b></span>"))
 
 /obj/item/attack_hand(mob/user as mob)
 	..()
@@ -147,7 +147,7 @@
 	if(H.isVampire)
 		if(src.silver && !H.gloves)
 			if(vamp_hand)
-				to_chat(H, pick("<span class='combatglow'><b>УБЕРИ ЭТО ОТСЮДА!</b></span>", "<span class='combatglow'><b>ПРОКЛЯТОЕ СЕРЕБРО!</b></span>", "<span class='combatglow'><b>ЭТО ОБЖИГАЕТ! ЭТО ОБЖИГАЕТ!</b></span>"))
+				to_chat(H, pick("<span class='combatglow'><b>GET THIS OUT OF HERE!</b></span>", "<span class='combatglow'><b>ACCURSED SILVER!</b></span>", "<span class='combatglow'><b>IT BURNS! IT BURNS!</b></span>"))
 				H.drop_from_inventory(H.get_active_hand())
 				H.apply_damage(rand(5, 10), BRUTE, vamp_hand)
 				H.flash_pain()

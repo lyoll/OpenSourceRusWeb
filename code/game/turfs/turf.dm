@@ -526,7 +526,7 @@ var/list/turfs = list()
 	if(!forced)
 		return
 	if(has_gravity(src))
-		visible_message("<span class='passivebold'>[faller]</span> <span class='passive'>упала.</span>")
+		visible_message("<span class='passivebold'>[faller]</span> <span class='passive'>falls over.</span>")
 		playsound(src, "bodyfall", 50, 1)
 
 /turf/handle_slip(mob/slipper, s_amount, w_amount, obj/O, lube)

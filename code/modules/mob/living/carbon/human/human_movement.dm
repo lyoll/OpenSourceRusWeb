@@ -160,11 +160,11 @@
 		}
 		var/datum/organ/external/E = get_organ(organ_name)
 		if(!E || (E.status & ORGAN_DESTROYED) || !E.is_usable())
-			to_chat(src, "ТЫ НЕ МОЖЕШЬ ПОШЕВЕЛИТЬСЯ!")
+			to_chat(src, "YOU CAN'T MOVE!")
 			src.mob_rest()
 			return
 		else if(E.status & ORGAN_BROKEN || !E.is_usable())
-			to_chat(src, "ТЫ НЕ МОЖЕШЬ ПОШЕВЕЛИТЬСЯ!")
+			to_chat(src, "YOU CAN'T MOVE!")
 			src.mob_rest()
 			return
 	..()

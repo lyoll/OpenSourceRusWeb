@@ -15,7 +15,7 @@
 	set name = "Ascend"
 
 	if(in_hell)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Я был проклят!</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I've been damned!</span>")
 		return
 
 	if(src.wraith_pain >= 30)
@@ -28,46 +28,46 @@
 		M.key = key
 		M.client.color = null
 	else
-		to_chat(src, "<spanclass='combat'>([wraith_pain]/30)</span><span class='combat'> Требуется боль.</span>")
+		to_chat(src, "<spanclass='combat'>([wraith_pain]/30)</span><span class='combat'> Pain required.</span>")
 
 /mob/dead/observer/verb/jaunt(var/mob/living/carbon/human/M in player_list)
 	set category = "Wraith"
 	set name = "Jaunt"
 
 	if(in_hell)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Я был проклят!</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I've been damned!</span>")
 		return
 	if(src.wraith_pain >= 5)
 		if(can_reenter_corpse)
 			can_reenter_corpse = FALSE
-			to_chat(usr, "<span class='combatglow'>Ты упускаешь свои шансы.</span>")
+			to_chat(usr, "<span class='combatglow'>You throw your chances away.</span>")
 		to_chat(src, "<spanclass='jogtowalk'>5 Pain lost.</span>")
 		src.wraith_pain -= 5
 		src.forceMove(M.loc)
 	else
-		to_chat(src, "<spanclass='combat'>([wraith_pain]/5)</span><span class='combat'> Требуется боль.</span>")
+		to_chat(src, "<spanclass='combat'>([wraith_pain]/5)</span><span class='combat'> Pain required.</span>")
 
 /mob/dead/observer/verb/gruespawn() // warning: unexpected inquisition
 	set name = "GrueSpawn"
 	set category = "Wraith"
 	if(in_hell)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Я был проклят!</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I've been damned!</span>")
 		return
 	var/turf/T = get_turf(src)
 	var/area/A = get_area(T)
 	if(A.luminosity || istype(A,/area/dunwell/realsurface) || istype(A, /area/shuttle/train))
-		to_chat(src, "<spanclass='combatbold'>[pick(nao_consigoen)]</span><span class='combat'> слишком яркий!</span>")
+		to_chat(src, "<spanclass='combatbold'>[pick(nao_consigoen)]</span><span class='combat'> too bright!</span>")
 		return
 	if(src.wraith_pain >= 15)
 		if(can_reenter_corpse)
 			can_reenter_corpse = FALSE
-			to_chat(usr, "<span class='combatglow'>Ты упускаешь свои шансы.</span>")
-		to_chat(src, "<spanclass='jogtowalk'>15 боли потеряно.</span>")
+			to_chat(usr, "<span class='combatglow'>You throw your chances away.</span>")
+		to_chat(src, "<spanclass='jogtowalk'>15 Pain lost.</span>")
 		src.wraith_pain -= 15
 		new /mob/living/simple_animal/grue(src.loc)
 		return
 	else
-		to_chat(src, "<spanclass='combat'>([wraith_pain]/15)</span><span class='combat'> Требуется боль.</span>")
+		to_chat(src, "<spanclass='combat'>([wraith_pain]/15)</span><span class='combat'> Pain required.</span>")
 		return
 
 
@@ -93,7 +93,7 @@
 	set name = "InterveneDreams"
 	set category = "Wraith"
 	if(in_hell)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Я был проклят!</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I've been damned!</span>")
 		return
 	msg = sanitize(msg)
 	if(!msg)	return
@@ -109,7 +109,7 @@
 		build_click(src, client.buildmode, params, A)
 		return
 	if(in_hell)
-		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] Я был проклят!</span>")
+		to_chat(src, "<span class='combat'>[pick(nao_consigoen)] I've been damned!</span>")
 		return
 	if(src.wraith_pain >= 1)
 		if(istype(A,/obj/structure/fireplace) || istype(A, /obj/structure/torchwall))
@@ -118,7 +118,7 @@
 				F.turn_off()
 				if(can_reenter_corpse)
 					can_reenter_corpse = FALSE
-					to_chat(usr, "<span class='combatglow'>Ты упускаешь свои шансы.</span>")
+					to_chat(usr, "<span class='combatglow'>You throw your chances away.</span>")
 				to_chat(src, "<spanclass='jogtowalk'>1 Pain lost.</span>")
 				src.wraith_pain -= 1
 				return
@@ -130,14 +130,14 @@
 				F.flicker(rand(10,20))
 				if(can_reenter_corpse)
 					can_reenter_corpse = FALSE
-					to_chat(usr, "<span class='combatglow'>Ты упускаешь свои шансы.</span>")
+					to_chat(usr, "<span class='combatglow'>You throw your chances away.</span>")
 				to_chat(src, "<spanclass='jogtowalk'>1 Pain lost.</span>")
 				src.wraith_pain -= 1
 				return
 			else
 				return
 	else
-		to_chat(src, "<spanclass='combat'>([wraith_pain]/1)</span><span class='combat'> Требуется боль.</span>")
+		to_chat(src, "<spanclass='combat'>([wraith_pain]/1)</span><span class='combat'> Pain required.</span>")
 		return
 /*
 	if(can_reenter_corpse && mind && mind.current)
@@ -188,13 +188,13 @@
 	if(awaygate)
 		user.loc = awaygate.loc
 	else
-		user << "[src] не имеет пункта назначения."
+		user << "[src] has no destination."
 
 /obj/machinery/gateway/centeraway/attack_ghost(mob/user as mob)
 	if(stationgate)
 		user.loc = stationgate.loc
 	else
-		user << "[src] не имеет пункта назначения."
+		user << "[src] has no destination."
 
 // -------------------------------------------
 // This was supposed to be used by adminghosts

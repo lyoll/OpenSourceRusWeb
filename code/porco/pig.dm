@@ -45,56 +45,56 @@
 	var/fulltext = ""
 
 	if(reflectneed >= 750)
-		text += "<a href='#' id='ReflectExperience'>Подумайте о своём опыте!<br></a>"
+		text += "<a href='#' id='ReflectExperience'>Reflect your Experience!<br></a>"
 	if(src?.mind?.succubus)
-		text += "<a href='#' id='teleportSlaves'>Teleport Slaves<br></a><a href='#' id='punishSlave'>Накажи раба<br></a> <a href='#' id='killSlave'>Убей раба<br></a>"
+		text += "<a href='#' id='teleportSlaves'>Teleport Slaves<br></a><a href='#' id='punishSlave'>Punish Slave<br></a> <a href='#' id='killSlave'>Kill Slave<br></a>"
 	if(src.verbs.Find(/mob/living/carbon/human/proc/plantEgg))
-		text += "<a href='#' id='plantEgg'>Отложи яйцо<br></a>"
+		text += "<a href='#' id='plantEgg'>Lay Egg<br></a>"
 	if(src.verbs.Find(/mob/living/carbon/human/proc/plantWeeds))
-		text += "<a href='#' id='plantWeeds'>Сажайте сорняки<br></a>"
+		text += "<a href='#' id='plantWeeds'>Plant Weeds<br></a>"
 	switch(job)
 		if("Bishop")
-			text += "<a href='#'' id='Excommunicate'>Отлучить от церкви<br></a><a href='#'' id='BannishtheUndead'>Изгнать нежить</a><a href='#'' id='RobofSins'><br>Избавься от грехов<br></a><a href='#' id='Epitemia''>Эпитемия<br></a><a href='#'' id='RewardtheInquisitor'>Вознаградите инквизитора</a><a href='#'' id='Coronation'><br>Коронация</a><a href='#'' id='Eucharisty'><br>Евхаристия<br></a><a href='#'' id='BannishSpirits'>Изгнать духов<br></a><a href='#'' id='CallforChurchMeeting'>Созвать церковное собрание<br></a><a href='#' id='Marriage''>Брак!<br></a><a href='#' id='ClearName''>Очистить имя<br></a>"
+			text += "<a href='#'' id='Excommunicate'>Excommunicate<br></a><a href='#'' id='BannishtheUndead'>Banish Undead</a><a href='#'' id='RobofSins'><br>Rob of Sins<br></a><a href='#' id='Epitemia''>Epitemia<br></a><a href='#'' id='RewardtheInquisitor'>Reward the Inquisitor</a><a href='#'' id='Coronation'><br>Coronation</a><a href='#'' id='Eucharisty'><br>Eucharisty<br></a><a href='#'' id='BannishSpirits'>Banish Spirits<br></a><a href='#'' id='CallforChurchMeeting'>Call for Chuch Meeting<br></a><a href='#' id='Marriage''>Marriage!<br></a><a href='#' id='ClearName''>Clear Name<br></a>"
 		if("Priest")
-			text += "<a href='#'' id='Excommunicate'>Отлучить от церкви<br></a><a href='#'' id='BannishtheUndead'>Изгнать нежить</a><a href='#'' id='RobofSins'><br>Избавься от грехов<br></a><a href='#' id='Epitemia''>Эпитемия<br></a><a href='#'' id='RewardtheInquisitor'>Вознаградите инквизитора</a><a href='#'' id='Coronation'><br>Коронация</a><a href='#'' id='Eucharisty'><br>Евхаристия<br></a><a href='#'' id='BannishSpirits'>Изгнать духов<br></a><a href='#'' id='CallforChurchMeeting'>Созвать церковное собрание<br></a><a href='#' id='Marriage''>Брак!<br></a><a href='#' id='ClearName''>Очистить имя<br></a>"
+			text += "<a href='#'' id='Excommunicate'>Excommunicate<br></a><a href='#'' id='BannishtheUndead'>Banish Undead</a><a href='#'' id='RobofSins'><br>Rob of Sins<br></a><a href='#' id='Epitemia''>Epitemia<br></a><a href='#'' id='RewardtheInquisitor'>Reward the Inquisitor</a><a href='#'' id='Coronation'><br>Coronation</a><a href='#'' id='Eucharisty'><br>Eucharisty<br></a><a href='#'' id='BannishSpirits'>Banish Spirits<br></a><a href='#'' id='CallforChurchMeeting'>Call for Chuch Meeting<br></a><a href='#' id='Marriage''>Marriage!<br></a><a href='#' id='ClearName''>Clear Name<br></a>"
 		if("Monk")
-			text += "<a href='#'' id='BannishtheUndead'>Изгнать нежить</a><a href='#'' id='RobofSins'><br>Избавься от грехов<br></a><a href='#'' id='Eucharisty'><br>Евхаристия<br></a><a href='#'' id='BannishSpirits'>Изгнать духов<br></a><a href='#' id='Marriage!''>Брак!<br></a>"
+			text += "<a href='#'' id='BannishtheUndead'>Banish Undead</a><a href='#'' id='RobofSins'><br>Rob of Sins<br></a><a href='#'' id='Eucharisty'><br>Eucharisty<br></a><a href='#'' id='BannishSpirits'>Banish Spirits<br></a><a href='#' id='Marriage!''>Marriage<br></a>"
 		if("Expedition Leader")
-			text += "<a href='#' id='SetMigSpawn'>Установить место прибытия мигранта<br></a><a href='#' id='announceEx'>Объявить (14 TILES)<br></a>"
+			text += "<a href='#' id='SetMigSpawn'>Set Migrant Arrival<br></a><a href='#' id='announceEx'>Announce (14 TILES)<br></a>"
 		if("Bum")
-			text += "<a href='#' id='tellTheTruth'>Сказать правду<br></a>"
+			text += "<a href='#' id='tellTheTruth'>Tell the Truth<br></a>"
 		if("Urchin")
-			text += "<a href='#' id='tellTheTruth'>Сказать правду<br></a>"
+			text += "<a href='#' id='tellTheTruth'>Tell the Truth<br></a>"
 		if("Migrant")
 			if(!migclass)
 				if(ckey in outlaw)
-					text += "<a href='#' id='ChoosemigrantClass'>Выберите класс мигрантов!<br></a><a href='#' id='ToggleOutlaw'>Переключить преступников!<br></a>"
+					text += "<a href='#' id='ChoosemigrantClass'>Choose Migrant Class!<br></a><a href='#' id='ToggleOutlaw'>Toggle Outlaw!<br></a>"
 				else
-					text += "<a href='#' id='ChoosemigrantClass'>Выберите класс мигрантов!<br></a>"
+					text += "<a href='#' id='ChoosemigrantClass'>Choose Migrant Class!<br></a>"
 		if("Count")
-			text += "<a href='#' id='Reinforcement'>Изменить тип поддержки<br></a><a href='#' id='Command'>Команда<br></a><a href='#' id='SpecialReinforcement'>Вызовите специальное подкрепление!<br></a><a href='#' id='Recruit'>Рекрутировать<br></a><a href='#' id='CaptureThrone'>Захватить трон<br></a>"
+			text += "<a href='#' id='Reinforcement'>Change Reinforcement Type<br></a><a href='#' id='Command'>Command<br></a><a href='#' id='SpecialReinforcement'>Call for Special Reinforcement!<br></a><a href='#' id='Recruit'>Recruit<br></a><a href='#' id='CaptureThrone'>Capture Throne<br></a>"
 		if("Count Hand")
-			text += "<a href='#' id='Command'>Команда<br></a><a href='#' id='SpecialReinforcement'>Вызовите специальное подкрепление!<br></a><a href='#' id='Recruit'>Рекрутировать<br></a>"
+			text += "<a href='#' id='Command'>Command<br></a><a href='#' id='SpecialReinforcement'>Call for Special Reinforcement!<br></a><a href='#' id='Recruit'>Recruit<br></a>"
 		if("Count Heir")
-			text += "<a href='#' id='SpecialReinforcement'>Вызовите специальное подкрепление!<br></a>"
+			text += "<a href='#' id='SpecialReinforcement'>Call for Special Reinforcement!<br></a>"
 		if("Sieger")
 			if(!migclass)
-				text += "<a href='#' id='ChoosesiegerClass'>Выберите осаждающий класс!<br></a>"
+				text += "<a href='#' id='ChoosesiegerClass'>Choose Sieger Class!<br></a>"
 		if("Mercenary")
 			if(!migclass)
-				text += "<a href='#' id='PegaclasseMerc'>Выберите класс наемника!<br></a>"
+				text += "<a href='#' id='PegaclasseMerc'>Choose Mercenary Class!<br></a>"
 	if(src.consyte)
-		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='respark'>Разжечь искру<br></a>"
+		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='respark'>Respark<br></a>"
 	if(src.job == "Jester")
-		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='nickname'>Дать имя!<br></a>"
-		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='juggle'>Жонглировать!<br></a>"
-		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='rememberjoke'>Вспомнить шутку!<br></a>"
-		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='joke'>Шутка!<br></a>"
+		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='nickname'>Give a nickname!<br></a>"
+		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='juggle'>Juggle!<br></a>"
+		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='rememberjoke'>Remember Joke!<br></a>"
+		text += "<a href='#' id='Choir'>Choir<br></a><a href='#' id='joke'>Joke!<br></a>"
 	if(check_perk(/datum/perk/pathfinder))
-		text += "<a href='#' id='TrackSomeonePathfinder'>Выслеживать кого-то<br></a><a href='#' id='TrackselfPathfinder'>Следите за собой<br></a>"
+		text += "<a href='#' id='TrackSomeonePathfinder'>Track Someone<br></a><a href='#' id='TrackselfPathfinder'>Track Yourself<br></a>"
 
 	if(check_perk(/datum/perk/singer))
-		text += "<a href='#' id='RememberSong'>Вспомнить песню<br></a><a href='#' id='Sing'>Петь<br></a>"
+		text += "<a href='#' id='RememberSong'>Remember Song<br></a><a href='#' id='Sing'>Sing<br></a>"
 
 	for(var/T in text)
 		fulltext += "[T]"
@@ -109,27 +109,27 @@
 
 	if(job == "Pusher")
 		if(mind)
-			text += "ВРЕМЯ ПЛАТИТЬ: <span id='timepusher'>[secondsToMintues(mind.time_to_pay)]</span>"
+			text += "TIME TO PAY: <span id='timepusher'>[secondsToMintues(mind.time_to_pay)]</span>"
 	if(job == "Inquisitor")
 		if(mind && Inquisitor_Type == "Month's Inquisitor")
-			text += "Признания в виновности отправлены: (<span id='timepusher'>[secondsToMintues(mind.avowals_of_guilt_sent)] / 6)</span>"
-		text += "Пункты поддержки: <span id='timepusher'>[Inquisitor_Points]</span>"
+			text += "Avowals of Guilt sent: (<span id='timepusher'>[secondsToMintues(mind.avowals_of_guilt_sent)] / 6)</span>"
+		text += "Inquisitorial Points: <span id='timepusher'>[Inquisitor_Points]</span>"
 	if(old_ways.god)
 		if(old_ways.god == "Xom")
-			text += "ТЫ - ИГРУШКА КСОМА"
+			text += "THOU ARE XOM'S TOY"
 
 	if(src?.mind?.succubus)
-		text += "Рабы : [src.mind.succubus.succubusSlaves.len]"
+		text += "Slaves : [src.mind.succubus.succubusSlaves.len]"
 	if(ticker.mode.config_tag == "siege" && siegesoldier)
 		var/datum/game_mode/siege/S = ticker.mode
-		text += "Потери: [S.losses]/[S.max_losses]"
+		text += "Losses: [S.losses]/[S.max_losses]"
 	else if(ticker.mode.config_tag == "miniwar" && mini_war)
 		var/datum/game_mode/miniwar/M = ticker.mode
 		switch(mini_war)
 			if("Northner")
-				text += "Потери: [M.north_count]/[M.max_count]"
+				text += "Losses: [M.north_count]/[M.max_count]"
 			if("Southner")
-				text += "Потери: [M.south_count]/[M.max_count]"
+				text += "Losses: [M.south_count]/[M.max_count]"
 
 	for(var/T in text)
 		fulltext += "[T]<br>"
@@ -241,37 +241,37 @@
 	client.changebuttoncontent("#note", noteUpdate())
 	client.changebuttoncontent("#Verb", verbUpdate())
 	client.changebuttoncontent("#GPC", spiderUpdate())
-	client.changebuttoncontent("#Emotes", {"<span class='segment1'>[generateVerbList(list(list("slap", "Шлепок"), list("Nod", "Кивнуть"), list(".praiselord", "Креститься"), list("Hug", "Обнять"), list("Bow", "Поклониться"), list("Scream", "Кричать"), list("Whimper", "Хныкать"), list("Laugh", "Смеяться"), list("Sigh", "Вздохнуть"), list("Clearthroat", "Прочистить горло"), list("mob_rest", "Рухнуть")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Kiss", "Поцеловать"), list("LickLips", "Облизать губы"), list("Cough", "Кашлять"), list("SpitonSomeone", "Плюнь на кого-нибудь"), list("Yawn", "Зевнуть"), list("Wink", "Подмигивать"), list("Grumble", "Ворчать"), list("Cry", "Плакать"), list("Hem", "Хмыкнуть"), list("Smile", "Улыбнуться")), 2)]</span>"})
-	client.changebuttoncontent("#Craft", {"<span class='segment1'>[generateVerbList(list(list("Furniture", "Мебель"), list("Cult", "Культ"), list("Items", "Вещи"), list("Leather", "Кожа"), list("Mason", "Строительство"), list("Tanning", "Кожевничество"), list("Signs", "Знаки")))]</span><span class='segment2'>[generateVerbList(list(list("Weapons", "Оружие"), list("Other", "Остальное")), 2)]</span>"})
+	client.changebuttoncontent("#Emotes", {"<span class='segment1'>[generateVerbList(list(list("slap", "Slap"), list("Nod", "Nod"), list(".praiselord", "Cross"), list("Hug", "Hug"), list("Bow", "Bow"), list("Scream", "Scream"), list("Whimper", "Whimper"), list("Laugh", "Laugh"), list("Sigh", "Sigh"), list("Clearthroat", "Clear Throat"), list("mob_rest", "Collapse")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Kiss", "Kiss"), list("LickLips", "Lick Lips"), list("Cough", "Cough"), list("SpitonSomeone", "Spit on Someone"), list("Yawn", "Yawn"), list("Wink", "Wink"), list("Grumble", "Grumble"), list("Cry", "Cry"), list("Hem", "Hem"), list("Smile", "Smile")), 2)]</span>"})
+	client.changebuttoncontent("#Craft", {"<span class='segment1'>[generateVerbList(list(list("Furniture", "Furniture"), list("Cult", "Cult"), list("Items", "Items"), list("Leather", "Leather"), list("Mason", "Mason"), list("Tanning", "Tanning"), list("Signs", "Signs")))]</span><span class='segment2'>[generateVerbList(list(list("Weapons", "Weapons"), list("Other", "Other")), 2)]</span>"})
 
-	client.changebuttoncontent("#DeadGhost", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Призрак"), list("Ascend", "Восхождение"), list("LateParty", "Поздняя вечеринка"), list("ToggleDarkness", "Плотность завесы"), list("GotoHell", "Отправиться в ад"), list("Jaunt", "(5) Прогулка"), list("GrueSpawn", "(15) Гру"), list("Ignition", "(30) Поджог"), list("InterveneDreams", "Вмешаться в сон"), list("ReenterCorpse", "Вернуться в тело")))]</span>"})
-	client.changebuttoncontent("#Dead", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Призрак")))]</span>"})
+	client.changebuttoncontent("#DeadGhost", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Wraith"), list("Ascend", "Ascend"), list("LateParty", "Late Party"), list("ToggleDarkness", "Shroud Thickness"), list("GotoHell", "Go to Hell"), list("Jaunt", "(5) Jaunt"), list("GrueSpawn", "(15) Grue"), list("Ignition", "(30) Ignition"), list("InterveneDreams", "Intervene Dreams"), list("ReenterCorpse", "Re-enter Corpse")))]</span>"})
+	client.changebuttoncontent("#Dead", {"<span class='segment1'>[generateVerbList(list(list("Wraith", "Wraith")))]</span>"})
 
-	client.changebuttoncontent("#Vampire", {"<span class='segment1'>[generateVerbList(list(list("ExposeFangs", "Обнажить клыки"), list("BloodStrength", "Сила крови (50cl)"), list("Fortitude", "Сила духа (50cl)"), list("Heal", "Лечение (150cl)"), list("Celerety", "Быстрота (250cl)"), list("DeadEyes", "Мёртвые глаза")))]</span>"})
-	client.changebuttoncontent("#Advisor", {"<span class='segment1'>[generateVerbList(list(list("gradeHygiene", "Оценить уровень чистоплотности"), list("gradePeople", "Оценить человека"), list("gradeFortress", "Оценить крепость")))]</span>"})
-	client.changebuttoncontent("#Bodyguard", {"<span class='segment1'>[generateVerbList(list(list("localizeAdvisor", "Защитить инспектора")))]</span>"})
-	client.changebuttoncontent("#They", {"<span class='segment1'>[generateVerbList(list(list("ExtendTentacles", "Вытягивать щупальца"), list("AbsorbDNA", "Поглощать ДНК жертвы"), list("Hunt", "Охотиться"), list("infest", "Заразить паутину жизни"), list("Lump", "Сбежать"), list("Learnch", "Учится у своих коллег"), list("RegenerativeStasis", "Регенеративная кома")))]</span>"})
-	client.changebuttoncontent("#Crown", {"<span class='segment1'>[generateVerbList(list(list("DecretodoBarao", "Указ барона"), list("Abrirtrapdoors", "Открыть ловушки"), list("ColocarTaxas", "Установить налоги"), list("Declararalerta", "Объявить чрезвычайное положение"), list("VendadeDrogas", "Продажа наркотиков"), list("VendadeArmas", "Продажа оружия"), list("Expandirpoderesdaigreja", "Расширить полномочия церкви"), list("SetHands", "Назначить Десницу")))]</span>"})
-	client.changebuttoncontent("#Integralist", {"<span class='segment1'>[generateVerbList(list(list("RevConvert", "Конвертировать гражданина")))]</span>"})
-	client.changebuttoncontent("#Thanati", {"<span class='segment1'>[generateVerbList(list(list("praisethelord", "Воззвание к Господу"), list("getWords", "Запомни эти слова"), list("getBrothers", "Вспомните своих коллег")))]</span>"})
+	client.changebuttoncontent("#Vampire", {"<span class='segment1'>[generateVerbList(list(list("ExposeFangs", "Expose Fangs"), list("BloodStrength", "Blood Strength (50cl)"), list("Fortitude", "Fortitude (50cl)"), list("Heal", "Heal (150cl)"), list("Celerety", "Celerety (250cl)"), list("DeadEyes", "Dead Eyes")))]</span>"})
+	client.changebuttoncontent("#Advisor", {"<span class='segment1'>[generateVerbList(list(list("gradeHygiene", "Grade the Hygiene"), list("gradePeople", "Grade the People"), list("gradeFortress", "Grade the Fortress")))]</span>"})
+	client.changebuttoncontent("#Bodyguard", {"<span class='segment1'>[generateVerbList(list(list("localizeAdvisor", "Localize Advisor")))]</span>"})
+	client.changebuttoncontent("#They", {"<span class='segment1'>[generateVerbList(list(list("ExtendTentacles", "Extend Tentacles"), list("AbsorbDNA", "Absorb Victim"), list("Hunt", "Hunt"), list("infest", "Infest the Lifeweb"), list("Lump", "Lump"), list("Learnch", "Learn from the Associates"), list("RegenerativeStasis", "Regenerative Stasis")))]</span>"})
+	client.changebuttoncontent("#Crown", {"<span class='segment1'>[generateVerbList(list(list("DecretodoBarao", "Baron Decree"), list("Abrirtrapdoors", "Open Traps"), list("ColocarTaxas", "Impose Fees"), list("Declararalerta", "Declare Emergency"), list("VendadeDrogas", "Drug Sell"), list("VendadeArmas", "Gun Sell"), list("Expandirpoderesdaigreja", "Expand Church Power"), list("SetHands", "Set Hand")))]</span>"})
+	client.changebuttoncontent("#Integralist", {"<span class='segment1'>[generateVerbList(list(list("RevConvert", "Convert a Citizen")))]</span>"})
+	client.changebuttoncontent("#Thanati", {"<span class='segment1'>[generateVerbList(list(list("praisethelord", "Call to the Lord"), list("getWords", "Remember the Words"), list("getBrothers", "Remember the Associates")))]</span>"})
 
 /mob/proc/verbUpdate()
 	var/newHTML = ""
 	if(istype(src, /mob/new_player))
 		var/lobby = ""
 		if(ticker.current_state == GAME_STATE_PREGAME)
-			lobby += "Пора начинать: <span id='timestart'>[ticker.pregame_timeleft]</span>$"
-			lobby += "Хромосомы: [client.info?.chromosomes]$"
+			lobby += "Time to Start: <span id='timestart'>[ticker.pregame_timeleft]</span>$"
+			lobby += "Chromosomes: [client.info?.chromosomes]$"
 		if(ticker.current_state == GAME_STATE_PLAYING)
 			if(ticker.mode.config_tag == "siege")
 				var/datum/game_mode/siege/S = ticker.mode
-				lobby += "Потери: [S.losses]/[S.max_losses]$"
-				lobby += "Следующая волна усиления: [ticker.migwave_timeleft]s$"
-				lobby += "Подкрепление: [ticker.migrants_inwave.len]/[ticker.migrant_req]$"
+				lobby += "Losses: [S.losses]/[S.max_losses]$"
+				lobby += "Next Reinforcement Wave: [ticker.migwave_timeleft]s$"
+				lobby += "Reinforcement: [ticker.migrants_inwave.len]/[ticker.migrant_req]$"
 			else
-				lobby += "Следующая волна мигрантов: [ticker.migwave_timeleft]s$"
-				lobby += "Мигрантов: [ticker.migrants_inwave.len]/[ticker.migrant_req]$"
-			lobby += "Хромосомы: [client.info?.chromosomes]$"
+				lobby += "Next Migrant Wave: [ticker.migwave_timeleft]s$"
+				lobby += "Migrants: [ticker.migrants_inwave.len]/[ticker.migrant_req]$"
+			lobby += "Chromosomes: [client.info?.chromosomes]$"
 			for(var/client/C in ticker.migrants_inwave)
 				var/religioncheck = ""
 				var/gendercheck = "M"
@@ -288,7 +288,7 @@
 			lobby += "$$<i>! - Pagan </i>$<i>* - Family</i>"
 			newHTML += {"<span style='color:#600; font-weight:bold;'>[lobby]</span>"}
 	if(ishuman(src))
-		newHTML += {"<span class='segment1'>[generateVerbList(list(list("DisguiseVoice", "Замаскировать голос"), list("Dance", "Танцевать"), list("vomit", "Попробовать вызвать рвоту"), list("Pee", "Писать"), list(".asktostop", "Стой")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Notes", "Воспоминания"), list("AddNote", "Добавь воспоминаний"), list("Pray", "Молиться"), list("Clean", "Чистить"), list("Masturbate", "Мастурбировать"), list("Poo", "Наложить")), 2)]</span>"}
+		newHTML += {"<span class='segment1'>[generateVerbList(list(list("DisguiseVoice", "Disguise Voice"), list("Dance", "Dance"), list("vomit", "Try to Vomit"), list("Pee", "Pee"), list(".asktostop", "Stop")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Notes", "Memories"), list("AddNote", "Add Memories"), list("Pray", "Pray"), list("Clean", "Clean"), list("Masturbate", "Masturbate"), list("Poo", "Poo")), 2)]</span>"}
 	return newHTML
 
 /mob/proc/spiderUpdate()
@@ -296,66 +296,66 @@
 	var/list/verbs = list()
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
-		verbs += list(list("RememberTheTerrain", "Вспомните местность"))
+		verbs += list(list("RememberTheTerrain", "Remember the Terrain"))
 
 		if(is_dreamer(H))
-			verbs += list(list("Wonders", "Чудеса"))
+			verbs += list(list("Wonders", "Wonders"))
 		if(H.reflectneed >= 750)
-			verbs += list(list("ReflectExperience", "Подумайте о своём опыте!"))
+			verbs += list(list("ReflectExperience", "Reflect your Experience!"))
 		if(H?.mind?.succubus)
-			verbs += list(list("teleportSlaves", "Телепортировать рабов"), list("killSlave", "Убить раба"))
+			verbs += list(list("teleportSlaves", "Teleport Slaves"), list("killSlave", "Kill Slave"))
 		if(istype(H?.species, /datum/species/human/alien))
-			verbs += list(list("plantWeeds", "Сажайте сорняки"), list("plantEgg", "Отложите яйцо"))
+			verbs += list(list("plantWeeds", "Plant Weeds"), list("plantEgg", "Lay Egg"))
 
 		if(H.job == "Bishop" || H.old_job == "Bishop")
-			verbs += list(list("Excommunicate", "Отлучить от церкви"), list("BannishtheUndead", "Изгонять нежить"), list("RobofSins", "Избавься от грехов"), list("Epitemia", "Эпитемия"), list("RewardtheInquisitor", "Вознаградите инквизитора"), list("Coronation", "Коронация"), list("Eucharisty", "Евхаристия"), list("BannishSpirits", "Изгонять духов"), list("CallforChurchMeeting", "Призвать церковное собрание"), list("Marriage", "Брак!"), list("ClearName", "Очистить имя"))
+			verbs += list(list("Excommunicate", "Excommunicate"), list("BannishtheUndead", "Banish Undead"), list("RobofSins", "Rob of Sins"), list("Epitemia", "Epitemia"), list("RewardtheInquisitor", "Reward the Inquisitor"), list("Coronation", "Coronation"), list("Eucharisty", "Eucharisty"), list("BannishSpirits", "Banish Spirits"), list("CallforChurchMeeting", "Call for Church Meeting"), list("Marriage", "Marriage!"), list("ClearName", "Clear Name"))
 		if(H.job == "Priest" || H.old_job == "Priest")
-			verbs += list(list("Excommunicate", "Отлучить от церкви"), list("BannishtheUndead", "Изгонять нежить"), list("RobofSins", "Избавься от грехов"), list("Epitemia", "Эпитемия"), list("RewardtheInquisitor", "Вознаградите инквизитора"), list("Coronation", "Коронация"), list("Eucharisty", "Евхаристия"), list("BannishSpirits", "Изгонять духов"), list("CallforChurchMeeting", "Призвать церковное собрание"), list("Marriage", "Брак!"), list("ClearName", "Очистить имя"))
+			verbs += list(list("Excommunicate", "Excommunicate"), list("BannishtheUndead", "Banish Undead"), list("RobofSins", "Rob of Sins"), list("Epitemia", "Epitemia"), list("RewardtheInquisitor", "Reward the Inquisitor"), list("Coronation", "Coronation"), list("Eucharisty", "Eucharisty"), list("BannishSpirits", "Banish Spirits"), list("CallforChurchMeeting", "Call for Church Meeting"), list("Marriage", "Marriage!"), list("ClearName", "Clear Name"))
 		if(H.job == "Monk" || H.old_job == "Monk")
-			verbs += list(list("BannishtheUndead", "Изгонять нежить"), list("RobofSins", "Избавься от грехов"), list("Eucharisty", "Евхаристия"), list("BannishSpirits", "Изгонять духов"), list("Marriage", "Брак"))
+			verbs += list(list("BannishtheUndead", "Banish Undead"), list("RobofSins", "Rob of Sins"), list("Eucharisty", "Eucharisty"), list("BannishSpirits", "Banish Spirits"), list("Marriage", "Marriage"))
 		if(H.job == "Expedition Leader" || H.old_job == "Expedition Leader")
-			verbs += list(list("SetMigSpawn", "Установить место прибытия мигранта"), list("announceEx", "Обьявить (14 TILES)"))
+			verbs += list(list("SetMigSpawn", "Set Migrant Arrival"), list("announceEx", "Announce (14 TILES)"))
 
 		if(H.job == "Bum" || H.old_job == "Bum")
-			verbs += list(list("tellTheTruth", "Сказать правду"))
+			verbs += list(list("tellTheTruth", "Tell the Truth"))
 
 		if(H.job == "Urchin" || H.old_job == "Urchin")
-			verbs += list(list("tellTheTruth", "Сказать правду"))
+			verbs += list(list("tellTheTruth", "Tell the Truth"))
 
 		if(H.job == "Migrant" || H.old_job == "Migrant")
 			if(!H.migclass)
-				verbs += list(list("ChoosemigrantClass", "Выберите класс мигрантов!"))
+				verbs += list(list("ChoosemigrantClass", "Choose Migrant Class!"))
 				if(ckey in outlaw)
-					verbs += list(list("ToggleOutlaw", "Переключить преступников!"))
+					verbs += list(list("ToggleOutlaw", "Toggle Outlaw!"))
 
 		if(H.job == "Count" || H.old_job == "Count")
-			verbs += list(list("Reinforcement" , "Изменить тип подкрепления"), list("Command", "Приказать"), list("SpecialReinforcement", "Вызовите специальное подкрепление!"), list("Recruit", "Призвать"), list("CaptureThrone", "Захватить трон"))
+			verbs += list(list("Reinforcement" , "Change Reinforcement Type"), list("Command", "Command"), list("SpecialReinforcement", "Call for Special Reinforcement!"), list("Recruit", "Recruit"), list("CaptureThrone", "Capture Throne"))
 
 		if(H.job == "Count Hand" || H.old_job == "Count Hand")
-			verbs += list(list("Command", "Приказать"), list("SpecialReinforcement", "Вызовите специальное подкрепление!"), list("Recruit", "Призвать"))
+			verbs += list(list("Command", "Command"), list("SpecialReinforcement", "Call for Special Reinforcement!"), list("Recruit", "Recruit"))
 
 		if(H.job == "Count Heir" || H.old_job == "Count Heir")
-			verbs += list(list("SpecialReinforcement", "Вызовите специальное подкрепление!"))
+			verbs += list(list("SpecialReinforcement", "Call for Special Reinforcement!"))
 
 		if(H.job == "Sieger" || H.old_job == "Sieger")
 			if(!H.migclass)
-				verbs += list(list("ChoosesiegerClass", "Выберите класс осаждающего!"))
+				verbs += list(list("ChoosesiegerClass", "Choose Sieger Class!"))
 
 		if(H.job == "Mercenary" || H.old_job == "Mercenary")
 			if(!H.migclass)
-				verbs += list(list("PegaclasseMerc", "Выберите класс наемника!"))
+				verbs += list(list("PegaclasseMerc", "Choose Mercenary Class!"))
 
 		if(H.consyte)
-			verbs += list(list("Choir", "Хор"), list("Respark", "Зажечь искру"))
+			verbs += list(list("Choir", "Choir"), list("Respark", "Respark"))
 		if(H.job == "Jester")
-			verbs += list(list("joke", "Шутка"), list("rememberjoke", "Вспомнить шутку"),list("apelidar", "Дайте прозвище!"), list("malabares", "Жонглировать!"))
+			verbs += list(list("joke", "Joke"), list("rememberjoke", "Remember Joke"),list("apelidar", "Give a Nickname!"), list("malabares", "Juggling!"))
 		if(H.check_perk(/datum/perk/pathfinder))
-			verbs += list(list("TrackSomeonePathFinder", "Выслеживать кого-то"), list("TrackselfPathfinder", "Следить за собой"))
+			verbs += list(list("TrackSomeonePathFinder", "Track Someone"), list("TrackselfPathfinder", "Track Yourself"))
 		if(H.check_perk(/datum/perk/singer))
-			verbs += list(list("RememberSong", "Вспомнить песню"), list("Sing", "Петь"))
+			verbs += list(list("RememberSong", "Remember Song"), list("Sing", "Sing"))
 
 		if(H.verbs.Find(/mob/living/carbon/human/proc/interrogate))
-			verbs += list(list("Interrogate", "Допрашивать"))
+			verbs += list(list("Interrogate", "Interrogate"))
 
 	newOption = generateVerbList(verbs)
 	return {"<span class='segment1'>[newOption]</span>"}
@@ -364,16 +364,16 @@
 	src << browse('code/porco/html/pig.html', "window=outputwindow.browser; size=411x330;")
 
 /mob/proc/defaultButton()
-	client.changebuttoncontent("#options", "<span class='segment1'>" + generateVerbList(list(list("OOC", "OOC"), list("Adminhelp", "Admin Help"), list(".togglegraphics", "Настройки графики"), list(".addeffects", "(EXPERIMENTAL) Добавление эффектов"), list(".togglefullscreen", "Переключение полноэкранного режима"), list("LobbyMusic", "Переключить музыку в лобби"), list("Midis", "Переключение Midis"), list("AmbiVolume", "Громкость окружения (0-255)"), list("MusicVolume", "Громкость музыки (0, 255)"))) + "</span>")
+	client.changebuttoncontent("#options", "<span class='segment1'>" + generateVerbList(list(list("OOC", "OOC"), list("Adminhelp", "Admin Help"), list(".togglegraphics", "Graphics Settings"), list(".addeffects", "(EXPERIMENTAL) Add Effects"), list(".togglefullscreen", "Toggle Fullscreen"), list("LobbyMusic", "Toggle Lobby Music"), list("Midis", "Toggle Midis"), list("AmbiVolume", "Ambience Volume (0-255)"), list("MusicVolume", "Music Volume (0, 255)"))) + "</span>")
 	if(istype(src, /mob/new_player) && ticker.current_state == GAME_STATE_PREGAME)
-		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("MigracaodeTodos", "(100) Всемиграция"), list("LimparCromossomos", "(100) Обнулить хромосомы"), list("ForceAspect", "(10) Продвинуть Аспект"), list("EscondercargoCustom", "(10) Скрыть особую роль"), list("Escondercargo", "(2)Скрыть роль"), list("ReRolarSpecial", "(2) Сменить особенность"), list("silencePigs", "(2) Молчание свиней"), list("Trapokalipsis", "(15) Трапокалипсис"))) + "</span>")
+		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("MigracaodeTodos", "(100) Allmigration"), list("LimparCromossomos", "(100) Wipe Chromosomes"), list("ForceAspect", "(10) Force Aspect"), list("EscondercargoCustom", "(10) Hide Custom Job"), list("Escondercargo", "(2) Hide Job"), list("ReRolarSpecial", "(2) Reroll Special"), list("silencePigs", "(2) Silence Pigs"), list("Trapokalipsis", "(15) Trapokalipsis"))) + "</span>")
 	else if(istype(src, /mob/living/carbon/human) && ticker.current_state == GAME_STATE_PLAYING)
-		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("LimparCromossomos", "(100) Обнулить хромосомы"), list("ChamarCharon", "(10) Вызвать Харон"), list("ForcePadla", "(7) Продвинуть  Падлу"), list("ReceiveObols", "(1) Получить оболы"), list("RetirarVice", "(1) Удалить недостаток"))) + "</span>")
+		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("LimparCromossomos", "(100) Wipe Chromosomes"), list("ChamarCharon", "(10) Launch Babylon"), list("ForcePadla", "(7) Force Padla"), list("ReceiveObols", "(1) Receive Obols"), list("RetirarVice", "(1) Remove Vice"))) + "</span>")
 	else
-		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("LimparCromossomos", "(100) Обнулить хромосомы"), list("ChamarCharon", "(10) Вызвать Харон"), list("ForcePadla", "(7) Продвинуть  Падлу"), list("ReRolarSpecial", "(2) Сменить особенность"))) + "</span>")
+		client.changebuttoncontent("#chrome", "<span class='segment1'>" + generateVerbList(list(list("LimparCromossomos", "(100) Wipe Chromosomes"), list("ChamarCharon", "(10) Launch Babylon"), list("ForcePadla", "(7) Force Padla"), list("ReRolarSpecial", "(2) Reroll Special"))) + "</span>")
 
 /client/proc/setDefaultButtons()
-	changebuttoncontent("#Verb", {"<span class='segment1'>[generateVerbList(list(list("DisguiseVoice", "Замаскировать голос"), list("Dance", "Танцевать"), list("vomit", "Попробовать вызвать рвоту"), list("Pee", "Писать"), list(".asktostop", "Стой")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Notes", "Воспоминания"), list("Pray", "Молиться"), list("AddNote", "Добавь воспоминаний"), list("Clean", "Чистить"), list("Masturbate", "Мастурбировать"), list("Poo", "Наложить")))]</span>"})
+	changebuttoncontent("#Verb", {"<span class='segment1'>[generateVerbList(list(list("DisguiseVoice", "Disguise Voice"), list("Dance", "Dance"), list("vomit", "Try to Vomit"), list("Pee", "Pee"), list(".asktostop", "Stop")))]</span>"} + {"<span class='segment2'>[generateVerbList(list(list("Notes", "Memories"), list("Pray", "Pray"), list("AddNote", "Add Memories"), list("Clean", "Clean"), list("Masturbate", "Masturbate"), list("Poo", "Poo")))]</span>"})
 
 /client/New()
 	..()

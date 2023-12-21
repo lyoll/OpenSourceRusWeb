@@ -144,7 +144,7 @@
 		var/msg
 		for (var/mob/V in viewers(usr))
 			if(target == user && !user.stat && !user.weakened && !user.stunned && !user.paralysis)
-				V.show_message("[usr] начинает забираться на [src].", 3)
+				V.show_message("[usr] starts climbing into the [src].", 3)
 			if(target != user && !user.restrained() && !user.stat && !user.weakened && !user.stunned && !user.paralysis)
 				if(target.anchored) return
 				V.show_message("[usr] starts stuffing [target.name] into the [src].", 3)
