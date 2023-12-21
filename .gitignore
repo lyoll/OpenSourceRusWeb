@@ -21,3 +21,4 @@ config/admins.txt
 data/banlist.bdb
 /nodejs/
 /.vscode/settings.json
+/code/game/gamemodes/gameticker.dm
