@@ -107,6 +107,8 @@
 			parry_chance_mod += modifier
 			if(C.meanwhile_combat_intent == "defend")
 				parry_chance_mod += 20
+			if(C.meanwhile_combat_intent == "guard")
+				parry_chance_mod += 10
 			var/hp = 1
 			if(istype(C.gloves, /obj/item/clothing/gloves/combat/gauntlet/steel))
 				parry_chance_mod += 20

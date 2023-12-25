@@ -483,17 +483,17 @@
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "defend"
 							if(18 to 24)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
+								to_chat(H, "⠀<span class='combatmodes'> Guard: You will automatically attack anyone who approaches you. And small arms will allow you to hold any point at gunpoint!</i></span>")
 								H.combat_intent = "guard"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "guard"
 							if(9 to 17)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
+								to_chat(H, "⠀<span class='combatmodes'> Dual: You will hit the target with a weapon in a non-primary hand. Price: reduced accuracy!</i></span>")
 								H.combat_intent = "dual"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "dual"
 							if(1 to 9)
-								to_chat(H, "⠀<span class='combatbold'>[pick(nao_consigoen)]! You don't know how to use this..</span>")
+								to_chat(H, "⠀<span class='combatmodes'> Feint: You will feint at the target. It will force the opponent to parry prematurely, opening him up for a real attack. It's a bad idea if the enemy is not alert or is not going to parry!</i></span>")
 								H.combat_intent = "feint"
 								H.combat_popup.screen_loc = null
 								H.combat_intents.icon_state = "feint"

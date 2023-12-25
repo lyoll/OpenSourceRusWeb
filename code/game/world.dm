@@ -228,7 +228,7 @@ var/rtlog_path
 	if (features)
 		s += "<br>[list2text(features, ", ")]"
 	s += "<br><b>The server:</b> [src.port]"
-	s += "<br><b>This week's map:</b> [currentmaprotation]"
+//	s += "<br><b>This week's map:</b> [currentmaprotation]"
 	if(master_mode == "holywar")
 		s += "<br><b>HOLY WAR!</b>"
 	if(master_mode == "miniwar")
