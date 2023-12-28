@@ -133,7 +133,7 @@
 
 /mob/living/carbon/proc/handle_dreamer_mob_hallucination()
 	var/mob_msg = list()
-	mob_msg = pick("It's mom!", "I have to HURRY UP!", "They are close! Theyareclose!", "Пакет харош.", "Hide!")
+	mob_msg = pick("It's mom!", "I have to HURRY UP!", "They are close! Theyareclose!", "You're mine.", "Hide!")
 	var/turf/turfie
 	var/list/turf/turfies = list()
 	for(var/turf/torf in view(src))

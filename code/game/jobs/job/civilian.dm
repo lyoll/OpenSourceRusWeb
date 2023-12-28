@@ -956,7 +956,7 @@
 	idtype = /obj/item/weapon/card/id/qm
 	access = list(merchant)
 	minimal_access = list(merchant)
-	latejoin_locked = TRUE
+	latejoin_locked = FALSE
 	thanati_chance = 33
 	jobdesc = "A newcomer from somewhere in the east, rumors say he&#8217;s a known book maker and came to Firethorn to outrun tribunal troops."
 	jobdescbr = "A newcomer from somewhere in the east, rumors say he&#8217;s a known book maker and came to Firethorn to outrun tribunal troops."
