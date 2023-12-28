@@ -13,4 +13,4 @@ HAHAHAHAHA DREAMMAKER LANGUAGE HAHAHAHHAHAHAH
 #define I_FEINT		"feint"
 /mob/var/meanwhile_combat_intent = "null"
 /mob/var/ticks_to_reset = 0
-/mob/var/combat_intent = "feint"
+/mob/var/combat_intent = "defend"

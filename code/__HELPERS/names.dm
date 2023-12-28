@@ -50,7 +50,7 @@ var/religion_name = null
 
 	// Prefix
 
-	name = "\[EN\] Spider Trail: modified †Farweb†/†Nearweb† code. NO-WL. "
+	name = "\[ENG/RUS\] Trailweb: modified †Farweb† code. NO-WL. GURPS UPDATE"
 /*	name += pick("Murder", "Love", "Kill the", "Love the","Kidnap the","Castrate the","Save","Deadly", "Paranoid", "Unidentified", "Skeleton", "Communist", "Dead","Sleeping","Thirsty","Hungry","Dangerous","Overdosed","Depressed","Butchered","Chuck","Feed","Seed","Foolish","False","Ominous")
 	name += " "
 	name += pick("Baron","Dreamer","Child","Bum","Amuser","Randy","Terrorist","Enoch","Consyte","Mortician","Whore","Witch","Lodge","Graga","Rat","Beast","Demon","Chimera","God","Inquisitor","Soup","Bees","Prophet","Bishop","Sheriff")

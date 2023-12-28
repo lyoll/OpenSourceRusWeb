@@ -943,6 +943,10 @@ var/mob/FortLordHand
 			H.terriblethings = TRUE
 			H.add_perk(/datum/perk/heroiceffort)
 			H.religion = "Gray Church"
+			if(H.religion == "Gray Church")
+				for(var/obj/effect/landmark/L in landmarks_list)
+					if (L.name == "Crusader")
+						H.forceMove(L.loc)
 			if(master_mode == "holywar")
 				if(H.religion == "Gray Church")
 					for(var/obj/effect/landmark/L in landmarks_list)
