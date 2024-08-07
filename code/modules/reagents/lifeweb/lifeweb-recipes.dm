@@ -13,7 +13,7 @@
 	result = "dylovene"
 	required_reagents = list("europium" = 1, "tantalum" = 1, "hassium" = 1)
 	result_amount = 3
-
+/*
 /datum/chemical_reaction/explosion_cagata
 	name = "Explosion"
 	id = "explosion_cagata"
@@ -23,7 +23,7 @@
 
 /datum/chemical_reaction/explosion_cagata/on_reaction(var/datum/reagents/holder, var/created_volume)
 	var/turf/simulated/T = get_turf(holder.my_atom)
-	explosion(T,created_volume/15,0,created_volume/15,2)
+	explosion(T,created_volume/15,0,created_volume/15,2) */
 
 /datum/chemical_reaction/kelotane
 	name = "Kelotane"

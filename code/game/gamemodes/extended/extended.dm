@@ -1,4 +1,4 @@
-/* /datum/game_mode/extended
+/datum/game_mode/extended
 	name = "Extended"
 	config_tag = "extended"
 	required_players = 0
@@ -39,4 +39,4 @@
 		var/mob/living/carbon/human/H
 		H = pick(player_list)
 		to_chat(world, "<span class='bname'>Starring: [H.real_name]</span>")
-		to_chat(world, "<span class='bname'>Objective #1:</span> Prevent tragedy from happening in Firethorn. <font color='green'>Success!</font>") */
+		to_chat(world, "<span class='bname'>Objective #1:</span> Prevent tragedy from happening in Firethorn. <font color='green'>Success!</font>") 

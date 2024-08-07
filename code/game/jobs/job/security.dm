@@ -13,7 +13,7 @@ datum/job/ordinator
 	access = list(meistery,sanctuary,garrison,keep,hump,courtroom,soilery,lifeweb, baronquarter, marduk, innkeep, hand_access)
 	minimal_access = list(meistery,sanctuary,garrison,keep,hump,courtroom,soilery,lifeweb, baronquarter, marduk, innkeep, hand_access)
 	minimal_player_age = 14
-	latejoin_locked = TRUE
+	latejoin_locked = FALSE
 	jobdesc = "Being a man of strong will, heroic strength, and incredible combat prowess, the Marduk is one of the most horrifying men one will ever face in battle. His formidable skills are recognized throughout the Salarian province. Champion of the Baron of Firethorn, he is sometimes sent to take part in hastilude and martial games among more wealthy nobility. Many more influential nobles have offered him a seat among their mighty men, but his loyalty towards his Lord is undying."
 	sex_lock = MALE
 	money = 66

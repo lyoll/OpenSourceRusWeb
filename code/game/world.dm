@@ -222,17 +222,17 @@ var/rtlog_path
 		features += "~[n] addict"
 
 	//if (!host && config && config.hostedby)
-	features += "<b>IZONE</b>"
-	features += "<b>+\[18\]</b>"
+	features += "The dark world of pain and despair in the setting of the future."
 
 	if (features)
 		s += "<br>[list2text(features, ", ")]"
+	s += "<br><b>IZONE, +\[18\]</b>"
 	s += "<br><b>The server:</b> [src.port]"
 //	s += "<br><b>This week's map:</b> [currentmaprotation]"
-	if(master_mode == "holywar")
+/*	if(master_mode == "holywar")
 		s += "<br><b>HOLY WAR!</b>"
 	if(master_mode == "miniwar")
-		s += "<br><b>MINIWAR!</b>"
+		s += "<br><b>MINIWAR!</b>" */
 	/* does this help? I do not know */
 	if (src.status != s)
 		src.status = s
